@@ -2,7 +2,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="build" content="RT v0.9 pre-alpha · 17 Oct 21:02">
+<meta name="build" content="RT v0.9.1 pre-alpha · 17 Oct 21:20">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -192,7 +192,7 @@ html.sa #top{padding-top:max(var(--st),4px)}
 </style></head><body>
 <canvas id="c"></canvas>
 <div id="rot"><div class="rph"></div><h2>Turn the paper sideways</h2><p>Blood and Paper is played in landscape. Rotate your phone; the game waits for you.</p></div>
-<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT v0.9 pre-alpha · 17 Oct 21:02</div>
+<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT v0.9.1 pre-alpha · 17 Oct 21:20</div>
 <div id="top" class="deco">
  <div class="r"><span id="cash">$0</span><span id="inc">+$0/day</span><span id="day">Day 1</span><button class="ib" id="tb-menu" title="Menu" onclick="openPause()"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button></div>
  <div class="r"><span id="hc" onclick="openTab('police')">Heat 0 · Case 0</span>
@@ -200,7 +200,7 @@ html.sa #top{padding-top:max(var(--st),4px)}
   <button class="ib" id="tb-intel" title="Intel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.8-6.5 10-6.5S22 12 22 12s-3.8 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button><button class="ib" id="tb-fam" title="Families"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8l8 3v6.2c0 5-3.6 8.2-8 9.4-4.4-1.2-8-4.4-8-9.4V5.8zM12 7v9M8.5 10.5h7"/></svg></button></div>
 </div>
 <div id="toast"></div>
-<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div class="tver" style="margin-top:4px;font:bold 13px Georgia,serif;letter-spacing:2px;color:#e6c56a;text-transform:uppercase">v0.9 pre-alpha</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT v0.9 pre-alpha · 17 Oct 21:02</div>
+<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div class="tver" style="margin-top:4px;font:bold 13px Georgia,serif;letter-spacing:2px;color:#e6c56a;text-transform:uppercase">v0.9.1 pre-alpha</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT v0.9.1 pre-alpha · 17 Oct 21:20</div>
 <button class="mbtn pri" onclick="goFull();newGame()">New Game</button><button class="mbtn" id="bcont" onclick="goFull();startGame(true)">Continue</button>
 <button class="mbtn" onclick="openSettings('titleMenu')">Settings</button><button class="mbtn" onclick="openHowTo('titleMenu')">How to Play</button><button class="mbtn" onclick="openCredits()">Credits</button></div></div>
 <div id="mwrap"><div id="modal" class="deco"></div></div>
@@ -1556,7 +1556,7 @@ const CHALK=[];window.CHALK=CHALK;let CHALKN=0;
 function chalkFor(u){if(!u||u._chalk)return;u._chalk=1;let x=u.x,y=u.y;if(u.inB!=null&&G.bld[u.inB]){const d=G.bld[u.inB].door;x=d[0];y=d[1]}
  const kb=u.kbFrom?[u.x-u.kbFrom[0],u.y-u.kbFrom[1]]:null,now=performance.now(),dl=Math.max(0,(u.hitT||0)-now)+(u.hitT&&now-u.hitT<1500?900:300);chalkAt(x,y,u.dir,kb,dl)}
 function chalkAt(x,y,dir,kb,delay){const C=CFG.CHALK;let th;if(kb&&Math.hypot(kb[0],kb[1])>0.01)th=Math.atan2(kb[1],kb[0]);else th={se:0,sw:Math.PI/2,nw:Math.PI,ne:-Math.PI/2}[dir]??Math.random()*6.28;th+=(Math.random()-0.5)*0.5;
- const R=(a,b)=>a+Math.random()*(b-a),cs=Math.cos(th),sn=Math.sin(th),cx=x+cs*0.12,cy=y+sn*0.12;const W=(a,b)=>{a*=1.3;b*=1.3;const p=iso(cx+cs*a-sn*b,cy+sn*a+cs*b);return[p.X,p.Y]};
+ const R=(a,b)=>a+Math.random()*(b-a),cs=Math.cos(th),sn=Math.sin(th),cx=x+cs*0.12,cy=y+sn*0.12;const pl=Math.hypot((cs-sn)*TW/2,(cs+sn)*TH/2),m=0.7*Math.pow(Math.hypot(TW/2,TH/2)/pl,0.5);const W=(a,b)=>{a*=m;b*=m;const p=iso(cx+cs*a-sn*b,cy+sn*a+cs*b);return[p.X,p.Y]};
  // one side of the body (s=+1/-1); a runs feet(-) to head(+), b across; arms and legs splayed at random
  const side=s=>{const up=Math.random()<0.45,ea=R(0.04,0.1),hb=R(0.18,0.27),lg=R(0.1,0.19);
   const arm=up?[[0.16,0.08*s],[0.25,R(0.13,0.18)*s],[0.33,hb*s],[0.35,(hb-0.05)*s],[0.24,0.1*s],[0.15,0.055*s]]:[[0.15,0.085*s],[ea,R(0.15,0.2)*s],[R(-0.06,0),hb*s],[R(-0.06,0)+0.03,(hb-0.05)*s],[ea+0.02,0.11*s],[0.08,0.075*s]];
@@ -1565,21 +1565,21 @@ function chalkAt(x,y,dir,kb,delay){const C=CFG.CHALK;let th;if(kb&&Math.hypot(kb
  for(let i=0;i<poly.length;i++){const p=poly[i],q=poly[(i+1)%poly.length];for(let k=0;k<3;k++){const t=k/3;pts.push(W(p[0]+(q[0]-p[0])*t+R(-0.006,0.006),p[1]+(q[1]-p[1])*t+R(-0.006,0.006)))}}
  const head=[];const hr=R(0.06,0.072);for(let i=0;i<=14;i++){const a=i/14*6.283,rr=hr*(1+R(-0.08,0.08));head.push(W(0.255+Math.cos(a)*rr,Math.sin(a)*rr))}
  const dust=[];for(let i=0;i<10;i++)dust.push(W(R(-0.3,0.32),R(-0.2,0.2)));const n=(CHALKN=CHALKN%99+1),np=W(-0.36,R(-0.22,0.22));
- const c0=iso(x,y);CHALK.push({t0:performance.now()+(delay||0),pts,head,dust,n,np,X:c0.X,Y:c0.Y,ds:[R(5,9),R(1,2.2),R(2,4),R(0.8,1.6)]});while(CHALK.length>C.MAX)CHALK.shift()}
+ const c0=iso(x,y);CHALK.push({t0:performance.now()+(delay||0),pts,head,dust,n,np,X:c0.X,Y:c0.Y,ds:[R(3.5,6),R(0.7,1.5),R(1.5,3),R(0.5,1.1)]});while(CHALK.length>C.MAX)CHALK.shift()}
 let CHALKD=0;function drawChalk(now,TA){const C=CFG.CHALK;now=performance.now();CHALKD=0;for(let i=CHALK.length-1;i>=0;i--)if(now-CHALK[i].t0>C.LIFE)CHALK.splice(i,1);
  if(!CHALK.length||cam.z<C.MINZ||TA>=1)return;const X0=cam.x-80,Y0=cam.y-60,X1=cam.x+innerWidth/cam.z+80,Y1=cam.y+innerHeight/cam.z+60;
  for(const c of CHALK){const t=now-c.t0;if(t<0||c.X<X0||c.X>X1||c.Y<Y0||c.Y>Y1)continue;const a=Math.min(1,t/C.IN)*(t>C.LIFE-C.FADE?Math.max(0,(C.LIFE-t)/C.FADE):1)*(1-TA);if(a<=0.01)continue;CHALKD++;
   if(!c.cv)chalkBake(c);ctx.globalAlpha=a;ctx.drawImage(c.cv,c.bx,c.by,c.bw,c.bh)}
  ctx.globalAlpha=1}
 // bake one outline into a small bitmap once (dashed strokes are slow to redraw every frame)
-function chalkBake(c){const S=2.5,all=[...c.pts,...c.head,...c.dust,[c.np[0]-8,c.np[1]-6],[c.np[0]+8,c.np[1]+6]];let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;for(const p of all){x0=Math.min(x0,p[0]);y0=Math.min(y0,p[1]);x1=Math.max(x1,p[0]);y1=Math.max(y1,p[1])}
+function chalkBake(c){const S=2.5,all=[...c.pts,...c.head,...c.dust,[c.np[0]-5,c.np[1]-4],[c.np[0]+5,c.np[1]+4]];let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;for(const p of all){x0=Math.min(x0,p[0]);y0=Math.min(y0,p[1]);x1=Math.max(x1,p[0]);y1=Math.max(y1,p[1])}
  x0-=3;y0-=3;x1+=3;y1+=3;c.bx=x0;c.by=y0;c.bw=x1-x0;c.bh=y1-y0;const cv=document.createElement('canvas');cv.width=Math.ceil(c.bw*S);cv.height=Math.ceil(c.bh*S);const g=cv.getContext('2d');g.setTransform(S,0,0,S,-x0*S,-y0*S);g.lineJoin='round';g.lineCap='round';
  const path=(P,ox,oy,close)=>{g.beginPath();g.moveTo(P[0][0]+ox,P[0][1]+oy);for(let i=1;i<P.length;i++)g.lineTo(P[i][0]+ox,P[i][1]+oy);if(close)g.closePath();g.stroke()};
- g.setLineDash(c.ds);g.strokeStyle='rgba(236,232,220,0.85)';g.lineWidth=2;path(c.pts,0,0,1);path(c.head,0,0,0);
- g.setLineDash([c.ds[2],c.ds[1]*1.6,c.ds[0]*0.6,c.ds[3]]);g.strokeStyle='rgba(255,255,250,0.38)';g.lineWidth=1;path(c.pts,0.7,0.45,1);path(c.head,0.6,0.4,0);
- g.setLineDash([]);g.fillStyle='rgba(235,232,222,0.3)';for(const d of c.dust)g.fillRect(d[0],d[1],1.1,1.1);
- g.strokeStyle='rgba(236,232,220,0.75)';g.lineWidth=1.1;g.beginPath();g.ellipse(c.np[0],c.np[1],6.5,4.2,0,0,6.283);g.stroke();
- g.fillStyle='rgba(240,236,224,0.85)';g.font='bold 7px Georgia,serif';g.textAlign='center';g.textBaseline='middle';g.fillText(String(c.n),c.np[0],c.np[1]+0.3);c.cv=cv}
+ g.setLineDash(c.ds);g.strokeStyle='rgba(236,232,220,0.85)';g.lineWidth=1.25;path(c.pts,0,0,1);path(c.head,0,0,0);
+ g.setLineDash([c.ds[2],c.ds[1]*1.6,c.ds[0]*0.6,c.ds[3]]);g.strokeStyle='rgba(255,255,250,0.36)';g.lineWidth=0.7;path(c.pts,0.45,0.3,1);path(c.head,0.4,0.25,0);
+ g.setLineDash([]);g.fillStyle='rgba(235,232,222,0.3)';for(const d of c.dust)g.fillRect(d[0],d[1],0.8,0.8);
+ g.strokeStyle='rgba(236,232,220,0.72)';g.lineWidth=0.7;g.beginPath();g.ellipse(c.np[0],c.np[1],3.9,2.6,0,0,6.283);g.stroke();
+ g.fillStyle='rgba(240,236,224,0.85)';g.font='bold 4.4px Georgia,serif';g.textAlign='center';g.textBaseline='middle';g.fillText(String(c.n),c.np[0],c.np[1]+0.2);c.cv=cv}
 function hpBar(x,y,k,a){if(a<=0.02)return;ctx.globalAlpha=a;const w=HPB.W,h=HPB.H;ctx.fillStyle='rgba(12,9,6,0.85)';ctx.fillRect(x-w/2-1,y-1,w+2,h+2);ctx.fillStyle='#3a2a1e';ctx.fillRect(x-w/2,y,w,h);ctx.fillStyle=hpCol(k);ctx.fillRect(x-w/2,y,Math.max(1,w*k),h);ctx.globalAlpha=1}
 function hurtA(t,now){if(!t)return 0;const d=now-t;return d<HPB.SHOW?1:d<HPB.SHOW+HPB.FADE?1-(d-HPB.SHOW)/HPB.FADE:0}
 function drawHPBars(now,us,items){const ta=tacA();if(ta>=1)return;const fade=1-ta,mk=mkAlpha();ctx.setTransform(dpr,0,0,dpr,0,0);const z=cam.z;
