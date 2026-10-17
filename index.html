@@ -2,7 +2,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="build" content="RT v0.6 pre-alpha · 17 Oct 15:40">
+<meta name="build" content="RT v0.7 pre-alpha · 17 Oct 18:44">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -183,7 +183,7 @@ html.sa #top{padding-top:max(var(--st),4px)}
 </style></head><body>
 <canvas id="c"></canvas>
 <div id="rot"><div class="rph"></div><h2>Turn the paper sideways</h2><p>Blood and Paper is played in landscape. Rotate your phone; the game waits for you.</p></div>
-<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT v0.6 pre-alpha · 17 Oct 15:40</div>
+<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT v0.7 pre-alpha · 17 Oct 18:44</div>
 <div id="top" class="deco">
  <div class="r"><span id="cash">$0</span><span id="inc">+$0/day</span><span id="day">Day 1</span><button class="ib" id="tb-menu" title="Menu" onclick="openPause()"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button></div>
  <div class="r"><span id="hc" onclick="openTab('police')">Heat 0 · Case 0</span>
@@ -191,7 +191,7 @@ html.sa #top{padding-top:max(var(--st),4px)}
   <button class="ib" id="tb-intel" title="Intel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.8-6.5 10-6.5S22 12 22 12s-3.8 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button><button class="ib" id="tb-fam" title="Families"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8l8 3v6.2c0 5-3.6 8.2-8 9.4-4.4-1.2-8-4.4-8-9.4V5.8zM12 7v9M8.5 10.5h7"/></svg></button></div>
 </div>
 <div id="toast"></div>
-<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div class="tver" style="margin-top:4px;font:bold 13px Georgia,serif;letter-spacing:2px;color:#e6c56a;text-transform:uppercase">v0.6 pre-alpha</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT v0.6 pre-alpha · 17 Oct 15:40</div>
+<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div class="tver" style="margin-top:4px;font:bold 13px Georgia,serif;letter-spacing:2px;color:#e6c56a;text-transform:uppercase">v0.7 pre-alpha</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT v0.7 pre-alpha · 17 Oct 18:44</div>
 <button class="mbtn pri" onclick="goFull();newGame()">New Game</button><button class="mbtn" id="bcont" onclick="goFull();startGame(true)">Continue</button>
 <button class="mbtn" onclick="openSettings('titleMenu')">Settings</button><button class="mbtn" onclick="openHowTo('titleMenu')">How to Play</button><button class="mbtn" onclick="openCredits()">Credits</button></div></div>
 <div id="mwrap"><div id="modal" class="deco"></div></div>
@@ -234,12 +234,13 @@ const CFG={TITLE:'Blood and Paper RT', SAVE_NS:'bprt_', SHOW_PATHS:0, AUTOSAVE:1
  DIST:{CORE:18, BASE:2, EXTRA_FROM:30, PER:20, DECAY_DAY:12, COP_KILL:50, CASE_MULT:1}, // districts: 4 family turfs + Downtown; BASE beat cops each, +1 at EXTRA_FROM heat and per PER more; cop kill adds COP_KILL to that district
  CHASE:{SIGHT:7, SPEED:1.08, LOSE:90, MAX:600, FAR:16, CATCH:0.75, REPATH:1.5, BOSS_JAIL:900, BOSS_FINE:0.3}, // sim s; SPEED vs a walking gangster; boss: fined 30% of dirty cash, short jail
  CIV:{PER_TILES:180, MIN:15, MAX:42, WALK:34, FLEE:11, RANGE:18, IN:[30,160], WAIT:[20,160], DANGER:6, SCAN:2},  // ambient civilians: count = tiles/PER_TILES clamped; sim s per tile walking/fleeing
- PETTY:{RANGE:26, REST:75, REST_FIELD:25, JAIL:3600, ARREST_CASE:3, JOBS:{ // petty crime from the Hideout: $ range (dirty), work sim s, rumor = chance heat leaks with no cop around, h = that heat, seen = chance a nearby cop notices, hs = heat if seen, caught = chance he is arrested once seen
+ PETTY:{RANGE:26, IN_COP_R:3.5, IN_PART:0.5, IN_MINP:0.3, REST:75, REST_FIELD:25, JAIL:3600, ARREST_CASE:3, JOBS:{ // petty crime from the Hideout: $ range (dirty), work sim s, rumor = chance heat leaks with no cop around, h = that heat, seen = chance a nearby cop notices, hs = heat if seen, caught = chance he is arrested once seen
   pick:{name:'Pickpocket',verb:'pickpocketing',tg:'civ',$:[10,22],work:25,rumor:0.15,h:1,seen:0.45,hs:3,d:'Lift wallets off folks in the street. Small money, little noise.'},
   mug:{name:'Mug',verb:'mugging somebody',tg:'civ',$:[25,55],work:40,rumor:0.35,h:3,seen:0.75,hs:6,d:'Corner a passer-by and take the lot. More money, more noise.'},
   burgle:{name:'Burgle',verb:'burgling a flat',tg:'home',$:[60,140],work:600,rumor:0.3,h:3,seen:0.5,hs:6,d:'Break into a tenement or apartment house. Takes a while, pays well.'},
   shake:{name:'Shake down',verb:'shaking down a shop',tg:'shop',$:[30,60],work:150,rumor:0.2,h:1.5,seen:0.4,hs:4,d:'Collect protection from a corner shop. Steady money.'},
-  numbers:{name:'Run numbers',verb:'running numbers',tg:'corner',$:[40,80],work:300,rumor:0.12,h:0.5,seen:0.3,hs:3,d:'Take bets on a street corner. Steady money, quiet work.'}}},
+  numbers:{name:'Run numbers',verb:'running numbers',tg:'corner',$:[40,80],work:300,rumor:0.12,h:0.5,seen:0.3,hs:3,d:'Take bets on a street corner. Steady money, quiet work.'},
+  car:{name:'Break into car',verb:'breaking into a car',tg:'car',$:[15,40],work:110,rumor:0.25,h:2,seen:0.85,hs:5,manual:1,goods:0.2,cd:1,d:'Smash a window on a parked car and grab what is inside. Quick, small money, and loud: a cop who sees it gives chase. By hand only.'}}},
  UNIT_MOVE:21.25,           // RT: sim seconds per tile for crew & cars (~1.4 tiles/real s at 30x)
  CAPTURE:600,               // sim seconds to capture
  COMBAT_TICK:60,
@@ -298,7 +299,7 @@ const CFG={TITLE:'Blood and Paper RT', SAVE_NS:'bprt_', SHOW_PATHS:0, AUTOSAVE:1
   Police:{col:'#3b4a63',h:98,icon:'🚓'},
   Tenement:{col:'#8d7a62',h:76},Apartment:{},CornerShop:{},Park:{},Courthouse:{},Church:{col:'#6b6156',h:130}},
  NB:14,                      // blocks per side incl. the sea ring (city blocks 1..12)
- LANDMARKS:{police:[6,6],court:[7,6],church:[4,9],park:[9,4]}, PIERS:[3,7,11], SPAWN_APART:55, TAC:{ON:0.27,OFF:0.3,FADE:0.3,FAR:0.34}, ESTABLISH:500, TAKE_MIN:3, TAKE:{BASE:4,LEVEL:2,BIG:2,GUARD:2,BIGT:['Casino','GunFactory']}, REVEAL:600, DAME_SEE:6,
+ LANDMARKS:{police:[6,6],court:[7,6],church:[4,9],park:[9,4]}, PIERS:[3,7,11], SPAWN_APART:55, TAC:{ON:0.22,OFF:0.24,FADE:0.3,FAR:0.34}, ESTABLISH:500, TAKE_MIN:3, TAKE:{BASE:4,LEVEL:2,BIG:2,GUARD:2,BIGT:['Casino','GunFactory']}, REVEAL:600, DAME_SEE:6,
  STARTER:['Speakeasy'],      // each family starts with Hideout + this, owned (home block = territory from day 1)
  // START_CASH 2000 kept: the starter Speakeasy earns B.Speakeasy.baseInc on its own until the booze chain is complete
  /* MAP LAYOUT (blocks, 8x8). One quadrant template, mirrored into all four corners so every family has an identical neighbourhood.
@@ -857,30 +858,62 @@ function pettyTap(u){const J=CFG.PETTY.JOBS,j=u.petty.j||u.petty.k,vb=J[j]?J[j].
 function crimeTargets(j,x,y,R,fam){const J=CFG.PETTY.JOBS[j],inR=(a,b)=>Math.hypot(a-x,b-y)<R;
  if(J.tg=='civ'){const taken=new Set(G.units.filter(m=>m.petty&&m.petty.c!=null).map(m=>m.petty.c));return G.civ.filter(c=>c.inside<=0&&!c.flee&&c.hold<=0&&!taken.has(c.id)&&inR(c.x,c.y)).sort((a,b)=>Math.hypot(a.x-x,a.y-y)-Math.hypot(b.x-x,b.y-y)).map(c=>({c}))}
  if(J.tg=='corner')return G.lamps.filter(l=>inR(l[0],l[1])&&isRoad(l[0],l[1])).sort((a,b)=>Math.hypot(a[0]-x,a[1]-y)-Math.hypot(b[0]-x,b[1]-y)).map(l=>({spot:[l[0],l[1]]}));
+ if(J.tg=='car'){const taken=new Set(G.units.filter(m=>m.petty&&m.petty.car!=null).map(m=>m.petty.car));return G.cars.map((c,i)=>({c,i})).filter(o=>carReady(o.c)&&!taken.has(o.i)&&inR(o.c.x,o.c.y)).sort((a,b)=>Math.hypot(a.c.x-x,a.c.y-y)-Math.hypot(b.c.x-x,b.c.y-y)).map(o=>({car:o.i}))}
  let bs=G.bld.filter(b=>b.door&&!b.dmg&&inR(b.door[0],b.door[1])&&crimeKind(b)===j);
  return bs.sort((a,b)=>Math.hypot(a.door[0]-x,a.door[1]-y)-Math.hypot(b.door[0]-x,b.door[1]-y)).map(b=>({b}))}
 const crimeKind=b=>b.type=='Tenement'||b.type=='Apartment'?'burgle':b.type=='CornerShop'?'shake':null;
-function goTarget(u,T){const p=u.petty;p.c=T.c?T.c.id:null;p.b=T.b?T.b.id:null;p.spot=T.spot||null;
+// ===== v0.7: car break-ins (by hand), and burglars who go inside with a clock ring =====
+const carReady=c=>!!c&&!c.gone&&G.t-(c.robT??-1e9)>=CFG.PETTY.JOBS.car.cd*CFG.DAY;
+function carSpot(u,c){const occ=new Set(G.cars.filter(o=>!o.gone).map(o=>o.x+','+o.y));const ns=[[c.x+1,c.y],[c.x-1,c.y],[c.x,c.y+1],[c.x,c.y-1]].filter(q=>isRoad(q[0],q[1])&&!occ.has(q[0]+','+q[1])).sort((a,b)=>Math.hypot(a[0]-u.x,a[1]-u.y)-Math.hypot(b[0]-u.x,b[1]-u.y));return ns[0]||nearRoad(c.x,c.y)}
+function goInside(u,b){if(u.type=='spy')return;u.inB=b.id;u.burg=b.id;u.path=[];u.x=b.door[0];u.y=b.door[1];u.vx=u.vy=0;if(u.fam===0){u._bsel=G.sel.has(u.id);G.sel.delete(u.id)}sfx&&sfx('door',b.door[0],b.door[1])}
+function comeOut(u,keep){const b=G.bld[u.burg];u.inB=null;u.burg=null;if(b){u.x=b.door[0];u.y=b.door[1];if(!keep)u.atB=b}if(!keep)u.path=[];if(u.fam===0&&u._bsel&&u.petty&&u.petty.manual)G.sel.add(u.id);u._bsel=false}
+const copAtDoor=b=>G.units.some(c=>c.fam==='police'&&!c.ride&&!c.offUntil&&Math.hypot(c.x-b.door[0],c.y-b.door[1])<CFG.PETTY.IN_COP_R);
+// leave a job early: frac of the take (0 = nothing)
+function pettyEarly(u,frac,why){const p=u.petty;if(!p)return;const J=CFG.PETTY.JOBS[p.j||p.k];if(u.burg!=null)comeOut(u);
+ if(frac>0){p.early=why;pettyCrime(u,frac);return}
+ const cop=witnessCrime(u,J.seen*0.6);if(cop)addHeat(u.fam,J.hs*0.5,'seen '+J.verb,u.x,u.y);
+ if(u.fam===0){const m=manName(u)+(why=='cop'?' heard a cop at the door and slipped out empty-handed.':' came out early with nothing to show for it.');NSEEN.delete(m);notice(m,true)}
+ if(p.manual)u.petty=null;else{p.st='rest';p.t=CFG.PETTY.REST_FIELD;p.c=null;p.car=null}}
+function callOut(u){const p=u.petty;if(!p||p.st!='work')return false;const J=CFG.PETTY.JOBS[p.j||p.k],pr=1-p.t/J.work;pettyEarly(u,pr>=CFG.PETTY.IN_MINP?CFG.PETTY.IN_PART*pr:0,'called');if(u.fam===0&&!onJob(u))G.sel=new Set([u.id]);return true}
+let BURGIC=[];
+function drawJobRings(now){BURGIC=[];const z=cam.z;for(const u of G.units){const p=u.petty;if(u.fam!==0||!p||p.st!='work')continue;const J=CFG.PETTY.JOBS[p.j||p.k];if(!J)continue;let cx,cy,R0,inb=u.burg!=null;
+  if(inb){const b=G.bld[u.burg];if(!b)continue;const q=iso(b.door[0],b.door[1]);cx=q.X;cy=q.Y-100;R0=15/Math.min(1,Math.max(0.6,z))}
+  else if(p.car!=null&&G.cars[p.car]){const c=G.cars[p.car],q=iso(c.x,c.y);cx=q.X;cy=q.Y-64;R0=12/Math.min(1,Math.max(0.6,z))}else continue;
+  const pr=Math.max(0,Math.min(1,1-p.t/J.work)),a0=-Math.PI/2;ctx.save();ctx.beginPath();ctx.arc(cx,cy,R0,0,7);ctx.fillStyle='#1b120ee8';ctx.fill();
+  ctx.beginPath();ctx.moveTo(cx,cy);ctx.arc(cx,cy,R0*0.78,a0,a0+pr*Math.PI*2);ctx.closePath();ctx.fillStyle='rgba(230,197,106,0.85)';ctx.fill();
+  ctx.lineWidth=Math.max(1.6,R0*0.14);ctx.strokeStyle='#e6c56a';ctx.beginPath();ctx.arc(cx,cy,R0,0,7);ctx.stroke();
+  ctx.strokeStyle='#1b120e';ctx.lineWidth=Math.max(1.2,R0*0.1);ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(cx+Math.cos(a0+pr*Math.PI*2)*R0*0.8,cy+Math.sin(a0+pr*Math.PI*2)*R0*0.8);ctx.stroke();
+  const spd=CFG.SPEEDS[G.speed]*(G.boost||1),secs=Math.max(0,Math.ceil(p.t/(spd||30)));const lab=G.paused?'II':secs+'s';ctx.font=`bold ${Math.round(R0*0.85)}px Georgia,serif`;ctx.textAlign='left';ctx.textBaseline='middle';ctx.lineWidth=3;ctx.strokeStyle='#000';ctx.strokeText(lab,cx+R0+3,cy);ctx.fillStyle='#f1dfa8';ctx.fillText(lab,cx+R0+3,cy);ctx.restore();
+  if(inb)BURGIC.push({u,x:(cx-cam.x)*z,y:(cy-cam.y)*z,r:R0*z})}}
+function carPop(sx,sy,ci,us){const c=G.cars[ci];if(!c)return false;const cr=us.filter(CRIMER),dr=us.filter(u=>u.type=='driver');if(!cr.length){wNote('Only your gangsters do street jobs.');return false}cr.sort((a,b)=>Math.hypot(a.x-c.x,a.y-c.y)-Math.hypot(b.x-c.x,b.y-c.y));const u=cr[0],ok=carReady(c),busy=G.units.some(m=>m.petty&&m.petty.car===ci);
+ const el=$('choice');el.innerHTML=`<div class="ct">A parked car · ${manName(u)}</div><button data-k="brk" ${ok&&!busy?'':'disabled'}><svg viewBox="0 0 32 32" style="width:20px;height:20px;vertical-align:-5px;margin-right:6px">${WIC.car}</svg>${ok?(busy?'Somebody is on it':'Break in ($15-40)'):'Cleaned out already'}</button>`+(dr.length?'<button data-k="steal">Steal the car</button>':'')+'<button data-k="x" class="cx">✕</button>';
+ el.style.display='block';const w=el.offsetWidth,h=el.offsetHeight;el.style.left=Math.max(6,Math.min(innerWidth-w-6,sx-w/2))+'px';el.style.top=Math.max(50,Math.min(innerHeight-h-60,sy-h-20))+'px';
+ el.onclick=e=>{const k=e.target.closest('button')?.dataset.k;if(!k)return;el.style.display='none';buzz(12);if(k=='x')return;if(k=='steal'){if(orderSteal(us,ci))ripple(c.x,c.y,'Steal car','#ffb04a');updUI();return}if(startCrime(u,'car',{car:ci}))G.selPulse=performance.now();updUI()};return true}
+function goTarget(u,T){const p=u.petty;p.c=T.c?T.c.id:null;p.b=T.b?T.b.id:null;p.spot=T.spot||null;p.car=T.car!=null?T.car:null;
+ if(T.car!=null){const s2=carSpot(u,G.cars[T.car]);return s2?sendTo(u,s2[0],s2[1],null,true):false}
  if(T.c)return sendTo(u,Math.round(T.c.x),Math.round(T.c.y),null,true);if(T.spot)return sendTo(u,T.spot[0],T.spot[1],null,true);return sendToB(u,T.b)}
-function pettyTarget(u){const P=CFG.PETTY,p=u.petty,hq=hqOf(u.fam)||{door:[Math.round(u.x),Math.round(u.y)]};const keys=Object.keys(P.JOBS);
+function pettyTarget(u){const P=CFG.PETTY,p=u.petty,hq=hqOf(u.fam)||{door:[Math.round(u.x),Math.round(u.y)]};const keys=Object.keys(P.JOBS).filter(k=>!P.JOBS[k].manual);
  p.j=p.k=='any'?keys[Math.floor(Math.random()*keys.length)]:p.k;let ts=crimeTargets(p.j,u.x,u.y,P.RANGE*0.6,u.fam);if(!ts.length)ts=crimeTargets(p.j,hq.door[0],hq.door[1],P.RANGE,u.fam);if(!ts.length&&p.k=='any'){for(const k2 of keys){ts=crimeTargets(k2,u.x,u.y,P.RANGE,u.fam);if(ts.length){p.j=k2;break}}}if(!ts.length)return false;
  const pool=ts.slice(0,4),T=pool[Math.floor(Math.random()*pool.length)];return goTarget(u,T)}
 function startCrime(u,j,T){if(!CRIMER(u)||u.jail)return false;if(u.petty&&!u.petty.manual)pettyPay(u);u.garrison=null;u.tgt=null;u.amove=false;u.petty={k:j,j,manual:1,st:'go',t:0,cash:0,rp:0};
- if(!goTarget(u,T)){u.petty=null;return false}if(u.fam===0){const J=CFG.PETTY.JOBS[j];const m=manName(u)+': '+J.name.toLowerCase()+'.';const q=T.c?[T.c.x,T.c.y]:T.spot||T.b.door;ripple(q[0],q[1],J.name,'#e6c56a')}return true}
-function pettyCrime(u){const P=CFG.PETTY,p=u.petty,j=p.j||p.k,J=P.JOBS[j],F=FAM[u.fam];pettyDay();
+ if(!goTarget(u,T)){u.petty=null;return false}if(u.fam===0){const J=CFG.PETTY.JOBS[j];const m=manName(u)+': '+J.name.toLowerCase()+'.';const q=T.c?[T.c.x,T.c.y]:T.car!=null?[G.cars[T.car].x,G.cars[T.car].y]:T.spot||T.b.door;ripple(q[0],q[1],J.name,'#e6c56a')}return true}
+function pettyCrime(u,frac){const P=CFG.PETTY,p=u.petty,j=p.j||p.k,J=P.JOBS[j],F=FAM[u.fam];pettyDay();if(frac==null)frac=1;
  if(p.c!=null&&j=='mug'){const c=G.civ.find(q=>q.id===p.c);if(c){c.hold=0;if(c.hp==null)c.hp=10;c.hp=Math.max(1,c.hp-2-Math.random()*3);c.hurtT=performance.now();civFlee(c,u.x,u.y)}}
- let cash=Math.round(rr(J.$));const b=p.b!=null?G.bld[p.b]:null;let stale=false;if(b){if(G.t-(b.pcT??-1e9)<CFG.DAY){cash=Math.round(cash*0.25);stale=true}b.pcT=G.t}
+ let cash=Math.max(1,Math.round(rr(J.$)*frac));let goods='';if(j=='car'&&p.car!=null){const c=G.cars[p.car];if(c)c.robT=G.t;if(frac>=1&&Math.random()<J.goods){if(Math.random()<0.4){F.inv.pistol++;goods='a pistol (in Stock)'}else{F.inv.booze=Math.min(CFG.INV.BOOZE_CAP,F.inv.booze+4);goods='a case of whiskey'}}p.car=null}const b=p.b!=null?G.bld[p.b]:null;let stale=false;if(b){if(G.t-(b.pcT??-1e9)<CFG.DAY){cash=Math.round(cash*0.25);stale=true}b.pcT=G.t}
  addDHeat(u.x,u.y,J.h);
  const cop=witnessCrime(u,J.seen);if(cop)addHeat(u.fam,J.hs,'seen '+J.verb,u.x,u.y);else if(Math.random()<J.rumor)addHeat(u.fam,J.h,'petty crime: '+J.verb);
  p.cash+=cash;p.c=null;pettyPay(u);
  if(u.fam===0){const dd=Math.floor(G.t/CFG.DAY);if(!u.pd||u.pd.d!==dd)u.pd={d:dd,cash:0,jobs:0};u.pd.cash+=cash;u.pd.jobs++;cashPop(u.x,u.y,cash);sfx&&sfx('cash')}
- if(p.manual){u.petty=null;if(u.fam===0){const m='+'+money(cash)+' '+J.verb+(stale?' (they were hit already today)':'')+'.';NSEEN.delete(m);notice(m,true)}return}
+ const early=p.early;p.early=null;if(u.fam===0&&(goods||early)){const m=manName(u)+(early=='cop'?' heard a cop at the door and got out with part of the take: +':early?' came out early with part of the take: +':' got +')+money(cash)+(goods?' and '+goods:'')+'.';if(!p.manual||early||goods){NSEEN.delete(m);notice(m,true)}}
+ if(p.manual){u.petty=null;if(u.fam===0&&!early&&!goods){const m='+'+money(cash)+' '+J.verb+(stale?' (they were hit already today)':'')+'.';NSEEN.delete(m);notice(m,true)}return}
  if(u.wanted!=null){p.st='back';const hq=hqOf(u.fam);if(hq)sendToB(u,hq)}else{p.st='rest';p.t=P.REST_FIELD}}
 // floating '+$X' over a man when a job pays
 const CPOP=[];window.CPOP=CPOP;
 function cashPop(x,y,v){CPOP.push({x,y,v,t:performance.now()});if(CPOP.length>30)CPOP.shift()}
 function drawCashPops(){const now=performance.now();for(let i=CPOP.length-1;i>=0;i--){const c=CPOP[i],a=(now-c.t)/1800;if(a>=1){CPOP.splice(i,1);continue}const p=iso(c.x,c.y),sz=Math.max(15,13/Math.max(cam.z,0.35));ctx.save();ctx.globalAlpha=a<0.75?1:(1-a)*4;ctx.font=`bold ${sz}px Georgia,serif`;ctx.textAlign='center';ctx.lineWidth=Math.max(3,3/cam.z);ctx.strokeStyle='#120d08';const y=p.Y-70-a*46;ctx.strokeText('+'+money(c.v),p.X,y);ctx.fillStyle='#9fd27a';ctx.fillText('+'+money(c.v),p.X,y);ctx.restore()}}
+const P2=p=>CFG.PETTY.JOBS[p.j||p.k];
 function stepPetty(dt){
+ for(const u of G.units){if(u.burg==null)continue;const p=u.petty;if(!p||p.st!='work'||u.tgt!=null||u.jail||u.ride||u.garrison!=null||u.path.length){comeOut(u,true);if(p&&p.st=='work'){if(p.manual)u.petty=null;else{p.st='rest';p.t=20}}}}
  if(G.jail.length){for(const j of [...G.jail]){if(G.t<j.until)continue;G.jail=G.jail.filter(x=>x!==j);const u=j.u,hq=hqOf(u.fam)||PHQB;if(!FAM[u.fam]||!FAM[u.fam].alive)continue;u.x=hq.door[0];u.y=hq.door[1];u.path=[];u.atB=hq.type=='Hideout'?hq:null;u.goB=null;G.units.push(u);if(u.fam===0)log(manName(u)+' is out of the cells and back at the Hideout.',1)}}
  for(const u of G.units){if(!u.petty||typeof u.fam!='number')continue;const p=u.petty;if(!p.manual&&u.fam===0)G.sel.delete(u.id);
   const hq=hqOf(u.fam);if(!CRIMER(u)||u.garrison!=null||u.jail||(!p.manual&&((!hq&&!(u.type=='boss'&&u.fam!==0))||!AUTOOK(u)&&u.fam===0))){if(!p.manual)pettyPay(u);u.petty=null;continue}if(u.tgt!=null||u.ride)continue;
@@ -891,9 +924,11 @@ function stepPetty(dt){
     if(d<0.9){u.path=[];p.st='work';p.t=J.work;c.hold=J.work+2;const dx=c.x-u.x,dy=c.y-u.y;u.dir=Math.abs(dx)>Math.abs(dy)?(dx>0?'se':'nw'):(dy>0?'sw':'ne');continue}
     p.rp=(p.rp||0)-dt;const e=u.path.at(-1);if(p.rp<=0&&(!u.path.length||!e||Math.hypot(e[0]-c.x,e[1]-c.y)>1.2)){p.rp=3;if(!sendTo(u,Math.round(c.x),Math.round(c.y),null,true))fail()}continue}
    if(u.path.length)continue;
+   if(J.tg=='car'){const c=G.cars[p.car];if(!carReady(c)){if(p.manual&&u.fam===0)wNote('That car was cleaned out already.');fail();continue}if(Math.hypot(u.x-c.x,u.y-c.y)<1.7){p.st='work';p.t=J.work;const dx=c.x-u.x,dy=c.y-u.y;u.dir=Math.abs(dx)>Math.abs(dy)?(dx>0?'se':'nw'):(dy>0?'sw':'ne')}else{const s2=carSpot(u,c);if(!s2||!sendTo(u,s2[0],s2[1],null,true))fail()}continue}
    if(J.tg=='corner'){if(p.spot&&Math.hypot(u.x-p.spot[0],u.y-p.spot[1])<1.2){p.st='work';p.t=J.work}else if(!p.spot||!sendTo(u,p.spot[0],p.spot[1],null,true))fail();continue}
-   const b=G.bld[p.b];if(!b||b.dmg){fail();continue}if(u.atB===b){p.st='work';p.t=J.work}else if(!sendToB(u,b))fail();continue}
-  if(p.st=='work'){p.t-=dt;if(Math.random()<dt/12){u.atk=performance.now();u.atkGun=false;u.atkTo=null}if(p.t<=0)pettyCrime(u);continue}
+   const b=G.bld[p.b];if(!b||b.dmg){fail();continue}if(u.atB===b){p.st='work';p.t=J.work;goInside(u,b)}else if(!sendToB(u,b))fail();continue}
+  if(p.st=='work'){if(u.burg!=null){const b=G.bld[u.burg],J=P2(p);if(!b||b.dmg){pettyEarly(u,0,'hit');continue}if(copAtDoor(b)){const pr=1-p.t/J.work;pettyEarly(u,pr>=CFG.PETTY.IN_MINP?CFG.PETTY.IN_PART*pr:0,'cop');continue}p.t-=dt;if(p.t<=0){comeOut(u);pettyCrime(u)}continue}
+   p.t-=dt;if(Math.random()<dt/12){u.atk=performance.now();u.atkGun=false;u.atkTo=null}if(p.t<=0)pettyCrime(u);continue}
   if(p.st=='back'){if(u.path.length)continue;if(!hq){p.st='rest';p.t=20;continue}if(u.atB===hq||u.wanted==null&&Math.hypot(u.x-hq.door[0],u.y-hq.door[1])<1.5){pettyPay(u);p.st='rest';p.t=CFG.PETTY.REST}else if(!sendToB(u,hq)){p.st='rest';p.t=20}}}}
 // AI families: the boss works the streets until there is a crew; up to half the thugs run jobs
 function aiPetty(f,mine){const boss=mine.find(u=>u.type=='boss');const n=crewUsed(f.id);
@@ -1029,6 +1064,9 @@ function paintGround(g,rx0,ry0,rx1,ry1,detail){
 let SEAL=null;
 function drawSea(now){if(cam.z<0.22)return;if(!SEAL){SEAL=[];for(let y=0;y<N;y++)for(let x=0;x<N;x++)if(SEAT[y*N+x]==1){let e=0;for(const[k,dx,dy]of[[1,-1,0],[2,0,-1],[4,1,0],[8,0,1]]){const nx=x+dx,ny=y+dy;if(nx>=0&&ny>=0&&nx<N&&ny<N&&SEAT[ny*N+nx]!=1)e|=k}SEAL.push([x,y,e])}}
  const vx0=cam.x-TW,vy0=cam.y-TH,vx1=cam.x+innerWidth/cam.z+TW,vy1=cam.y+innerHeight/cam.z+TH,t=now/1000;ctx.lineCap='round';
+ if(cam.z<CFG.TAC.FAR){// far zoom (v0.7): no per-tile wave glints, the surf line is one batched stroke
+  const o=4+3*Math.sin(t*1.8);ctx.strokeStyle='rgba(225,235,225,0.26)';ctx.lineWidth=3;ctx.beginPath();for(const[x,y,e]of SEAL){if(!e)continue;const X=(x-y)*TW/2,Y=(x+y)*TH/2;if(X<vx0||X>vx1||Y<vy0||Y>vy1)continue;
+   if(e&1){ctx.moveTo(X-TW/2+o*2,Y+o);ctx.lineTo(X+o*2,Y-TH/2+o)}if(e&2){ctx.moveTo(X-o*2,Y-TH/2+o);ctx.lineTo(X+TW/2-o*2,Y+o)}if(e&4){ctx.moveTo(X+TW/2-o*2,Y-o);ctx.lineTo(X-o*2,Y+TH/2-o)}if(e&8){ctx.moveTo(X+o*2,Y+TH/2-o);ctx.lineTo(X-TW/2+o*2,Y-o)}}ctx.stroke();return}
  for(const[x,y,e]of SEAL){const X=(x-y)*TW/2,Y=(x+y)*TH/2;if(X<vx0||X>vx1||Y<vy0||Y>vy1)continue;const ph=((x*7919+y*104729)%997)/997*6.283;
   const a=0.5+0.5*Math.sin(t*1.3+ph);if(a>0.55){const dx=Math.sin(t*0.4+ph)*14,u=(ph%1)-0.5;ctx.strokeStyle='rgba(190,220,215,'+((a-0.55)*0.7).toFixed(3)+')';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(X-12+dx,Y+u*20);ctx.quadraticCurveTo(X+dx,Y+u*20-4,X+12+dx,Y+u*20);ctx.stroke()}
   if(e){const f=0.18+0.16*Math.sin(t*1.8+ph),o=4+3*Math.sin(t*1.8+ph);ctx.strokeStyle='rgba(225,235,225,'+f.toFixed(3)+')';ctx.lineWidth=3;ctx.beginPath();
@@ -1192,9 +1230,57 @@ function drawTape(b){const P=fpC(b),pts=[P[3],P[2],P[1]].map(p=>[p[0],p[1]+4]),H
  for(const[x,y]of pts){ctx.strokeStyle='#2a221a';ctx.lineWidth=2.5;ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x,y-H-6);ctx.stroke()}
  for(const h of[H,H*0.55])for(let i=0;i<2;i++){const A=pts[i],B=pts[i+1],mx=(A[0]+B[0])/2,my=(A[1]+B[1])/2-h+5;ctx.beginPath();ctx.moveTo(A[0],A[1]-h);ctx.quadraticCurveTo(mx,my,B[0],B[1]-h);ctx.strokeStyle='#f2c81e';ctx.lineWidth=3.2;ctx.stroke();ctx.setLineDash([5,5]);ctx.strokeStyle='#14110c';ctx.lineWidth=3.2;ctx.stroke();ctx.setLineDash([])}
  ctx.restore()}
-function drawBuilding(b){if(b.type=='Park'){b._r=null;return}const hid=!seenB(0,b),c=CFG.B[hid?dispType(b):b.type],sp=bSprite(b);b._r=[sp.X,sp.Y,sp.X+sp.w,sp.Y+sp.h];let sim=scaledImg(sp.img,sp.w*cam.z,sp.h);if(b.tape&&b.dmg=='smashed')sim=sepiaOf(sim);const wreck=b.dmg=='bombed'||b.dmg=='rebuild';if(wreck){b._r=[sp.X,sp.Y+sp.h*0.4,sp.X+sp.w,sp.Y+sp.h];if(b.dmg=='bombed')drawRubble(b,sp);else drawScaffold(b,sp)}else{
+// ===== v0.7 CUTAWAY: walls drop to a ground-floor stub where they hide the street near your men, along their path or under your finger =====
+// Hiding test uses the full building outline (so a lowered wall never 'stops hiding' and pops back up), plus a hold time to keep the opening steady.
+const CUT={MINZ:0.42,STUB:0.3,STUBMAX:46,BACK:9,MINH:26,ANIM:150,HOLD:700};
+let FING=null,CUTL=0,FLOORP=null,BTI=null,BTIR=null;
+function bGeo(b){const ty=b.look||b.base||b.type,key=ty+(b.flip?'f':'');if(b._gk===key&&b._g)return b._g;let m=BM[ty];if(!m)return null;if(b.flip)m={w:m.w,h:m.h,ay:m.ay,ax:m.w-m.ax,hl:m.hr,hr:m.hl};const sp=bSprite(b),sc=sp.sc;
+ const B={X:sp.X+m.ax*sc,Y:sp.Y+m.ay*sc},L={X:B.X-m.hl*sc,Y:B.Y-m.hl*sc/2},R={X:B.X+m.hr*sc,Y:B.Y-m.hr*sc/2},T={X:L.X+m.hr*sc,Y:L.Y-m.hr*sc/2};
+ b._gk=key;b._g={B,L,R,T,H:Math.max(CUT.MINH,T.Y-sp.Y)};return b._g}
+function hexIn(g,X,Y,H){const{L,B,R,T}=g;if(X<=L.X||X>=R.X)return false;const lo=X<B.X?L.Y+(X-L.X)*(B.Y-L.Y)/(B.X-L.X):B.Y+(X-B.X)*(R.Y-B.Y)/(R.X-B.X);if(Y>lo)return false;const up=(X<T.X?L.Y+(X-L.X)*(T.Y-L.Y)/(T.X-L.X):T.Y+(X-T.X)*(R.Y-T.Y)/(R.X-T.X))-H;return Y>=up}
+function bAtTile(x,y){if(BTIR!==G.bld){BTIR=G.bld;BTI=new Int32Array(N*N);G.bld.forEach((b,i)=>{for(let yy=b.y;yy<b.y+b.s;yy++)for(let xx=b.x;xx<b.x+b.s;xx++)if(xx>=0&&yy>=0&&xx<N&&yy<N)BTI[yy*N+xx]=i+1})}if(x<0||y<0||x>=N||y>=N)return null;const i=BTI[y*N+x];return i?G.bld[i-1]:null}
+function cutPoints(now){const P=[];const us=selUnits();
+ for(const u of us){P.push([u.x,u.y,56]);let px=u.x,py=u.y,n=0;for(const w of u.path){const d=Math.hypot(w[0]-px,w[1]-py),k=Math.max(1,Math.ceil(d));for(let i=1;i<=k&&n<60;i++,n++)P.push([px+(w[0]-px)*i/k,py+(w[1]-py)*i/k,30]);px=w[0];py=w[1];if(n>=60)break}}
+ if(G.target&&now-(G.targetT||0)<2500)P.push([G.target[0],G.target[1],30]);
+ if(FING&&(us.length||G.selCar!=null)&&(FING.down||now-FING.t<CUT.HOLD)){const[sx,sy]=cvXY(FING.x,FING.y);const wx=cam.x+sx/cam.z,wy=cam.y+sy/cam.z;P.push([(wx/(TW/2)+wy/(TH/2))/2,(wy/(TH/2)-wx/(TW/2))/2,0])}
+ return P}
+function stepCut(now,items){const mode=SET.cut||'auto',on=mode!=='off'&&cam.z>=CUT.MINZ;const dt=Math.min(100,Math.max(0,now-(CUTL||now)));CUTL=now;const P=on&&mode=='auto'?cutPoints(now):null;
+ for(const it of items){const b=it.b;if(!b)continue;let tg=0;
+  if(on&&b.type!='Park'&&b.dmg!='bombed'&&b.dmg!='rebuild'){if(mode=='always')tg=1;else{const g=bGeo(b);if(g&&P.length){const s=b.s;for(const p of P){const x=p[0],y=p[1],h=p[2];if(x>b.x+s-0.5||y>b.y+s-0.5)continue;if(x>=b.x-0.5&&y>=b.y-0.5)continue;
+      const q=iso(x,y);if(q.X<=g.L.X||q.X>=g.R.X)continue;if(hexIn(g,q.X,q.Y,g.H)||(h&&(hexIn(g,q.X,q.Y-h,g.H)||hexIn(g,q.X,q.Y-h/2,g.H)))){b._cutT=now;break}}}
+    if(now-(b._cutT??-1e9)<CUT.HOLD)tg=1}}
+  const c=b._cut||0;if(c!==tg)b._cut=tg?Math.min(1,c+dt/CUT.ANIM):Math.max(0,c-dt/CUT.ANIM)}}
+// a man whose feet stand on a cut building's painted base (the art overhangs its tiles a little) is drawn on top of the stub, not under it
+function cutLift(items){let CB=null;for(const it of items){const b=it.b;if(b&&(b._cut||0)>0.5&&b._g)(CB||(CB=[])).push(b)}if(!CB)return;
+ for(const it of items){let X,Y;if(it.u){X=it.s.X;Y=it.s.Y}else if(it.cz){X=it.X;Y=it.Y}else continue;for(const b of CB){if(hexIn(b._g,X,Y,0)){const k=bKey(b)+0.25;if(it.d<k)it.d=k}}}}
+function floorPat(X){if(!FLOORP)FLOORP=new WeakMap();if(FLOORP.has(X))return FLOORP.get(X);const c=mkC(64,32),g=c.getContext('2d');g.fillStyle='#6a4729';g.fillRect(0,0,64,32);g.lineWidth=1.4;g.strokeStyle='#432a17';for(let i=-64;i<=128;i+=8){g.beginPath();g.moveTo(i,0);g.lineTo(i+64,32);g.stroke()}g.strokeStyle='rgba(255,215,150,0.10)';for(let i=-62;i<=128;i+=8){g.beginPath();g.moveTo(i,0);g.lineTo(i+64,32);g.stroke()}const pt=X.createPattern(c,'repeat');FLOORP.set(X,pt);return pt}
+function paintCut(ctx,b,sp,sim,k,lw){const g=bGeo(b),e=k*k*(3-2*k),st=Math.min(CUT.STUBMAX,g.H*CUT.STUB),H=g.H+(st-g.H)*e,hb=g.H+(CUT.BACK-g.H)*e,{L,B,R,T}=g;const ga=ctx.globalAlpha;
+ // back walls: knee-high, so men walking behind stay in view
+ ctx.fillStyle='#2a2019';ctx.beginPath();ctx.moveTo(L.X,L.Y);ctx.lineTo(T.X,T.Y);ctx.lineTo(T.X,T.Y-hb);ctx.lineTo(L.X,L.Y-hb);ctx.closePath();ctx.fill();
+ ctx.fillStyle='#3b2d22';ctx.beginPath();ctx.moveTo(T.X,T.Y);ctx.lineTo(R.X,R.Y);ctx.lineTo(R.X,R.Y-hb);ctx.lineTo(T.X,T.Y-hb);ctx.closePath();ctx.fill();
+ // floor
+ ctx.beginPath();ctx.moveTo(L.X,L.Y);ctx.lineTo(T.X,T.Y);ctx.lineTo(R.X,R.Y);ctx.lineTo(B.X,B.Y);ctx.closePath();ctx.fillStyle=floorPat(ctx);ctx.fill();
+ const f=0.14,mx=(P0,P1)=>[P0.X+(P1.X-P0.X)*f,P0.Y+(P1.Y-P0.Y)*f];ctx.globalAlpha=ga*0.38;ctx.fillStyle='#000';ctx.beginPath();ctx.moveTo(L.X,L.Y);ctx.lineTo(T.X,T.Y);ctx.lineTo(R.X,R.Y);ctx.lineTo(...mx(R,B));ctx.lineTo(...mx(T,B));ctx.lineTo(...mx(L,B));ctx.closePath();ctx.fill();ctx.globalAlpha=ga;
+ // front walls: the painted ground floor below the cut line
+ ctx.save();const x0=sp.X-6,x1=sp.X+sp.w+6,yb=sp.Y+sp.h+6;ctx.beginPath();ctx.moveTo(x0,L.Y-H);ctx.lineTo(L.X,L.Y-H);ctx.lineTo(B.X,B.Y-H);ctx.lineTo(R.X,R.Y-H);ctx.lineTo(x1,R.Y-H);ctx.lineTo(x1,yb);ctx.lineTo(x0,yb);ctx.closePath();ctx.clip();
+ if(b.flip){ctx.translate(sp.X+sp.w,sp.Y);ctx.scale(-1,1);ctx.drawImage(sim,0,0,sp.w,sp.h)}else ctx.drawImage(sim,sp.X,sp.Y,sp.w,sp.h);ctx.restore();
+ // wall tops
+ ctx.lineJoin='round';ctx.lineCap='round';const cap=(pts)=>{ctx.beginPath();pts.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.lineWidth=6;ctx.strokeStyle='#211812';ctx.stroke();ctx.lineWidth=2;ctx.strokeStyle='#a08a6a';ctx.stroke()};
+ cap([[L.X,L.Y-hb],[T.X,T.Y-hb],[R.X,R.Y-hb]]);cap([[L.X,L.Y-hb],[L.X,L.Y-H],[B.X,B.Y-H],[R.X,R.Y-H],[R.X,R.Y-hb]]);
+ // faint outline of the building that was there
+ if(e>0.3){ctx.save();ctx.globalAlpha=ga*0.28*e;ctx.setLineDash([7,6]);ctx.lineWidth=lw;ctx.strokeStyle='#f0e2c0';ctx.beginPath();ctx.moveTo(L.X,L.Y-g.H);ctx.lineTo(T.X,T.Y-g.H);ctx.lineTo(R.X,R.Y-g.H);ctx.lineTo(B.X,B.Y-g.H);ctx.closePath();ctx.moveTo(L.X,L.Y-H);ctx.lineTo(L.X,L.Y-g.H);ctx.moveTo(B.X,B.Y-H);ctx.lineTo(B.X,B.Y-g.H);ctx.moveTo(R.X,R.Y-H);ctx.lineTo(R.X,R.Y-g.H);ctx.moveTo(T.X,T.Y-hb);ctx.lineTo(T.X,T.Y-g.H);ctx.stroke();ctx.restore()}
+ return {H,top:Math.min(L.Y,R.Y)-H}}
+// fully cut buildings come from a per-type cache (one drawImage, same cost as the normal sprite); only the 150 ms drop is painted live
+const CUTC=new Map();
+function drawCut(b,sp,sim){const g=bGeo(b);if(!g){ctx.drawImage(sim,sp.X,sp.Y,sp.w,sp.h);return}const k=b._cut;let res;
+ if(k>=1&&!b.dmg&&!b.tape){const key=(b.look||b.base||b.type)+(b.flip?'f':'')+b.s;let c=CUTC.get(key);const pad=10;
+  if(!c){const cv2=mkC(Math.ceil(sp.w+pad*2),Math.ceil(sp.h+pad*2)),g2=cv2.getContext('2d');g2.translate(pad-sp.X,pad-sp.Y);res=paintCut(g2,b,sp,sp.img,1,1.8);c={cv:cv2,dx:sp.X-pad,dy:sp.Y-pad,top:res.top-sp.Y,H:res.H};CUTC.set(key,c)}
+  ctx.drawImage(c.cv,sp.X-pad,sp.Y-pad,c.cv.width,c.cv.height);res={top:sp.Y+c.top,H:c.H}}
+ else res=paintCut(ctx,b,sp,sim,k,1.6/Math.max(cam.z,0.5));
+ b._cutTop=res.top;if(k>0.5)b._r=[sp.X,res.top-8,sp.X+sp.w,sp.Y+sp.h]}
+function drawBuilding(b){if(b.type=='Park'){b._r=null;return}const hid=!seenB(0,b),c=CFG.B[hid?dispType(b):b.type],sp=bSprite(b);b._r=[sp.X,sp.Y,sp.X+sp.w,sp.Y+sp.h];b._rf=b._r;let sim=scaledImg(sp.img,sp.w*cam.z,sp.h);if(b.tape&&b.dmg=='smashed')sim=sepiaOf(sim);const wreck=b.dmg=='bombed'||b.dmg=='rebuild';if(wreck){b._r=[sp.X,sp.Y+sp.h*0.4,sp.X+sp.w,sp.Y+sp.h];if(b.dmg=='bombed')drawRubble(b,sp);else drawScaffold(b,sp)}else{
  if(cam.z>=CFG.TAC.FAR){ctx.fillStyle='rgba(0,0,0,0.2)';ctx.beginPath();ctx.ellipse(sp.X+sp.w*0.62,sp.Y+sp.h-sp.w*0.2,sp.w*0.5,sp.w*0.2,0,0,7);ctx.fill()}
- if(b.flip){ctx.save();ctx.translate(sp.X+sp.w,sp.Y);ctx.scale(-1,1);ctx.drawImage(sim,0,0,sp.w,sp.h);ctx.restore()}else ctx.drawImage(sim,sp.X,sp.Y,sp.w,sp.h)}const cx=sp.X+sp.w/2,top=wreck?(b.dmg=='rebuild'?sp.Y+sp.h*0.25:sp.Y+sp.h*0.5):sp.Y;
+ const cutk=(b._cut||0)>0.02;if(cutk)drawCut(b,sp,sim);else if(b.flip){ctx.save();ctx.translate(sp.X+sp.w,sp.Y);ctx.scale(-1,1);ctx.drawImage(sim,0,0,sp.w,sp.h);ctx.restore()}else ctx.drawImage(sim,sp.X,sp.Y,sp.w,sp.h)}const cx=sp.X+sp.w/2,top=wreck?(b.dmg=='rebuild'?sp.Y+sp.h*0.25:sp.Y+sp.h*0.5):((b._cut||0)>0.02&&b._cutTop!=null?b._cutTop:sp.Y);
  if(b.dmg=='smashed'&&!b.tape)drawDamage(b,sp);
  if(b.dmg=='smashed'&&b.tape)drawRaid(b,sp);
  if(b.type=='Courthouse'&&false){const gx=sp.X+sp.w*0.5,gy=sp.Y+sp.h*0.5,gw=Math.max(60,sp.w*0.5),gh=gw*0.22;ctx.fillStyle='#1d1712';ctx.fillRect(gx-gw/2-2,gy-gh/2-2,gw+4,gh+4);ctx.fillStyle='#cfc3a3';ctx.fillRect(gx-gw/2,gy-gh/2,gw,gh);ctx.fillStyle='#1d1712';ctx.font=`bold ${Math.round(gh*0.6)}px Georgia,serif`;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('COURT HOUSE',gx,gy+1);
@@ -1203,7 +1289,7 @@ function drawBuilding(b){if(b.type=='Park'){b._r=null;return}const hid=!seenB(0,
  const own=b.owner!=null&&!hid?FAM[b.owner].col:null;
  if(own){ctx.strokeStyle='#1d1712';ctx.lineWidth=2.5;ctx.beginPath();ctx.moveTo(cx-22,top+18);ctx.lineTo(cx-22,top-24);ctx.stroke();poly([[cx-22,top-24],[cx-2,top-19],[cx-22,top-13]],own,'#1d1712',1.5)}
  if(b.prog>0&&b.capFam!=null){const p=b.prog/CFG.CAPTURE;ctx.fillStyle='#000a';const by=top-2*Math.max(21,13/cam.z)-14;ctx.fillRect(cx-30,by,60,7);ctx.fillStyle=FAM[b.capFam].col;ctx.fillRect(cx-30,by,60*p,7)}
- if(c.icon&&(cam.z>=0.15||b.owner===0)){const R=Math.max(21,13/cam.z),iy=top-R*0.9,ix=cx+8;ctx.beginPath();ctx.arc(ix,iy,R,0,7);ctx.fillStyle='#16120ee6';ctx.fill();ctx.strokeStyle=own||'#8a6d3b';ctx.lineWidth=R*0.16;ctx.stroke();
+ if(c.icon&&(cam.z>=0.15||b.owner===0)){const R=Math.max(21,13/cam.z),iy=top-R*0.9,ix=cx+8;b._ic=[ix,iy,R];ctx.beginPath();ctx.arc(ix,iy,R,0,7);ctx.fillStyle='#16120ee6';ctx.fill();ctx.strokeStyle=own||'#8a6d3b';ctx.lineWidth=R*0.16;ctx.stroke();
   ctx.font=Math.round(R*1.15)+'px serif';ctx.textAlign='center';ctx.textBaseline='middle';{const im=ICIMG[b.type];if(im&&im.complete)ctx.drawImage(im,ix-R*0.82,iy-R*0.82,R*1.64,R*1.64)}
   if(upgradable(b)){const L=lvl(b),fs=Math.round(R*0.62);ctx.font=`bold ${fs}px sans-serif`;ctx.lineWidth=3;ctx.strokeStyle='#16120e';const ML=maxLvl(b);for(let i=0;i<ML;i++){const sx=ix+(i-(ML-1)/2)*fs*0.9,sy=iy-R*1.22;ctx.strokeText('★',sx,sy);ctx.fillStyle=i<L?'#ffd34d':'#5a4a30';ctx.fillText('★',sx,sy)}if(b.upUntil){ctx.fillStyle='#fff';ctx.font=`bold ${Math.round(R*0.55)}px sans-serif`;ctx.drawImage(ICIMG.up,ix+R*1.05,iy-R*1.52,R*0.6,R*0.6);ctx.textAlign='left';ctx.fillText(fmtH(b.upUntil-G.t),ix+R*1.7,iy-R*1.22);ctx.textAlign='center'}}
   const gn=(b.owner===0||cam.z>=0.15)?guardsAt(b).length:0;if(gn){const sx=ix-R*0.95,sy=iy+R*0.7,r2=R*0.55;ctx.beginPath();ctx.moveTo(sx-r2,sy-r2);ctx.lineTo(sx+r2,sy-r2);ctx.lineTo(sx+r2,sy+r2*0.2);ctx.lineTo(sx,sy+r2*1.2);ctx.lineTo(sx-r2,sy+r2*0.2);ctx.closePath();ctx.fillStyle='#c9a24a';ctx.fill();ctx.strokeStyle='#1d1712';ctx.lineWidth=R*0.1;ctx.stroke();ctx.fillStyle='#1d1712';ctx.font='bold '+Math.round(R*0.7)+'px sans-serif';ctx.fillText(gn,sx,sy)}
@@ -1363,9 +1449,10 @@ function drawUnit(u,X,Y){const col=u.fam==='police'?'#9ab8ff':FAM[u.fam].col,sel
  if(u.wanted!=null)WQ.set(u.id,[u,X,Y]);
  if(u.hp<u.max){ctx.fillStyle='#000a';ctx.fillRect(X-12,Y-(u.type=='boss'?66:54),24,4);ctx.fillStyle='#6c3';ctx.fillRect(X-12,Y-(u.type=='boss'?66:54),24*u.hp/u.max,4)}}
 function visible(u){return !(u.type=='spy'&&u.fam!==0)&&u.inB==null&&!u.jail&&seenU(0,u)}
-function unitKey(u){let k=u.x+u.y;const ux=Math.round(u.x),uy=Math.round(u.y);
+function unitKey(u){let k=u.x+u.y;const ux=Math.round(u.x),uy=Math.round(u.y);let lo=-1e9,hi=1e9;
  for(const b of G.bld){if(Math.abs(b.x-ux)>4||Math.abs(b.y-uy)>4)continue;const bk=bKey(b);
-  const front=ux>=b.x+b.s||uy>=b.y+b.s;if(front&&bk>=k)k=bk+0.2;else if(!front&&bk<=k)k=Math.min(k,bk-0.2)}return k}
+  const front=ux>=b.x+b.s||uy>=b.y+b.s;if(front){if(bk+0.2>lo)lo=bk+0.2}else if(bk-0.2<hi)hi=bk-0.2}
+ if(k<lo)k=lo;if(k>hi)k=hi;return k}   // v0.7: 'behind a building' wins over 'in front of another', so a cut-away wall still hides his feet
 function render(now){let shx=0,shy=0;const q=G.shakeQ;if(q&&now>=q.t){const k=(now-q.t)/260;if(k>1)G.shakeQ=null;else{const p=iso(q.x,q.y),sx=(p.X-cam.x)*cam.z,sy=(p.Y-cam.y)*cam.z;
   const near=sx>0&&sy>0&&sx<innerWidth&&sy<innerHeight&&cam.z>0.6;if(near){const A=q.amp*(1-k)/cam.z;shx=(Math.random()-0.5)*2*A;shy=(Math.random()-0.5)*2*A}}}
  cam.x+=shx;cam.y+=shy;try{render0(now)}finally{cam.x-=shx;cam.y-=shy}}
@@ -1382,19 +1469,19 @@ function render0(now){ctx.setTransform(dpr,0,0,dpr,0,0);ctx.fillStyle='#24414b';
  const vis=it=>{const o=it.b||it.u||it.v||it.w||it.c;let x,y;if(o){x=o.x;y=o.y}else{const t=it.l||it.t;x=t[0];y=t[1]}const X=(x-y)*TW/2,Y=(x+y)*TH/2;return X>VX0&&X<VX1&&Y>VY0&&Y<VY1};
  {let k=0;for(let i=0;i<items.length;i++)if(vis(items[i]))items[k++]=items[i];items.length=k}
  if(cam.z>=0.3)for(const c of G.civ){if(c.inside>0)continue;const X=(c.x-c.y)*TW/2,Y=(c.x+c.y)*TH/2;if(X<VX0+300||X>VX1-300||Y<VY0+150||Y>VY1-400)continue;items.push({d:unitKey(c),cz:c,X,Y})}
- items.sort((a,b)=>a.d-b.d);
- {const kf=1-Math.exp(-(VOT||0.016)/0.07);for(const b of G.bld){const r=b._r;let occ=false;if(r){const bk=bKey(b);for(const it of us){const u=it.u;if(u.fam!==0&&!G.sel.has(u.id))continue;const{X,Y}=it.s;if(X>r[0]+4&&X<r[2]-4&&Y-20>r[1]&&Y-25<r[3]&&bk>it.d){occ=true;break}}
+ stepCut(now,items);cutLift(items);items.sort((a,b)=>a.d-b.d);
+ {const kf=1-Math.exp(-(VOT||0.016)/0.07);for(const b of G.bld){const r=b._r;let occ=false;if(r&&!((b._cut||0)>0.02)){const bk=bKey(b);for(const it of us){const u=it.u;if(u.fam!==0&&!G.sel.has(u.id))continue;const{X,Y}=it.s;if(X>r[0]+4&&X<r[2]-4&&Y-20>r[1]&&Y-25<r[3]&&bk>it.d){occ=true;break}}
    if(!occ)for(const v of manualCars()){const q=iso(v.x,v.y);if(q.X>r[0]+4&&q.X<r[2]-4&&q.Y-15>r[1]&&q.Y-20<r[3]&&bk>v.x+v.y+0.06){occ=true;break}}}
   const tgt=occ?0.4:1;b._fa=(b._fa??1)+(tgt-(b._fa??1))*kf;if(Math.abs(b._fa-tgt)<0.01)b._fa=tgt}}
  const TINY=cam.z<0.07&&mkAlpha()>=1;
  for(const it of items){if(it.b){const fa=it.b._fa??1;if(fa<1){ctx.globalAlpha=fa;drawBuilding(it.b);ctx.globalAlpha=1}else drawBuilding(it.b)}else if(it.b)drawBuilding(it.b);else if(it.u){if(!TINY)drawUnit(it.u,it.s.X,it.s.Y)}else if(it.cz)drawCiv(it.cz,it.X,it.Y);else if(it.t){const p=iso(...it.t);drawTree(p.X,p.Y,it.t[2])}else if(it.l){const p=iso(...it.l);drawLamp(p.X-TW*0.3,p.Y-TH*0.0)}else if(it.v)drawVeh(it.v);else if(it.w)drawWreck(it.w);else drawCar(it.c)}
  // x-ray: units hidden behind buildings
- const XB=[];for(const b of G.bld)if(b._r)XB.push(b._r,bKey(b));
+ const XB=[];for(const b of G.bld)if(b._r&&!((b._cut||0)>0.5))XB.push(b._r,bKey(b));
  for(const it of us){const{X,Y}=it.s;let hid=false;for(let q=0;q<XB.length;q+=2){const r=XB[q];if(X>r[0]&&X<r[2]&&Y-20>r[1]&&Y-20<r[3]&&XB[q+1]>it.d){hid=true;break}}if(hid){ctx.globalAlpha=0.4;drawUnit(it.u,X,Y);ctx.globalAlpha=1;
    if(G.sel.has(it.u.id)){const h=(it.u.type=='boss'?BOSSH:(RIGH[it.u.type]||44));ctx.save();ctx.strokeStyle='rgba(255,230,140,0.85)';ctx.lineWidth=2/Math.max(cam.z,0.5);ctx.setLineDash([4,3]);ctx.beginPath();ctx.ellipse(X,Y-h*0.5,h*0.28,h*0.55,0,0,7);ctx.stroke();ctx.restore()}}}
  for(const q of WQ.values())drawWanted(...q);WQ.clear();if(CPOP.length)drawCashPops();
  {const nowh=performance.now();for(const b of G.bld){if(!b._hl||!b._r)continue;const t=(nowh-b._hl)/700;if(t>=1){b._hl=0;continue}const r=b._r;ctx.save();ctx.globalAlpha=1-t;ctx.strokeStyle='#ffd34d';ctx.lineWidth=4/Math.max(cam.z,0.5);ctx.shadowColor='#ffd34d';ctx.shadowBlur=14;ctx.strokeRect(r[0]+6,r[1]+6,r[2]-r[0]-12,r[3]-r[1]-12);ctx.restore()}}
- SPYIC=[];{const inside=G.units.filter(u=>u.fam===0&&u.inB!=null);const byB=new Map();for(const u of inside){const a=byB.get(u.inB)||[];a.push(u);byB.set(u.inB,a)}
+ SPYIC=[];{const inside=G.units.filter(u=>u.fam===0&&u.inB!=null&&u.type=='spy');const byB=new Map();for(const u of inside){const a=byB.get(u.inB)||[];a.push(u);byB.set(u.inB,a)}
   for(const [bid,list] of byB){const b=G.bld[bid];if(!b||!b._r)continue;const r=b._r,cx=(r[0]+r[2])/2,cy=r[1]+Math.min(40,(r[3]-r[1])*0.25),R0=13/Math.min(1,Math.max(0.6,cam.z));
    const pu=0.5+0.5*Math.sin(now/400);ctx.save();ctx.beginPath();ctx.arc(cx,cy,R0,0,7);ctx.fillStyle='#1b120ee8';ctx.fill();ctx.strokeStyle=`rgba(232,160,192,${0.7+0.3*pu})`;ctx.lineWidth=2.2;ctx.stroke();
    // veiled hat + shoulders silhouette
@@ -1402,7 +1489,7 @@ function render0(now){ctx.setTransform(dpr,0,0,dpr,0,0);ctx.fillStyle='#24414b';
    ctx.fillStyle='#5a1e2a';ctx.beginPath();ctx.moveTo(cx-R0*0.55,cy+R0*0.75);ctx.quadraticCurveTo(cx,cy+R0*0.05,cx+R0*0.55,cy+R0*0.75);ctx.fill();
    const sn=b.owner===0&&G.aiSpies.some(a=>a.b===b.id&&a.seen),lab=(sn?'!':'')+(list.length>1?' ×'+list.length:'');ctx.font=`bold ${Math.round(R0*0.8)}px Georgia,serif`;ctx.fillStyle='#f1dfa8';ctx.textAlign='left';ctx.textBaseline='middle';ctx.strokeStyle='#000';ctx.lineWidth=3;ctx.strokeText(lab,cx+R0+3,cy);ctx.fillText(lab,cx+R0+3,cy);ctx.textBaseline='alphabetic';ctx.restore();
    SPYIC.push({u:list[0],x:(cx-cam.x)*cam.z,y:(cy-cam.y)*cam.z,r:R0*cam.z})}}
- drawFX(now);postFX(now);drawMarkers(now);drawHPBars(now,us,items);if(TA>0)drawTactical(now,TA);
+ drawJobRings(now);drawFX(now);postFX(now);drawMarkers(now);drawHPBars(now,us,items);if(TA>0)drawTactical(now,TA);
  if(drag&&drag.box&&(drag.mouse||drag.boxShow)){const[x0,y0,x1,y1]=drag.box;ctx.setTransform(dpr,0,0,dpr,0,0);ctx.fillStyle='rgba(212,168,75,0.15)';ctx.strokeStyle='#d4a84b';ctx.lineWidth=1.5;ctx.setLineDash([5,4]);ctx.fillRect(Math.min(x0,x1),Math.min(y0,y1),Math.abs(x1-x0),Math.abs(y1-y0));ctx.strokeRect(Math.min(x0,x1),Math.min(y0,y1),Math.abs(x1-x0),Math.abs(y1-y0));ctx.setLineDash([])}}
 
 // ===== zoomed-out unit markers =====
@@ -1655,7 +1742,7 @@ function pettyHTML(){pettyDay();const J=CFG.PETTY.JOBS,P=G.petty,fr=pettyFree().
  const lvl=x=>x>=6?'high':x>=4?'medium':'low';
  let h=`<div class="pcsum"><div><span>Free men</span><b>${fr}</b></div><div><span>On jobs</span><b>${on.length}</b></div><div><span>Today</span><b>${money(et)}</b></div><div><span>Arrests today</span><b>${at}</b></div></div>`;
  h+='<div class="row" style="font-size:12px;opacity:.8">Put idle men on small jobs (anyone but the boss: he only works by hand). They go out on their own and every job pays dirty cash on the spot, then they look for the next mark nearby. A cop who sees it gives chase; the man runs for the Hideout, and if the cop catches him it is the cells.</div>';
- for(const k in J){const j=J[k],n=pettyMen(k).length;h+=`<div class="pcj"><div class="pci"><b>${j.name}</b><span>${j.d}</span><em>${money(j.$[0])}-${money(j.$[1])} a job · ${lvl(j.hs)} heat${P.earn[k]?' · '+money(P.earn[k])+' today':''}${P.arr[k]?' · '+P.arr[k]+' arrested':''}</em></div><div class="pcc"><button data-pm="${k}" ${n?'':'disabled'} aria-label="fewer">−</button><b>${n}</b><button data-pp="${k}" ${fr?'':'disabled'} aria-label="more">+</button></div></div>`}
+ for(const k in J){if(J[k].manual)continue;const j=J[k],n=pettyMen(k).length;h+=`<div class="pcj"><div class="pci"><b>${j.name}</b><span>${j.d}</span><em>${money(j.$[0])}-${money(j.$[1])} a job · ${lvl(j.hs)} heat${P.earn[k]?' · '+money(P.earn[k])+' today':''}${P.arr[k]?' · '+P.arr[k]+' arrested':''}</em></div><div class="pcc"><button data-pm="${k}" ${n?'':'disabled'} aria-label="fewer">−</button><b>${n}</b><button data-pp="${k}" ${fr?'':'disabled'} aria-label="more">+</button></div></div>`}
  if(on.length){const st={rest:'between jobs',go:'going after a mark',work:'on the job',back:'lying low at the Hideout'},dd=Math.floor(G.t/CFG.DAY);h+='<div class="row" style="margin-top:8px"><b>Out on the street</b></div>';for(const u of on){const pd=u.pd&&u.pd.d===dd?u.pd:{cash:0,jobs:0};h+=`<div class="pcm"><span>${manName(u)} · ${jobName(u.petty)}, ${st[u.petty.st]}${u.wanted!=null?' · <b style="color:#ff8a5a">WANTED</b>':''}<br><b style="color:#5c7a3a">${money(pd.cash)} today</b> · ${pd.jobs} job${pd.jobs==1?'':'s'}</span><button data-prc="${u.id}">Recall</button></div>`}}
  const jl=G.jail.filter(j=>j.u.fam===0);if(jl.length){h+='<div class="row" style="margin-top:8px"><b>In the cells</b></div>';for(const j of jl)h+=`<div class="pcm"><span>${manName(j.u)} · out in ${fmtH(j.until-G.t)}</span></div>`}
  h+=`<div class="row" style="font-size:12px;opacity:.7;margin-top:6px">All-time take: ${money(P.tot)} · arrests: ${P.tarr}. Tap a man on a job to see what he is doing; double-tap him for his wheel to call him off.</div>`;return h}
@@ -1688,16 +1775,17 @@ const WIC={ // painted-ink icons, 32x32
  crowbar:'<path d="M7 27L23 8c1.2-1.4 3.6-.6 3.4 1.4" stroke="#5a5650" stroke-width="3.2" fill="none" stroke-linecap="round"/><path d="M7 27l-3-1" stroke="#5a5650" stroke-width="3" stroke-linecap="round"/><rect x="18" y="20" width="10" height="9" fill="#8a5a3a"/><path d="M18 20l5-4 5 4" fill="#6a3a22"/>',
  shop:'<rect x="5" y="13" width="22" height="15" fill="#8a5a3a"/><path d="M3 8h26l-2 6H5z" fill="#8a1f16"/><path d="M8 8l-1 6M13 8v6M19 8v6M24 8l1 6" stroke="#efe4c6" stroke-width="1.6"/><rect x="13" y="18" width="6" height="10" fill="#2a1c10"/><circle cx="23" cy="9.5" r="0" />',
  dice:'<rect x="4" y="9" width="13" height="13" rx="2.5" fill="#efe4c6" transform="rotate(-12 10 15)"/><rect x="15" y="11" width="13" height="13" rx="2.5" fill="#d9c49a" transform="rotate(10 21 17)"/><circle cx="8" cy="14" r="1.3" fill="#2a1c10"/><circle cx="12" cy="18" r="1.3" fill="#2a1c10"/><circle cx="19" cy="15" r="1.3" fill="#8a1f16"/><circle cx="24" cy="20" r="1.3" fill="#8a1f16"/><circle cx="21.5" cy="17.5" r="1.3" fill="#8a1f16"/>',
+ car:'<path d="M3 21v-4l3-1 3-5h12l4 5 4 1v4z" fill="#7a2a22"/><path d="M10 12h5v4H8zM17 12h3l3 4h-6z" fill="#b9c6c8"/><path d="M18 12l1.5 2-1 1 2 1M19.5 14l2-.5" stroke="#2a1c10" stroke-width="1" fill="none"/><circle cx="9" cy="22" r="3" fill="#2a2420"/><circle cx="23" cy="22" r="3" fill="#2a2420"/><path d="M26 6l2 3M29 9l-3 1M24 9l2-3" stroke="#d9b56a" stroke-width="1.4"/>',
  run:'<circle cx="19" cy="6" r="3" fill="#2a2420"/><path d="M17 10l-5 6 4 2-2 9M17 10l4 7 5 1M12 16l-6-1M16 18l5 4 1 6" stroke="#2a2420" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>'};
-const JIC={pick:'wallet',mug:'fist',burgle:'crowbar',shake:'shop',numbers:'dice'};
-const CRANGE={pick:12,mug:12,burgle:14,shake:14,numbers:8};
+const JIC={pick:'wallet',mug:'fist',burgle:'crowbar',shake:'shop',numbers:'dice',car:'car'};
+const CRANGE={pick:12,mug:12,burgle:14,shake:14,numbers:8,car:10};
 const MOODN={agg:'Aggressive',norm:'Normal',def:'Defensive'};
 const WSEG=[
  {id:'hq',label:'Hideout',icon:'house',show:u=>u.type=='boss'&&!hqOf(u.fam),state:u=>u.estB!=null?'Going':money(Math.min(CFG.ESTABLISH,FAM[u.fam].dirty+FAM[u.fam].clean))+' / '+money(CFG.ESTABLISH),lock:u=>{const F=FAM[u.fam],h=F.dirty+F.clean;return h<CFG.ESTABLISH?'Earn '+money(CFG.ESTABLISH)+' to set up a hideout ('+money(h)+' now).':null},
   act:u=>{const nb=G.bld.filter(b=>!estWhy(u.fam,b)&&Math.hypot(b.door[0]-u.x,b.door[1]-u.y)<2.2).sort((a,b)=>Math.hypot(a.door[0]-u.x,a.door[1]-u.y)-Math.hypot(b.door[0]-u.x,b.door[1]-u.y))[0];closeWheel();
    if(nb&&u.atB===nb){goEstablish(u,nb);return}G.mode='establish';G.estU=u.id;renderABar&&renderABar();wNote('Tap the building you want for your hideout. Any ordinary building will do.')}},
  {id:'petty',label:'Petty crime',icon:'wallet',state:u=>onJob(u)?jobName(u.petty):'Off',lock:u=>u.type=='boss'?'The boss never works the streets on his own. Use Crimes for a job by hand.':!AUTOOK(u)?'He is no street hustler.':null,
-  sub:u=>[{id:'any',label:'Any job',icon:'star'},...Object.keys(CFG.PETTY.JOBS).map(k=>({id:k,label:CFG.PETTY.JOBS[k].name,icon:JIC[k],on:onJob(u)&&u.petty.k===k})),{id:'off',label:'Off',icon:'x'}],
+  sub:u=>[{id:'any',label:'Any job',icon:'star'},...Object.keys(CFG.PETTY.JOBS).filter(k=>!CFG.PETTY.JOBS[k].manual).map(k=>({id:k,label:CFG.PETTY.JOBS[k].name,icon:JIC[k],on:onJob(u)&&u.petty.k===k})),{id:'off',label:'Off',icon:'x'}],
   pick:(u,id)=>{if(id=='off'){if(onJob(u))pettyRecall(u);wNote(manName(u)+' is off petty crime.')}else{setAuto(u,id);wNote(manName(u)+' goes out on '+(id=='any'?'any petty job':CFG.PETTY.JOBS[id].name.toLowerCase()+' jobs')+' by himself.')}closeWheel()}},
  {id:'guard',label:'Guard',icon:'shield',state:u=>u.garrison!=null?'On':'',lock:u=>u.type=='spy'||u.type=='lawyer'?'A '+CFG.UNITS[u.type].name.toLowerCase()+' can\'t stand guard.':null,
   act:u=>{G.mode='guard';G.guardU=u.id;closeWheel();wNote('Tap one of your buildings for '+manName(u)+' to guard.');renderABar&&renderABar()}},
@@ -1706,7 +1794,7 @@ const WSEG=[
  {id:'weapon',label:'Pistol',icon:'pistol',state:u=>u.type=='thug'?(u.pistol?'Armed':'None'):'',lock:u=>u.type!='thug'?gearSlot(u).opt[0].why:(!u.pistol&&FAM[0].inv.pistol<1?'No pistols in stock. Buy one at a Gun Store.':null),
   act:u=>{const I=FAM[0].inv;if(u.pistol){u.pistol=0;I.pistol++;wNote('Pistol back in stock.')}else if(I.pistol>0){I.pistol--;u.pistol=1;sfx&&sfx('door');wNote(manName(u)+' is carrying a pistol.')}renderWheel();updUI()}},
  {id:'crime',label:'Crimes',icon:'mask',lock:u=>!CRIMER(u)?'He doesn\'t do street jobs.':null,
-  sub:u=>Object.keys(CFG.PETTY.JOBS).map(k=>{const n=crimeTargets(k,u.x,u.y,CRANGE[k],0).length;return{id:k,label:CFG.PETTY.JOBS[k].name,icon:JIC[k],lock:n?null:(k=='pick'||k=='mug'?'Nobody close enough to rob.':k=='burgle'?'No tenement or apartment house nearby.':k=='shake'?'No corner shop nearby.':'No street corner nearby.')}}),
+  sub:u=>Object.keys(CFG.PETTY.JOBS).map(k=>{const n=crimeTargets(k,u.x,u.y,CRANGE[k],0).length;return{id:k,label:CFG.PETTY.JOBS[k].name,icon:JIC[k],lock:n?null:(k=='pick'||k=='mug'?'Nobody close enough to rob.':k=='burgle'?'No tenement or apartment house nearby.':k=='shake'?'No corner shop nearby.':k=='car'?'No parked car nearby (or they were cleaned out already).':'No street corner nearby.')}}),
   pick:(u,id)=>{const T=crimeTargets(id,u.x,u.y,CRANGE[id],0)[0];if(T&&startCrime(u,id,T))buzz(12);closeWheel()}},
  {id:'follow',label:'Follow cam',icon:'eye',state:()=>WH.follow?'On':'Off',act:()=>{WH.follow=!WH.follow;renderWheel()}},
  {id:'gear',label:'Gear',icon:'hat',act:u=>{closeWheel();openGear(u)}}];
@@ -1765,14 +1853,21 @@ function groundPick(sx,sy){const wx=cam.x+sx/cam.z,wy=cam.y+sy/cam.z,fx=(wx/(TW/
  return best}
 let SPYIC=[];
 function pickCar(sx,sy){let best=null,bd=Math.max(42,40*cam.z);for(const v of manualCars()){const p=iso(v.x,v.y),X=(p.X-cam.x)*cam.z,Y=(p.Y-14-cam.y)*cam.z,d=Math.hypot(sx-X,(sy-Y)*1.2);if(d<bd){bd=d;best=v}}return best}
-function pick(sx,sy){{const c=cvXY(sx,sy),cv1=pickCar(c[0],c[1]);if(cv1){const p=iso(cv1.x,cv1.y),d=Math.hypot(c[0]-(p.X-cam.x)*cam.z,c[1]-(p.Y-14-cam.y)*cam.z);if(d<28*Math.max(1,cam.z))return{veh:cv1}}}{const hu0=hitUnit2(sx,sy);if(hu0&&hu0.u)return hu0;[sx,sy]=cvXY(sx,sy)}
+function pick(sx,sy,o){{const c=cvXY(sx,sy),cv1=pickCar(c[0],c[1]);if(cv1){const p=iso(cv1.x,cv1.y),d=Math.hypot(c[0]-(p.X-cam.x)*cam.z,c[1]-(p.Y-14-cam.y)*cam.z);if(d<28*Math.max(1,cam.z))return{veh:cv1}}}{const hu0=hitUnit2(sx,sy);if(hu0&&hu0.u)return hu0;[sx,sy]=cvXY(sx,sy)}
  for(const ic of SPYIC){if(Math.hypot(sx-ic.x,sy-ic.y)<Math.max(26,ic.r+10))return{spy:ic.u}}
+ for(const ic of BURGIC){if(Math.hypot(sx-ic.x,sy-ic.y)<Math.max(26,ic.r+10))return{burg:ic.u}}
  {const cv0=pickCar(sx,sy);if(cv0)return{veh:cv0}}{const mk=pickMarker(sx,sy);if(mk)return mk}const wx=cam.x+sx/cam.z,wy=cam.y+sy/cam.z;
  {const hu=hitUnit2(sx,sy,1);if(hu)return hu}
- if(selUnits().some(u=>u.type=='driver')){let bc=-1,cd=Math.max(34,40*cam.z);G.cars.forEach((c,i)=>{if(c.gone)return;const p=iso(c.x,c.y),d=Math.hypot(sx-(p.X-cam.x)*cam.z,sy-(p.Y-14-cam.y)*cam.z);if(d<cd){cd=d;bc=i}});if(bc>=0)return{car:bc}}
+ if(selUnits().some(CRIMER)){let bc=-1,cd=Math.max(34,40*cam.z);G.cars.forEach((c,i)=>{if(c.gone)return;const p=iso(c.x,c.y),d=Math.hypot(sx-(p.X-cam.x)*cam.z,sy-(p.Y-14-cam.y)*cam.z);if(d<cd){cd=d;bc=i}});if(bc>=0)return{car:bc}}
  const GP=groundPick(sx,sy);const selN=selUnits().length;
  const bs=[...G.bld].sort((a,b)=>bKey(b)-bKey(a));
- for(const b of bs){const r=b._r;if(selN&&(b._fa??1)<0.75)continue;if(r&&wx>r[0]+10&&wx<r[2]-10&&wy>r[1]-20&&wy<r[3]-10)return{b}}
+ const cutOn=(SET.cut||'auto')!=='off'&&cam.z>=CUT.MINZ&&!(o&&o.forceB),gfx=(wx/(TW/2)+wy/(TH/2))/2,gfy=(wy/(TH/2)-wx/(TW/2))/2,gx=Math.round(gfx),gy=Math.round(gfy);
+ for(const b of bs){const r=cutOn?(b._rf||b._r):b._r;if(!cutOn&&selN&&(b._fa??1)<0.75)continue;if(!(r&&wx>r[0]+10&&wx<r[2]-10&&wy>r[1]-20&&wy<r[3]-10))continue;
+  if(cutOn){if(b._ic&&Math.hypot(wx-b._ic[0],wy-b._ic[1])<b._ic[2]*1.25)return{b};   // its sign
+   if(gx>=b.x&&gx<b.x+b.s&&gy>=b.y&&gy<b.y+b.s)return{b};                             // its front / footprint
+   if(b.door&&Math.abs(gfx-b.door[0])<0.7&&Math.abs(gfy-b.door[1])<0.7)return{b};     // its door
+   if((selN||(b._cut||0)>0.5)&&(isRoad(gx,gy)||bAtTile(gx,gy)))continue}               // ground behind it: let the tap through
+  return{b}}
  return GP||{}}
 function nearWalk(x,y){for(let r=1;r<8;r++)for(let dx=-r;dx<=r;dx++)for(let dy=-r;dy<=r;dy++)if(isRoad(x+dx,y+dy))return[x+dx,y+dy];return null}
 function choicePop(sx,sy,b,us){const el=$('choice');const en=us.some(u=>CFG.SMASH.RATE[u.type]),bo=us.some(u=>u.type=='bomber');
@@ -1798,6 +1893,7 @@ function snapOrder(us){G._undo={t:performance.now(),s:us.map(u=>({u,path:u.path.
 function undoOrder(){const U=G._undo;G._undo=null;if(!U||performance.now()-U.t>450)return false;for(const o of U.s){const u=o.u;if(u.ride!==o.ride)continue;Object.assign(u,{path:o.path,goB:o.goB,atB:o.atB,tgt:o.tgt,amove:o.amove,amDest:o.amDest,stance:o.stance,job:o.job})}G.target=null;return true}
 function tap(sx,sy,dbl,o={}){if(G.over)return;if(tacA()>0.5){const c=cvXY(sx,sy);vel=null;ZT={z:0.45,sx:c[0],sy:c[1]};G._tacTap=[c[0],c[1]];buzz&&buzz(8);return}if(WH.u!=null&&!dbl){closeWheel();return}if($('choice').style.display=='block'){$('choice').style.display='none';return}if(TAB){closeTab();return}if(G.panel){closePanel();return}let h=pick(sx,sy);const us=selUnits();
  if(h.spy){spyRecall(h.spy);buzz(12);updUI();return}
+ if(h.burg){callOut(h.burg);buzz(12);updUI();return}
  if(G.mode==='guard'){guardTap(h);return}
  if(G.mode==='establish'){const u=G.units.find(v=>v.id===G.estU);G.mode=null;G.estU=null;renderABar&&renderABar();if(!u||!h.b){wNote('Hideout cancelled. Tap the boss and pick Hideout again.');return}goEstablish(u,h.b);updUI();return}
  if(h.u&&onJob(h.u)&&!dbl){pettyTap(h.u);return}
@@ -1811,7 +1907,7 @@ function tap(sx,sy,dbl,o={}){if(G.over)return;if(tacA()>0.5){const c=cvXY(sx,sy)
  if(h.e&&h.e.fam==='police'&&us.some(u=>u.type==='spy')){const sp=us.filter(u=>u.type==='spy');let ok=0;for(const u of sp)if(!ok&&charmCop(u,h.e))ok=1;buzz(12);updUI();return}
  if(h.e&&us.length){for(const u of us){u.tgt=h.e.id;u.amove=false;if(u.stance)u.stance=null;sendTo(u,Math.round(h.e.x),Math.round(h.e.y),null,true)}G.reticle=h.e.id;ripple(h.e.x,h.e.y,'Attack','#ff3b30');buzz(20);
   if(h.e.fam==='police')log('Your crew are going after a cop. This will bring serious heat.',1);updUI();return}
- if(h.car!=null&&us.length){const n=orderSteal(us,h.car);const c=G.cars[h.car];if(n){ripple(c.x,c.y,'Steal car','#ffb04a');buzz(15)}updUI();return}
+ if(h.car!=null&&us.length&&!o.order&&G.mode!=='amove'){carPop(sx,sy,h.car,us);buzz(10);return}
  for(const u of us){if(u.petty&&u.petty.manual)u.petty=null;u.tgt=null;u.amove=false;u.stance=u.stance==='hold'?'hold':null;u.board=null;if(u.type==='spy'){u.spyJob=null;u.copJob=null}}
  if(h.u){G.selCar=null;if(dbl){G.sel.add(h.u.id);openWheel(h.u);updUI();return}else{if(o.pre){}else if(o.mouse&&!o.add){G.sel=new Set([h.u.id])}else if(o.mouse&&o.add&&G.sel.has(h.u.id))G.sel.delete(h.u.id);else G.sel.add(h.u.id);G.selPulse=performance.now();buzz(8)}}
  else if(h.b&&us.length&&sabotageable(h.b,0)&&!h.b.dmg&&us.some(u=>CFG.SMASH.RATE[u.type]||u.type=='bomber')){h.b._hl=performance.now();for(const u of us){u.job=null;sendToB(u,h.b)}G.target=h.b.door;G.targetT=performance.now();ripple(h.b.door[0],h.b.door[1],h.b.owner==null?'Capture':'Attack',h.b.owner==null?'#ffd34d':'#ff6b5a');choicePop(sx,sy,h.b,us);updUI();return}
@@ -1827,7 +1923,7 @@ function tap(sx,sy,dbl,o={}){if(G.over)return;if(tacA()>0.5){const c=cvXY(sx,sy)
  updUI()}
 const ptrs=new Map();let drag=null,pinch=null,vel=null,lastTap={t:0,x:0,y:0};let DEAD=9;const DEAD_T=16;
 let lpT=null,h0LP=300;function startDrag(x,y,moved){clearTimeout(lpT);drag={sx:x,sy:y,cx:cam.x,cy:cam.y,moved,hist:[[performance.now(),x,y]]};
- if(!moved)lpT=setTimeout(()=>{if(drag&&!drag.moved&&ptrs.size==1){const h=pick(x,y);if(h.b&&!h.u){drag.moved=true;drag.lp=true;openPanel(h.b);if(navigator.vibrate)navigator.vibrate(15)}}},h0LP)}
+ if(!moved)lpT=setTimeout(()=>{if(drag&&!drag.moved&&ptrs.size==1){const h=pick(x,y,{forceB:1});if(h.b&&!h.u){drag.moved=true;drag.lp=true;openPanel(h.b);if(navigator.vibrate)navigator.vibrate(15)}}},h0LP)}
 function startPinch(){closeWheel();const[a,b]=[...ptrs.values()];pinch={d:Math.max(20,Math.hypot(a.x-b.x,a.y-b.y)),mx:(a.x+b.x)/2,my:(a.y+b.y)/2};drag=null;vel=null}
 // ---- RT mouse controls: left click/drag = select (box), right click = order, right/middle drag = pan ----
 let MD=null;
@@ -1844,6 +1940,9 @@ function mouseUp(e,cancel){if(!MD)return;const m=MD;MD=null;
   if(m.preSel!=null){const pu=G.units.find(v=>v.id===m.preSel);if(dbl&&pu){G.sel.add(pu.id);selectSimilar(pu)}updUI();return}const pk=pick(x,y);if(dbl&&pk.u){G.sel.add(pk.u.id);selectSimilar(pk.u);updUI()}else if(pk.b&&!pk.u&&!pk.e&&!TAB&&!G.panel){openPanel(pk.b)}else if(!pk.u&&!pk.b&&!pk.e&&pk.car==null&&!pk.veh&&!pk.spy&&!e.shiftKey&&G.mode!=='amove'&&!$('choice').style.display.includes('block')&&!TAB&&!G.panel){G.sel.clear();G.selCar=null;updUI()}else tap(x,y,false,{mouse:1,add:e.shiftKey||e.ctrlKey})}
  if(m.b!==0&&m.moved&&m.h&&m.h.length>1){const a=m.h[0],b=m.h[m.h.length-1],dt=b[0]-a[0];if(dt>0&&performance.now()-b[0]<80)vel={vx:(b[1]-a[1])/dt,vy:(b[2]-a[2])/dt}}
  else if(m.b===2&&!m.moved&&!cancel){tap(e.clientX,e.clientY,false,{order:1,mouse:1})}}
+cv.addEventListener('pointerdown',e=>{FING={x:e.clientX,y:e.clientY,down:1,t:performance.now()}},true);
+cv.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse'&&!(FING&&FING.down))return;if(drag&&drag.moved){FING=null;return}FING={x:e.clientX,y:e.clientY,down:FING?FING.down:0,t:performance.now()}},true);
+window.addEventListener('pointerup',()=>{if(FING){FING.down=0;FING.t=performance.now()}},true);
 cv.addEventListener('pointerdown',e=>{if(e.pointerType==='mouse'){e.preventDefault();mouseDown(e);return}},true);
 cv.addEventListener('pointermove',e=>{if(e.pointerType==='mouse'){mouseMove(e);e.stopImmediatePropagation()}},true);
 cv.addEventListener('pointerup',e=>{if(e.pointerType==='mouse'){mouseUp(e,false);e.stopImmediatePropagation()}},true);
@@ -1898,7 +1997,7 @@ function frame(now){const rdt=Math.min(0.1,(now-last)/1000);last=now;let dt=(G.p
  while(dt>0){const s=Math.min(dt,5);tick(s);dt-=s}
  stepInertia(rdt);stepKeys(rdt);stepZoom(rdt);VOT=rdt;render(now);stepWheel(rdt);uiAcc+=rdt;if(uiAcc>0.25){uiAcc=0;updUI()}requestAnimationFrame(frame)}
 // ================= SOUND (procedural WebAudio) =================
-const SET=Object.assign({dmgnum:1,master:1,music:1,sfx:1,rain:1,quality:'high'},JSON.parse(localStorage.getItem('bprt_settings')||'{}'));
+const SET=Object.assign({dmgnum:1,master:1,music:1,sfx:1,rain:1,quality:'high',cut:'auto'},JSON.parse(localStorage.getItem('bprt_settings')||'{}'));
 function saveSet(){localStorage.setItem('bprt_settings',JSON.stringify(SET));applySet()}
 let AC=null,BUS={},NOISE=null,lastS={},MUS={on:false};
 function initAudio(){if(AC){if(AC.state!='running')AC.resume();return}
@@ -1961,6 +2060,7 @@ const btn=(lab,fn,cls='mbtn',dis)=>`<button class="${cls}" ${dis?'disabled':''} 
 function settingsHTML(back){const tg=(k,l)=>`<div class="srow"><span>${l}</span><button class="tog ${SET[k]?'on':''}" onclick="SET.${k}=SET.${k}?0:1;saveSet();openSettings('${back}')">${SET[k]?'ON':'OFF'}</button></div>`;
  return `<h2>Settings</h2>${tg('master','Sound')}${tg('music','Music')}${tg('sfx','Effects')}${tg('rain','Rain')}${tg('dmgnum','Damage numbers')}
  <div class="srow"><span>Graphics</span><div class="seg">${['low','high'].map(q=>`<button class="${SET.quality==q?'on':''}" onclick="SET.quality='${q}';saveSet();resize();openSettings('${back}')">${q.toUpperCase()}</button>`).join('')}</div></div>
+ <div class="srow"><span>Cutaway</span><div class="seg">${['auto','always','off'].map(q=>`<button class="${(SET.cut||'auto')==q?'on':''}" onclick="SET.cut='${q}';saveSet();openSettings('${back}')">${q.toUpperCase()}</button>`).join('')}</div></div>
  <div class="srow"><span>Saved game</span><button class="tog" id="rst" onclick="resetSave(this)">${ST.has()?'RESET':'NONE'}</button></div>
  <div class="srow"><span>Backup code</span><span><button class="tog on" onclick="exportSave()">EXPORT</button> <button class="tog on" onclick="importSave()">IMPORT</button></span></div>
  <div class="srow" style="font-size:11px;opacity:.7"><span>Storage: ${ST.ls?'local':''}${ST.ls&&ST.idb?' + ':''}${ST.idb?'IndexedDB':''}${!ST.ls&&!ST.idb?'⚠ none, export to keep progress':''}</span></div>
@@ -1972,9 +2072,9 @@ const HOWTO=[
  ['Starting out','p_boss','You start with nothing: the <b>Boss</b>, an empty pocket and <b>no hideout</b>, somewhere in a city of 12 by 12 blocks with the sea all round it. The rival families start the same way, far off across town, and you won\'t know where they settle. First earn your stake by hand: <b>select the Boss and tap a passer-by</b> to <b>Pickpocket</b> (quick, small money) or <b>Mug</b> him (more money, more noise), or tap a <b>tenement or apartment house</b> to <b>Burgle</b> it, or a <b>corner shop</b> to <b>Shake it down</b>. He walks over, does the job and the dirty cash is yours at once. A burgled house or squeezed shop pays little again the same day, so move around. Mind the beat cops: a job done in front of one starts a chase. When you have <b>$500</b>, set up your <b>Hideout</b> (see the next page). Then hire your first <b>Thug</b> there, put thugs on petty crime, take over your first racket and grow from there.'],
  ['The Hideout','t_Hideout','Until you have a hideout you can\'t hire, run petty crews or take rackets; the bar at the top says <b>Earn $500 to set up a hideout</b>. With $500, <b>double-tap the Boss</b>, pick <b>Hideout</b> on his wheel, then tap the building you want (or tap a building and press <b>Set up hideout here</b>). Any ordinary building will do: a tenement, a shop, even a racket you walk into. The landmarks (Church, Park, Police Station, Court House) are off limits. The Boss walks there, pays $500 and it becomes your Hideout: crew cap, hiring, the Petty Crime tab, and a safe house where the cops can\'t touch you. <b>Lying low:</b> rival families can\'t see your Boss or your Hideout and won\'t go after them, unless the Boss gets into a fight (then he is marked for a while) or a rival <b>dame</b> is close. It works both ways: rival bosses and hideouts stay hidden from you until they fight, or one of your dames is nearby or inside.'],
  ['The Wheel','p_thug','<b>Double-tap one of your men</b> to open his action wheel. It stays on him as he walks, and the camera follows him; drag the map, tap outside the wheel or press the centre button to close it. <b>Petty crime:</b> put him on an automatic street job (pick one, or Any), or call him off. Not for the Boss: he only works by hand. <b>Guard:</b> then tap one of your buildings and he goes to garrison it. <b>Stance:</b> <b>Aggressive</b> (looks for trouble further out and fights even while walking), <b>Normal</b>, or <b>Defensive</b> (never starts a fight and runs home when hit). <b>Weapon:</b> hand a thug a pistol from Stock or take it back. <b>Crimes:</b> a job by hand on the nearest mark: pickpocket, mug, burgle, shake down or run numbers; greyed out when there is no mark close by. <b>Follow:</b> keep the camera on him. <b>Gear:</b> his full gear card.'],
- ['Controls','p_thug','<b>Touch:</b> tap a gangster to select him, tap again to deselect (others stay selected). With men selected, tap a street to walk there (the first man stops exactly where you tapped, the rest stand beside him), or tap a building (anywhere on its picture) to send them to its door to capture, attack or move in, or tap an enemy to attack. A building turns <b>see-through</b> when one of your men is behind it; while it is see-through, taps go straight through it to the road behind. <b>Double-tap a man</b> to open his action wheel (see The Wheel). <b>Double-tap and hold, then drag</b> to draw a box round several men. <b>Double-tap empty ground</b> to clear the selection. With men selected, tapping a passer-by, a tenement or a shop offers a <b>crime by hand</b>. One finger drags the map, pinch to zoom, long-press a building for its info. <b>Dame:</b> select her and tap any building to send her inside; a pink badge shows where she is (G = guards). Tap the badge or press Recall on the Intel page to bring her out. <b>Cars:</b> new cars park at your Hideout. Select up to 4 men and tap the car to board; tap the car to select it, then tap a street or building to drive there (they get out at the door), or press Unload. <b>Mouse:</b> click or drag a box to select (Shift adds), right-click to order, right/middle-drag or WASD to pan, wheel to zoom, Esc to clear. <b>Full screen on iPhone:</b> in Safari tap Share, then Add to Home Screen, and start the game from the new icon. <b>Landscape:</b> the game is played sideways. Tabs sit on the left rail, pages and building info slide in from the right so the map stays in view, the selection chip is bottom-left and the order bar bottom-right.'],
+ ['Controls','p_thug','<b>Touch:</b> tap a gangster to select him, tap again to deselect (others stay selected). With men selected, tap a street to walk there (the first man stops exactly where you tapped, the rest stand beside him), or tap a building (its front, its door or its sign) to send them to its door to capture, attack or move in, or tap an enemy to attack. When you are zoomed in with men selected, any building that hides the street near them, along their path or under your finger drops to a <b>cutaway</b>: only its ground-floor walls stay up, so you can see and tap the road behind it. A tap on the street behind a building always goes to the street. Settings has Cutaway: Auto, Always or Off. <b>Double-tap a man</b> to open his action wheel (see The Wheel). <b>Double-tap and hold, then drag</b> to draw a box round several men. <b>Double-tap empty ground</b> to clear the selection. With men selected, tapping a passer-by, a tenement or a shop offers a <b>crime by hand</b>. One finger drags the map, pinch to zoom, long-press a building for its info. <b>Dame:</b> select her and tap any building to send her inside; a pink badge shows where she is (G = guards). Tap the badge or press Recall on the Intel page to bring her out. <b>Cars:</b> new cars park at your Hideout. Select up to 4 men and tap the car to board; tap the car to select it, then tap a street or building to drive there (they get out at the door), or press Unload. <b>Mouse:</b> click or drag a box to select (Shift adds), right-click to order, right/middle-drag or WASD to pan, wheel to zoom, Esc to clear. <b>Full screen on iPhone:</b> in Safari tap Share, then Add to Home Screen, and start the game from the new icon. <b>Landscape:</b> the game is played sideways. Tabs sit on the left rail, pages and building info slide in from the right so the map stays in view, the selection chip is bottom-left and the order bar bottom-right.'],
  ['Crew','p_thug','Hire <b>Thugs</b> at your Hideout. Rackets unlock better crew: a Speakeasy gives <b>Enforcers</b>, a Gun Store <b>Hitmen</b>, a Casino <b>Dames</b> (spies). Long trips are made by car.'],
- ['Petty Crime','p_thug','Petty crime is open from the start for every man except the <b>Boss</b>: he only works by hand (tap a mark with him selected, or use Crimes on his wheel). Put men on automatic jobs from your <b>Hideout</b> (<b>Petty Crime</b> tab, + and −) or one at a time from a man\'s wheel: <b>Pickpocket</b> (small money, quiet), <b>Mug</b> (more money, more noise), <b>Burgle</b> a tenement or apartment house (good money, takes hours), <b>Shake down</b> corner shops (steady), <b>Run numbers</b> on a street corner (steady, quiet), or <b>Any</b> (he picks whatever is close). Each man finds a mark, does the job and the dirty cash is yours on the spot (a green +$ rises over him), then he catches his breath and looks for the next mark. A man with a cop on his tail runs home first. Men on a job can\'t take orders; tap one twice, use Recall in the tab, or switch it off on his wheel. Every job warms up the district a little, and if a beat cop sees it he gives chase: a caught man sits in the cells for a day and the case grows. The tab shows each man\'s job, what he is doing right now and what he has made today, plus arrests. Stealing cars is not a petty job: send a Driver to do it yourself.'],
+ ['Petty Crime','p_thug','Petty crime is open from the start for every man except the <b>Boss</b>: he only works by hand (tap a mark with him selected, or use Crimes on his wheel). Anyone can <b>break into a parked car</b> by hand: tap the car with a man selected. It takes a few seconds and pays $15-40, sometimes goods, but a cop who sees it gives chase, and a car that was hit stays cleaned out for a day. Burglars and shakedown men <b>go inside</b>: a clock ring over the building shows the time left. Tap the ring to call him out early with part of the take; if a cop comes to the door he slips out by himself. Put men on automatic jobs from your <b>Hideout</b> (<b>Petty Crime</b> tab, + and −) or one at a time from a man\'s wheel: <b>Pickpocket</b> (small money, quiet), <b>Mug</b> (more money, more noise), <b>Burgle</b> a tenement or apartment house (good money, takes hours), <b>Shake down</b> corner shops (steady), <b>Run numbers</b> on a street corner (steady, quiet), or <b>Any</b> (he picks whatever is close). Each man finds a mark, does the job and the dirty cash is yours on the spot (a green +$ rises over him), then he catches his breath and looks for the next mark. A man with a cop on his tail runs home first. Men on a job can\'t take orders; tap one twice, use Recall in the tab, or switch it off on his wheel. Every job warms up the district a little, and if a beat cop sees it he gives chase: a caught man sits in the cells for a day and the case grows. The tab shows each man\'s job, what he is doing right now and what he has made today, plus arrests. Stealing cars is not a petty job: send a Driver to do it yourself.'],
  ['Civilians','p_dame','Ordinary folk walk the streets, go in and out of buildings and run for it when fists or bullets fly. You can\'t order them about; your pickpockets and muggers work them over.'],
  ['Rackets & Chains','t_Speakeasy','<b>Taking over</b> a racket needs a hideout and enough <b>strength</b> inside it: the Boss counts 4, a Thug 2 (3 with a pistol), an Enforcer 3, a Hitman 6. A plain racket needs 4, so the Boss alone or two thugs will do; every extra level, a Casino or Gun Factory, and every guard posted there add 2 more. The panel shows <b>Strength X / Y needed</b>. The rival families play by the same rule. Every quarter of the city has its own set of rackets. Businesses earn only when their supplier is yours too: <b>Distillery → Warehouse → Speakeasy</b>, <b>Gun Factory → Gun Store</b>, <b>Print Shop → Casino</b>. A <b>Laundry</b> cleans dirty cash. Cut a rival\'s chain to starve him.'],
  ['Territory','t_Hideout','Own every business on a city block and it becomes your <b>territory</b>, glowing in your colour when zoomed out. Territory pays <b>+10%</b> income. Zoom right out and the city turns into a flat <b>tactical map</b>: quarters tinted by the family whose rackets you have seen there, markers for your men and any rival crews in sight. Tap a quarter to zoom back in on it.'],
