@@ -2,9 +2,15 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="build" content="RT build 6.0 · 17 Oct 02:19">
+<meta name="build" content="RT build 6.1 · 17 Oct 02:52">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Blood & Paper">
+<meta name="theme-color" content="#0b0907">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="screen-orientation" content="landscape">
 <title>Blood and Paper RT</title>
@@ -154,10 +160,19 @@ button.on{background:#8a6d3b;color:#111}button:disabled{opacity:.4}
 @keyframes rotp{0%,25%{transform:rotate(0)}55%,100%{transform:rotate(-90deg)}}
 #rot h2{font-family:Limelight,Georgia,serif;font-weight:normal;color:#e6c56a;font-size:30px;letter-spacing:2px;margin:0}#rot p{margin:0;max-width:280px;font-size:15px;line-height:1.4;color:#c9b48a}
 @media (orientation:portrait) and (max-width:820px){#rot{display:flex}}
+
+.ptabs{display:flex;gap:6px;margin:4px 0 8px}.ptabs button{flex:1;padding:7px 4px;font:bold 12px Georgia,serif;letter-spacing:1px;text-transform:uppercase;background:#1b1610;color:#b9a47a;border:1px solid #5a4630;border-radius:6px}.ptabs button.on{background:linear-gradient(#e2c27a,#b48c3e);color:#1b130a;border-color:#e6c56a}
+.pcsum{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin:6px 0}.pcsum div{background:#e8dcc0;color:#2a2116;border:1px solid #2a2116;padding:4px 5px;text-align:center}.pcsum span{display:block;font-size:9px;letter-spacing:1px;text-transform:uppercase}.pcsum b{font:20px Limelight,Georgia,serif}
+.pcj{display:flex;align-items:center;gap:8px;border-top:1px solid #3a2e20;padding:7px 0}.pci{flex:1;min-width:0}.pci b{color:#f2c46d;font-weight:normal;font-size:15px}.pci span{display:block;font-size:12px;opacity:.85}.pci em{display:block;font-style:normal;font-size:11px;color:#c9b27a}
+.pcc{display:flex;align-items:center;gap:6px}.pcc button{width:38px;height:38px;font-size:20px;padding:0;border-radius:8px}.pcc b{min-width:18px;text-align:center;font-size:18px;color:#f1dfa8}
+.pcm{display:flex;justify-content:space-between;align-items:center;gap:6px;font-size:12px;padding:3px 0}.pcm button{padding:3px 8px;font-size:12px}
+#fshint{position:absolute;z-index:4;left:calc(env(safe-area-inset-left,0px) + 14px);top:calc(env(safe-area-inset-top,0px) + 10px);max-width:300px;display:none;align-items:flex-start;gap:10px;padding:9px 34px 9px 11px;background:linear-gradient(#efe4c6,#d8c79e);color:#2a2116;border:1px solid #2a2116;box-shadow:0 0 0 3px #e8dcc066,0 6px 18px #000c;font:13px/1.35 Georgia,serif;transform:rotate(-1deg)}
+#fshint b{font-variant:small-caps;letter-spacing:1px}#fshint .sh{flex:0 0 auto;width:20px;height:24px;margin-top:2px}#fshint button{position:absolute;right:4px;top:4px;width:26px;height:26px;padding:0;background:none;border:0;color:#2a2116;font:bold 18px Georgia,serif}
+html.sa #top{padding-top:max(var(--st),4px)}
 </style></head><body>
 <canvas id="c"></canvas>
 <div id="rot"><div class="rph"></div><h2>Turn the paper sideways</h2><p>Blood and Paper is played in landscape. Rotate your phone; the game waits for you.</p></div>
-<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT build 6.0 · 17 Oct 02:19</div>
+<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT build 6.1 · 17 Oct 02:52</div>
 <div id="top" class="deco">
  <div class="r"><span id="cash">$0</span><span id="inc">+$0/day</span><span id="day">Day 1</span><button class="ib" id="tb-menu" title="Menu" onclick="openPause()"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button></div>
  <div class="r"><span id="hc" onclick="openTab('police')">Heat 0 · Case 0</span>
@@ -165,8 +180,8 @@ button.on{background:#8a6d3b;color:#111}button:disabled{opacity:.4}
   <button class="ib" id="tb-intel" title="Intel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.8-6.5 10-6.5S22 12 22 12s-3.8 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button><button class="ib" id="tb-fam" title="Families"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8l8 3v6.2c0 5-3.6 8.2-8 9.4-4.4-1.2-8-4.4-8-9.4V5.8zM12 7v9M8.5 10.5h7"/></svg></button></div>
 </div>
 <div id="toast"></div>
-<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT build 6.0 · 17 Oct 02:19</div>
-<button class="mbtn pri" onclick="newGame()">New Game</button><button class="mbtn" id="bcont" onclick="startGame(true)">Continue</button>
+<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT build 6.1 · 17 Oct 02:52</div>
+<button class="mbtn pri" onclick="goFull();newGame()">New Game</button><button class="mbtn" id="bcont" onclick="goFull();startGame(true)">Continue</button>
 <button class="mbtn" onclick="openSettings('titleMenu')">Settings</button><button class="mbtn" onclick="openHowTo('titleMenu')">How to Play</button><button class="mbtn" onclick="openCredits()">Credits</button></div></div>
 <div id="mwrap"><div id="modal" class="deco"></div></div>
 <div id="selchip" class="deco"></div><div id="gear"></div><div id="carbar" class="deco"></div>
@@ -205,11 +220,18 @@ const CFG={TITLE:'Blood and Paper RT', SAVE_NS:'bprt_', SHOW_PATHS:0, AUTOSAVE:1
  MOVE:100,                   // sim seconds per road tile (police raid timing reference)
  SPY:{REPORT:500, CHECK:900, SKIM:0.4, SKIM_CD:900, HOT:2400, CATCH:0.25, CATCH_HOT:0.6, SPOT:0.5, SPOT_HOT:0.8, AI_SEND:0.08, AI_WATCH:0.12, AI_STAY:5400, AI_SKIM:0.12, BAN:3600, TALK:120, CHARM_CD:300, OFF_DUTY:450}, // dame intel: report every REPORT sim s, discovery roll every CHECK sim s (~1 real min at 30x)
  CAR_SEATS_P:4,
+ CIV:{PER_TILES:180, MIN:15, MAX:30, WALK:34, FLEE:11, RANGE:18, IN:[30,160], WAIT:[20,160], DANGER:6, SCAN:2},  // ambient civilians: count = tiles/PER_TILES clamped; sim s per tile walking/fleeing
+ PETTY:{RANGE:26, REST:75, JAIL:3600, ARREST_CASE:3, JOBS:{ // petty crime from the Hideout: $ range (dirty), work sim s, rumor = chance heat leaks with no cop around, h = that heat, seen = chance a nearby cop notices, hs = heat if seen, caught = chance he is arrested once seen
+  pick:{name:'Pickpocket',verb:'pickpocketing',tg:'civ',$:[25,70],work:25,rumor:0.15,h:1,seen:0.4,hs:3,caught:0.25,d:'Lift wallets off folks in the street. Small money, little noise.'},
+  mug:{name:'Mug',verb:'mugging somebody',tg:'civ',$:[50,130],work:40,rumor:0.35,h:3,seen:0.7,hs:6,caught:0.4,d:'Corner a passer-by and take the lot. More money, more noise.'},
+  burgle:{name:'Burgle',verb:'burgling a flat',tg:'home',$:[120,280],work:375,rumor:0.3,h:3,seen:0.5,hs:6,caught:0.35,d:'Break into a tenement or apartment house. Takes a while, pays well.'},
+  shake:{name:'Shake down',verb:'shaking down a shop',tg:'shop',$:[70,120],work:150,rumor:0.2,h:1.5,seen:0.4,hs:4,caught:0.2,d:'Collect protection from corner shops and street vendors. Steady money.'},
+  numbers:{name:'Run numbers',verb:'running numbers',tg:'corner',$:[50,100],work:300,rumor:0.12,h:1,seen:0.3,hs:3,caught:0.2,d:'Take bets on a street corner. Steady money, quiet work.'}}},
  UNIT_MOVE:21.25,           // RT: sim seconds per tile for crew & cars (~1.4 tiles/real s at 30x)
  CAPTURE:600,               // sim seconds to capture
  COMBAT_TICK:60,
  AI_TICK:400, AI_ATTACK_CHANCE:0.25, AI_MAX_UNITS:10,
- HEAT:{COP_HIT:5, COP_KILL:40, CAR_STEAL:12, GANG_KILL:6, HIT:0.15, WRECK:6, PATROL_PER:35, DRAW:150}, // HEAT: built by actions, fades HEAT_DECAY_DAY/day
+ HEAT:{COP_HIT:5, COP_KILL:40, CAR_STEAL:12, GANG_KILL:6, HIT:0.15, WRECK:6, PATROL_PER:20, EXTRA_FROM:40, DRAW_FROM:20, DRAW:150}, // HEAT: built by actions, fades HEAT_DECAY_DAY/day
  CASE:{MAX:100, PER_1K_DAY:8, RACKET_DAY:0.8, DIRTY_FREE:5000, DIRTY_PER_1K_DAY:0.4, AFTER_RAID:30, LAWYER_DAY:12, // CASE: built by businesses (dirty income), never fades on its own
  // police case file per family (0-100): a raid fires when it reaches MAX
   PAYOFF_DIRTY:[2500,15], BRIBE_CLEAN:[2000,35]},  // pay-offs: [cost, case points removed]
@@ -235,8 +257,8 @@ const CFG={TITLE:'Blood and Paper RT', SAVE_NS:'bprt_', SHOW_PATHS:0, AUTOSAVE:1
   income:{name:'Sharp Books',desc:'+10% racket income',per:0.10,cost:[1000,2000,4000]},
   heat:{name:'Friends Downtown',desc:'Heat cools 20% faster',per:0.20,cost:[700,1400,2800]}},
  CAR_SPEED:1.8, PCAR_SPEED:3.2, CAR_MIN:30, CAR_SEATS:4,  // crew ride a family car for trips longer than CAR_MIN tiles, CAR_SPEED x walking speed
- POLICE:{PATROL_CARS:6, PATROL_COPS:8, PARK_MIN:600, PARK_MAX:1800, PATROL_RANGE:22, COP_WAIT:[120,420], COP_RANGE:12,
-  SEE_RADIUS:6, WITNESS_TICK:30, WITNESS_HEAT:1.5, INTERVENE_CHANCE:0.25, INTERVENE_TIME:300},
+ POLICE:{PATROL_CARS:6, PATROL_COPS:4, SPAWN_CLEAR:14, PARK_MIN:600, PARK_MAX:1800, PATROL_RANGE:22, COP_WAIT:[120,420], COP_RANGE:12,
+  SEE_RADIUS:4.2, WITNESS_TICK:30, WITNESS_HEAT:1.5, INTERVENE_CHANCE:0.25, INTERVENE_TIME:300},
  GUARD:{MAX:4,MAX_HIDEOUT:6,HEAT_DAY:0.5,AI_TARGET:2}, // guards are your own thugs garrisoned at a building (no hire cost; thugs have no upkeep yet)
  // Game time: DAY=3600 sim-s, so 1 game hour = DAY/24 = 150 sim-s = 5 real seconds at Fast (30x).
  SMASH:{HOURS:2, WORK_H:2, RATE:{enforcer:2,thug:1}, REPAIR:600, HEAT:8},            // thugs+enforcers: WORK_H = hours for ONE thug (enforcer 2x rate, group rates add); business shut 2h; neutral ones can't be captured till recovered; owner can repair early for $
@@ -612,19 +634,20 @@ function stepField(dt){const F=CFG.FIELD||CFG.FIGHT;fieldAcc+=dt;if(fieldAcc<F.T
   else if(u.stance!=='hold'){const tx=Math.round(t.x),ty=Math.round(t.y),e=u.path.at(-1);if(!e||Math.abs(e[0]-tx)+Math.abs(e[1]-ty)>1){const am=u.amove,ad=u.amDest;sendTo(u,tx,ty,null,true);u.amove=am;u.amDest=ad}}
   else u.tgt=null}}
 let witAcc=0,witLog=-1e9;
+const extraCops=()=>{const h=FAM[0].heat,H=CFG.HEAT;return h<H.EXTRA_FROM?0:1+Math.floor((h-H.EXTRA_FROM)/H.PATROL_PER)};
 function initPolice(){const slots=[[28,30,'sw'],[28,33,'ne'],[30,28,'se'],[33,28,'nw'],[36,31,'sw'],[31,36,'se']];
  for(let i=0;i<Math.min(CFG.POLICE.PATROL_CARS,slots.length);i++){const s=slots[i];const v=mkVeh('pcar','police',s[0],s[1]);v.slot=s;v.dir=s[2];v.state='park';v.wait=rnd()*CFG.POLICE.PARK_MAX}
  for(let i=0;i<CFG.POLICE.PATROL_COPS;i++)spawnPatrol(true)}
-function spawnPatrol(scatter){const hq=G.bld[4].door;let x=hq[0],y=hq[1];if(scatter){for(let k=0;k<20;k++){const tx=Math.floor(rnd()*N),ty=Math.floor(rnd()*N);if(isRoad(tx,ty)&&paveT(tx,ty)){x=tx;y=ty;break}}}
+function spawnPatrol(scatter){const hq=G.bld[4].door;let x=hq[0],y=hq[1];if(scatter){for(let k=0;k<20;k++){const tx=Math.floor(rnd()*N),ty=Math.floor(rnd()*N);if(isRoad(tx,ty)&&paveT(tx,ty)&&(k>15||FAM.every(f=>Math.hypot(tx-f.hq[0],ty-f.hq[1])>CFG.POLICE.SPAWN_CLEAR))){x=tx;y=ty;break}}}
  const u=spawn('police','police',x,y);u.patrol=true;u.wait=rnd()*200;return u}
 function stepPatrol(dt){const P=CFG.POLICE;const cops=G.units.filter(u=>u.patrol);
  for(const u of cops){if(u.talkBy!=null)continue;if(u.offUntil){if(u.path.length&&u.goB===G.bld[4])u.offUntil=Math.max(u.offUntil,G.t+CFG.SPY.OFF_DUTY);if(G.t<u.offUntil)continue;u.offUntil=0;u.atB=null;u.wait=0}if(u.intervene!=null){u.raid-=dt;const b=G.bld[u.intervene];const en=u.atB&&present(u.atB).some(v=>v.fam!=='police');if(u.atB&&(u.raid<=0||!en)){u.intervene=null;u.atB=null;u.wait=60}continue}
   if(u.path.length)continue;u.wait-=dt;if(u.wait>0)continue;
-  if(rnd()<FAM[0].heat/CFG.HEAT.DRAW){const pb=G.bld.filter(b=>b.owner===0);if(pb.length){const b=pb[Math.floor(rnd()*pb.length)],r=nearWalk(b.door[0],b.door[1]);if(r){sendTo(u,r[0],r[1],null,true);u.wait=P.COP_WAIT[0]+rnd()*(P.COP_WAIT[1]-P.COP_WAIT[0]);continue}}}
+  if(rnd()<Math.max(0,FAM[0].heat-CFG.HEAT.DRAW_FROM)/CFG.HEAT.DRAW){const pb=G.bld.filter(b=>b.owner===0);if(pb.length){const b=pb[Math.floor(rnd()*pb.length)],r=nearWalk(b.door[0],b.door[1]);if(r){sendTo(u,r[0],r[1],null,true);u.wait=P.COP_WAIT[0]+rnd()*(P.COP_WAIT[1]-P.COP_WAIT[0]);continue}}}
   for(let k=0;k<10;k++){const tx=Math.round(u.x+(rnd()-0.5)*2*P.COP_RANGE),ty=Math.round(u.y+(rnd()-0.5)*2*P.COP_RANGE);if(isRoad(tx,ty)&&paveT(tx,ty)){sendTo(u,tx,ty,null,true);break}}
   u.wait=P.COP_WAIT[0]+rnd()*(P.COP_WAIT[1]-P.COP_WAIT[0])}
  witAcc+=dt;if(witAcc<P.WITNESS_TICK)return;witAcc=0;
- if(cops.length<P.PATROL_COPS+Math.floor(FAM[0].heat/CFG.HEAT.PATROL_PER)&&G.t-(G.copDeadT??-1e9)>CFG.FIGHT.COP_RESPAWN&&rnd()<0.3)spawnPatrol(false);
+ if(cops.length<P.PATROL_COPS+extraCops()&&G.t-(G.copDeadT??-1e9)>CFG.FIGHT.COP_RESPAWN&&rnd()<0.3)spawnPatrol(false);
  for(const b of G.bld){const fight=G.t-(b.fightT||-1e9)<90,cap=b.prog>0&&b.capFam!=null;if(!fight&&!cap)continue;
   const near=cops.filter(c=>!c.offUntil&&c.talkBy==null&&Math.hypot(c.x-b.door[0],c.y-b.door[1])<=P.SEE_RADIUS);if(!near.length)continue;
   const fs=new Set(present(b).map(u=>u.fam).filter(f=>f!=='police'));for(const f of fs)addHeat(f,P.WITNESS_HEAT,'seen by a beat cop');
@@ -661,7 +684,7 @@ function stepEconomy(dt){const k=dt/CFG.DAY;for(const f of fams()){
  f.heat=Math.max(0,Math.min(100,f.heat-CFG.HEAT_DECAY_DAY*k*(1+upgL(f.id,'heat')*CFG.UPG.heat.per)))}}
 const guardsAt=b=>G.units.filter(u=>u.garrison===b.id&&u.fam===b.owner);
 const guardMax=b=>b.type=='Hideout'?CFG.GUARD.MAX_HIDEOUT:CFG.GUARD.MAX;
-const freeThugs=f=>G.units.filter(u=>u.fam===f&&u.type=='thug'&&u.garrison==null&&!u.goB);
+const freeThugs=f=>G.units.filter(u=>u.fam===f&&u.type=='thug'&&u.garrison==null&&!u.goB&&!u.petty);
 function addGuard(f,b){if(b.owner!==f||guardsAt(b).length>=guardMax(b))return false;const fr=freeThugs(f);if(!fr.length)return false;
  fr.sort((a,c)=>Math.hypot(a.x-b.door[0],a.y-b.door[1])-Math.hypot(c.x-b.door[0],c.y-b.door[1]));const u=fr[0];
  if(u.atB!==b)sendToB(u,b);u.garrison=b.id;G.sel.delete(u.id);if(f==0)log('A thug is heading to guard your '+b.type,1);return true}
@@ -669,10 +692,106 @@ function removeGuard(b){const g=guardsAt(b);if(!g.length)return;const u=g[g.leng
 const upgL=(f,k)=>(FAM[f]&&FAM[f].upg&&FAM[f].upg[k])||0;
 const lvl=b=>b.lvl||1,lvM=b=>b.type=='Hideout'?1:CFG.BLV.INC[lvl(b)-1],lvP=b=>CFG.BLV.PROD[Math.min(2,lvl(b)-1)];
 const upgradable=b=>!!b&&!DECOR(b.type)&&!LAW(b.type);const maxLvl=b=>b.type=='Hideout'?CFG.CREW_CAP.length:CFG.BLV.MAX;
-const crewCap=f=>{const h=G.bld.find(b=>b.owner===f&&b.type=='Hideout');return CFG.CREW_CAP[(h?lvl(h):1)-1]},crewUsed=f=>G.units.filter(u=>u.fam===f&&u.type!='boss').length;
+const crewCap=f=>{const h=G.bld.find(b=>b.owner===f&&b.type=='Hideout');return CFG.CREW_CAP[(h?lvl(h):1)-1]},crewUsed=f=>G.units.filter(u=>u.fam===f&&u.type!='boss').length+G.jail.filter(j=>j.u.fam===f).length;
 const payClean=t=>t!='thug',canPay=(f,t)=>(payClean(t)?FAM[f].clean:FAM[f].dirty)>=CFG.UNITS[t].cost;
 function incomeOf(b){const c=CFG.B[b.type];if(b.dmg)return 0;if(b.owner==null)return c.inc||c.baseInc||0;const bon=(inTerritory(b,b.owner)?1+CFG.TERRITORY_BONUS:1)*(1+upgL(b.owner,'income')*CFG.UPG.income.per);return Math.round((active(b)?(c.inc||0)*(b.type=='Speakeasy'&&FAM[b.owner].inv.booze<=0?CFG.INV.DRY_MULT:1):(c.baseInc||0))*bon*lvM(b))}
 function missing(b){const out=[];let t=CFG.B[b.type].up;while(t){if(!hasActive(b.owner,t)){out.push(t)}else break;t=CFG.B[t].up}return out}
+// ===== AMBIENT CIVILIANS (build 6.1): lightweight walkers, not units; A* between buildings, flee from fights =====
+G.civ=[];let civScan=0,CIVID=0;
+const rr=(a)=>a[0]+Math.random()*(a[1]-a[0]);
+function civCount(){const C=CFG.CIV;return Math.max(C.MIN,Math.min(C.MAX,Math.round(N*N/C.PER_TILES)))}
+function initCiv(){G.civ=[];const n=civCount();let tries=0;while(G.civ.length<n&&tries++<4000){const x=Math.floor(Math.random()*N),y=Math.floor(Math.random()*N);if(!isRoad(x,y)||!paveT(x,y))continue;
+  G.civ.push({id:++CIVID,v:CIVID%CIVV.length,x,y,path:[],dir:'se',anim:Math.random(),wait:Math.random()*CFG.CIV.WAIT[1],inside:0,goB:null,flee:0,hold:0})}}
+function civDest(c){const C=CFG.CIV;let tx=null,ty=null,b=null;
+ if(Math.random()<0.7){const bs=G.bld.filter(q=>q.door&&q.type!='Police'&&q.type!='Park'&&Math.abs(q.door[0]-c.x)+Math.abs(q.door[1]-c.y)<C.RANGE*1.4);if(bs.length){b=bs[Math.floor(Math.random()*bs.length)];[tx,ty]=b.door}}
+ if(tx==null){for(let k=0;k<12;k++){const x=Math.round(c.x+(Math.random()-0.5)*2*C.RANGE*0.7),y=Math.round(c.y+(Math.random()-0.5)*2*C.RANGE*0.7);if(isRoad(x,y)&&paveT(x,y)){tx=x;ty=y;break}}}
+ if(tx==null){c.wait=rr(C.WAIT);return}const fp=findPath(c.x,c.y,tx,ty);if(!fp){c.wait=rr(C.WAIT);return}c.path=fp.p.map(q=>[q[0],q[1]]);c.goB=b?b.id:null}
+function civFlee(c,fx,fy){if(c.inside>0)return;const C=CFG.CIV;let dx=c.x-fx,dy=c.y-fy;const l=Math.hypot(dx,dy)||1;dx/=l;dy/=l;
+ for(let k=0;k<10;k++){const a=(Math.random()-0.5)*1.4,ca=Math.cos(a),sa=Math.sin(a),L=7+Math.random()*5,x=Math.round(c.x+(dx*ca-dy*sa)*L),y=Math.round(c.y+(dx*sa+dy*ca)*L);if(!isRoad(x,y))continue;const fp=findPath(c.x,c.y,x,y);if(fp){c.path=fp.p.map(q=>[q[0],q[1]]);c.flee=1;c.hold=0;c.goB=null;c.wait=0;return}}}
+function stepCiv(dt){if(!G.civ.length){initCiv();if(!G.civ.length)return}const C=CFG.CIV;
+ civScan+=dt;if(civScan>=C.SCAN){civScan=0;const D=[];for(const u of G.units)if(u.tgt!=null&&u.hp>0&&!u.ride)D.push([u.x,u.y]);for(const b of G.bld)if(b.door&&G.t-(b.fightT||-1e9)<90)D.push(b.door);for(const bm of (G.bombs||[]))if(bm.b!=null&&G.bld[bm.b])D.push(G.bld[bm.b].door);
+  if(D.length)for(const c of G.civ){if(c.inside>0||c.flee)continue;for(const d of D)if(Math.abs(d[0]-c.x)+Math.abs(d[1]-c.y)<C.DANGER*1.4&&Math.hypot(d[0]-c.x,d[1]-c.y)<C.DANGER){civFlee(c,d[0],d[1]);break}}}
+ for(const c of G.civ){if(c.inside>0){c.inside-=dt;if(c.inside<=0){c.inside=0;const b=G.bld[c.goB];if(b){c.x=b.door[0];c.y=b.door[1]}c.goB=null;c.wait=Math.random()*20}continue}
+  if(c.hold>0){c.hold-=dt;continue}
+  if(c.path.length){let mv=dt/(c.flee?C.FLEE:C.WALK);const ox=c.x,oy=c.y;while(mv>0&&c.path.length){const[tx,ty]=c.path[0],dx=tx-c.x,dy=ty-c.y,d=Math.hypot(dx,dy);if(d<=mv){c.x=tx;c.y=ty;mv-=d;c.path.shift()}else{c.x+=dx/d*mv;c.y+=dy/d*mv;mv=0}}
+   const ddx=c.x-ox,ddy=c.y-oy;if(Math.abs(ddx)+Math.abs(ddy)>1e-6){c.dir=Math.abs(ddx)>Math.abs(ddy)?(ddx>0?'se':'nw'):(ddy>0?'sw':'ne');c.anim+=Math.hypot(ddx,ddy)}
+   if(!c.path.length){if(c.flee){c.flee=0;c.wait=rr(C.WAIT)}else if(c.goB!=null){c.inside=rr(C.IN)}else c.wait=rr(C.WAIT)}continue}
+  if(c.wait>0){c.wait-=dt;continue}civDest(c)}}
+// civilian painted silhouettes: cached upper bodies per variant, legs swung live
+const CIVV=[{k:'man',coat:'#4b4138',hat:'fedora',hc:'#25201b',leg:'#211d19'},{k:'man',coat:'#5b4a37',hat:'cap',hc:'#3a3027',leg:'#2c2823'},{k:'woman',coat:'#5a2e3a',hat:'cloche',hc:'#3a1e27',leg:'#b99a80'},{k:'woman',coat:'#2f4846',hat:'brim',hc:'#1d2a29',leg:'#b39478'},{k:'kid',coat:'#6a5a44',hat:'cap',hc:'#3d342a',leg:'#4a3f33'},{k:'man',coat:'#2d3139',hat:'bowler',hc:'#141619',leg:'#1c1d20',cane:1},{k:'woman',coat:'#6a5636',hat:'cloche',hc:'#46382a',leg:'#c0a084'},{k:'man',coat:'#3c3b31',hat:'fedora',hc:'#5a5240',leg:'#26251f'}];
+const CIVS=[];const CIVH=42,CRS=3;
+function civSprite(i){if(CIVS[i])return CIVS[i];const V=CIVV[i],W=24,H=44,c=mkC(W*CRS,H*CRS),g=c.getContext('2d');g.scale(CRS,CRS);g.lineJoin='round';g.lineCap='round';
+ const sk=V.k=='kid'?0.82:1;g.translate(12,44);g.scale(sk,sk);g.translate(-12,-44);
+ const grad=(x0,x1,col)=>{const q=g.createLinearGradient(x0,0,x1,0);q.addColorStop(0,shade(col,1.35));q.addColorStop(0.55,col);q.addColorStop(1,shade(col,0.6));return q};
+ const P=(pts,fill)=>{g.beginPath();pts.forEach((p,j)=>j?g.lineTo(p[0],p[1]):g.moveTo(p[0],p[1]));g.closePath();g.fillStyle=fill;g.fill();g.strokeStyle='#15110d';g.lineWidth=0.9;g.stroke()};
+ const hem=V.k=='woman'?37:V.k=='kid'?30:32;
+ if(V.k=='woman')P([[8.2,12.5],[15.8,12.5],[17.6,hem],[6.4,hem]],grad(6,18,V.coat));
+ else{P([[6.8,12.5],[17.2,12.5],[17.8,hem],[6.2,hem]],grad(6,18,V.coat));g.strokeStyle=shade(V.coat,0.55);g.lineWidth=0.7;g.beginPath();g.moveTo(12,14);g.lineTo(12,hem-1);g.stroke()}
+ // arms
+ g.fillStyle=shade(V.coat,0.8);g.strokeStyle='#15110d';g.lineWidth=0.8;for(const sx of[-1,1]){g.beginPath();const x0=12+sx*(V.k=='woman'?3.8:5);g.moveTo(x0,13.5);g.lineTo(x0+sx*2.2,14.5);g.lineTo(x0+sx*2.4,26);g.lineTo(x0+sx*0.6,26);g.closePath();g.fill();g.stroke();g.fillStyle='#caa080';g.beginPath();g.arc(x0+sx*1.5,27,1.1,0,7);g.fill();g.fillStyle=shade(V.coat,0.8)}
+ if(V.cane){g.strokeStyle='#3a2a1a';g.lineWidth=0.9;g.beginPath();g.moveTo(19,27);g.lineTo(21,44);g.stroke()}
+ if(V.k=='kid'){g.fillStyle='#c9b48a';g.fillRect(14.5,20,5,4);g.strokeStyle='#15110d';g.lineWidth=0.6;g.strokeRect(14.5,20,5,4)}
+ // collar/neck + head
+ g.fillStyle='#b08a6c';g.fillRect(10.8,10,2.4,3);
+ const hg=g.createRadialGradient(10.8,6.4,0.5,12,7.2,4.2);hg.addColorStop(0,'#e6c09c');hg.addColorStop(1,'#a87a5a');g.fillStyle=hg;g.beginPath();g.arc(12,7.2,3.4,0,7);g.fill();g.strokeStyle='#15110d';g.lineWidth=0.8;g.stroke();
+ g.fillStyle=V.hc;g.strokeStyle='#15110d';g.lineWidth=0.8;
+ if(V.hat=='fedora'){g.beginPath();g.ellipse(12,5,6,1.4,0,0,7);g.fill();g.stroke();P([[9,5],[9.6,1.6],[14.4,1.6],[15,5]],V.hc);g.strokeStyle=shade(V.hc,1.8);g.lineWidth=0.7;g.beginPath();g.moveTo(9.2,4.2);g.lineTo(14.8,4.2);g.stroke()}
+ else if(V.hat=='bowler'){g.beginPath();g.ellipse(12,5,5,1.2,0,0,7);g.fill();g.stroke();g.beginPath();g.arc(12,4.6,3.2,Math.PI,0);g.fill();g.stroke()}
+ else if(V.hat=='cap'){g.beginPath();g.ellipse(12.6,4.6,4.4,2.2,-0.1,Math.PI*0.95,Math.PI*2.05);g.fill();g.stroke();g.beginPath();g.ellipse(15.2,5.4,2.4,0.8,0,0,7);g.fill()}
+ else if(V.hat=='cloche'){g.beginPath();g.arc(12,6,3.9,Math.PI*0.95,Math.PI*2.05);g.fill();g.stroke();g.fillStyle=shade(V.hc,1.7);g.fillRect(8.4,5.2,7.2,0.9)}
+ else{g.beginPath();g.ellipse(12,4.8,6.2,1.5,0.08,0,7);g.fill();g.stroke();g.beginPath();g.arc(12,4.5,2.8,Math.PI,0);g.fill()}
+ CIVS[i]={c,hip:V.k=='woman'?hem-1:hem-3,leg:V.leg,sk,woman:V.k=='woman'};return CIVS[i]}
+function drawCiv(c,X,Y){const S=civSprite(c.v),sc=CIVH/44,mv=c.path.length&&c.hold<=0?1:0,ph=c.anim*Math.PI*2*1.6,flip=c.dir=='sw'||c.dir=='nw',bob=-Math.abs(Math.cos(ph))*1.2*mv;
+ ctx.beginPath();ctx.ellipse(X,Y,7,3,0,0,7);ctx.fillStyle='rgba(0,0,0,0.32)';ctx.fill();
+ ctx.save();ctx.translate(X,Y+bob);if(flip)ctx.scale(-1,1);ctx.scale(sc*S.sk,sc*S.sk);ctx.translate(-12,-44);
+ const amp=(c.flee?0.55:0.35)*mv,hy=S.woman?S.hip:S.hip;ctx.strokeStyle=S.leg;ctx.lineWidth=S.woman?1.7:2.6;ctx.lineCap='round';
+ for(const sx of[-1,1]){const a=Math.sin(ph)*amp*sx,px=12+sx*2.1,L=44-hy-0.8;ctx.beginPath();ctx.moveTo(px,hy);const ex=px+Math.sin(a)*L,ey=hy+Math.cos(a)*L;ctx.lineTo(ex,ey);ctx.stroke();ctx.fillStyle='#120e0b';ctx.beginPath();ctx.ellipse(ex+1,ey+0.3,1.9,0.9,0,0,7);ctx.fill()}
+ ctx.drawImage(S.c,0,0,24,44);ctx.restore()}
+// ===== PETTY CRIME (build 6.1): thugs assigned at the Hideout work small jobs on their own =====
+G.jail=[];G.petty={day:0,earn:{},arr:{},tot:0,tarr:0};
+const myHQ=()=>G.bld.find(b=>b.owner===0&&b.type=='Hideout');
+const pettyMen=k=>G.units.filter(u=>u.fam===0&&u.petty&&(!k||u.petty.k===k));
+function pettyDay(){const d=Math.floor(G.t/CFG.DAY);if(G.petty.day!==d){G.petty.day=d;G.petty.earn={};G.petty.arr={}}}
+function pettyFree(){const hq=myHQ();return G.units.filter(u=>u.fam===0&&u.type=='thug'&&u.garrison==null&&!u.petty&&!u.ride&&!u.job&&!u.board).sort((a,b)=>hq?Math.hypot(a.x-hq.door[0],a.y-hq.door[1])-Math.hypot(b.x-hq.door[0],b.y-hq.door[1]):0)}
+function pettyAssign(k){const u=pettyFree()[0];if(!u||!myHQ())return false;u.petty={k,st:'rest',t:0,cash:0};u.tgt=null;u.amove=false;u.stance=null;G.sel.delete(u.id);return true}
+function pettyPay(u){const p=u.petty;if(!p||!p.cash)return;pettyDay();FAM[0].dirty+=p.cash;G.petty.earn[p.k]=(G.petty.earn[p.k]||0)+p.cash;G.petty.tot+=p.cash;p.cash=0}
+function pettyRecall(u){if(!u.petty)return;pettyPay(u);u.petty=null;u.path=[];const hq=myHQ();if(hq)sendToB(u,hq)}
+function pettyUnassign(k){const ms=pettyMen(k);if(!ms.length)return false;const o={rest:0,back:1,go:2,work:3};ms.sort((a,b)=>o[a.petty.st]-o[b.petty.st]);pettyRecall(ms[0]);return true}
+function pettyTap(u){const J=CFG.PETTY.JOBS[u.petty.k],now=performance.now();if(G._pt===u.id&&now-(G._ptT||0)<3000){G._pt=null;pettyRecall(u);const m=manName(u)+' is off the '+J.name.toLowerCase()+' job and back with the crew.';NSEEN.delete(m);notice(m,true);updUI();return}
+ G._pt=u.id;G._ptT=now;const m=manName(u)+' is out '+J.verb+'. Tap him again to recall him.';NSEEN.delete(m);notice(m,true);buzz(8)}
+function pettyTarget(u){const P=CFG.PETTY,p=u.petty,J=P.JOBS[p.k],hq=myHQ();if(!hq)return false;const H=hq.door,inR=(x,y)=>Math.hypot(x-H[0],y-H[1])<P.RANGE;
+ p.c=null;p.b=null;p.spot=null;
+ if(J.tg=='civ'){const taken=new Set(pettyMen().map(m=>m.petty.c).filter(x=>x!=null));const cs=G.civ.filter(c=>c.inside<=0&&!c.flee&&c.hold<=0&&!taken.has(c.id)&&inR(c.x,c.y)).sort((a,b)=>Math.hypot(a.x-u.x,a.y-u.y)-Math.hypot(b.x-u.x,b.y-u.y)).slice(0,4);if(!cs.length)return false;const c=cs[Math.floor(Math.random()*cs.length)];p.c=c.id;return sendTo(u,Math.round(c.x),Math.round(c.y),null,true)}
+ if(J.tg=='corner'){const ls=G.lamps.filter(l=>inR(l[0],l[1])&&isRoad(l[0],l[1]));if(!ls.length)return false;const l=ls[Math.floor(Math.random()*ls.length)];p.spot=[l[0],l[1]];return sendTo(u,l[0],l[1],null,true)}
+ let bs=G.bld.filter(b=>b.door&&!b.dmg&&inR(b.door[0],b.door[1])&&(J.tg=='home'?(b.type=='Tenement'||b.type=='Apartment'):b.type=='CornerShop'));
+ if(!bs.length&&J.tg=='shop')bs=G.bld.filter(b=>b.door&&!b.dmg&&b.owner==null&&!DECOR(b.type)&&!LAW(b.type)&&b.type!='Police'&&inR(b.door[0],b.door[1]));if(!bs.length)return false;
+ const b=bs[Math.floor(Math.random()*bs.length)];p.b=b.id;return sendToB(u,b)}
+function pettyCrime(u){const P=CFG.PETTY,p=u.petty,J=P.JOBS[p.k];pettyDay();
+ if(p.c!=null&&p.k=='mug'){const c=G.civ.find(q=>q.id===p.c);if(c){c.hold=0;civFlee(c,u.x,u.y)}}
+ const cop=G.units.find(c=>c.patrol&&!c.offUntil&&c.talkBy==null&&!c.ride&&Math.hypot(c.x-u.x,c.y-u.y)<=CFG.POLICE.SEE_RADIUS);
+ if(cop&&Math.random()<J.seen){addHeat(0,J.hs,'seen '+J.verb);sfx&&sfx('whistle',u.x,u.y);
+  if(Math.random()<J.caught){pettyArrest(u,cop);return}
+  if(G.t-(G._pettySeenLog||-1e9)>300){G._pettySeenLog=G.t;log('A beat cop saw '+manName(u)+' '+J.verb+'. He got away, but heat is rising.',1)}}
+ else if(Math.random()<J.rumor)addHeat(0,J.h,'petty crime: '+J.verb);
+ p.cash+=Math.round(rr(J.$));p.st='back';p.c=null;const hq=myHQ();if(hq)sendToB(u,hq)}
+function pettyArrest(u,cop){const P=CFG.PETTY,J=P.JOBS[u.petty.k];pettyDay();G.petty.arr[u.petty.k]=(G.petty.arr[u.petty.k]||0)+1;G.petty.tarr++;
+ G.units=G.units.filter(v=>v!==u);G.sel.delete(u.id);const o={...u,path:[],atB:null,goB:null,tgt:null,ride:null,fin:null,petty:null,job:null,vx:0,vy:0};
+ G.jail.push({u:o,until:G.t+P.JAIL,k:u.petty.k});addCase(0,P.ARREST_CASE,null);if(cop){cop.wait=Math.max(cop.wait||0,120);const r=nearWalk(Math.round(u.x),Math.round(u.y));if(r)sendTo(cop,r[0],r[1],null,true)}
+ log('Police arrested '+manName(u)+' while '+J.verb+'. In the cells for a day; case +'+P.ARREST_CASE+'.',1)}
+function stepPetty(dt){
+ if(G.jail.length){const hq=myHQ();for(const j of [...G.jail]){if(G.t<j.until)continue;G.jail=G.jail.filter(x=>x!==j);if(!hq||!FAM[0].alive)continue;const u=j.u;u.x=hq.door[0];u.y=hq.door[1];u.path=[];u.atB=hq;u.goB=null;G.units.push(u);log(manName(u)+' is out of the cells and back at the Hideout.',1)}}
+ const hq=myHQ();for(const u of G.units){if(u.fam!==0||!u.petty)continue;const p=u.petty;G.sel.delete(u.id);
+  if(!hq||u.type!='thug'||u.garrison!=null){u.petty=null;continue}if(u.tgt!=null||u.ride)continue;
+  if(p.st=='rest'){p.t-=dt;if(p.t>0)continue;if(pettyTarget(u)){p.st='go';p.rp=0}else p.t=CFG.PETTY.REST;continue}
+  if(p.st=='go'){const J=CFG.PETTY.JOBS[p.k];
+   if(J.tg=='civ'){const c=G.civ.find(q=>q.id===p.c);if(!c||c.inside>0||c.flee){p.st='rest';p.t=10;u.path=[];continue}const d=Math.hypot(c.x-u.x,c.y-u.y);
+    if(d<0.9){u.path=[];p.st='work';p.t=J.work;c.hold=J.work+2;c.path.length||civDest(c);const dx=c.x-u.x,dy=c.y-u.y;u.dir=Math.abs(dx)>Math.abs(dy)?(dx>0?'se':'nw'):(dy>0?'sw':'ne');continue}
+    p.rp=(p.rp||0)-dt;const e=u.path.at(-1);if(p.rp<=0&&(!u.path.length||!e||Math.hypot(e[0]-c.x,e[1]-c.y)>1.2)){p.rp=3;if(!sendTo(u,Math.round(c.x),Math.round(c.y),null,true)){p.st='rest';p.t=20}}continue}
+   if(u.path.length)continue;
+   if(J.tg=='corner'){if(p.spot&&Math.hypot(u.x-p.spot[0],u.y-p.spot[1])<1.2){p.st='work';p.t=J.work}else if(!p.spot||!sendTo(u,p.spot[0],p.spot[1],null,true)){p.st='rest';p.t=20}continue}
+   const b=G.bld[p.b];if(!b||b.dmg){p.st='rest';p.t=20;continue}if(u.atB===b){p.st='work';p.t=J.work}else if(!sendToB(u,b)){p.st='rest';p.t=20}continue}
+  if(p.st=='work'){p.t-=dt;if(Math.random()<dt/12){u.atk=performance.now();u.atkGun=false;u.atkTo=null}if(p.t<=0)pettyCrime(u);continue}
+  if(p.st=='back'){if(u.path.length)continue;if(u.atB===hq){pettyPay(u);p.st='rest';p.t=CFG.PETTY.REST}else if(!sendToB(u,hq)){p.st='rest';p.t=20}}}}
 function stepPolice(dt){polAcc+=dt;
  stepPatrol(dt);
  for(const u of G.units.filter(u=>u.fam==='police'&&!u.patrol)){if(u.ride)continue;u.raid-=dt;
@@ -750,7 +869,7 @@ function drawTerritory(now){const al=Math.max(0,Math.min(1,(CFG.TERR_ZOOM+0.05-c
 var initPoliceLater=initPoliceLater||0;var sfx=window.sfx||null;
 let lastDayS=0;
 function stepWeather(){const W=CFG.WEATHER;if(!G.wx)G.wx={rain:true,until:G.t+(W.RAIN_H[0]+rnd()*(W.RAIN_H[1]-W.RAIN_H[0]))*HOUR()};if(G.t>=G.wx.until){const r=!G.wx.rain,R=r?W.RAIN_H:W.CLEAR_H;G.wx={rain:r,until:G.t+(R[0]+rnd()*(R[1]-R[0]))*HOUR()};try{applySet()}catch(e){}}}
-function tick(dt){if(G.over)return;stepWeather();stepField(dt);stepJobs(dt);{const d=Math.floor(G.t/CFG.DAY);if(d!=lastDayS){lastDayS=d;if(d>0&&G.started)sfx&&sfx('cash')}}if(initPoliceLater){initPoliceLater=0;initPolice()}G.t+=dt;updTerritory();stepSpies(dt);stepBoarding();ensureCars();stepUnits(dt);stepBuildings(dt);stepEconomy(dt);stepPolice(dt);stepAI(dt)}
+function tick(dt){if(G.over)return;stepWeather();stepField(dt);stepJobs(dt);{const d=Math.floor(G.t/CFG.DAY);if(d!=lastDayS){lastDayS=d;if(d>0&&G.started)sfx&&sfx('cash')}}if(initPoliceLater){initPoliceLater=0;initPolice()}G.t+=dt;updTerritory();stepSpies(dt);stepBoarding();ensureCars();stepUnits(dt);stepCiv(dt);stepPetty(dt);stepBuildings(dt);stepEconomy(dt);stepPolice(dt);stepAI(dt)}
 // ================= RENDER =================
 const cv=document.getElementById('c'),ctx=cv.getContext('2d');let dpr=1;
 const cam={x:0,y:0,z:1};const SPR={};
@@ -1089,12 +1208,13 @@ function render0(now){ctx.setTransform(dpr,0,0,dpr,0,0);ctx.fillStyle='#15130f';
  const VX0=cam.x-400,VY0=cam.y-200,VX1=cam.x+innerWidth/cam.z+400,VY1=cam.y+innerHeight/cam.z+500;
  const vis=it=>{const o=it.b||it.u||it.v||it.w||it.c;let x,y;if(o){x=o.x;y=o.y}else{const t=it.l||it.t;x=t[0];y=t[1]}const X=(x-y)*TW/2,Y=(x+y)*TH/2;return X>VX0&&X<VX1&&Y>VY0&&Y<VY1};
  {let k=0;for(let i=0;i<items.length;i++)if(vis(items[i]))items[k++]=items[i];items.length=k}
+ if(cam.z>=0.3)for(const c of G.civ){if(c.inside>0)continue;const X=(c.x-c.y)*TW/2,Y=(c.x+c.y)*TH/2;if(X<VX0+300||X>VX1-300||Y<VY0+150||Y>VY1-400)continue;items.push({d:unitKey(c),cz:c,X,Y})}
  items.sort((a,b)=>a.d-b.d);
  {const kf=1-Math.exp(-(VOT||0.016)/0.07);for(const b of G.bld){const r=b._r;let occ=false;if(r){const bk=bKey(b);for(const it of us){const u=it.u;if(u.fam!==0&&!G.sel.has(u.id))continue;const{X,Y}=it.s;if(X>r[0]+4&&X<r[2]-4&&Y-20>r[1]&&Y-25<r[3]&&bk>it.d){occ=true;break}}
    if(!occ)for(const v of manualCars()){const q=iso(v.x,v.y);if(q.X>r[0]+4&&q.X<r[2]-4&&q.Y-15>r[1]&&q.Y-20<r[3]&&bk>v.x+v.y+0.06){occ=true;break}}}
   const tgt=occ?0.4:1;b._fa=(b._fa??1)+(tgt-(b._fa??1))*kf;if(Math.abs(b._fa-tgt)<0.01)b._fa=tgt}}
  const TINY=cam.z<0.07&&mkAlpha()>=1;
- for(const it of items){if(it.b){const fa=it.b._fa??1;if(fa<1){ctx.globalAlpha=fa;drawBuilding(it.b);ctx.globalAlpha=1}else drawBuilding(it.b)}else if(it.b)drawBuilding(it.b);else if(it.u){if(!TINY)drawUnit(it.u,it.s.X,it.s.Y)}else if(it.t){const p=iso(...it.t);drawTree(p.X,p.Y,it.t[2])}else if(it.l){const p=iso(...it.l);drawLamp(p.X-TW*0.3,p.Y-TH*0.0)}else if(it.v)drawVeh(it.v);else if(it.w)drawWreck(it.w);else drawCar(it.c)}
+ for(const it of items){if(it.b){const fa=it.b._fa??1;if(fa<1){ctx.globalAlpha=fa;drawBuilding(it.b);ctx.globalAlpha=1}else drawBuilding(it.b)}else if(it.b)drawBuilding(it.b);else if(it.u){if(!TINY)drawUnit(it.u,it.s.X,it.s.Y)}else if(it.cz)drawCiv(it.cz,it.X,it.Y);else if(it.t){const p=iso(...it.t);drawTree(p.X,p.Y,it.t[2])}else if(it.l){const p=iso(...it.l);drawLamp(p.X-TW*0.3,p.Y-TH*0.0)}else if(it.v)drawVeh(it.v);else if(it.w)drawWreck(it.w);else drawCar(it.c)}
  // x-ray: units hidden behind buildings
  const XB=[];for(const b of G.bld)if(b._r)XB.push(b._r,bKey(b));
  for(const it of us){const{X,Y}=it.s;let hid=false;for(let q=0;q<XB.length;q+=2){const r=XB[q];if(X>r[0]&&X<r[2]&&Y-20>r[1]&&Y-20<r[3]&&XB[q+1]>it.d){hid=true;break}}if(hid){ctx.globalAlpha=0.4;drawUnit(it.u,X,Y);ctx.globalAlpha=1;
@@ -1251,7 +1371,7 @@ function renderSheet(){const f=FAM[0],h=[],sh=$('sheet');const x=`<button class=
   for(const[ic,n,v,tip]of T)h.push(`<div class="stile ${G.stip===n?'on':''}" data-tip="${tip}" data-tn="${n}"><div class="sic">${ic=='__T__'?ico('tommy'):ico(ICO_EM[ic]||ic)}</div><div class="scn">${v}</div><div class="snm">${n}</div></div>`);
   h.push(`</div><div id="stip" class="stip">${G.stip?'<b>'+G.stip+':</b> '+T.find(x=>x[1]==G.stip)[3]:''}</div>`)}
  else if(TAB=='police'){const C=CFG.CASE,K=caseBreak(0),hr=x=>{const m=Math.floor((x%CFG.DAY)/CFG.DAY*24*60);return 'Day '+(Math.floor(x/CFG.DAY)+1)+', '+String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0')};
-  const dec=CFG.HEAT_DECAY_DAY*(1+upgL(0,'heat')*CFG.UPG.heat.per),ng=G.units.filter(u=>u.fam===0&&u.garrison!=null).length,gd=ng*CFG.GUARD.HEAT_DAY,extra=Math.floor(f.heat/CFG.HEAT.PATROL_PER),draw=Math.round(f.heat/CFG.HEAT.DRAW*100);
+  const dec=CFG.HEAT_DECAY_DAY*(1+upgL(0,'heat')*CFG.UPG.heat.per),ng=G.units.filter(u=>u.fam===0&&u.garrison!=null).length,gd=ng*CFG.GUARD.HEAT_DAY,extra=extraCops(),draw=Math.round(Math.max(0,f.heat-CFG.HEAT.DRAW_FROM)/CFG.HEAT.DRAW*100);
   const dd=x=>x===Infinity?'never at this rate':x<=0?'any hour now':x<1?Math.max(1,Math.round(x*24))+' hours':x.toFixed(1)+' days';
   h.push(`<div class="dos pf"><h1>CITY POLICE DEPT.</h1><div class="dl"><span>File No. ${1931+'-'+String(G.uid%900+100)}</span><span>${hr(G.t)}</span><span>Subject: the ${FAM[0].name} family</span></div>
   <div class="pfgrid"><div class="pfbox"><div class="pfk">Heat</div><div class="pfn">${Math.round(f.heat)}</div><div class="pfs">of 100 · cools ${dec.toFixed(1)}/day${gd?` · guards +${gd.toFixed(1)}/day`:''}</div></div>
@@ -1307,10 +1427,11 @@ $('sheet').addEventListener('click',e=>{const st=e.target.closest('.stile');if(s
 addEventListener('resize',()=>setTimeout(layoutUI,50));
 $('home').onclick=()=>{vel=null;cam.z=Math.max(cam.z,1);const d=FAM[0].yard;center(d[0]-1,d[1]-1)};$('zi').onclick=()=>zoomSmooth(1.3,innerWidth/2,innerHeight/2);$('zo').onclick=()=>zoomSmooth(1/1.3,innerWidth/2,innerHeight/2);
 function fmtH(simS){const h=simS/HOUR();return h>=1?Math.ceil(h)+'h':Math.max(1,Math.ceil(h*60))+'m'}
-function openPanel(b){const p=$('panel'),c=CFG.B[b.type],f=FAM[0];G.panel=b;p.style.transform='';
+function openPanel(b){const p=$('panel'),c=CFG.B[b.type],f=FAM[0];if(G.panel!==b)G.ptab='main';G.panel=b;p.style.transform='';
+ if(b.owner===0&&b.type=='Hideout'&&!b.dmg){const tb=`<div class="ptabs"><button data-pt="main" class="${G.ptab!='petty'?'on':''}">Hideout</button><button data-pt="petty" class="${G.ptab=='petty'?'on':''}">Petty Crime</button></div>`;if(G.ptab=='petty'){p.innerHTML=`<div class="grab"></div><h3>${ico(b.type)} Hideout</h3>`+tb+pettyHTML();p.style.display='block';return}G._ptb=tb}else G._ptb='';
  const spied=G.units.some(u=>u.fam===0&&u.type=='spy'&&u.atB===b);const mine=b.owner===0,see=mine||spied||b.owner==null;
  const kv=(k,v)=>`<div class="kv" style="display:flex;justify-content:space-between;gap:8px;font-size:13px"><span>${k}</span><span>${v}</span></div>`;
- let h=`<div class="grab"></div><h3>${ico(b.type)} ${b.type.replace(/([a-z])([A-Z])/g,'$1 $2')}</h3>`;
+ let h=`<div class="grab"></div><h3>${ico(b.type)} ${b.type.replace(/([a-z])([A-Z])/g,'$1 $2')}</h3>`+(G._ptb||'');
  h+=kv('Owner',b.owner==null?'Neutral':`<b style="color:${FAM[b.owner].col}">${FAM[b.owner].name} family</b>`);
  if(b.type=='Courthouse')h+=`<div class="row">The city Courthouse. Nobody can take it. Send a <b>Lawyer</b> inside and he wears your case file down (${CFG.CASE.LAWYER_DAY}/day each, placeholder). Lawyers inside now: ${G.units.filter(u=>u.fam===0&&u.type=='lawyer'&&u.atB===b).length}.</div>`;
  else if(b.type=='Police')h+='<div class="row">Police HQ. Raids the hottest rackets when a family\'s heat gets too high.</div>';
@@ -1340,7 +1461,17 @@ function openPanel(b){const p=$('panel'),c=CFG.B[b.type],f=FAM[0];G.panel=b;p.st
   else h+='<div class="row" style="opacity:.7;margin-top:6px">Select crew, then tap here to send them to take it.</div>'}
  p.innerHTML=h;p.style.display='block'}
 const closePanel=()=>{$('panel').style.display='none';G.panel=null};
-$('panel').addEventListener('click',e=>{const t=e.target.closest('button');if(!t)return;const b=G.panel;if(t.dataset.act=='repair'){if(repairB(b))sfx&&sfx('cash');openPanel(b);updUI();return}
+function pettyHTML(){pettyDay();const J=CFG.PETTY.JOBS,P=G.petty,fr=pettyFree().length,on=pettyMen(),et=Object.values(P.earn).reduce((a,b)=>a+b,0),at=Object.values(P.arr).reduce((a,b)=>a+b,0);
+ const lvl=x=>x>=6?'high':x>=4?'medium':'low';
+ let h=`<div class="pcsum"><div><span>Free thugs</span><b>${fr}</b></div><div><span>On jobs</span><b>${on.length}</b></div><div><span>Today</span><b>${money(et)}</b></div><div><span>Arrests today</span><b>${at}</b></div></div>`;
+ h+='<div class="row" style="font-size:12px;opacity:.8">Put idle thugs on small jobs. They go out on their own, do the job, come back and hand in dirty cash. A cop nearby may see it: heat, and maybe an arrest.</div>';
+ for(const k in J){const j=J[k],n=pettyMen(k).length;h+=`<div class="pcj"><div class="pci"><b>${j.name}</b><span>${j.d}</span><em>${money(j.$[0])}-${money(j.$[1])} a job · ${lvl(j.hs)} heat${P.earn[k]?' · '+money(P.earn[k])+' today':''}${P.arr[k]?' · '+P.arr[k]+' arrested':''}</em></div><div class="pcc"><button data-pm="${k}" ${n?'':'disabled'} aria-label="fewer">−</button><b>${n}</b><button data-pp="${k}" ${fr?'':'disabled'} aria-label="more">+</button></div></div>`}
+ if(on.length){const st={rest:'resting at the Hideout',go:'heading out',work:'on the job',back:'bringing it home'};h+='<div class="row" style="margin-top:8px"><b>Out on the street</b></div>';for(const u of on)h+=`<div class="pcm"><span>${manName(u)} · ${J[u.petty.k].name}, ${st[u.petty.st]}${u.petty.cash?' · carrying '+money(u.petty.cash):''}</span><button data-prc="${u.id}">Recall</button></div>`}
+ const jl=G.jail.filter(j=>j.u.fam===0);if(jl.length){h+='<div class="row" style="margin-top:8px"><b>In the cells</b></div>';for(const j of jl)h+=`<div class="pcm"><span>${manName(j.u)} · out in ${fmtH(j.until-G.t)}</span></div>`}
+ h+=`<div class="row" style="font-size:12px;opacity:.7;margin-top:6px">All-time take: ${money(P.tot)} · arrests: ${P.tarr}. Tap a man on a job twice to recall him.</div>`;return h}
+setInterval(()=>{if(G.panel&&G.ptab=='petty'&&$('panel').style.display=='block'&&G.started&&!G.paused){const p=$('panel'),y=p.scrollTop;openPanel(G.panel);p.scrollTop=y}},1000);
+$('panel').addEventListener('click',e=>{const t=e.target.closest('button');if(!t)return;const b=G.panel;
+ if(t.dataset.pt){G.ptab=t.dataset.pt;buzz(6);openPanel(b);$('panel').scrollTop=0;return}if(t.dataset.pp){if(pettyAssign(t.dataset.pp))buzz(10);else{const m='No free thugs to send. Hire more, or pull men off guard duty.';NSEEN.delete(m);notice(m,true)}openPanel(b);updUI();return}if(t.dataset.pm){pettyUnassign(t.dataset.pm);buzz(8);openPanel(b);updUI();return}if(t.dataset.prc){const u=G.units.find(v=>v.id==t.dataset.prc);if(u)pettyRecall(u);openPanel(b);updUI();return}if(t.dataset.act=='repair'){if(repairB(b))sfx&&sfx('cash');openPanel(b);updUI();return}
  if(t.dataset.act=='upg'&&startUpg(0,b))sfx&&sfx('cash');if(t.dataset.act=='car'&&buyCar(0))sfx&&sfx('cash');if(t.dataset.act=='bomb'&&buyBomb(0))sfx&&sfx('cash');if(t.dataset.buy&&buyGun(0,t.dataset.buy)){sfx&&sfx('cash');log('Bought a '+(t.dataset.buy=='pistol'?'pistol':'tommy gun'),1)}
  if(t.dataset.h)hire(0,t.dataset.h,b);
  if(t.dataset.g=='add')addGuard(0,b);if(t.dataset.g=='remove')removeGuard(b);
@@ -1355,7 +1486,7 @@ function cvXY(sx,sy){const r=cv.getBoundingClientRect();return[(sx-r.left)*(inne
 function hitUnit2(sx,sy,raw){if(!raw)[sx,sy]=cvXY(sx,sy);const z=cam.z,touch=LASTPT!=='mouse',minS=touch?44:28,RAD=60;let best=null,bs=1e9,near=null,nd=RAD;
  for(const u of G.units){if(u.ride||u.hp<=0)continue;const own=u.fam===0;if(u.inB!=null)continue;if(own){if(u.garrison!=null)continue}else{if(!G.sel.size||!visible(u))continue}
   const p=SPOS.get(u.id);if(!p)continue;const fx=(p.X-cam.x)*z,fy=(p.Y-cam.y)*z,h=Math.max((u.type=='boss'?BOSSH:(RIGH[u.type]||44))*z,minS),w=Math.max(h*0.55,minS);
-  const cx=fx,cy=fy-h*0.5,dx=Math.abs(sx-cx)/(w/2),dy=Math.abs(sy-cy)/(h/2+(touch?6:3));if(touch&&!own&&false){}const cd=Math.hypot(sx-cx,sy-cy)-(own?4:0);if(touch&&!G.sel.size&&cd<nd&&own){nd=cd;near=u}if(dx>1||dy>1)continue;
+  const cx=fx,cy=fy-h*0.5,dx=Math.abs(sx-cx)/(w/2),dy=Math.abs(sy-cy)/(h/2+(touch?6:3));if(touch&&!own&&false){}const cd=Math.hypot(sx-cx,sy-cy)-(own?4:0);if(touch&&!G.sel.size&&cd<nd&&own&&!u.petty){nd=cd;near=u}if(dx>1||dy>1)continue;
   const sc=Math.hypot(dx,dy)-(own?0.15:0)-fy*1e-5;if(sc<bs){bs=sc;best=u}}
  if(!best&&near)best=near;return best?(best.fam===0?{u:best}:{e:best}):null}
 function groundPick(sx,sy){const wx=cam.x+sx/cam.z,wy=cam.y+sy/cam.z,fx=(wx/(TW/2)+wy/(TH/2))/2,fy=(wy/(TH/2)-wx/(TW/2))/2,x=Math.round(fx),y=Math.round(fy);
@@ -1383,7 +1514,7 @@ function choicePop(sx,sy,b,us){const el=$('choice');const en=us.some(u=>CFG.SMAS
   else if(c=='bomb'){const n=orderBomb(us,b);for(const u of us)if(u.type!='bomber')sendToB(u,b);ripple(d[0],d[1],'Bomb','#ff3b30')}
   G.target=d;G.targetT=performance.now();updUI()}}
 function buzz(ms){try{navigator.vibrate&&navigator.vibrate(ms)}catch(_){}}
-function selUnits(){return [...G.sel].map(id=>G.units.find(v=>v.id==id)).filter(u=>u&&u.garrison==null&&u.inB==null&&!u.ride)}
+function selUnits(){return [...G.sel].map(id=>G.units.find(v=>v.id==id)).filter(u=>u&&u.garrison==null&&u.inB==null&&!u.ride&&!u.petty)}
 function formationKeep(us,tx,ty){const n=us.length;if(n<2)return [[tx,ty]];let cx=0,cy=0;for(const u of us){cx+=u.x;cy+=u.y}cx/=n;cy/=n;
  let mr=0;for(const u of us)mr=Math.max(mr,Math.hypot(u.x-cx,u.y-cy));const lim=0.7*Math.sqrt(n)+0.6,sc=mr>lim?lim/mr:1;const used=new Set(),pool=formation(n*4,tx,ty),out=[];
  for(const u of us){let x=Math.round(tx+(u.x-cx)*sc),y=Math.round(ty+(u.y-cy)*sc);if(!isRoad(x,y)||used.has(y*N+x)||!astar(tx,ty,x,y)||Math.hypot(x-tx,y-ty)>lim+1){let best=null,bd=1e9;for(const q of pool){if(used.has(q[1]*N+q[0]))continue;const dd=Math.hypot(q[0]-x,q[1]-y);if(dd<bd){bd=dd;best=q}}if(best){x=best[0];y=best[1]}else{x=tx;y=ty}}
@@ -1391,12 +1522,13 @@ function formationKeep(us,tx,ty){const n=us.length;if(n<2)return [[tx,ty]];let c
 function formation(n,tx,ty){const out=[],seen=new Set([ty*N+tx]),q=[[tx,ty]];let h=0;while(h<q.length&&out.length<n){const[x,y]=q[h++];out.push([x,y]);
  for(const[dx,dy]of[[1,0],[0,1],[-1,0],[0,-1]]){const nx=x+dx,ny=y+dy;if(isRoad(nx,ny)&&!seen.has(ny*N+nx)){seen.add(ny*N+nx);q.push([nx,ny])}}}return out}
 function ripple(x,y,label,col){addFx({type:'ripple',x,y,label,col:col||'#ffd34d'})}
-function selectSimilar(u){const p=SPOS.get(u.id);for(const v of G.units)if(v.fam===0&&v.type===u.type&&v.garrison==null&&!v.ride&&Math.hypot(v.x-u.x,v.y-u.y)<10)G.sel.add(v.id);G.selPulse=performance.now();buzz(12)}
-function selectIdle(){for(const v of G.units)if(v.fam===0&&v.garrison==null&&!v.ride&&!v.path.length&&v.type!='boss')G.sel.add(v.id);G.selPulse=performance.now();buzz(10);updUI()}
+function selectSimilar(u){const p=SPOS.get(u.id);for(const v of G.units)if(v.fam===0&&v.type===u.type&&v.garrison==null&&!v.ride&&!v.petty&&Math.hypot(v.x-u.x,v.y-u.y)<10)G.sel.add(v.id);G.selPulse=performance.now();buzz(12)}
+function selectIdle(){for(const v of G.units)if(v.fam===0&&v.garrison==null&&!v.ride&&!v.petty&&!v.path.length&&v.type!='boss')G.sel.add(v.id);G.selPulse=performance.now();buzz(10);updUI()}
 function snapOrder(us){G._undo={t:performance.now(),s:us.map(u=>({u,path:u.path.map(q=>q.slice()),goB:u.goB,atB:u.atB,tgt:u.tgt,amove:u.amove,amDest:u.amDest,stance:u.stance,ride:u.ride,job:u.job}))}}
 function undoOrder(){const U=G._undo;G._undo=null;if(!U||performance.now()-U.t>450)return false;for(const o of U.s){const u=o.u;if(u.ride!==o.ride)continue;Object.assign(u,{path:o.path,goB:o.goB,atB:o.atB,tgt:o.tgt,amove:o.amove,amDest:o.amDest,stance:o.stance,job:o.job})}G.target=null;return true}
 function tap(sx,sy,dbl,o={}){if(G.over)return;if($('choice').style.display=='block'){$('choice').style.display='none';return}if(TAB){closeTab();return}if(G.panel){closePanel();return}let h=pick(sx,sy);const us=selUnits();
  if(h.spy){spyRecall(h.spy);buzz(12);updUI();return}
+ if(h.u&&h.u.petty){pettyTap(h.u);return}
  if(h.veh){if(us.length){orderBoard(us,h.veh);G.sel.clear()}else{G.selCar=h.veh.id;G.sel.clear()}buzz(10);updUI();renderABar&&renderABar();return}
  if(G.selCar!=null&&!us.length){const v=G.veh.find(w=>w.id===G.selCar);if(!v){G.selCar=null}else{if(h.u){G.selCar=null}else{const b=h.b&&!DECOR(h.b.type)?h.b:null;if(b)b._hl=performance.now();driveTo(v,b?b.door:(h.pt||h.road||[v.x,v.y]),b);buzz(10);updUI();return}}}
  if(o.order){if(!us.length&&G.selCar==null)return;if(h.u)h={road:[Math.round(h.u.x),Math.round(h.u.y)]}}
@@ -1465,15 +1597,15 @@ cv.addEventListener('pointermove',e=>{if(!ptrs.has(e.pointerId))return;e.prevent
  else if(drag&&drag.box){drag.box[2]=e.clientX;drag.box[3]=e.clientY;if(Math.hypot(drag.box[2]-drag.box[0],drag.box[3]-drag.box[1])>DEAD_T)drag.boxShow=true}
  else if(drag){const dx=e.clientX-drag.sx,dy=e.clientY-drag.sy;if(Math.hypot(dx,dy)>8)clearTimeout(lpT);if(!drag.moved&&Math.hypot(dx,dy)>DEAD_T){drag.moved=true;drag.sx=e.clientX;drag.sy=e.clientY;drag.cx=cam.x;drag.cy=cam.y}
   if(drag.moved){cam.x=drag.cx-(e.clientX-drag.sx)/cam.z;cam.y=drag.cy-(e.clientY-drag.sy)/cam.z;clamp();drag.hist.push([performance.now(),e.clientX,e.clientY]);if(drag.hist.length>6)drag.hist.shift()}}});
-function touchToggle(id){const u=G.units.find(v=>v.id===id);if(!u)return;if(G.sel.has(id))G.sel.delete(id);else{G.sel.add(id);G.selPulse=performance.now()}buzz(8);updUI();renderABar&&renderABar()}
+function touchToggle(id){const u=G.units.find(v=>v.id===id);if(!u)return;if(u.petty){pettyTap(u);return}if(G.sel.has(id))G.sel.delete(id);else{G.sel.add(id);G.selPulse=performance.now()}buzz(8);updUI();renderABar&&renderABar()}
 function endPtr(e,cancel){if(!ptrs.has(e.pointerId))return;const was=ptrs.size;
  if(!cancel&&was==1&&drag&&drag.dbl&&!drag.boxShow){drag.box=null;lastTap={t:0,x:0,y:0};const hu=hitUnit2(e.clientX,e.clientY);
    if(hu&&hu.u)touchToggle(hu.u.id);else{undoOrder();G.sel.clear();G.selCar=null;G.mode=null;buzz(6);updUI();renderABar&&renderABar()}}
  else if(!cancel&&was==1&&drag&&drag.dbl&&drag.boxShow&&!drag.mouse){const[x0,y0,x1,y1]=drag.box,a=Math.min(x0,x1),b=Math.max(x0,x1),c=Math.min(y0,y1),d=Math.max(y0,y1);undoOrder();G.sel.clear();let n=0;const R0=cv.getBoundingClientRect();
-  for(const u of G.units)if(u.fam===0&&u.garrison==null&&!u.ride){const s=SPOS.get(u.id);if(!s)continue;const ux=(s.X-cam.x)*cam.z+R0.left,uy=(s.Y-cam.y)*cam.z-15*cam.z+R0.top;if(ux>=a-12&&ux<=b+12&&uy>=c-12&&uy<=d+12){G.sel.add(u.id);n++}}
+  for(const u of G.units)if(u.fam===0&&u.garrison==null&&!u.ride&&!u.petty){const s=SPOS.get(u.id);if(!s)continue;const ux=(s.X-cam.x)*cam.z+R0.left,uy=(s.Y-cam.y)*cam.z-15*cam.z+R0.top;if(ux>=a-12&&ux<=b+12&&uy>=c-12&&uy<=d+12){G.sel.add(u.id);n++}}
   if(n){G.selPulse=performance.now();buzz(12)}drag.box=null;lastTap={t:0,x:0,y:0};updUI();renderABar&&renderABar()}
  else if(!cancel&&was==1&&drag&&drag.box){const[x0,y0,x1,y1]=drag.box,a=Math.min(x0,x1),b=Math.max(x0,x1),c=Math.min(y0,y1),d=Math.max(y0,y1);let n=0;if(drag.mouse&&!e.shiftKey&&Math.hypot(x1-x0,y1-y0)>DEAD)G.sel.clear();
-  for(const u of G.units)if(u.fam===0&&u.garrison==null&&!u.ride){const s=SPOS.get(u.id);if(!s)continue;const ux=(s.X-cam.x)*cam.z,uy=(s.Y-cam.y)*cam.z-15*cam.z;if(ux>=a-12&&ux<=b+12&&uy>=c-12&&uy<=d+12){G.sel.add(u.id);n++}}
+  for(const u of G.units)if(u.fam===0&&u.garrison==null&&!u.ride&&!u.petty){const s=SPOS.get(u.id);if(!s)continue;const ux=(s.X-cam.x)*cam.z,uy=(s.Y-cam.y)*cam.z-15*cam.z;if(ux>=a-12&&ux<=b+12&&uy>=c-12&&uy<=d+12){G.sel.add(u.id);n++}}
   if(n){G.selPulse=performance.now();buzz(12)}drag.box=null;updUI()}
  else if(!cancel&&was==1&&drag){if(!drag.moved){const now=performance.now(),x=e.clientX,y=e.clientY;
    lastTap={t:now,x,y};if(drag.onUnit!=null&&_free())touchToggle(drag.onUnit);else tap(x,y)}
@@ -1564,12 +1696,14 @@ function openSettings(back){showModal(settingsHTML(back))}
 function resetSave(el){if(el.dataset.c){ST.del();el.textContent='DELETED';updTitle()}else{el.dataset.c=1;el.textContent='TAP AGAIN'}}
 const HOWTO=[
  ['The Family','p_boss','You are the Don. Your <b>Boss</b> must survive: if he dies, the family is finished. Tap crew in the bar below to select them, then tap a street or building to send them.'],
- ['Controls','p_thug','<b>Touch:</b> tap a gangster to select him, tap again to deselect (others stay selected). With men selected, tap a street to walk there (the first man stops exactly where you tapped, the rest stand beside him), or tap a building (anywhere on its picture) to send them to its door to capture, attack or move in, or tap an enemy to attack. A building turns <b>see-through</b> when one of your men is behind it; while it is see-through, taps go straight through it to the road behind. <b>Double-tap and hold, then drag</b> to draw a box round several men. <b>Double-tap empty ground</b> to clear the selection. One finger drags the map, pinch to zoom, long-press a building for its info. <b>Dame:</b> select her and tap any building to send her inside; a pink badge shows where she is (G = guards). Tap the badge or press Recall on the Intel page to bring her out. <b>Cars:</b> new cars park at your Hideout. Select up to 4 men and tap the car to board; tap the car to select it, then tap a street or building to drive there (they get out at the door), or press Unload. <b>Mouse:</b> click or drag a box to select (Shift adds), right-click to order, right/middle-drag or WASD to pan, wheel to zoom, Esc to clear. <b>Landscape:</b> the game is played sideways. Tabs sit on the left rail, pages and building info slide in from the right so the map stays in view, the selection chip is bottom-left and the order bar bottom-right.'],
+ ['Controls','p_thug','<b>Touch:</b> tap a gangster to select him, tap again to deselect (others stay selected). With men selected, tap a street to walk there (the first man stops exactly where you tapped, the rest stand beside him), or tap a building (anywhere on its picture) to send them to its door to capture, attack or move in, or tap an enemy to attack. A building turns <b>see-through</b> when one of your men is behind it; while it is see-through, taps go straight through it to the road behind. <b>Double-tap and hold, then drag</b> to draw a box round several men. <b>Double-tap empty ground</b> to clear the selection. One finger drags the map, pinch to zoom, long-press a building for its info. <b>Dame:</b> select her and tap any building to send her inside; a pink badge shows where she is (G = guards). Tap the badge or press Recall on the Intel page to bring her out. <b>Cars:</b> new cars park at your Hideout. Select up to 4 men and tap the car to board; tap the car to select it, then tap a street or building to drive there (they get out at the door), or press Unload. <b>Mouse:</b> click or drag a box to select (Shift adds), right-click to order, right/middle-drag or WASD to pan, wheel to zoom, Esc to clear. <b>Full screen on iPhone:</b> in Safari tap Share, then Add to Home Screen, and start the game from the new icon. <b>Landscape:</b> the game is played sideways. Tabs sit on the left rail, pages and building info slide in from the right so the map stays in view, the selection chip is bottom-left and the order bar bottom-right.'],
  ['Crew','p_thug','Hire <b>Thugs</b> at your Hideout. Rackets unlock better crew: a Speakeasy gives <b>Enforcers</b>, a Gun Store <b>Hitmen</b>, a Casino <b>Dames</b> (spies). Long trips are made by car.'],
+ ['Petty Crime','p_thug','Open your <b>Hideout</b> and pick the <b>Petty Crime</b> tab. Use + and − to put idle thugs on a job: <b>Pickpocket</b> (small money, quiet), <b>Mug</b> (more money, more noise), <b>Burgle</b> a tenement or apartment house (good money, takes hours), <b>Shake down</b> corner shops for protection (steady), or <b>Run numbers</b> on a street corner (steady, quiet). Each man goes out on his own, finds a mark, does the job, walks home and hands in dirty cash. Men on a job can\'t take orders; tap one twice, or use Recall in the tab, to bring him back. Most jobs go unnoticed, but sometimes word gets out (a little heat). If a beat cop is close he may see it: more heat, and he may <b>arrest</b> your man. An arrested thug sits in the cells for a day and the police case grows. The tab shows who is on each job, today\'s take and arrests. Stealing cars is not a petty job: send a Driver to do it yourself.'],
+ ['Civilians','p_dame','Ordinary folk walk the streets, go in and out of buildings and run for it when fists or bullets fly. You can\'t order them about; your pickpockets and muggers work them over.'],,
  ['Rackets & Chains','t_Speakeasy','Businesses earn only when their supplier is yours too: <b>Distillery → Warehouse → Speakeasy</b>, <b>Gun Factory → Gun Store</b>, <b>Print Shop → Casino</b>. A <b>Laundry</b> cleans dirty cash. Cut a rival\'s chain to starve him.'],
  ['Territory','t_Hideout','Own every business on a city block and it becomes your <b>territory</b>, glowing in your colour when zoomed out. Territory pays <b>+10%</b> income.'],
  ['Guards','p_enforcer','Tap your building and press <b>+ Guard</b>: a free thug walks over and garrisons it. Attackers must beat the guards before they can take the building.'],
- ['Police & Heat','t_Police','<b>Heat</b> is the noise your men make: fights, shootings, smashing, bombing, killings, stealing or wrecking cars and hitting cops. It cools off over time. High heat means more beat cops, and they hang around your buildings. The <b>Case file</b> is the paper trail of your rackets; it only grows, and when it is full the squad raids. The top bar shows both as a small "Heat · Case" line; tap it or the <b>Police</b> tab for the full police file: what is driving your heat, what each racket adds to the case per day, days until the next raid and which joint they would hit, lawyers in court, pay-offs and recent raids.'],
+ ['Police & Heat','t_Police','Only a handful of beat cops walk the city, and they only notice what happens close to them. More cops come out once your heat passes 40. <b>Heat</b> is the noise your men make: fights, shootings, smashing, bombing, killings, stealing or wrecking cars and hitting cops. It cools off over time. High heat means more beat cops, and they hang around your buildings. The <b>Case file</b> is the paper trail of your rackets; it only grows, and when it is full the squad raids. The top bar shows both as a small "Heat · Case" line; tap it or the <b>Police</b> tab for the full police file: what is driving your heat, what each racket adds to the case per day, days until the next raid and which joint they would hit, lawyers in court, pay-offs and recent raids.'],
  ['Smash & Bomb','p_bomber','With <b>Thugs</b> or <b>Enforcers</b> selected, tap any rival <i>or neutral</i> business and choose <b>Smash</b> (enforcers work 2x faster; a group adds up). It is shut for <b>2 hours</b>: no income, its chain breaks, and a smashed neutral can\'t be captured until it recovers. A <b>Bomber</b> with a bomb in stock turns it to rubble for <b>24 hours</b>, no rebuild for the first 12. Hideouts and Police HQ can\'t be hit. Both bring heat.'],
  ['Clean Money','t_Laundry','Businesses pay <b>dirty cash</b>: hire crew and pay repairs with it, but sitting on a big pile of it draws <b>heat</b>. A <b>Laundry</b> turns it <b>clean</b> (upgrade the Laundry to wash faster). Clean cash buys building upgrades, guns, cars and bombs.'],
  ['Upgrades & Gear','t_GunFactory','Tap your business to <b>upgrade</b> it to ★★ and ★★★ for more income and output. Upgrades stay with the building if it is captured, and a bomb knocks it back to ★. Own a running Gun Store to buy pistols (arm thugs for ranged fire) and tommy guns (one per Hitman) at a Gun Store. See it all in the <b>Stock</b> tab.'],
@@ -1588,8 +1722,14 @@ function openHowTo(back){HP=Math.max(0,Math.min(HOWTO.length-1,HP));const[p,img,
  <div class="dots">${HOWTO.map((_,i)=>`<i class="${i==HP?'on':''}"></i>`).join('')}</div>
  <div class="hnav">${btn('‹ Prev',`HP--;openHowTo('${back}')`,'mbtn sm',HP==0)}${btn('Back',`HP=0;${back}()`,'mbtn sm')}${btn('Next ›',`HP++;openHowTo('${back}')`,'mbtn sm',HP==HOWTO.length-1)}</div>`)}
 function openCredits(){showModal(`<h2>Credits</h2><p class="htxt" style="text-align:center">${CFG.TITLE}<br>Prototype build<br><br>Design &amp; direction: you<br>Code, art processing &amp; sound: Grok Bot<br>Procedural jazz &amp; rain: WebAudio<br><br>Fonts: Limelight, Poiret One (OFL)</p>${btn('Back','titleMenu()')}`)}
+const IOSD=/iPhone|iPad|iPod/.test(navigator.userAgent)||(navigator.platform=='MacIntel'&&navigator.maxTouchPoints>1);
+const STANDALONE=!!(navigator.standalone||(matchMedia&&(matchMedia('(display-mode: standalone)').matches||matchMedia('(display-mode: fullscreen)').matches)));
+if(STANDALONE)document.documentElement.classList.add('sa');
+function fsHint(){const e=document.getElementById('fshint');if(!e)return;let off=false;try{off=localStorage.getItem('bprt_fshint')=='off'}catch(_){}e.style.display=IOSD&&!STANDALONE&&!off?'flex':'none'}
+function fsHintOff(){try{localStorage.setItem('bprt_fshint','off')}catch(_){}fsHint()}
+function goFull(){if(STANDALONE||IOSD)return;try{const d=document.documentElement,rq=d.requestFullscreen||d.webkitRequestFullscreen;if(rq&&!document.fullscreenElement){const r=rq.call(d,{navigationUI:'hide'});if(r&&r.then)r.then(()=>{try{screen.orientation&&screen.orientation.lock&&screen.orientation.lock('landscape').catch(()=>{})}catch(_){}}).catch(()=>{})}}catch(_){}}
 function titleMenu(){hideModal();document.getElementById('title').style.display='flex';updTitle()}
-function updTitle(){const c=document.getElementById('bcont');if(c)c.disabled=!ST.has()}
+function updTitle(){fsHint();const c=document.getElementById('bcont');if(c)c.disabled=!ST.has()}
 // --- pause
 function openPause(){if(G.over)return;G.paused=true;showModal(`<h2>Paused</h2><div class="sub2">Day ${Math.floor(G.t/CFG.DAY)+1}</div>${btn('Resume','resume()')}${btn('Settings',"openSettings('openPause')")}${btn('How to Play',"openHowTo('openPause')")}${btn('Quit to Title','quitTitle()')}`)}
 function resume(){hideModal();G.paused=false}
@@ -1600,7 +1740,7 @@ function saveGame(){if(!G.started||G.over||G.away)return;try{
  const st={v:1,wall:Date.now(),t:G.t,uid:G.uid,rs,VID,acc:[combatAcc,aiAcc,polAcc,witAcc],log:G.log,fam:FAM,
   bld:G.bld.map(b=>{const o={};for(const k in b){const v=b[k];if(k[0]!='_'&&(v===null||typeof v!='object'))o[k]=v}return o}),
   units:G.units.map(u=>({...u,atB:bIdx(u.atB),goB:bIdx(u.goB),ride:u.ride?u.ride.id:null,fin:u.fin?[u.fin[0],u.fin[1],bIdx(u.fin[2])]:null})),
-  cg:G.cars.map((c,i)=>c.gone?i:-1).filter(i=>i>=0),veh:G.veh.map(v=>({...v,riders:v.riders.map(u=>u.id)})),cam:[cam.x,cam.y,cam.z],ais:[G.aiSpies,G.aiWatch,aiSpyId],hl:[G.heatLog,G.raids]};
+  cg:G.cars.map((c,i)=>c.gone?i:-1).filter(i=>i>=0),veh:G.veh.map(v=>({...v,riders:v.riders.map(u=>u.id)})),cam:[cam.x,cam.y,cam.z],ais:[G.aiSpies,G.aiWatch,aiSpyId],hl:[G.heatLog,G.raids],pj:[G.jail,G.petty]};
  ST.put(JSON.stringify(st))}catch(e){console.warn('save failed',e)}}
 // ---- persistence: localStorage + IndexedDB mirror; newest copy wins ----
 const ST={ls:false,idb:false,cache:null,
@@ -1619,7 +1759,7 @@ function loadGame(){const st=JSON.parse(ST.cache||'null');if(!st)return false;G.
  st.fam.forEach((f,i)=>Object.assign(FAM[i],f));st.bld.forEach((o,i)=>Object.assign(G.bld[i],o));G.bld.forEach(b=>{if(b.base)b.type='Courthouse'});
  const B=i=>i>=0?G.bld[i]:null;G.veh=st.veh.map(v=>({...v,riders:[]}));const VM=new Map(G.veh.map(v=>[v.id,v]));
  G.units=st.units.map(u=>({...u,atB:B(u.atB),goB:B(u.goB),ride:u.ride!=null?VM.get(u.ride)||null:null,fin:u.fin?[u.fin[0],u.fin[1],B(u.fin[2])]:null}));
- G.units.forEach(u=>{if(u.ride)u.ride.riders.push(u)});(st.cg||[]).forEach(i=>{if(G.cars[i])G.cars[i].gone=1});FAM.forEach(f=>{f.inv=Object.assign({pistol:0,tommy:0,bomb:0,car:0,booze:0,guns:0},f.inv||{});if(f.bombT==null)f.bombT=-1e9});G.sel=new Set();if(st.ais){[G.aiSpies,G.aiWatch,aiSpyId]=st.ais}if(st.hl){[G.heatLog,G.raids]=st.hl}FAM.forEach(f=>{if(f.war==null)f.war=false});initPoliceLater=0;
+ G.units.forEach(u=>{if(u.ride)u.ride.riders.push(u)});(st.cg||[]).forEach(i=>{if(G.cars[i])G.cars[i].gone=1});FAM.forEach(f=>{f.inv=Object.assign({pistol:0,tommy:0,bomb:0,car:0,booze:0,guns:0},f.inv||{});if(f.bombT==null)f.bombT=-1e9});G.sel=new Set();if(st.ais){[G.aiSpies,G.aiWatch,aiSpyId]=st.ais}if(st.hl){[G.heatLog,G.raids]=st.hl}if(st.pj){G.jail=st.pj[0]||[];G.petty=Object.assign({day:0,earn:{},arr:{},tot:0,tarr:0},st.pj[1]||{})}FAM.forEach(f=>{if(f.war==null)f.war=false});initPoliceLater=0;
  if(st.cam){cam.x=st.cam[0];cam.y=st.cam[1];cam.z=st.cam[2]}return true}
 setInterval(()=>{if(G.started&&!G.over)saveGame()},(CFG.AUTOSAVE||15)*1000);
 document.addEventListener('visibilitychange',()=>{if(document.hidden)saveGame()});addEventListener('pagehide',()=>saveGame());addEventListener('beforeunload',()=>saveGame());
