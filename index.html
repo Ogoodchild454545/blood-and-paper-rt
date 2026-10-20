@@ -2,7 +2,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="build" content="RT v0.12 pre-alpha · 20 Oct 16:20">
+<meta name="build" content="RT v0.13 pre-alpha · 20 Oct 20:06">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -192,7 +192,7 @@ html.sa #top{padding-top:max(var(--st),4px)}
 </style></head><body>
 <canvas id="c"></canvas>
 <div id="rot"><div class="rph"></div><h2>Turn the paper sideways</h2><p>Blood and Paper is played in landscape. Rotate your phone; the game waits for you.</p></div>
-<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT v0.12 pre-alpha · 20 Oct 16:20</div>
+<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT v0.13 pre-alpha · 20 Oct 20:06</div>
 <div id="top" class="deco">
  <div class="r"><span id="cash">$0</span><span id="inc"></span><button class="ib" id="tb-menu" title="Menu" onclick="openPause()"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button></div>
  <div class="r"><span id="donst" style="display:none"></span><span id="hc" onclick="openTab('police')">Heat 0 · Case 0</span>
@@ -200,7 +200,7 @@ html.sa #top{padding-top:max(var(--st),4px)}
   <button class="ib" id="tb-intel" title="Intel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.8-6.5 10-6.5S22 12 22 12s-3.8 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button><button class="ib" id="tb-fam" title="Families"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8l8 3v6.2c0 5-3.6 8.2-8 9.4-4.4-1.2-8-4.4-8-9.4V5.8zM12 7v9M8.5 10.5h7"/></svg></button></div>
 </div>
 <div id="toast"></div>
-<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div class="tver" style="margin-top:4px;font:bold 13px Georgia,serif;letter-spacing:2px;color:#e6c56a;text-transform:uppercase">v0.12 pre-alpha</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT v0.12 pre-alpha · 20 Oct 16:20</div>
+<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div class="tver" style="margin-top:4px;font:bold 13px Georgia,serif;letter-spacing:2px;color:#e6c56a;text-transform:uppercase">v0.12 pre-alpha</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT v0.13 pre-alpha · 20 Oct 20:06</div>
 <button class="mbtn pri" onclick="goFull();newGame()">New Game</button><button class="mbtn" id="bcont" onclick="goFull();startGame(true)">Continue</button>
 <button class="mbtn" onclick="openSettings('titleMenu')">Settings</button><button class="mbtn" onclick="openHowTo('titleMenu')">How to Play</button><button class="mbtn" onclick="openCredits()">Credits</button></div></div>
 <div id="mwrap"><div id="modal" class="deco"></div></div>
@@ -662,7 +662,7 @@ function stepDriveBy(v){const D=v.db,C=CFG.DRIVEBY;let t=D.u!=null?G.units.find(
   // keep rolling: a getaway a few tiles on
   const dx=v.x-D.from[0],dy=v.y-D.from[1],L=Math.hypot(dx,dy)||1,ex=nearRoad(Math.round(v.x+dx/L*C.AWAY),Math.round(v.y+dy/L*C.AWAY));if(ex){const keep=v.db;driveTo(v,ex,null);v.db=keep}}
  if(D.fired&&!v.path.length)v.db=null}
-function wreckCar(v,by){if(!G.veh.includes(v))return;if(typeof by=='number')addHeat(by,CFG.HEAT.WRECK,'wrecked a car');badAct(by,v.fam,'a car was wrecked');G.veh=G.veh.filter(w=>w!==v);addFx({type:'boom',b:null,x:v.x,y:v.y,small:1,parts:Array.from({length:10},()=>[Math.random()*6.28,30+Math.random()*60,Math.random()])});sfx&&sfx('boom',v.x,v.y);
+function wreckCar(v,by){if(!G.veh.includes(v))return;const sq=v.kind=='pcar'&&v.squad!=null;if(sq)for(const u of v.riders)u.hp=0;if(typeof by=='number'&&!sq)addHeat(by,CFG.HEAT.WRECK,'wrecked a car');badAct(by,v.fam,'a car was wrecked');G.veh=G.veh.filter(w=>w!==v);addFx({type:'boom',b:null,x:v.x,y:v.y,small:1,parts:Array.from({length:10},()=>[Math.random()*6.28,30+Math.random()*60,Math.random()])});sfx&&sfx('boom',v.x,v.y);
  G.wrecks.push({x:v.x,y:v.y,dir:v.dir,t:G.t});if(v.fam!=null&&FAM[v.fam]){FAM[v.fam].inv.car=Math.max(0,FAM[v.fam].inv.car-1);if(v.fam===0)log('Your car was destroyed!',1)}
  for(const u of [...v.riders]){u.ride=null;u.x=Math.round(v.x);u.y=Math.round(v.y);u.fin=null;u.hp-=8;if(u.hp<=0)kill(u,by)}v.riders=[]}
 function orderSteal(us,ci){const c=G.cars[ci];let n=0;for(const u of us)if(u.type=='driver'){u.job={k:'steal',c:ci,p:0};u.tgt=null;const r=nearRoad(c.x,c.y)||[c.x,c.y];sendTo(u,r[0],r[1],null,true);n++}return n}
@@ -704,9 +704,9 @@ function hitUnit(a,t){if(t.inB!=null)return;reveal(a);reveal(t);if(typeof a.fam=
  else addFx({type:'spark',b:t.id,bx:t.x,by:t.y,d:impact-now});
  if(SET.dmgnum)addFx({type:'dmg',b:t.id,bx:t.x,by:t.y,d:impact-now,v:Math.max(1,Math.round(dmg)),c:t.fam===0?'#ff6b5a':'#ffe08a'});
  if((dmg>=4||t.hp<=0))G.shakeQ={t:impact,x:t.x,y:t.y,amp:t.hp<=0?5:3};
- if(t.fam==='police'&&a.fam!=='police'){const f=FAM[a.fam];addHeat(a.fam,F.COP_HIT_HEAT,'hit a cop',t.x,t.y);addHeat(a.fam,CFG.HEAT.COP_HIT);if(G.t-(G.copAggro[a.fam]??-1e9)>F.COP_AGGRO/2&&a.fam===0)log('You attacked the police! Heat rising.',1);G.copAggro[a.fam]=G.t}
+ if(t.fam==='police'&&a.fam!=='police'&&t.squad==null){const f=FAM[a.fam];addHeat(a.fam,F.COP_HIT_HEAT,'hit a cop',t.x,t.y);addHeat(a.fam,CFG.HEAT.COP_HIT);if(G.t-(G.copAggro[a.fam]??-1e9)>F.COP_AGGRO/2&&a.fam===0)log('You attacked the police! Heat rising.',1);G.copAggro[a.fam]=G.t}
  if(t.mood==='def'&&t.garrison==null&&!t.ride){if(t.stance!=='retreat'){t.tgt=null;const hq=hqOf(t.fam);t.stance='retreat';if(hq)sendToB(t,hq)}}else if(t.tgt==null&&t.stance!=='retreat')t.tgt=a.id;
- if(t.hp<=0){a.kills=(a.kills||0)+1;addFx({type:'death',u:{...t,path:[]},kb:[t.x-a.x,t.y-a.y],d:impact-now});if(t.fam==='police'){chalkFor(t);if(a.fam!=='police'){const f=FAM[a.fam];addHeat(a.fam,F.COP_KILL_HEAT,'killed a cop',t.x,t.y);addDHeat(t.x,t.y,CFG.DIST.COP_KILL);if(t.chase!=null)endChase(t,'gone');addHeat(a.fam,CFG.HEAT.COP_KILL,'killed a cop');if(a.fam===0)log('A cop is dead! Every squad car in town is coming for you.',1);f.lastRaid=-1e9;polAcc=CFG.POLICE_TICK;G.copAggro[a.fam]=G.t}G.units=G.units.filter(v=>v!==t);G.copDeadT=G.t}
+ if(t.hp<=0){a.kills=(a.kills||0)+1;addFx({type:'death',u:{...t,path:[]},kb:[t.x-a.x,t.y-a.y],d:impact-now});if(t.fam==='police'){chalkFor(t);if(a.fam!=='police'&&t.squad==null){const f=FAM[a.fam];addHeat(a.fam,F.COP_KILL_HEAT,'killed a cop',t.x,t.y);addDHeat(t.x,t.y,CFG.DIST.COP_KILL);if(t.chase!=null)endChase(t,'gone');addHeat(a.fam,CFG.HEAT.COP_KILL,'killed a cop');if(a.fam===0)log('A cop is dead! Every squad car in town is coming for you.',1);f.lastRaid=-1e9;polAcc=CFG.POLICE_TICK;G.copAggro[a.fam]=G.t}G.units=G.units.filter(v=>v!==t);G.copDeadT=G.t}
   else{if(t.fam===0&&a.fam!==0&&t.type!='boss')log('Your '+CFG.UNITS[t.type].name+' was gunned down',1);else if(a.fam===0)log('Your crew took out a '+(t.fam==='police'?'cop':FAM[t.fam].name+' '+CFG.UNITS[t.type].name),1);kill(t,a.fam)}
   a.tgt=null;if(a.amove&&a.amDest){sendTo(a,...a.amDest,null,true)}}}
 function stepField(dt){const F=CFG.FIELD||CFG.FIGHT;fieldAcc+=dt;if(fieldAcc<F.TICK)return;fieldAcc=0;
@@ -715,7 +715,7 @@ function stepField(dt){const F=CFG.FIELD||CFG.FIGHT;fieldAcc+=dt;if(fieldAcc<F.T
   let t=u.tgt!=null?alive(u.tgt):null;if(t&&(t.ride||Math.hypot(t.x-u.x,t.y-u.y)>F.LEASH||(u.fam==='police'&&!hostile(u,t)&&t.fam!=='police')))t=null;
   if(!t){u.tgt=null;if(u.atB&&!u.amove)continue;if(u.path.length&&!u.amove&&u.fam===0&&u.mood!=='agg')continue;if(u.mood==='def'||u.petty&&u.petty.st=='work')continue;
    const R=u.stance==='hold'?F.HOLD_RANGE:u.mood==='agg'?F.AGGRO*2:F.AGGRO;let bd=R;for(const v of G.units){if(!hostile(u,v))continue;const d=Math.hypot(v.x-u.x,v.y-u.y);if(d<bd){bd=d;t=v}}if(t)u.tgt=t.id}
-  if(!t&&isGun(u)&&!u.path.length){const cv=G.veh.find(v=>v.kind=='car'&&v.fam!==u.fam&&(u.fam==='police'||v.fam==='police'||atWar(u.fam,v.fam))&&(u.fam!=='police'||G.t-(G.copAggro[v.fam]??-1e9)<F.COP_AGGRO)&&Math.hypot(v.x-u.x,v.y-u.y)<=F.GUN);if(cv){badAct(u.fam,cv.fam,'shots fired at a car');cv.hp=(cv.hp??CFG.CAR.HP)-str(u)*(0.6+Math.random()*0.6)*carTough(cv);cv.hitT=performance.now();u.atk=performance.now();u.atkGun=true;u.atkTo=null;const dx=cv.x-u.x,dy=cv.y-u.y;u.dir=Math.abs(dx)>Math.abs(dy)?(dx>0?'se':'nw'):(dy>0?'sw':'ne');sfx&&sfx(u.type=='hitman'?'tommy':'shots',u.x,u.y);if(cv.hp<=0)wreckCar(cv,u.fam);continue}}
+  if(!t&&isGun(u)&&!u.path.length){const cv=G.veh.find(v=>v.kind=='pcar'&&v.squad!=null&&v.riders.length&&sqOf({squad:v.squad})?.f===u.fam&&Math.hypot(v.x-u.x,v.y-u.y)<=F.GUN||v.kind=='car'&&v.fam!==u.fam&&(u.fam==='police'||v.fam==='police'||atWar(u.fam,v.fam))&&(u.fam!=='police'||G.t-(G.copAggro[v.fam]??-1e9)<F.COP_AGGRO)&&Math.hypot(v.x-u.x,v.y-u.y)<=F.GUN);if(cv){badAct(u.fam,cv.fam,'shots fired at a car');cv.hp=(cv.hp??(cv.kind=='pcar'?CFG.SQUAD.CAR_HP:CFG.CAR.HP))-str(u)*(0.6+Math.random()*0.6)*carTough(cv);cv.hitT=performance.now();u.atk=performance.now();u.atkGun=true;u.atkTo=null;const dx=cv.x-u.x,dy=cv.y-u.y;u.dir=Math.abs(dx)>Math.abs(dy)?(dx>0?'se':'nw'):(dy>0?'sw':'ne');sfx&&sfx(u.type=='hitman'?'tommy':'shots',u.x,u.y);if(cv.hp<=0)wreckCar(cv,u.fam);continue}}
   if(!t)continue;const d=Math.hypot(t.x-u.x,t.y-u.y),rng=isGun(u)?F.GUN:u.stance==='hold'?Math.min(F.HOLD_RANGE,F.MELEE):F.MELEE;
   if(d<=rng){if(u.path.length&&!u.goB)u.path=[];const dx=t.x-u.x,dy=t.y-u.y;u.dir=Math.abs(dx)>Math.abs(dy)?(dx>0?'se':'nw'):(dy>0?'sw':'ne');hitUnit(u,t)}
   else if(u.garrison!=null){u.tgt=null}
@@ -770,14 +770,14 @@ function jailBoss(u,why,fine){const C=CFG.CHASE,F=FAM[u.fam];if(!u||u.hp<=0)retu
  u.jail=G.t+(why==='case'?C.CASE_JAIL:C.BOSS_JAIL);u.exposed=0;u.caseJail=why==='case';u.path=[];u.atB=null;u.goB=null;u.tgt=null;u.petty=null;u.ride=null;u.inB=null;u.wanted=null;u.estB=null;G.sel.delete(u.id);if(u.fam===0&&WH.u===u.id)closeWheel();const pd=PHQB.door;u.x=pd[0];u.y=pd[1];
  if(why!=='case')return;
  news(u.fam===0?'The police squad arrested the Don. He sits in a cell at Police HQ for '+fmtH(u.jail-G.t)+'.':'The police squad arrested '+donNm(u)+'. He sits in a cell at Police HQ for '+fmtH(u.jail-G.t)+'.')}
-CFG.SQUAD={CARS:3,PER:2,DISMOUNT:3,ARREST:1.2,RACKETS:3};CFG.HUNT={ESCORT_R:6,EDGE:1.3,MAX:8};
+CFG.SQUAD={CARS:3,PER:2,DISMOUNT:3,ARREST:1.2,RACKETS:3,CAR_HP:160};CFG.HUNT={ESCORT_R:6,EDGE:1.3,MAX:8};
 function news(m){G.news=G.news||[];G.news.unshift({t:G.t,m});if(G.news.length>200)G.news.length=200;NSEEN.delete(m);notice(m,true);log(m,1)}
 const sqOf=u=>u&&u.squad!=null?(G.squads||[]).find(s=>s.id===u.squad):null;
 const donNm=u=>u.fam===0?'the Don':manName(u)+' ('+FAM[u.fam].name+')';
 function caseSucceed(f){const bs=G.units.find(u=>u.fam===f.id&&u.type=='boss');if(!bs||bs.hp<=0)return;f.lastRaid=G.t;
  if(bs.jail){jailBoss(bs,'case',0);f.case=CFG.CASE.AFTER_RAID;return}
  G.squads=G.squads||[];const S={id:++G.uid,f:f.id,boss:bs.id,cars:[],cops:[],t0:G.t},p=nearRoad(PHQB.door[0],PHQB.door[1])||PHQB.door;
- for(let k=0;k<CFG.SQUAD.CARS;k++){const v=mkVeh('pcar','police',p[0],p[1]);v.slot=[p[0],p[1],'se'];v.temp=1;v.squad=S.id;v.state='squad';v.siren=true;v.rp=0;G.veh.push(v);
+ for(let k=0;k<CFG.SQUAD.CARS;k++){const v=mkVeh('pcar','police',p[0],p[1]);v.slot=[p[0],p[1],'se'];v.temp=1;v.squad=S.id;v.state='squad';v.siren=true;v.rp=0;v.hp=CFG.SQUAD.CAR_HP;G.veh.push(v);
   for(let j=0;j<CFG.SQUAD.PER;j++){const c=spawn('police','police',p[0],p[1]);c.squad=S.id;c.rp=0;c.ride=v;v.riders.push(c);S.cops.push(c.id)}S.cars.push(v.id)}
  G.squads.push(S);sfx&&sfx('siren',p[0],p[1]);
  news('The police case against the '+f.name+' family went through. '+CFG.SQUAD.CARS+' police cars are on their way to arrest '+donNm(bs)+'.')}
@@ -785,12 +785,12 @@ function carHome(v){v.riders=[];const r=roadBfs(Math.round(v.x),Math.round(v.y),
 function endSquad(S){G.squads=G.squads.filter(q=>q!==S);G.units=G.units.filter(u=>u.squad!==S.id||u.hp<=0&&false);for(const vid of S.cars){const v=G.veh.find(w=>w.id===vid);if(v)carHome(v)}}
 function squadArrest(S,bs){const f=FAM[S.f],d=distOf(Math.round(bs.x),Math.round(bs.y)),bx=bs.x,by=bs.y;
  if(bs.ride){const v=bs.ride;v.riders=v.riders.filter(w=>w!==bs);bs.ride=null}jailBoss(bs,'case',0);
- const rk=G.bld.filter(b=>b.owner===S.f&&CFG.B[b.type].racket&&!b.dmg&&distOf(b.door[0],b.door[1])===d).sort((a,b)=>Math.hypot(a.door[0]-bx,a.door[1]-by)-Math.hypot(b.door[0]-bx,b.door[1]-by)).slice(0,CFG.SQUAD.RACKETS);
+ const sd=b=>distOf(b.door[0],b.door[1])===d?0:1,rk=G.bld.filter(b=>b.owner===S.f&&CFG.B[b.type].racket&&!b.dmg).sort((a,b)=>sd(a)-sd(b)||Math.hypot(a.door[0]-bx,a.door[1]-by)-Math.hypot(b.door[0]-bx,b.door[1]-by)).slice(0,CFG.SQUAD.RACKETS);
  for(const b of rk){setDmg(b,'smashed',CFG.SMASH.HOURS,'police');G.raids.unshift({t:G.t,f:S.f,b:b.id,type:b.type})}if(G.raids.length>12)G.raids.length=12;
  f.case=CFG.CASE.AFTER_RAID;f.lastRaid=G.t;f.heat=Math.max(0,f.heat-10);endSquad(S)}
 function stepSquads(dt){for(const S of [...(G.squads||[])]){const bs=G.units.find(u=>u.id===S.boss),cops=S.cops.map(id=>G.units.find(u=>u.id===id)).filter(c=>c&&c.hp>0);
   if(!bs||bs.hp<=0){endSquad(S);continue}
-  if(!cops.length){FAM[S.f].case=0;endSquad(S);news('The police squad sent for '+donNm(bs)+' was beaten off. The case against the '+FAM[S.f].name+' family is dropped.');continue}
+  if(!cops.length){FAM[S.f].case=0;FAM[S.f].heat=0;endSquad(S);news('The police squad sent for '+donNm(bs)+' was beaten off. The case against the '+FAM[S.f].name+' family is dropped.');continue}
   if(bs.jail){jailBoss(bs,'case',0);FAM[S.f].case=CFG.CASE.AFTER_RAID;endSquad(S);continue}
   const x=bs.ride?bs.ride.x:bs.x,y=bs.ride?bs.ride.y:bs.y;
   for(const vid of S.cars){const v=G.veh.find(w=>w.id===vid);if(!v||v.squad!==S.id||!v.riders.length)continue;const d=Math.hypot(v.x-x,v.y-y);
@@ -805,7 +805,7 @@ function aiHunt(f){for(const u of G.units)if(u.fam===f.id&&u.huntB!=null){const 
   const free=G.units.filter(u=>u.fam===f.id&&isGun(u)&&u.type!='boss'&&u.garrison==null&&!u.jail&&!u.ride&&u.hp>0&&!u.job&&!u.petty).sort((a,b)=>Math.hypot(a.x-bs.x,a.y-bs.y)-Math.hypot(b.x-bs.x,b.y-bs.y));
   const need=escortStr(bs)*CFG.HUNT.EDGE;let sm=0;const team=[];for(const u of free){if(sm>need||team.length>=CFG.HUNT.MAX)break;team.push(u);sm+=str(u)}
   bs.huntD=bs.huntD||{};bs.huntD[f.id]=sm>need?'hunt':'leave';if(sm<=need)continue;
-  for(const u of team){u.huntB=bs.id;u.tgt=bs.id;u.stance=null;u.atB=null;u.goB=null;sendTo(u,Math.round(bs.x),Math.round(bs.y),null,true)}}}
+  bs.warN=bs.warN||{};if(bs.warN[f.id]!==bs.exposed){bs.warN[f.id]=bs.exposed;if(bs.fam===0)provoke(f.id,'they went hunting your exposed Don');news('The '+f.name+' family has declared war on the '+FAM[bs.fam].name+' family and sent men to hunt '+donNm(bs)+'.')}for(const u of team){u.huntB=bs.id;u.tgt=bs.id;u.stance=null;u.atB=null;u.goB=null;sendTo(u,Math.round(bs.x),Math.round(bs.y),null,true)}}}
 
 function releaseBoss(u){const C=CFG.CHASE;u.jail=0;const pd=PHQB.door;u.x=pd[0];u.y=pd[1];u.path=[];u.atB=null;if(!u.caseJail){u.exposed=0;return}u.caseJail=false;u.exposed=G.t+C.BOSS_EXPOSE;u.rev=Math.max(u.rev||0,u.exposed);
  const m=u.fam===0?'The Don walks out of Police HQ. Every family knows where he is for '+fmtH(C.BOSS_EXPOSE)+': protect him.':manName(u)+' ('+FAM[u.fam].name+') walks out of Police HQ. Everyone can see him for '+fmtH(C.BOSS_EXPOSE)+'.';news(m)}
@@ -1521,7 +1521,7 @@ function drawVeh(v){const{X,Y}=iso(v.x,v.y);const hit=v.hitT&&performance.now()-
  if(selC){const pu=0.5+0.5*Math.sin(performance.now()/180);ctx.beginPath();ctx.ellipse(X,Y-2,34,16,0,0,7);ctx.strokeStyle=`rgba(255,215,110,${0.6+0.4*pu})`;ctx.lineWidth=3;ctx.stroke()}
  if(hit){ctx.save();ctx.filter='brightness(2)'}drawVehSprite(v.kind,v.dir,X,Y,v.kind=='car'?FAM[v.fam].col:null,v.siren);if(hit)ctx.restore();
  if(v.manual){const n=v.riders.length,t=n+'/'+CFG.CAR_SEATS_P,yy=Y-CARH-2;ctx.font='bold 12px Georgia,serif';const w=ctx.measureText(t).width+12;ctx.fillStyle=selC?'#2a1d0ef0':'#16120ee0';ctx.strokeStyle=n?'#d4a84b':'#7a6a4a';ctx.lineWidth=1.5;ctx.beginPath();ctx.roundRect?ctx.roundRect(X-w/2,yy-9,w,17,4):ctx.rect(X-w/2,yy-9,w,17);ctx.fill();ctx.stroke();ctx.fillStyle=n?'#f1dfa8':'#a89a7a';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(t,X,yy);ctx.textAlign='start';ctx.textBaseline='alphabetic'}
- if(v.kind=='car'&&v.hp!=null&&v.hp<CFG.CAR.HP){ctx.fillStyle='#000a';ctx.fillRect(X-18,Y-46,36,5);ctx.fillStyle=v.hp<CFG.CAR.HP*0.35?'#e0332b':'#e3b21f';ctx.fillRect(X-18,Y-46,36*Math.max(0,v.hp)/CFG.CAR.HP,5)}}
+ if(v.kind=='pcar'&&v.squad!=null&&v.hp!=null&&v.hp<CFG.SQUAD.CAR_HP){const M=CFG.SQUAD.CAR_HP,BY=Y-CARH-2;ctx.fillStyle='#000a';ctx.fillRect(X-22,BY,44,6);ctx.fillStyle=v.hp<M*0.35?'#e0332b':'#e3b21f';ctx.fillRect(X-22,BY,44*Math.max(0,v.hp)/M,5)}if(v.kind=='car'&&v.hp!=null&&v.hp<CFG.CAR.HP){ctx.fillStyle='#000a';ctx.fillRect(X-18,Y-46,36,5);ctx.fillStyle=v.hp<CFG.CAR.HP*0.35?'#e0332b':'#e3b21f';ctx.fillRect(X-18,Y-46,36*Math.max(0,v.hp)/CFG.CAR.HP,5)}}
 function drawCar(cr){if(SPR.x_car_se){const{X,Y}=iso(cr.x,cr.y);drawVehSprite('car',cr.ax?(cr.flip?'ne':'sw'):(cr.flip?'nw':'se'),X,Y,null);return}const{X,Y}=iso(cr.x,cr.y);const A=cr.ax?[-TW/2,TH/2]:[TW/2,TH/2],B=cr.ax?[TW/2,TH/2]:[-TW/2,TH/2];
  const pt=(a,b,h)=>[X+A[0]*a+B[0]*b,Y+A[1]*a+B[1]*b-h];
  const box=(l,w,h0,h1,col,off=0)=>{const P=[[-l,-w],[l,-w],[l,w],[-l,w]].map(([a,b])=>[a+off,b]);
