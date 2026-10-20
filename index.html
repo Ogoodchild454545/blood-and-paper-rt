@@ -2,7 +2,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="build" content="RT v0.12 pre-alpha · 19 Oct 23:40">
+<meta name="build" content="RT v0.12 pre-alpha · 20 Oct 16:20">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -192,7 +192,7 @@ html.sa #top{padding-top:max(var(--st),4px)}
 </style></head><body>
 <canvas id="c"></canvas>
 <div id="rot"><div class="rph"></div><h2>Turn the paper sideways</h2><p>Blood and Paper is played in landscape. Rotate your phone; the game waits for you.</p></div>
-<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT v0.12 pre-alpha · 19 Oct 23:40</div>
+<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT v0.12 pre-alpha · 20 Oct 16:20</div>
 <div id="top" class="deco">
  <div class="r"><span id="cash">$0</span><span id="inc"></span><button class="ib" id="tb-menu" title="Menu" onclick="openPause()"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button></div>
  <div class="r"><span id="donst" style="display:none"></span><span id="hc" onclick="openTab('police')">Heat 0 · Case 0</span>
@@ -200,7 +200,7 @@ html.sa #top{padding-top:max(var(--st),4px)}
   <button class="ib" id="tb-intel" title="Intel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.8-6.5 10-6.5S22 12 22 12s-3.8 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button><button class="ib" id="tb-fam" title="Families"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8l8 3v6.2c0 5-3.6 8.2-8 9.4-4.4-1.2-8-4.4-8-9.4V5.8zM12 7v9M8.5 10.5h7"/></svg></button></div>
 </div>
 <div id="toast"></div>
-<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div class="tver" style="margin-top:4px;font:bold 13px Georgia,serif;letter-spacing:2px;color:#e6c56a;text-transform:uppercase">v0.12 pre-alpha</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT v0.12 pre-alpha · 19 Oct 23:40</div>
+<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div class="tver" style="margin-top:4px;font:bold 13px Georgia,serif;letter-spacing:2px;color:#e6c56a;text-transform:uppercase">v0.12 pre-alpha</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT v0.12 pre-alpha · 20 Oct 16:20</div>
 <button class="mbtn pri" onclick="goFull();newGame()">New Game</button><button class="mbtn" id="bcont" onclick="goFull();startGame(true)">Continue</button>
 <button class="mbtn" onclick="openSettings('titleMenu')">Settings</button><button class="mbtn" onclick="openHowTo('titleMenu')">How to Play</button><button class="mbtn" onclick="openCredits()">Credits</button></div></div>
 <div id="mwrap"><div id="modal" class="deco"></div></div>
@@ -451,7 +451,7 @@ function sendTo(u,tx,ty,b,noCar){u.garrison=null;let EX=null;if(tx%1||ty%1){EX=[
 function sendToB(u,b){return sendTo(u,b.door[0],b.door[1],b)}
 const fams=()=>FAM.filter(f=>f.alive);
 function hire(f,t,b){b=b&&b.owner===f?b:hqOf(f);if(!b){if(f==0){const m='Earn '+money(CFG.ESTABLISH)+' to set up a hideout first. No hideout, no crew.';NSEEN.delete(m);notice(m,true)}return}const c=CFG.UNITS[t].cost;if(crewUsed(f)>=crewCap(f)){if(f==0)log('Crew is at the cap ('+crewCap(f)+'). Upgrade your Hideout to hire more.',1);return}if(!canPay(f,t)||!canHire(f,t)||!gearOK(f,t)){if(f==0&&!gearOK(f,t))log('A hitman needs a tommy gun. Buy one at a Gun Store.',1);return}{const ps=paySplit(f,t);FAM[f].dirty-=ps.d;FAM[f].clean-=ps.c;if(f===0&&t=='thug'){const m='Hired a thug. Paid '+(ps.d&&ps.c?money(ps.d)+' dirty and '+money(ps.c)+' clean':money(c)+' '+(ps.c?'clean':'dirty'))+'.';NSEEN.delete(m);notice(m,true)}}if(t=='hitman')FAM[f].inv.tommy--;const u=spawn(f,t,b.door[0],b.door[1]);u.atB=b;if(f==0)log('Hired a '+CFG.UNITS[t].name,1)}
-G.heatLog=[];G.raids=[];
+G.heatLog=[];G.raids=[];G.news=[];G.squads=[];
 function addHeat(f,n,why,x,y){if(x!=null)addDHeat(x,y,n);const F=FAM[f];if(!F||typeof f!='number')return;F.heat=Math.min(100,F.heat+n);if(f===0&&n>0){const k=why||'other';const L=G.heatLog,l=L[0];if(l&&l.why===k&&G.t-l.t<300){l.n+=n;l.t=G.t;l.c++}else{L.unshift({t:G.t,n,why:k,c:1});if(L.length>30)L.length=30}}if(f===0&&why&&n>=3)log('Heat +'+Math.round(n)+': '+why,0)}
 function caseBreak(fid){const C=CFG.CASE,F=FAM[fid],rows=[];let tot=0;
  for(const b of G.bld){if(b.owner!==fid||b.dmg)continue;const c=CFG.B[b.type];if(!active(b))continue;let d=0;if(c.racket)d+=C.RACKET_DAY*lvl(b);if(c.inc)d+=c.inc*lvM(b)/1000*C.PER_1K_DAY;d*=dMul(b);if(d>0){rows.push({b,d});tot+=d}}
@@ -472,7 +472,7 @@ function end(m){G.over=true;try{ST.del()}catch(e){}try{closeTab();closePanel();h
 function overNew(){try{sessionStorage.setItem('bprt_new','1')}catch(e){}location.reload()}
 function overMenu(){try{sessionStorage.removeItem('bprt_new')}catch(e){}location.reload()}
 function stepUnits(dt){stepVeh(dt);for(const u of G.units){if(u.ride||u.jail)continue;if(!u.path.length){u.anim=0;continue}
- const spm=(1+upgL(u.fam,'speed')*CFG.UPG.speed.per)*(u.stance==='retreat'?CFG.FIGHT.RETREAT_SPEED:1);steer(u,dt,(u.chase!=null||u.hunt!=null)?CFG.CHASE.SPEED/CFG.UNIT_MOVE:(CFG.UNITS[u.type].speed||1)*spm/(u.fam==='police'?CFG.MOVE:CFG.UNIT_MOVE));
+ const spm=(1+upgL(u.fam,'speed')*CFG.UPG.speed.per)*(u.stance==='retreat'?CFG.FIGHT.RETREAT_SPEED:1);steer(u,dt,u.chase!=null?CFG.CHASE.SPEED/CFG.UNIT_MOVE:(CFG.UNITS[u.type].speed||1)*spm/(u.fam==='police'?CFG.MOVE:CFG.UNIT_MOVE));
  if(u.path.length){let ax=0,ay=0;for(let i=0;i<Math.min(4,u.path.length);i++){ax+=u.path[i][0]-u.x;ay+=u.path[i][1]-u.y}if(Math.abs(ax)>Math.abs(ay)*1.2)u.dir=ax>0?'se':'nw';else if(Math.abs(ay)>Math.abs(ax)*1.2)u.dir=ay>0?'sw':'ne'}
  if(!u.path.length&&u.goB){u.atB=u.goB;u.goB=null}}}
 // ===== RT steering: seek + arrive, accel/decel, curved cornering, separation, gradual facing, stuck re-path =====
@@ -521,7 +521,7 @@ function stepVeh(dt){const P=CFG.POLICE;
   if(v.path.length)continue;
   if(v.manual){carArrive(v);continue}
   if(v.riders.length){for(const u of [...v.riders]){u.ride=null;u.x=v.x;u.y=v.y;const f=u.fin;u.fin=null;if(f){if(f[2])sendTo(u,f[2].door[0],f[2].door[1],f[2],true);else sendTo(u,f[0],f[1],null,true)}}v.riders=[];sfx&&sfx('door',v.x,v.y)}
-  if(v.kind=='pcar'){if(v.state=='home'||(Math.round(v.x)==v.slot[0]&&Math.round(v.y)==v.slot[1])){v.state='park';v.x=v.slot[0];v.y=v.slot[1];v.dir=v.slot[2];v.wait=P.PARK_MIN+rnd()*(P.PARK_MAX-P.PARK_MIN);v.siren=false}
+  if(v.kind=='pcar'){if(v.state=='home'||(Math.round(v.x)==v.slot[0]&&Math.round(v.y)==v.slot[1])){if(v.temp){G.veh=G.veh.filter(w=>w!==v);continue}v.state='park';v.x=v.slot[0];v.y=v.slot[1];v.dir=v.slot[2];v.wait=P.PARK_MIN+rnd()*(P.PARK_MAX-P.PARK_MIN);v.siren=false}
    else{const r=roadBfs(Math.round(v.x),Math.round(v.y),v.slot[0],v.slot[1]);v.path=r||[];v.state='home';v.siren=false;if(!r){v.x=v.slot[0];v.y=v.slot[1]}}}
   else G.veh=G.veh.filter(w=>w!==v)}}
 // ===== SABOTAGE: smash (enforcers) & bomb (bomber) =====
@@ -696,7 +696,7 @@ function explode(bm){const b=G.bld[bm.b];if(!b)return;{const cx=b.x+b.s/2,cy=b.y
 let fieldAcc=0;G.copAggro={};
 const alive=id=>G.units.find(v=>v.id===id&&v.hp>0);
 function hostile(u,v){if(v.hp<=0||v.ride||v.jail||v.fam===u.fam||v.garrison!=null)return false;if(!seenU(u.fam,v))return false;if(v.type=='spy'&&u.fam!==v.fam&&v.fam!==0)return false;if(v.type=='spy'&&v.fam===0&&u.fam!==0)return false;
- if(u.fam==='police')return G.t-(G.copAggro[v.fam]??-1e9)<CFG.FIGHT.COP_AGGRO;if(v.fam==='police')return false;return atWar(u.fam,v.fam)}
+ if(u.fam==='police'&&u.squad!=null){const S=sqOf(u);if(S&&v.fam===S.f&&v.id!==S.boss)return true}if(v.fam==='police'&&v.squad!=null){const S=sqOf(v);if(S&&u.fam===S.f)return true}if(u.fam==='police')return G.t-(G.copAggro[v.fam]??-1e9)<CFG.FIGHT.COP_AGGRO;if(v.fam==='police')return false;return atWar(u.fam,v.fam)}
 const isGun=u=>u.type=='hitman'||u.type=='boss'||(u.type=='thug'&&u.pistol);
 function hitUnit(a,t){if(t.inB!=null)return;reveal(a);reveal(t);if(typeof a.fam=='number'&&typeof t.fam=='number')addHeat(a.fam,CFG.HEAT.HIT*(isGun(a)?2:1),isGun(a)?'shooting':'street fight',a.x,a.y);if(a.fam===0)badAct(0,t.fam,'your crew attacked their men');else if(t.fam===0)badAct(a.fam,0,'their men attacked yours');const F=CFG.FIGHT;const dmg=str(a)*(0.6+Math.random()*0.6);t.hp-=dmg;t.hurtT=performance.now();const F0=CFG.FIGHT,gun=isGun(a),now=performance.now(),st=now+Math.random()*450,impact=st+(gun?60:F0.MELEE_MS*0.45);
  a.atk=st;a.atkGun=gun;a.atkTo=t.id;t.hitT=impact;t.kbFrom=[a.x,a.y];
@@ -766,18 +766,49 @@ function stepChase(dt){const C=CFG.CHASE;for(const c of G.units){if(c.chase==nul
   if(vis&&d<C.CATCH&&u.tgt!==c.id){arrestUnit(u,c);continue}
   c.rp-=dt;if(c.rp<=0){c.rp=C.REPATH;const t=vis?[u.x,u.y]:c.seen;const e=c.path.at(-1);if(!e||Math.hypot(e[0]-t[0],e[1]-t[1])>0.8)sendTo(c,Math.round(t[0]),Math.round(t[1]),null,true);if(!vis&&Math.hypot(c.x-c.seen[0],c.y-c.seen[1])<1)c.seen=[c.x,c.y]}}
  for(const u of G.units){if(u.jail&&G.t>=u.jail)releaseBoss(u);else if(u.exposed&&G.t>=u.exposed)u.exposed=0}}
-function jailBoss(u,why,fine){const C=CFG.CHASE,F=FAM[u.fam];if(!u||u.hp<=0)return;if(u.jail){if(why==='case')u.jail=Math.max(u.jail,G.t+C.CASE_JAIL);return}if(u.ride){const v=u.ride;v.riders=v.riders.filter(w=>w!==u)}
- u.jail=G.t+(why==='case'?C.CASE_JAIL:C.BOSS_JAIL);u.exposed=0;u.caseCop=null;u.path=[];u.atB=null;u.goB=null;u.tgt=null;u.petty=null;u.ride=null;u.inB=null;u.wanted=null;u.estB=null;G.sel.delete(u.id);if(u.fam===0&&WH.u===u.id)closeWheel();const pd=PHQB.door;u.x=pd[0];u.y=pd[1];
- const nm=u.fam===0?'The Don':manName(u),how=why==='case'?'The police case against the '+F.name+' family went through: ':'',fi=fine?' The cops took '+money(fine)+'.':'';
- const m=u.fam===0?how+'The Don is arrested and sits in a cell at Police HQ for '+fmtH(u.jail-G.t)+'.'+fi:how+nm+' ('+F.name+') is arrested and sits in a cell at Police HQ for '+fmtH(u.jail-G.t)+'.';
- NSEEN.delete(m);notice(m,true);log(m,1)}
-function caseHunt(fid){const bs=G.units.find(u=>u.fam===fid&&u.type=='boss');if(!bs||bs.hp<=0)return;if(bs.jail){jailBoss(bs,'case',0);return}
- const pd=PHQB.door,c=spawn('police','police',pd[0],pd[1]);c.hunt=bs.id;c.rp=0;bs.caseCop=c.id}
-function stepHunt(dt){for(const b of G.units)if(b.type=='boss'&&b.caseCop!=null&&!b.jail&&!G.units.some(c=>c.id===b.caseCop&&c.hp>0)){b.caseCop=null;caseHunt(b.fam)}for(const c of G.units){if(c.hunt==null)continue;const u=G.units.find(v=>v.id===c.hunt);if(!u||u.hp<=0||u.jail){G.units=G.units.filter(w=>w!==c);continue}
-  const x=u.ride?u.ride.x:u.x,y=u.ride?u.ride.y:u.y;if(Math.hypot(c.x-x,c.y-y)<1.2){if(u.ride){const v=u.ride;v.riders=v.riders.filter(w=>w!==u);u.ride=null}jailBoss(u,'case',0);G.units=G.units.filter(w=>w!==c);continue}
-  c.rp-=dt;if(c.rp<=0||!c.path.length){c.rp=CFG.CHASE.REPATH*4;const e=c.path.at(-1);if(!e||Math.hypot(e[0]-x,e[1]-y)>0.8)sendTo(c,Math.round(x),Math.round(y),null,true)}}}
-function releaseBoss(u){const C=CFG.CHASE;u.jail=0;const pd=PHQB.door;u.x=pd[0];u.y=pd[1];u.path=[];u.atB=null;u.exposed=G.t+C.BOSS_EXPOSE;u.rev=Math.max(u.rev||0,u.exposed);
- const m=u.fam===0?'The Don walks out of Police HQ. Every family knows where he is for '+fmtH(C.BOSS_EXPOSE)+': protect him.':manName(u)+' ('+FAM[u.fam].name+') walks out of Police HQ. Everyone can see him for '+fmtH(C.BOSS_EXPOSE)+'.';NSEEN.delete(m);notice(m,true);log(m,1)}
+function jailBoss(u,why,fine){const C=CFG.CHASE,F=FAM[u.fam];if(!u||u.hp<=0)return;if(u.jail){if(why==='case'){u.jail=Math.max(u.jail,G.t+C.CASE_JAIL);u.caseJail=true;news('The police case against the '+F.name+' family went through while '+donNm(u)+' was already in a cell. He now stays at Police HQ for '+fmtH(u.jail-G.t)+'.')}return}if(u.ride){const v=u.ride;v.riders=v.riders.filter(w=>w!==u)}
+ u.jail=G.t+(why==='case'?C.CASE_JAIL:C.BOSS_JAIL);u.exposed=0;u.caseJail=why==='case';u.path=[];u.atB=null;u.goB=null;u.tgt=null;u.petty=null;u.ride=null;u.inB=null;u.wanted=null;u.estB=null;G.sel.delete(u.id);if(u.fam===0&&WH.u===u.id)closeWheel();const pd=PHQB.door;u.x=pd[0];u.y=pd[1];
+ if(why!=='case')return;
+ news(u.fam===0?'The police squad arrested the Don. He sits in a cell at Police HQ for '+fmtH(u.jail-G.t)+'.':'The police squad arrested '+donNm(u)+'. He sits in a cell at Police HQ for '+fmtH(u.jail-G.t)+'.')}
+CFG.SQUAD={CARS:3,PER:2,DISMOUNT:3,ARREST:1.2,RACKETS:3};CFG.HUNT={ESCORT_R:6,EDGE:1.3,MAX:8};
+function news(m){G.news=G.news||[];G.news.unshift({t:G.t,m});if(G.news.length>200)G.news.length=200;NSEEN.delete(m);notice(m,true);log(m,1)}
+const sqOf=u=>u&&u.squad!=null?(G.squads||[]).find(s=>s.id===u.squad):null;
+const donNm=u=>u.fam===0?'the Don':manName(u)+' ('+FAM[u.fam].name+')';
+function caseSucceed(f){const bs=G.units.find(u=>u.fam===f.id&&u.type=='boss');if(!bs||bs.hp<=0)return;f.lastRaid=G.t;
+ if(bs.jail){jailBoss(bs,'case',0);f.case=CFG.CASE.AFTER_RAID;return}
+ G.squads=G.squads||[];const S={id:++G.uid,f:f.id,boss:bs.id,cars:[],cops:[],t0:G.t},p=nearRoad(PHQB.door[0],PHQB.door[1])||PHQB.door;
+ for(let k=0;k<CFG.SQUAD.CARS;k++){const v=mkVeh('pcar','police',p[0],p[1]);v.slot=[p[0],p[1],'se'];v.temp=1;v.squad=S.id;v.state='squad';v.siren=true;v.rp=0;G.veh.push(v);
+  for(let j=0;j<CFG.SQUAD.PER;j++){const c=spawn('police','police',p[0],p[1]);c.squad=S.id;c.rp=0;c.ride=v;v.riders.push(c);S.cops.push(c.id)}S.cars.push(v.id)}
+ G.squads.push(S);sfx&&sfx('siren',p[0],p[1]);
+ news('The police case against the '+f.name+' family went through. '+CFG.SQUAD.CARS+' police cars are on their way to arrest '+donNm(bs)+'.')}
+function carHome(v){v.riders=[];const r=roadBfs(Math.round(v.x),Math.round(v.y),v.slot[0],v.slot[1]);v.path=r||[];v.state='home';v.siren=false;v.squad=null;if(!r)G.veh=G.veh.filter(w=>w!==v)}
+function endSquad(S){G.squads=G.squads.filter(q=>q!==S);G.units=G.units.filter(u=>u.squad!==S.id||u.hp<=0&&false);for(const vid of S.cars){const v=G.veh.find(w=>w.id===vid);if(v)carHome(v)}}
+function squadArrest(S,bs){const f=FAM[S.f],d=distOf(Math.round(bs.x),Math.round(bs.y)),bx=bs.x,by=bs.y;
+ if(bs.ride){const v=bs.ride;v.riders=v.riders.filter(w=>w!==bs);bs.ride=null}jailBoss(bs,'case',0);
+ const rk=G.bld.filter(b=>b.owner===S.f&&CFG.B[b.type].racket&&!b.dmg&&distOf(b.door[0],b.door[1])===d).sort((a,b)=>Math.hypot(a.door[0]-bx,a.door[1]-by)-Math.hypot(b.door[0]-bx,b.door[1]-by)).slice(0,CFG.SQUAD.RACKETS);
+ for(const b of rk){setDmg(b,'smashed',CFG.SMASH.HOURS,'police');G.raids.unshift({t:G.t,f:S.f,b:b.id,type:b.type})}if(G.raids.length>12)G.raids.length=12;
+ f.case=CFG.CASE.AFTER_RAID;f.lastRaid=G.t;f.heat=Math.max(0,f.heat-10);endSquad(S)}
+function stepSquads(dt){for(const S of [...(G.squads||[])]){const bs=G.units.find(u=>u.id===S.boss),cops=S.cops.map(id=>G.units.find(u=>u.id===id)).filter(c=>c&&c.hp>0);
+  if(!bs||bs.hp<=0){endSquad(S);continue}
+  if(!cops.length){FAM[S.f].case=0;endSquad(S);news('The police squad sent for '+donNm(bs)+' was beaten off. The case against the '+FAM[S.f].name+' family is dropped.');continue}
+  if(bs.jail){jailBoss(bs,'case',0);FAM[S.f].case=CFG.CASE.AFTER_RAID;endSquad(S);continue}
+  const x=bs.ride?bs.ride.x:bs.x,y=bs.ride?bs.ride.y:bs.y;
+  for(const vid of S.cars){const v=G.veh.find(w=>w.id===vid);if(!v||v.squad!==S.id||!v.riders.length)continue;const d=Math.hypot(v.x-x,v.y-y);
+   let off=d<=CFG.SQUAD.DISMOUNT;if(!off){v.rp-=dt;if(v.rp<=0||!v.path.length){v.rp=RS(1);const r=nearRoad(x,y),pa=r&&roadBfs(Math.round(v.x),Math.round(v.y),r[0],r[1]);if(pa&&pa.length>1)v.path=pa;else off=true}}
+   if(off){for(const c of v.riders){c.ride=null;c.x=v.x;c.y=v.y;c.path=[];c.rp=0}sfx&&sfx('door',v.x,v.y);carHome(v)}}
+  for(const c of cops){if(c.ride)continue;if(Math.hypot(c.x-x,c.y-y)<CFG.SQUAD.ARREST){squadArrest(S,bs);break}if(c.tgt!=null)continue;c.rp-=dt;if(c.rp<=0||!c.path.length){c.rp=RS(0.4);const e=c.path.at(-1);if(!e||Math.hypot(e[0]-x,e[1]-y)>0.8)sendTo(c,Math.round(x),Math.round(y),null,true)}}}}
+function escortStr(bs){let s=str(bs);for(const v of G.units)if(v!==bs&&v.fam===bs.fam&&v.hp>0&&!v.jail&&!v.ride&&v.type!='spy'&&Math.hypot(v.x-bs.x,v.y-bs.y)<=CFG.HUNT.ESCORT_R)s+=str(v);return s}
+function aiHunt(f){for(const u of G.units)if(u.fam===f.id&&u.huntB!=null){const b=G.units.find(w=>w.id===u.huntB);if(!b||b.hp<=0||!(b.exposed>G.t)){u.huntB=null;if(u.tgt===(b&&b.id))u.tgt=null}}
+ for(const bs of G.units){if(bs.type!='boss'||bs.fam===f.id||bs.hp<=0||bs.jail||!(bs.exposed>G.t))continue;
+  const on=G.units.filter(u=>u.fam===f.id&&u.huntB===bs.id&&u.hp>0);
+  if(on.length){for(const u of on){u.tgt=bs.id;sendTo(u,Math.round(bs.x),Math.round(bs.y),null,true)}continue}
+  const free=G.units.filter(u=>u.fam===f.id&&isGun(u)&&u.type!='boss'&&u.garrison==null&&!u.jail&&!u.ride&&u.hp>0&&!u.job&&!u.petty).sort((a,b)=>Math.hypot(a.x-bs.x,a.y-bs.y)-Math.hypot(b.x-bs.x,b.y-bs.y));
+  const need=escortStr(bs)*CFG.HUNT.EDGE;let sm=0;const team=[];for(const u of free){if(sm>need||team.length>=CFG.HUNT.MAX)break;team.push(u);sm+=str(u)}
+  bs.huntD=bs.huntD||{};bs.huntD[f.id]=sm>need?'hunt':'leave';if(sm<=need)continue;
+  for(const u of team){u.huntB=bs.id;u.tgt=bs.id;u.stance=null;u.atB=null;u.goB=null;sendTo(u,Math.round(bs.x),Math.round(bs.y),null,true)}}}
+
+function releaseBoss(u){const C=CFG.CHASE;u.jail=0;const pd=PHQB.door;u.x=pd[0];u.y=pd[1];u.path=[];u.atB=null;if(!u.caseJail){u.exposed=0;return}u.caseJail=false;u.exposed=G.t+C.BOSS_EXPOSE;u.rev=Math.max(u.rev||0,u.exposed);
+ const m=u.fam===0?'The Don walks out of Police HQ. Every family knows where he is for '+fmtH(C.BOSS_EXPOSE)+': protect him.':manName(u)+' ('+FAM[u.fam].name+') walks out of Police HQ. Everyone can see him for '+fmtH(C.BOSS_EXPOSE)+'.';news(m)}
 function arrestUnit(u,c){const C=CFG.CHASE,F=FAM[u.fam];carryLose(u,'police');if(c){c.chase=null;c.path=[];c.wait=90}u.wanted=null;G.sel.delete(u.id);sfx&&sfx('whistle',u.x,u.y);
  if(u.fam===0&&WH.u===u.id)closeWheel();
  if(u.type=='boss'){const fine=Math.round((F?F.dirty:0)*C.BOSS_FINE);if(F)F.dirty-=fine;jailBoss(u,'street',fine);return}
@@ -1050,22 +1081,13 @@ function aiPetty(f,mine){const boss=mine.find(u=>u.type=='boss');const n=crewUse
  const th=mine.filter(u=>u.type=='thug'&&u.garrison==null&&!u.goB);const on=th.filter(u=>u.petty).length,want=f.war?0:Math.min(3,Math.max(th.length<CFG.TAKE_MIN?th.length:0,th.length-CFG.TAKE_MIN));
  if(on<want){const u=th.find(u=>!u.petty&&!u.path.length);if(u)u.petty={k:'any',st:'rest',t:0,cash:0}}else if(on>want){const u=th.find(u=>u.petty);if(u)pettyRecall(u)}}
 function stepPolice(dt){polAcc+=dt;
- stepPatrol(dt);stepHunt(dt);
- for(const u of G.units.filter(u=>u.fam==='police'&&!u.patrol&&u.hunt==null)){if(u.ride)continue;u.raid-=dt;
+ stepPatrol(dt);stepSquads(dt);
+ for(const u of G.units.filter(u=>u.fam==='police'&&!u.patrol&&u.squad==null)){if(u.ride)continue;u.raid-=dt;
   const tgt=u.atB;const enemies=tgt&&present(tgt).some(v=>v.fam!=='police');
   if(u.atB&&(u.raid<=0||!enemies)&&!u.home){const rb=u.atB;if(rb.raidFam!=null&&rb.owner===rb.raidFam&&!rb.dmg){setDmg(rb,'smashed',CFG.SMASH.HOURS,'police');rb.raidFam=null}u.home=1;u.atB=null;const r=nearRoad(u.x,u.y);if(r)sendTo(u,r[0],r[1],null,true)}
   if(u.home&&!u.path.length){const v=G.veh.find(v=>v.kind=='pcar'&&v.state!='park'&&v.state!='patrol'&&Math.hypot(v.x-u.x,v.y-u.y)<3);G.units=G.units.filter(w=>w!==u)}}
  if(polAcc<CFG.POLICE_TICK)return;polAcc=0;
- for(const f of fams()){if(f.case<CFG.CASE.MAX-2||G.t-f.lastRaid<CFG.POLICE_COOLDOWN)continue;
-  const cand=G.bld.filter(b=>b.owner===f.id&&b.type!='Hideout'&&!b.dmg);if(!cand.length)continue;
-  cand.sort((a,b)=>(CFG.B[b.type].racket?1:0)-(CFG.B[a.type].racket?1:0)||present(b).length-present(a).length);
-  const t=cand[0],n=Math.min(4,2+Math.floor(f.heat/40)),pd=PHQB.door;
-  const car=G.veh.filter(v=>v.kind=='pcar'&&v.state=='park').sort((a,b)=>Math.hypot(a.x-t.door[0],a.y-t.door[1])-Math.hypot(b.x-t.door[0],b.y-t.door[1]))[0];
-  const e0=nearRoad(t.door[0],t.door[1]);const rp=car&&e0&&roadBfs(car.x,car.y,e0[0],e0[1]);
-  for(let i=0;i<n;i++){const u=spawn('police','police',pd[0],pd[1]);u.raid=CFG.RAID_TIME+(rp?rp.length/CFG.PCAR_SPEED:bfsLen(pd,t.door))*CFG.MOVE;
-   if(rp){u.x=car.x;u.y=car.y;u.ride=car;car.riders.push(u);u.fin=[t.door[0],t.door[1],t];u.goB=t}else sendToB(u,t)}
-  if(rp){car.path=rp;car.state='raid';car.siren=true}sfx&&sfx('siren',t.door[0],t.door[1]);
-  caseHunt(f.id);f.lastRaid=G.t;G.raids.unshift({t:G.t,f:f.id,b:t.id,type:t.type});if(G.raids.length>12)G.raids.length=12;f.case=CFG.CASE.AFTER_RAID;t.raidFam=f.id;f.heat=Math.max(0,f.heat-10);log('Police raid on '+(f.id==0?'your':f.name+"'s")+' '+t.type+'!',f.id==0)}}
+ for(const f of fams()){if(f.case<CFG.CASE.MAX-2||G.t-f.lastRaid<CFG.POLICE_COOLDOWN||(G.squads||[]).some(q=>q.f===f.id))continue;caseSucceed(f)}}
 function bfsLen(a,b){const p=bfs(a[0],a[1],b[0],b[1]);return p?p.length:0}
 function aiSabotage(f){if(rnd()>CFG.AI_SABOTAGE)return;const us=G.units.filter(u=>u.fam===f.id&&!u.job&&!u.path.length&&u.garrison==null&&(u.type=='enforcer'||u.type=='bomber'));
  if(!us.length&&f.inv.bomb>0&&f.clean>CFG.UNITS.bomber.cost&&rnd()<0.3){const h=hqOf(f.id);if(h)hire(f.id,'bomber',h);return}
@@ -1077,7 +1099,7 @@ function aiGear(f,mine){const id=f.id;{const h=G.bld.find(b=>b.owner===id&&b.typ
  if(G.t>CFG.AI_BOMB_AFTER&&rnd()<0.1)buyBomb(id);
  if(hasActive(id,'Garage')&&!mine.some(u=>u.type=='driver')&&f.clean>CFG.UNITS.driver.cost+600&&crewUsed(id)<crewCap(id)&&rnd()<0.2){hire(id,'driver',hqOf(id));return}
  const d=mine.find(u=>u.type=='driver'&&!u.job&&!u.ride&&!u.path.length);if(d&&rnd()<CFG.CAR.AI_STEAL){let bi=-1,bd=25;G.cars.forEach((c,i)=>{if(c.gone)return;const q=Math.hypot(c.x-d.x,c.y-d.y);if(q<bd){bd=q;bi=i}});if(bi>=0)orderSteal([d],bi)}}
-function stepAI(dt){aiAcc+=dt;if(aiAcc<CFG.AI_TICK)return;aiAcc=0;for(const b of G.bld)if(b.dmg=='smashed'&&!b.tape&&!b.repaired&&b.owner!=null&&b.owner!==0&&FAM[b.owner].ai&&FAM[b.owner].dirty>CFG.SMASH.REPAIR+800)repairB(b);for(const f of fams())if(f.ai){aiSabotage(f);aiSpyTick(f)}
+function stepAI(dt){aiAcc+=dt;if(aiAcc<CFG.AI_TICK)return;aiAcc=0;for(const b of G.bld)if(b.dmg=='smashed'&&!b.tape&&!b.repaired&&b.owner!=null&&b.owner!==0&&FAM[b.owner].ai&&FAM[b.owner].dirty>CFG.SMASH.REPAIR+800)repairB(b);for(const f of fams())if(f.ai){aiSabotage(f);aiSpyTick(f);aiHunt(f)}
  for(const f of fams()){if(!f.ai)continue;const hq=hqOf(f.id);
   const mine=G.units.filter(u=>u.fam===f.id);
   if(!hq){aiPetty(f,mine);aiFound(f);continue}
@@ -1863,7 +1885,7 @@ function renderSheet(){const f=FAM[0],h=[],sh=$('sheet');const x=`<button class=
   h.push(`<h3>Make it go away</h3><div class="it pfl"><span>Pay off a detective: −${C.PAYOFF_DIRTY[1]} case for ${money(C.PAYOFF_DIRTY[0])} dirty</span><button class="gbtn" data-payoff="dirty" ${f.dirty<C.PAYOFF_DIRTY[0]||f.case<=0?'disabled':''}>Pay</button></div>
    <div class="it pfl"><span>Bribe the judge: −${C.BRIBE_CLEAN[1]} case for ${money(C.BRIBE_CLEAN[0])} clean</span><button class="gbtn" data-payoff="clean" ${f.clean<C.BRIBE_CLEAN[0]||f.case<=0?'disabled':''}>Bribe</button></div>
    <div class="it pfl"><span>Grease the precinct: −${CFG.BRIBE_HEAT} heat for ${money(CFG.BRIBE_COST)} clean</span><button class="gbtn" data-bribe=1 ${f.clean<CFG.BRIBE_COST?'disabled':''}>Bribe</button></div>`);
-  h.push('<h3>Recent raids</h3>');if(!G.raids.length)h.push('<div class="it">No raids on record.</div>');
+  h.push('<h3>News</h3>');if(!(G.news||[]).length)h.push('<div class="it">Nothing in the papers yet.</div>');for(const e of (G.news||[]).slice(0,30))h.push('<div class="it">'+e.m+' <span style="opacity:.6">'+agoR(e.t)+'</span></div>');h.push('<h3>Recent raids</h3>');if(!G.raids.length)h.push('<div class="it">No raids on record.</div>');
   for(const r of G.raids.slice(0,6))h.push(`<div class="it pfl"><span>${hr(r.t)} · ${r.f===0?'<b>your</b>':FAM[r.f].name+"'s"} ${nice(r.type)}</span>${G.bld[r.b]&&G.bld[r.b].dmg?'<b>closed</b>':'<span>reopened</span>'}</div>`);
   const cops=G.units.filter(u=>u.fam==='police'&&!u.patrol);if(cops.length){const tg={};cops.forEach(c=>{const b=c.goB||c.atB;if(b)tg[b.id]=(tg[b.id]||0)+1});h.push('<h3>Squad out now</h3>');for(const id in tg){const b=G.bld[id];h.push(`<div class="it pfl"><span>${b.owner!=null?FAM[b.owner].name+"'s ":''}${nice(b.type)}</span><b>${tg[id]} cops</b></div>`)}}
   h.push('<h3>Other families</h3>');for(const fm of FAM){if(fm.id===0||!fm.alive)continue;h.push(`<div class="it pfl"><span>${fm.name}</span><span>Heat ${Math.round(fm.heat)} · Case ${Math.round(fm.case)}</span></div>`)}
@@ -2314,7 +2336,7 @@ const HOWTO=[
  ['Rackets & Chains','t_Speakeasy','<b>Taking over</b> a racket needs a hideout and enough <b>strength</b> inside it: the Boss counts 4, a Thug 2 (3 with a pistol), an Enforcer 3, a Hitman 6. A plain racket needs 4, so the Boss alone or two thugs will do. <b>Hitmen don\'t take over</b>: they hit people and buildings but add no strength to a takeover; every extra level, a Casino or Gun Factory, and every guard posted there add 2 more. The panel shows <b>Strength X / Y needed</b>. The rival families play by the same rule. Every quarter of the city has its own set of rackets. Businesses earn only when their supplier is yours too: <b>Distillery → Warehouse → Speakeasy</b>, <b>Gun Factory → Gun Store</b>, <b>Print Shop → Casino</b>. A <b>Laundry</b> cleans dirty cash. Cut a rival\'s chain to starve him.'],
  ['Territory','t_Hideout','Own every business on a city block and it becomes your <b>territory</b>, glowing in your colour when zoomed out. Territory pays <b>+10%</b> income. Zoom right out and the city turns into a flat <b>tactical map</b>: quarters tinted by the family whose rackets you have seen there, markers for your men and any rival crews in sight. Tap a quarter to zoom back in on it.'],
  ['Guards','p_enforcer','Tap your building and press <b>+ Guard</b>: a free thug walks over and garrisons it (or use <b>Guard</b> on his wheel). Attackers must beat the guards before they can take the building. A guard can still be tapped and selected: send him anywhere and he leaves his post (a notice says so); order him to guard again to put him back.'],
- ['Police & Heat','t_Police','The city has five <b>districts</b>: each family\'s quarter around where it settled and neutral <b>Downtown</b> in the middle, with the Police Station and the Court House. Each has a beat cop or two, and every crime heats up the district where it happens. Past 30 heat a district gets extra cops, and the rackets in a hot district fill their case file faster. Doing jobs on a rival\'s turf makes the cops lean on <b>him</b>. A cop who <b>sees a crime</b> chases the man, who gets a <b>WANTED</b> tag. Break his line of sight (get behind buildings) and keep away, or get far off, and he gives up; reach your own Hideout and you are safe. Or fight him, but <b>killing a cop</b> sends that district\'s heat through the roof and floods it with police. If he catches you: a thug goes to the cells for 60 seconds; the <b>Boss</b> is fined 30% of your dirty cash and jailed at Police HQ for 60 seconds (not game over). Every family hears about it. When he walks out, his position is <b>exposed</b> to every family for 5 minutes (Don exposed 4:32 over him and at the top), so guard him. The same goes for rival bosses. Your family <b>Heat</b> is the noise your men make: fights, shootings, smashing, bombing, killings, stealing or wrecking cars and hitting cops. It cools off over time. The <b>Case file</b> is the paper trail of your rackets; it only grows, and when it is full the squad raids. The top bar shows both as a small "Heat · Case" line; tap it or the <b>Police</b> tab for the full police file, including heat and cops per district, what is driving your heat, what each racket adds to the case per minute, minutes until the next raid and which joint they would hit, lawyers in court, pay-offs and recent raids.'],
+ ['Police & Heat','t_Police','The city has five <b>districts</b>: each family\'s quarter around where it settled and neutral <b>Downtown</b> in the middle, with the Police Station and the Court House. Each has a beat cop or two, and every crime heats up the district where it happens. Past 30 heat a district gets extra cops, and the rackets in a hot district fill their case file faster. Doing jobs on a rival\'s turf makes the cops lean on <b>him</b>. A cop who <b>sees a crime</b> chases the man, who gets a <b>WANTED</b> tag. Break his line of sight (get behind buildings) and keep away, or get far off, and he gives up; reach your own Hideout and you are safe. Or fight him, but <b>killing a cop</b> sends that district\'s heat through the roof and floods it with police. If he catches you: a thug goes to the cells for 60 seconds; the <b>Boss</b> is fined 30% of your dirty cash and jailed at Police HQ for 60 seconds (not game over). Nobody else hears about it. The same goes for rival bosses. Your family <b>Heat</b> is the noise your men make: fights, shootings, smashing, bombing, killings, stealing or wrecking cars and hitting cops. It cools off over time. The <b>Case file</b> is the paper trail of your rackets; it only grows, and when it is full the squad raids. The top bar shows both as a small "Heat · Case" line; tap it or the <b>Police</b> tab for the full police file, including heat and cops per district, what is driving your heat, what each racket adds to the case per minute, minutes until the next raid and which joint they would hit, lawyers in court, pay-offs and recent raids.'],
  ['Smash & Bomb','p_bomber','With <b>Thugs</b> or <b>Enforcers</b> selected, tap any rival <i>or neutral</i> business and choose <b>Smash</b> (enforcers work 2x faster; a group adds up). Closures run on <b>real minutes of play</b> (paused time does not count) and the m:ss countdown shows over the building and in its panel. A smashed business is shut for <b>20 minutes</b>: no income, its chain breaks, and a smashed neutral can\'t be captured until it recovers. Its owner can press <b>Repair</b> ($600 dirty) to cut what is left to a quarter. A <b>Bomber</b> with a bomb in stock turns it to rubble for <b>30 minutes</b> (the last 5 are scaffolding) and it can\'t be repaired. A police closure lasts <b>10 minutes</b>, no repair. Rival families repair and wait the same way. Hideouts and Police HQ can\'t be hit. Both bring heat.'],
  ['Clean Money','t_Laundry','Businesses pay <b>dirty cash</b>: hire crew and pay repairs with it, but sitting on a big pile of it draws <b>heat</b>. A <b>Laundry</b> turns it <b>clean</b> (upgrade the Laundry to wash faster). Clean cash buys building upgrades, guns, cars and bombs.'],
  ['Upgrades & Gear','t_GunFactory','Tap your business to <b>upgrade</b> it to ★★ and ★★★ for more income and output. Upgrades stay with the building if it is captured, and a bomb knocks it back to ★. Own a running Gun Store to buy pistols (arm thugs for ranged fire) and tommy guns (one per Hitman) at a Gun Store. See it all in the <b>Stock</b> tab.'],
@@ -2330,7 +2352,7 @@ const HOWTO=[
  ['Bombs (end-game)','p_bomber','Bombs need a <b>level-3 Gun Factory</b> and a <b>level-3 Gun Store</b>, cost '+'$'+CFG.BOMB.COST.toLocaleString()+' clean each, with no daily limit. A Bomber throws one from stock: the business becomes rubble for 30 minutes, can\'t be repaired, and drops back to level 1.'],
  ['Crew & Upkeep','p_thug','Your <b>Hideout</b> level sets how many crew you can keep: 5/10/15/20. Upgrade it to grow. Thugs take <b>dirty</b> cash first and make up the rest in <b>clean</b>, so you can hire with either. Everyone else needs <b>clean</b> cash. The Crew and Rackets tabs stay locked until you have a hideout. Every member draws <b>upkeep</b> by the minute (dirty first, then clean). Check the Books in the Boss tab (income and upkeep per real minute). There is no game clock: everything in the city runs on real minutes of play, and pausing stops it all.'],
  ['Booze','t_Distillery','Distilleries make booze and your Speakeasies pour it. If your booze stock runs dry, Speakeasies earn only 40%.'],
- ['The Case','p_boss','Your rackets leave a paper trail: the <b>Case file</b> gauge (top) grows with your dirty income and the size of your businesses, and never fades on its own. When it fills, the squad raids a business: it is boarded up, padlocked and closed by order for 10 minutes, and the police know exactly where the family boss is: no hideout or hiding place protects him. A cop goes straight for him, arrests him and he is jailed at Police HQ for 8 minutes. Every family is told, and he is exposed to everyone for 5 minutes after release. Pay off a detective (dirty) or bribe a judge (clean) in the Police tab, or hire a <b>Lawyer</b> (Hideout, clean cash, placeholder) and send him into the <b>Courthouse</b> by Police HQ: while he sits there the case slowly shrinks.'],
+ ['The Case','p_boss','Your rackets leave a paper trail: the <b>Case file</b> gauge (top) grows with your dirty income and the size of your businesses, and never fades on its own. When it fills, the case goes through and every family is warned: 3 police cars with 2 cops each drive out for the family boss. They know exactly where he is and track him: no hideout or hiding place protects him. His men can fight them off: if every cop in the squad is killed, the case is dropped (back to zero), with no arrest and no raid. If they reach him, he is jailed at Police HQ for 8 minutes (if he is already in a cell, his stay becomes 8 minutes), and up to 3 of the family\'s rackets in the district where he was taken are boarded up, padlocked and closed by order for 10 minutes. When he walks out his position is <b>exposed</b> to every family for 5 minutes (Don exposed 4:32 over him and at the top): rival families that think they are strong enough against the men around him send a hit squad. Case warnings, arrests and releases for all families go into the <b>News</b> list in the Police tab. Pay off a detective (dirty) or bribe a judge (clean) in the Police tab, or hire a <b>Lawyer</b> (Hideout, clean cash, placeholder) and send him into the <b>Courthouse</b> by Police HQ: while he sits there the case slowly shrinks.'],
  ['Spies','p_dame','<b>Dames</b> are invisible to rivals. Park one in a rival racket to read its till and goods and skim its cash, or in your own joint to catch rival dames.']];
 let HP=0;
 function openHowTo(back){HP=Math.max(0,Math.min(HOWTO.length-1,HP));const[p,img,txt]=HOWTO[HP];
@@ -2356,7 +2378,7 @@ function saveGame(){if(!G.started||G.over||G.away)return;try{
  const st={v:3,wall:Date.now(),t:G.t,uid:G.uid,rs,VID,acc:[combatAcc,aiAcc,polAcc,witAcc],log:G.log,fam:FAM,
   bld:G.bld.map(b=>{const o={};for(const k in b){const v=b[k];if(k[0]!='_'&&(v===null||typeof v!='object'))o[k]=v}return o}),
   units:G.units.map(u=>({...u,atB:bIdx(u.atB),goB:bIdx(u.goB),ride:u.ride?u.ride.id:null,fin:u.fin?[u.fin[0],u.fin[1],bIdx(u.fin[2])]:null})),
-  cg:G.cars.map((c,i)=>c.gone?i:-1).filter(i=>i>=0),veh:G.veh.map(v=>({...v,riders:v.riders.map(u=>u.id)})),cam:[cam.x,cam.y,cam.z],ais:[G.aiSpies,G.aiWatch,aiSpyId],hl:[G.heatLog,G.raids],pj:[G.jail,G.petty],dh:G.dh,sq:G.seenQ,it:[G.spied||{},G.spotD||[],G.spotB||{},G.spotH||{}]};
+  cg:G.cars.map((c,i)=>c.gone?i:-1).filter(i=>i>=0),veh:G.veh.map(v=>({...v,riders:v.riders.map(u=>u.id)})),cam:[cam.x,cam.y,cam.z],ais:[G.aiSpies,G.aiWatch,aiSpyId],hl:[G.heatLog,G.raids],nw:G.news||[],pj:[G.jail,G.petty],dh:G.dh,sq:G.seenQ,it:[G.spied||{},G.spotD||[],G.spotB||{},G.spotH||{}]};
  ST.put(JSON.stringify(st))}catch(e){console.warn('save failed',e)}}
 // ---- persistence: localStorage + IndexedDB mirror; newest copy wins ----
 const ST={ls:false,idb:false,cache:null,
@@ -2375,7 +2397,7 @@ function loadGame(){const st=JSON.parse(ST.cache||'null');if(!st||(st.v||1)<2)re
  st.fam.forEach((f,i)=>Object.assign(FAM[i],f));st.bld.forEach((o,i)=>Object.assign(G.bld[i],o));
  const B=i=>i>=0?G.bld[i]:null;G.veh=st.veh.map(v=>({...v,riders:[]}));const VM=new Map(G.veh.map(v=>[v.id,v]));
  G.units=st.units.map(u=>({...u,atB:B(u.atB),goB:B(u.goB),ride:u.ride!=null?VM.get(u.ride)||null:null,fin:u.fin?[u.fin[0],u.fin[1],B(u.fin[2])]:null}));
- G.units.forEach(u=>{if(u.ride)u.ride.riders.push(u)});(st.cg||[]).forEach(i=>{if(G.cars[i])G.cars[i].gone=1});FAM.forEach(f=>{f.inv=Object.assign({pistol:0,tommy:0,bomb:0,car:0,booze:0,guns:0},f.inv||{});if(f.bombT==null)f.bombT=-1e9});G.sel=new Set();if(st.ais){[G.aiSpies,G.aiWatch,aiSpyId]=st.ais}if(st.hl){[G.heatLog,G.raids]=st.hl}if(st.dh)G.dh=st.dh;if(st.sq)G.seenQ=st.sq;if(st.it){[G.spied,G.spotD,G.spotB,G.spotH]=st.it}else{G.spied={};G.spotD=[];G.spotB={};G.spotH={}}if(st.pj){G.jail=st.pj[0]||[];G.petty=Object.assign({day:0,earn:{},arr:{},tot:0,tarr:0},st.pj[1]||{})}FAM.forEach(f=>{if(f.war==null)f.war=false});initPoliceLater=0;
+ G.units.forEach(u=>{if(u.ride)u.ride.riders.push(u)});(st.cg||[]).forEach(i=>{if(G.cars[i])G.cars[i].gone=1});FAM.forEach(f=>{f.inv=Object.assign({pistol:0,tommy:0,bomb:0,car:0,booze:0,guns:0},f.inv||{});if(f.bombT==null)f.bombT=-1e9});G.sel=new Set();if(st.ais){[G.aiSpies,G.aiWatch,aiSpyId]=st.ais}if(st.hl){[G.heatLog,G.raids]=st.hl}G.news=st.nw||[];if(st.dh)G.dh=st.dh;if(st.sq)G.seenQ=st.sq;if(st.it){[G.spied,G.spotD,G.spotB,G.spotH]=st.it}else{G.spied={};G.spotD=[];G.spotB={};G.spotH={}}if(st.pj){G.jail=st.pj[0]||[];G.petty=Object.assign({day:0,earn:{},arr:{},tot:0,tarr:0},st.pj[1]||{})}FAM.forEach(f=>{if(f.war==null)f.war=false});initPoliceLater=0;
  if(st.cam){cam.x=st.cam[0];cam.y=st.cam[1];cam.z=st.cam[2]}return true}
 setInterval(()=>{if(G.started&&!G.over)saveGame()},(CFG.AUTOSAVE||15)*1000);
 document.addEventListener('visibilitychange',()=>{if(document.hidden)saveGame()});addEventListener('pagehide',()=>saveGame());addEventListener('beforeunload',()=>saveGame());
