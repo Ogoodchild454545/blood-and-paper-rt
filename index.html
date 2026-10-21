@@ -2,7 +2,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="build" content="RT v0.17.2 pre-alpha · 21 Oct 22:56">
+<meta name="build" content="RT v0.18 pre-alpha · 21 Oct 23:18">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -189,10 +189,41 @@ html.sa #top{padding-top:max(var(--st),4px)}
 #wheel .wx{left:-24px;top:-24px;width:48px;height:48px;border-radius:50%;background:#1b130c;border:2px solid #e6c56a;color:#e6c56a;font:bold 26px/1 Georgia,serif;padding:0;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px #000c}#wheel .wx svg{width:24px;height:24px;filter:invert(.85) sepia(1)}
 #wheel .wname{position:absolute;left:-48px;width:96px;top:-66px;text-align:center;color:#f1dfa8;font:12px/1.1 Limelight,Georgia,serif;text-shadow:0 1px 3px #000,0 0 8px #000;pointer-events:none}#wheel .wname small{display:block;font:9.5px Georgia,serif;color:#c9b27a}
 .dbar{height:6px;background:#2a211633;border:1px solid #2a2116;margin:2px 0 6px}.dbar i{display:block;height:100%;background:linear-gradient(90deg,#b07a2a,#9a1a12)}
+
+/* v0.18 newspaper: aged 1930s newsprint */
+#tabs .tab{padding:5px 0}
+#paperov{position:fixed;inset:0;z-index:60;display:none;align-items:center;justify-content:center;background:radial-gradient(ellipse at center,#0008,#000d);padding:6px}
+#paperov.mp{background:none;pointer-events:none;align-items:flex-start;padding-top:50px}#paperov.mp .news{pointer-events:auto;transform:scale(.8);transform-origin:top center}
+.news{position:relative;color:#231a10;font-family:Georgia,serif;border-radius:2px;
+ background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .32 0 0 0 0 .24 0 0 0 0 .12 0 0 0 .22 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"),
+ radial-gradient(ellipse at 18% 12%,#f3e6c255,transparent 45%),radial-gradient(ellipse at 85% 90%,#8a6a3a44,transparent 50%),
+ linear-gradient(90deg,transparent 49.6%,#7a5c3022 50%,transparent 50.4%),linear-gradient(170deg,#eadcb6,#dcc89c 55%,#cdb585);
+ box-shadow:inset 0 0 50px #7a5a2a77,inset 0 0 4px #5a4020,0 6px 26px #000c}
+.news::after{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 92% 8%,#9a6a2a22 0 30px,transparent 31px),radial-gradient(circle at 6% 88%,#7a4a1a1a 0 22px,transparent 23px)}
+#paperov .news{width:min(820px,98vw);max-height:97vh;overflow:auto;padding:6px 14px 6px;box-sizing:border-box}
+.news .mast{display:flex;align-items:center;justify-content:space-between;gap:8px;border-bottom:3px double #231a10}
+.news .ear{font-size:8.5px;letter-spacing:1px;text-transform:uppercase;width:90px;line-height:1.2;border:1px solid #231a10aa;padding:2px 4px;text-align:center}
+.news .ttl{font-family:Limelight,Georgia,serif;font-size:30px;letter-spacing:2px;line-height:1.05;text-align:center;text-shadow:0 0 1px #231a1088;white-space:nowrap}
+.news .dl{display:flex;justify-content:space-between;font-size:9.5px;letter-spacing:1px;text-transform:uppercase;border-bottom:1px solid #231a10;padding:2px 0}
+.news .hl{font-family:Limelight,Georgia,serif;font-size:25px;line-height:1.1;text-align:center;letter-spacing:1px;padding:4px 0 3px;border-bottom:2px solid #231a10}
+.news .hl b{font-weight:normal;padding:0 4px;border-radius:2px}
+.news table{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:2px}
+.news th{font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;text-align:left;padding:2px 4px;border-bottom:1.5px solid #231a10}
+.news td{padding:2px 4px;border-bottom:1px dotted #231a1077;white-space:nowrap}
+.news td.k{font-weight:bold;letter-spacing:.5px}.news td.you{font-weight:bold}
+.news td.best{color:#1d6a2a;font-weight:bold}.news td.worst{color:#9a2418;font-weight:bold}
+.news .bdg{display:inline-block;width:11px;height:11px;border-radius:50%;border:1px solid #231a10;vertical-align:-1px;margin-right:4px;box-shadow:inset 0 0 2px #0008}
+.news .ft{text-align:center;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;padding-top:3px;opacity:.75}
+.news .x{position:absolute;right:6px;top:4px;border:1px solid #231a10;background:#e6d6ae;border-radius:3px;font:bold 13px Georgia,serif;padding:0 7px;color:#231a10}
+#sheet .news{padding:6px 10px 8px;margin-bottom:8px}#sheet .news .ttl{font-size:22px}#sheet .news .hl{font-size:19px}#sheet .news .ear{display:none}
+#sheet .news td{padding:2px 2px;font-size:10.5px}#sheet .news th{padding:2px 2px;font-size:7.5px;letter-spacing:.5px}#sheet .news .bdg{width:8px;height:8px;margin-right:2px}#sheet .news td.k{letter-spacing:0}
+.news h3{font-size:11px;letter-spacing:2px;text-transform:uppercase;margin:8px 0 3px;border-bottom:1px solid #231a10}
+.news .it{font-size:12.5px;line-height:1.3;padding:3px 0;border-bottom:1px dotted #231a1066}.news .it .ago{opacity:.6;font-size:11px}
+.news .tog{font:bold 11px Georgia,serif;border:1px solid #231a10;background:#e9dbb5;color:#231a10;border-radius:3px;padding:2px 8px}
 </style></head><body>
 <canvas id="c"></canvas>
 <div id="rot"><div class="rph"></div><h2>Turn the paper sideways</h2><p>Blood and Paper is played in landscape. Rotate your phone; the game waits for you.</p></div>
-<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT v0.17.2 pre-alpha · 21 Oct 22:56</div>
+<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT v0.18 pre-alpha · 21 Oct 23:18</div>
 <div id="top" class="deco">
  <div class="r"><span id="cash">$0</span><span id="inc"></span><button class="ib" id="tb-menu" title="Menu" onclick="openPause()"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button></div>
  <div class="r"><span id="donst" style="display:none"></span><span id="hc" onclick="openTab('police')">Heat 0 · Case 0</span>
@@ -200,11 +231,11 @@ html.sa #top{padding-top:max(var(--st),4px)}
   <button class="ib" id="tb-intel" title="Intel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.8-6.5 10-6.5S22 12 22 12s-3.8 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button><button class="ib" id="tb-fam" title="Families"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8l8 3v6.2c0 5-3.6 8.2-8 9.4-4.4-1.2-8-4.4-8-9.4V5.8zM12 7v9M8.5 10.5h7"/></svg></button></div>
 </div>
 <div id="toast"></div>
-<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div class="tver" style="margin-top:4px;font:bold 13px Georgia,serif;letter-spacing:2px;color:#e6c56a;text-transform:uppercase">v0.17.2 pre-alpha</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT v0.17.2 pre-alpha · 21 Oct 22:56</div>
+<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div class="tver" style="margin-top:4px;font:bold 13px Georgia,serif;letter-spacing:2px;color:#e6c56a;text-transform:uppercase">v0.18 pre-alpha</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT v0.18 pre-alpha · 21 Oct 23:18</div>
 <button class="mbtn pri" onclick="goFull();newGame()">New Game</button><button class="mbtn" id="bcont" onclick="goFull();startGame(true)">Continue</button>
 <button class="mbtn" onclick="openSettings('titleMenu')">Settings</button><button class="mbtn" onclick="openHowTo('titleMenu')">How to Play</button><button class="mbtn" onclick="openCredits()">Credits</button></div></div>
 <div id="intro" style="position:fixed;inset:0;z-index:90;background:#000;display:flex;align-items:center;justify-content:center;transition:opacity .35s;touch-action:none"><video id="ivid" playsinline webkit-playsinline preload="auto" style="width:100%;height:100%;object-fit:contain;background:#000"></video><div id="itap" style="display:none;position:absolute;inset:0;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse at center,#2a1f14 0%,#0c0805 75%);color:#e6c56a;text-align:center"><div style="font:30px Limelight,Georgia,serif;letter-spacing:3px;color:#d9c08a;text-shadow:0 2px 6px #000">Blood and Paper</div><div style="width:180px;height:1px;background:#8a6d3b;margin:10px 0"></div><div style="font:italic 17px Georgia,serif;letter-spacing:2px;color:#c9b27a;animation:itp 1.6s ease-in-out infinite">Tap to begin</div></div></div><style>@keyframes itp{50%{opacity:.35}}</style>
-<div id="mwrap"><div id="modal" class="deco"></div></div>
+<div id="paperov"></div><div id="mwrap"><div id="modal" class="deco"></div></div>
 <div id="wheel"></div><div id="selchip" class="deco"></div><div id="hqhint" class="deco"></div><div id="gear"></div><div id="carbar" class="deco"></div>
 <div id="zoom" class="ui"><button id="zi">+</button><button id="zo">−</button><button id="home">⌂</button></div>
 <div id="sheet" class="deco"></div>
@@ -212,7 +243,7 @@ html.sa #top{padding-top:max(var(--st),4px)}
 <nav id="tabs" class="deco">
  <button class="tab" data-tab="crew"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16h18M6.5 16c0-6 2.5-9 5.5-9s5.5 3 5.5 9M2.5 16c2 2.5 17 2.5 19 0M7 12.5h10"/></svg>Crew</button><button class="tab" data-tab="rackets"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2.5h4v4l2.2 3.2v10.8a1 1 0 0 1-1 1H8.8a1 1 0 0 1-1-1V9.7L10 6.5zM8 13h8M8 17h8"/></svg>Rackets</button>
  <button class="tab" data-tab="boss"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 19h18M4 19L3 8l5 4 4-7 4 7 5-4-1 11M12 14v.01"/></svg>Boss</button><button class="tab" data-tab="upg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l9-5 9 5v8l-9 5-9-5z M3 8l9 5 9-5 M12 13v8"/></svg><svg style="display:none"><path d="M12 20V7M6.5 12.5 12 7l5.5 5.5M5 3.5h14"/></svg>Stock</button>
- <button class="tab" data-tab="intel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3.2"/></svg>Intel</button><button class="tab" data-tab="police"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l2.8 5.8 6.4.9-4.6 4.5 1.1 6.3L12 17l-5.7 3 1.1-6.3L2.8 9.2l6.4-.9z"/></svg>Police</button>
+ <button class="tab" data-tab="intel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3.2"/></svg>Intel</button><button class="tab" data-tab="paper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h13v13a2 2 0 0 0 2 2H6a2 2 0 0 1-2-2zM17 9h3v9a2 2 0 0 1-2 2M7 8h7M7 11.5h7M7 15h4"/></svg>Paper</button><button class="tab" data-tab="police"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l2.8 5.8 6.4.9-4.6 4.5 1.1 6.3L12 17l-5.7 3 1.1-6.3L2.8 9.2l6.4-.9z"/></svg>Police</button>
 </nav>
 <div id="panel" class="ui"></div>
 <div id="over" class="ui"><div id="overt" style="text-align:center;font-family:Limelight,serif;color:#e6c56a;padding:0 20px"></div><button class="mbtn pri" onclick="overNew()" style="margin-top:22px;width:240px">New Game</button><button class="mbtn" onclick="overMenu()" style="margin-top:10px;width:240px">Main Menu</button></div>
@@ -331,7 +362,10 @@ PETTY:{PAY:1.4, RANGE:26, IN_COP_R:3.5, IN_PART:0.5, IN_MINP:0.3, REST:75, REST_
   Police:{col:'#3b4a63',h:98,icon:'🚓'},
   Tenement:{col:'#8d7a62',h:76},Apartment:{},CornerShop:{},Park:{},Courthouse:{},Church:{col:'#6b6156',h:130}},
  NB:14,                      // blocks per side incl. the sea ring (city blocks 1..12)
- LANDMARKS:{police:[6,6],court:[7,6],church:[4,9],park:[9,4]}, PIERS:[3,7,11], SPAWN_APART:55, TAC:{ON:0.22,OFF:0.26,DWELL:0.5,FADE:0.3,FAR:0.34}, ESTABLISH:300, TAKE_MIN:3, TAKE:{BASE:4,LEVEL:2,BIG:2,GUARD:2,BIGT:['Casino','GunFactory']}, REVEAL:600, DAME_SEE:6,
+ LANDMARKS:{police:[6,6],court:[7,6],church:[4,9],park:[9,4]}, PIERS:[3,7,11], SPAWN_APART:55, TAC:{ON:0.22,OFF:0.26,DWELL:0.5,FADE:0.3,FAR:0.34},
+ PAPER:{EVERY:1800, // v0.18 front page every 30 REAL minutes of play (G.rt counts real seconds while the game runs)
+  PAUSE:true, // single player: the front page is a full overlay that pauses the game until tapped. MULTIPLAYER: set false -> a non-pausing popup the player can dismiss
+  NAME:'The Evening Clarion', W:{T:0.4,G:0.3,M:0.3}, BLD_VAL:2000}, ESTABLISH:300, TAKE_MIN:3, TAKE:{BASE:4,LEVEL:2,BIG:2,GUARD:2,BIGT:['Casino','GunFactory']}, REVEAL:600, DAME_SEE:6,
  STARTER:['Speakeasy'],      // each family starts with Hideout + this, owned (home block = territory from day 1)
  // START_CASH 2000 kept: the starter Speakeasy earns B.Speakeasy.baseInc on its own until the booze chain is complete
  /* MAP LAYOUT (blocks, 8x8). One quadrant template, mirrored into all four corners so every family has an identical neighbourhood.
@@ -368,7 +402,7 @@ const OCC=new Uint8Array(N*N),SEAT=new Uint8Array(N*N); // SEAT: 1 water, 2 pier
 const isRoad=(x,y)=>x>=0&&y>=0&&x<N&&y<N&&!OCC[y*N+x];  // walkable (roads, pavements, plazas)
 const G={t:0,speed:3, /* fixed game speed: SPEEDS[3] = 30x */units:[],bld:[],log:[],sel:new Set(),over:false,uid:0,target:null,lamps:[],cars:[],trees:[],veh:[]};
 window.G=G;
-FAM.forEach(f=>Object.assign(f,{case:0,inv:{pistol:0,tommy:0,bomb:0,car:0,booze:0,guns:0},bombT:-1e9,upg:{},dirty:CFG.START_CASH,clean:CFG.START_CLEAN,heat:0,inf:0,alive:true,lastRaid:-1e9,war:false}));
+FAM.forEach(f=>Object.assign(f,{case:0,inv:{pistol:0,tommy:0,bomb:0,car:0,booze:0,guns:0},bombT:-1e9,upg:{},dirty:CFG.START_CASH,clean:CFG.START_CLEAN,heat:0,inf:0,alive:true,lastRaid:-1e9,war:false,fk:0}));
 function door(x,y,s=2){for(const[dx,dy]of[[s,s-1],[s-1,s],[s,0],[0,s],[-1,0],[0,-1]])if(isRoad(x+dx,y+dy))return[x+dx,y+dy]}
 (function buildMap(){
  const used=new Set(),k=(x,y)=>x+','+y;
@@ -719,7 +753,7 @@ function hitUnit(a,t){if(t.inB!=null)return;reveal(a);reveal(t);if(typeof a.fam=
  if((dmg>=4||t.hp<=0))G.shakeQ={t:impact,x:t.x,y:t.y,amp:t.hp<=0?5:3};
  if(t.fam==='police'&&a.fam!=='police'&&t.squad==null){const f=FAM[a.fam];addHeat(a.fam,F.COP_HIT_HEAT,'hit a cop',t.x,t.y);addHeat(a.fam,CFG.HEAT.COP_HIT);if(G.t-(G.copAggro[a.fam]??-1e9)>F.COP_AGGRO/2&&a.fam===0)log('You attacked the police! Heat rising.',1);G.copAggro[a.fam]=G.t}
  if(t.mood==='def'&&t.garrison==null&&!t.ride){if(t.stance!=='retreat'){t.tgt=null;const hq=hqOf(t.fam);t.stance='retreat';if(hq)sendToB(t,hq)}}else if(t.tgt==null&&t.stance!=='retreat')t.tgt=a.id;
- if(t.hp<=0){a.kills=(a.kills||0)+1;addFx({type:'death',u:{...t,path:[]},kb:[t.x-a.x,t.y-a.y],d:impact-now});if(t.fam==='police'){chalkFor(t);if(a.fam!=='police'&&t.squad==null){const f=FAM[a.fam];addHeat(a.fam,F.COP_KILL_HEAT,'killed a cop',t.x,t.y);addDHeat(t.x,t.y,CFG.DIST.COP_KILL);if(t.chase!=null)endChase(t,'gone');addHeat(a.fam,CFG.HEAT.COP_KILL,'killed a cop');if(a.fam===0)log('A cop is dead! Every squad car in town is coming for you.',1);f.lastRaid=-1e9;polAcc=CFG.POLICE_TICK;G.copAggro[a.fam]=G.t}G.units=G.units.filter(v=>v!==t);G.copDeadT=G.t}
+ if(t.hp<=0){a.kills=(a.kills||0)+1;if(typeof a.fam=='number'&&FAM[a.fam])FAM[a.fam].fk=(FAM[a.fam].fk||0)+1;addFx({type:'death',u:{...t,path:[]},kb:[t.x-a.x,t.y-a.y],d:impact-now});if(t.fam==='police'){chalkFor(t);if(a.fam!=='police'&&t.squad==null){const f=FAM[a.fam];addHeat(a.fam,F.COP_KILL_HEAT,'killed a cop',t.x,t.y);addDHeat(t.x,t.y,CFG.DIST.COP_KILL);if(t.chase!=null)endChase(t,'gone');addHeat(a.fam,CFG.HEAT.COP_KILL,'killed a cop');if(a.fam===0)log('A cop is dead! Every squad car in town is coming for you.',1);f.lastRaid=-1e9;polAcc=CFG.POLICE_TICK;G.copAggro[a.fam]=G.t}G.units=G.units.filter(v=>v!==t);G.copDeadT=G.t}
   else{if(t.fam===0&&a.fam!==0&&t.type!='boss')log('Your '+CFG.UNITS[t.type].name+' was gunned down',1);else if(a.fam===0)log('Your crew took out a '+(t.fam==='police'?'cop':FAM[t.fam].name+' '+CFG.UNITS[t.type].name),1);kill(t,a.fam)}
   a.tgt=null;if(a.amove&&a.amDest){sendTo(a,...a.amDest,null,true)}}}
 function stepField(dt){const F=CFG.FIELD||CFG.FIGHT;fieldAcc+=dt;if(fieldAcc<F.TICK)return;fieldAcc=0;
@@ -1759,7 +1793,7 @@ const CHAINS=[['Booze',['Distillery','Warehouse','Speakeasy'],'#c98b3c'],['Guns'
 const nice=t=>t.replace(/([a-z])([A-Z])/g,'$1 $2');
 const LANDQ=matchMedia('(orientation:landscape)');
 function layoutUI(){const th=$('top').offsetHeight,bh=$('tabs').offsetHeight;const sh=$('sheet');$('toast').style.top=(th+6)+'px';if(LANDQ.matches){for(const id of['abar','selchip','zoom'])$(id).style.bottom='';sh.style.top='';sh.style.bottom='';return}sh.style.top=th+'px';sh.style.bottom=bh+'px';$('abar').style.bottom=(bh+6)+'px';$('selchip').style.bottom=(bh+68)+'px';$('zoom').style.bottom=(bh+68)+'px'}
-const ROTQ=matchMedia('(orientation:portrait) and (max-width:820px)');function rotCheck(){if(ROTQ.matches){if(G.started&&!G.paused){G.paused=true;G._rotP=1}}else if(G._rotP){G._rotP=0;if(!$('mwrap')||$('mwrap').style.display!='flex')G.paused=false}}
+const ROTQ=matchMedia('(orientation:portrait) and (max-width:820px)');function rotCheck(){if(ROTQ.matches){if(G.started&&!G.paused){G.paused=true;G._rotP=1}}else if(G._rotP){G._rotP=0;if((!$('mwrap')||$('mwrap').style.display!='flex')&&!PAPOPEN)G.paused=false}}
 (ROTQ.addEventListener?ROTQ.addEventListener('change',()=>{rotCheck();setTimeout(()=>{resize();layoutUI()},120)}):ROTQ.addListener(rotCheck));setInterval(rotCheck,1000);
 function famIncome(f){return G.bld.filter(b=>b.owner===f).reduce((s,b)=>s+incomeOf(b),0)}
 function status(u){if(u.garrison!=null)return['Guarding','#d4a84b'];if(u.path.length)return['Moving','#8fb3d9'];if(u.atB&&present(u.atB).some(v=>v.fam!==u.fam))return['Fighting','#e0594f'];return['Idle','#a8977a']}
@@ -1880,6 +1914,45 @@ function crewCard(u){const d=CFG.UNITS[u.type],[st,c]=doing(u),k=Math.max(0,Math
   ${u.type=='spy'?(()=>{const d=u.dm||{};return row('Latest intel',d.last?`<span style="font-weight:normal;color:#f0c8d8">${d.last}</span>`:'Nothing to report yet')+row('Skims',(d.steals||0)+(d.took?' · '+money(d.took):''))+row('Spotted',d.spots||0)+row('Heal',u.autoHeal?'Auto heal on':G.t<(u.healCD||0)?'Resting '+fmtH(u.healCD-G.t):'Ready')})():row('Earned, last 10 min',money(pd.cash)+(pd.jobs?' · '+pd.jobs+' job'+(pd.jobs>1?'s':''):''))+row('Kills',u.kills||0)}</div></div>
  <div class="cbtns"><button class="gbtn" data-goto="${u.id}" ${inJ?'disabled':''}>Go to him</button><button class="gbtn" data-equip="${u.id}" ${inJ?'disabled':''}>Equip</button></div>
  <div class="d" style="font-size:11.5px;opacity:.8;margin-top:6px">Crime money rides in his pockets until he walks into the hideout. At ${money(CFG.CARRY.MAX)} he heads home by himself. If he is killed the killers take it; the police confiscate it.</div>`}
+// ===== v0.18 NEWSPAPER =====
+let PAPOPEN=false,PAPT=0;
+function PAP(){return G.paper||(G.paper={n:0,next:CFG.PAPER.EVERY,iss:null})}
+function famStats(){const W=CFG.PAPER;updTerritory();return fams().map(f=>{const id=f.id,terr=Object.values(blockOwner).filter(o=>o===id).length,blds=G.bld.filter(b=>b.owner===id).length,
+ men=G.units.filter(u=>u.fam===id&&u.hp>0),crew=men.length,money=Math.floor((f.clean||0)+(f.dirty||0)),kills=f.fk||0,
+ worth=money+men.reduce((a,u)=>a+((CFG.UNITS[u.type]||{}).cost||0),0)+G.bld.filter(b=>b.owner===id).reduce((a,b)=>a+W.BLD_VAL*(b.lvl||1),0);
+ return {id,name:f.name,col:f.col,terr,blds,crew,money,kills,worth}})}
+// score: 40% territory share + 30% gangster share + 30% money share, each share = family value / sum over living families; territory points = blocks held x2 + buildings held
+function standings(){const S=famStats(),W=CFG.PAPER.W,sum=k=>S.reduce((a,x)=>a+x[k],0)||1;S.forEach(x=>x.tp=2*x.terr+x.blds);const T=sum('tp'),Gg=sum('crew'),M=sum('money');
+ S.forEach(x=>x.score=Math.round(100*(W.T*x.tp/T+W.G*x.crew/Gg+W.M*x.money/M)));return S.sort((a,b)=>b.score-a.score||a.id-b.id)}
+const PCATS=[['Territory','terr','blocks'],['Gangsters','crew',''],['Money','money','$'],['Kills','kills',''],['Buildings','blds',''],['Net Worth','worth','$']];
+function demoRows(S){return PCATS.map(([lab,k,u])=>{const v=S.map(x=>x[k]),me=S.find(x=>x.id===0);const srt=[...S].sort((a,b)=>b[k]-a[k]);const best=srt[0],worst=srt[srt.length-1];
+ const rank=me?1+S.filter(x=>x[k]>me[k]).length:null,avg=v.reduce((a,b)=>a+b,0)/(v.length||1);return {lab,k,u,you:me?me[k]:null,rank,best:{id:best.id,v:best[k]},avg,worst:{id:worst.id,v:worst[k]}}})}
+const HLP={lead:['{F} PULLS OUT IN FRONT','{F} MOB TIGHTENS ITS GRIP ON THE CITY','{F} OUTFIT RUNS THE TOWN'],close:['{F} MOB CLOSING IN','{F} GANG HOT ON THE LEADER\'S HEELS','NECK AND NECK AS {F} MOB GAINS'],ropes:['{F} FAMILY ON THE ROPES','{F} OUTFIT FEELS THE SQUEEZE','DARK DAYS FOR THE {F} MOB']};
+function headline(S,n){const L=S[0],Sc=S[1],W=S[S.length-1];let kind='lead',f=L;if(Sc){if(L.score>=Sc.score*1.25)kind='lead';else if(Sc.score>=L.score*0.9){kind='close';f=Sc}else if(S.length>=3){kind='ropes';f=W}}
+ const pool=HLP[kind];return {kind,fam:f.id,text:pool[n%pool.length]}}
+function paperIssue(){const P=PAP();P.next=Math.max(P.next+CFG.PAPER.EVERY,(G.rt||0)+1);P.n++;const S=standings();P.iss={n:P.n,t:G.t,rt:G.rt||0,S,rows:demoRows(S),hl:headline(S,P.n)};showPaper();return P.iss}
+const ord=n=>n+(n%100>=11&&n%100<=13?'th':['th','st','nd','rd'][n%10]||'th');
+function fmtV(v,u){return u=='$'?money(v):(Math.round(v*10)/10).toLocaleString('en-US')}
+function paperHTML(iss,full){const F=id=>FAM[id],bd=id=>`<span class="bdg" style="background:${F(id).col}"></span>`;const h=iss.hl,fn=F(h.fam);
+ const hl=h.text.replace('{F}',`<b style="color:${fn.col};text-shadow:0 0 1px #231a10,0 0 2px #231a10aa">${fn.name.toUpperCase()}</b>`);const day=Math.floor(iss.t/CFG.DAY)+1;
+ let t=`<div class="mast"><div class="ear">Late City Edition<br>Two Cents</div><div class="ttl">${CFG.PAPER.NAME}</div><div class="ear">All the News<br>Fit to Whisper</div></div>
+ <div class="dl"><span>No. ${iss.n}</span><span>Day ${day} · 1931</span><span>Standings of the families</span></div><div class="hl">${hl}</div>
+ <table><tr><th>Category</th><th>Rank</th><th>You</th><th>Best</th><th>Average</th><th>Worst</th></tr>`;
+ for(const r of iss.rows)t+=`<tr><td class="k">${r.lab}</td><td>${r.rank?ord(r.rank):'-'}</td><td class="you">${r.you==null?'-':fmtV(r.you,r.u)}</td><td class="best">${bd(r.best.id)}${fmtV(r.best.v,r.u)}</td><td>${fmtV(r.avg,r.u)}</td><td class="worst">${bd(r.worst.id)}${fmtV(r.worst.v,r.u)}</td></tr>`;
+ return t+'</table>'+(full?`<div class="ft">${CFG.PAPER.PAUSE?'Tap anywhere to put the paper down':'Tap to dismiss'}</div>`:'')}
+function showPaper(){const P=PAP(),o=$('paperov');if(!P.iss||!o)return;o.innerHTML=`<div class="news" id="frontpage">${CFG.PAPER.PAUSE?'':'<button class="x">✕</button>'}${paperHTML(P.iss,true)}</div>`;
+ o.classList.toggle('mp',!CFG.PAPER.PAUSE);o.style.display='flex';PAPOPEN=true;PAPT=performance.now();if(CFG.PAPER.PAUSE){G._paperP=!G.paused;G.paused=true}sfx&&sfx('tab');if(TAB==='paper')renderSheet()}
+function closePaper(){if(!PAPOPEN)return;const o=$('paperov');o.style.display='none';o.innerHTML='';PAPOPEN=false;if(CFG.PAPER.PAUSE&&G._paperP){G._paperP=false;G.paused=false}}
+$('paperov').addEventListener('click',e=>{if(performance.now()-PAPT<350)return;e.stopPropagation();if(!CFG.PAPER.PAUSE&&!e.target.closest('.news'))return;closePaper()});
+function paperTabHTML(){const P=PAP(),h=[];const left=Math.max(0,P.next-(G.rt||0)),mm=Math.floor(left/60),ss=String(Math.floor(left%60)).padStart(2,'0');
+ h.push(`<div class="news" id="papertab">`);if(P.iss)h.push(paperHTML(P.iss,false));else h.push(`<div class="mast"><div class="ttl" style="margin:0 auto">${CFG.PAPER.NAME}</div></div><div class="it">The first edition hits the stands after 30 minutes of play.</div>`);
+ h.push(`<div class="dl" style="border:0"><span>Next edition in ${mm}:${ss} of play</span></div>`);
+ const L=G.log||[];h.push('<h3>Latest</h3>'+(L[0]?`<div class="it" id="plast"><b>${L[0].m}</b> <span class="ago">${agoR(L[0].t)}</span></div>`:'<div class="it">Quiet on the streets.</div>'));
+ h.push('<h3>Last 10 notices</h3><div id="plist">');for(const l of L.slice(0,10))h.push(`<div class="it">${l.m} <span class="ago">${agoR(l.t)}</span></div>`);if(!L.length)h.push('<div class="it">Nothing yet.</div>');h.push('</div>');
+ const N=G.news||[];h.push(`<h3>Police blotter <button class="tog" data-blot=1>${G.blotOpen?'Hide':'Show'} (${N.length+G.raids.length})</button></h3>`);
+ if(G.blotOpen){h.push('<div id="pblot">');if(!N.length)h.push('<div class="it">Nothing on the blotter yet.</div>');for(const e of N)h.push(`<div class="it">${e.m} <span class="ago">${agoR(e.t)}</span></div>`);
+  if(G.raids.length){h.push('<h3>Recent raids</h3>');for(const r of G.raids.slice(0,6))h.push(`<div class="it">${r.f===0?'<b>Your</b>':FAM[r.f].name+"'s"} ${nice(r.type)} <span class="ago">${agoR(r.t)}</span> ${G.bld[r.b]&&G.bld[r.b].dmg?'· closed':'· reopened'}</div>`)}h.push('</div>')}
+ h.push('</div>');return h.join('')}
 function renderSheet(){const f=FAM[0],h=[],sh=$('sheet');const x=`<button class="ib x" data-close=1>${svgI('x')}</button>`;
  if(TAB=='crew'){h.push(crewHTML())}
  else if(TAB=='rackets'){h.push(`<h2>Rackets</h2><div class="sub">${G.bld.filter(b=>b.owner===0).length} properties · ${money(PMIN(famIncome(0)))}/min</div>`);
@@ -1907,30 +1980,19 @@ function renderSheet(){const f=FAM[0],h=[],sh=$('sheet');const x=`<button class=
    ['🍾','Booze',Math.floor(I.booze),'Made at Distilleries. Speakeasies pour it: with none in stock they earn only '+Math.round(CFG.INV.DRY_MULT*100)+'%.']];
   for(const[ic,n,v,tip]of T)h.push(`<div class="stile ${G.stip===n?'on':''}" data-tip="${tip}" data-tn="${n}"><div class="sic">${ic=='__T__'?ico('tommy'):ico(ICO_EM[ic]||ic)}</div><div class="scn">${v}</div><div class="snm">${n}</div></div>`);
   h.push(`</div><div id="stip" class="stip">${G.stip?'<b>'+G.stip+':</b> '+T.find(x=>x[1]==G.stip)[3]:''}</div>`)}
+ else if(TAB=='paper'){h.push(paperTabHTML())}
  else if(TAB=='police'){const C=CFG.CASE,K=caseBreak(0),hr=x=>x>=G.t-1?'Filed now':agoR(x);
-  const dec=CFG.HEAT_DECAY_DAY*(1+upgL(0,'heat')*CFG.UPG.heat.per),ng=G.units.filter(u=>u.fam===0&&u.garrison!=null).length,gd=ng*CFG.GUARD.HEAT_DAY,extra=extraCops(),draw=Math.round(Math.max(0,f.heat-CFG.HEAT.DRAW_FROM)/CFG.HEAT.DRAW*100);
+  const dec=CFG.HEAT_DECAY_DAY*(1+upgL(0,'heat')*CFG.UPG.heat.per),ng=G.units.filter(u=>u.fam===0&&u.garrison!=null).length,gd=ng*CFG.GUARD.HEAT_DAY;
   const dd=x=>{if(x===Infinity)return 'never at this rate';const m=x*CFG.DAY/RM(1);return m<=0.25?'any moment now':m<1?'under a minute':Math.round(m)+' min'};
-  h.push(`<div class="dos pf"><h1>CITY POLICE DEPT.</h1><div class="dl"><span>File No. ${1931+'-'+String(G.uid%900+100)}</span><span>${hr(G.t)}</span><span>Subject: the ${FAM[0].name} family</span></div>
+  h.push(`<div class="dos pf"><h1>CITY POLICE DEPT.</h1><div class="dl"><span>File No. ${1931+'-'+String(G.uid%900+100)}</span><span>Subject: the ${FAM[0].name} family</span></div>
   <div class="pfgrid"><div class="pfbox"><div class="pfk">Heat</div><div class="pfn">${Math.round(f.heat)}</div><div class="pfs">of 100 · cools ${PMIN(dec).toFixed(1)}/min${gd?` · guards +${PMIN(gd).toFixed(1)}/min`:''}</div></div>
-  <div class="pfbox"><div class="pfk">Case file</div><div class="pfn">${Math.round(f.case)}</div><div class="pfs">of ${C.MAX} · ${K.net>=0?'+':''}${PMIN(K.net).toFixed(1)}/min · raid in <b>${dd(K.days)}</b></div></div></div>
-  <h3>Heat: what the beat cops talk about</h3><div class="it">On the street: <b>${G.units.filter(u=>u.patrol&&!u.retire).length}</b> beat cops (${extra?'+'+extra+' because of hot districts':'normal'}); ${draw}% of patrol walks end at your doors.${f.heat>=CFG.POLICE_HEAT?' Raids on you send extra men.':''}</div>${distHTML()}`);
-  if(!G.heatLog.length)h.push('<div class="it">Nothing on the blotter lately.</div>');
-  for(const l of G.heatLog.slice(0,8))h.push(`<div class="it pfl"><span>${hr(l.t)} · ${l.why}${l.c>1?' ×'+l.c:''}</span><b>+${l.n<1?l.n.toFixed(1):Math.round(l.n)}</b></div>`);
-  h.push(`<h3>Case file: the paper trail</h3>`);
-  if(!K.rows.length)h.push('<div class="it">No rackets running. Nothing to write up.</div>');
-  for(const r of K.rows)h.push(`<div class="it pfl"><span>${nice(r.b.type)} ${'★'.repeat(lvl(r.b))} <button class="tog on" data-jump="${r.b.id}">Map</button></span><b>+${PMIN(r.d).toFixed(1)}/min</b></div>`);
-  h.push(`<div class="it pfl"><span>Dirty cash on hand ${money(f.dirty)}${f.dirty>C.DIRTY_FREE?'':' (under '+money(C.DIRTY_FREE)+', not counted)'}</span><b>+${PMIN(K.dirty).toFixed(1)}/min</b></div>`);
-  h.push(`<div class="it pfl"><span>Lawyers in court: ${K.nl}</span><b>${K.law?'−'+PMIN(K.law).toFixed(1)+'/min':'0'}</b></div>`);
-  h.push(`<div class="it">${K.target?`If they raid next they hit your <b>${nice(K.target.type)}</b>. <button class="tog on" data-jump="${K.target.id}">Map</button>`:'Nothing of yours to raid.'} After a raid the file drops to ${C.AFTER_RAID}.</div>`);
-  h.push(`<h3>The Courthouse</h3><div class="it">${K.ct?`Neutral ground by Police HQ. ${K.nl?`<b>${K.nl}</b> of your lawyers ${K.nl>1?'are':'is'} inside, cutting ${PMIN(C.LAWYER_DAY)}/min each.`:'None of your lawyers inside. Hire one at the Hideout and send him in.'} <button class="tog on" data-jump="${K.ct.id}">Map</button>`:'Not on this map.'} <i>(placeholder numbers)</i></div>`);
+  <div class="pfbox"><div class="pfk">Case file</div><div class="pfn">${Math.round(f.case)}</div><div class="pfs">of ${C.MAX} · ${K.net>=0?'+':''}${PMIN(K.net).toFixed(1)}/min · raid in <b>${dd(K.days)}</b></div></div></div>`);
+  h.push(`<div class="it">${K.target?`Next raid hits your <b>${nice(K.target.type)}</b>. <button class="tog on" data-jump="${K.target.id}">Map</button>`:'Nothing of yours to raid.'}</div>`);
+  const cops=G.units.filter(u=>u.fam==='police'&&!u.patrol);if(cops.length){const tg={};cops.forEach(c=>{const b=c.goB||c.atB;if(b)tg[b.id]=(tg[b.id]||0)+1});for(const id in tg){const b=G.bld[id];h.push(`<div class="it pfl"><span>Squad out: ${b.owner!=null?FAM[b.owner].name+"'s ":''}${nice(b.type)}</span><b>${tg[id]} cops</b></div>`)}}
   h.push(`<h3>Make it go away</h3><div class="it pfl"><span>Pay off a detective: −${C.PAYOFF_DIRTY[1]} case for ${money(C.PAYOFF_DIRTY[0])} dirty</span><button class="gbtn" data-payoff="dirty" ${f.dirty<C.PAYOFF_DIRTY[0]||f.case<=0?'disabled':''}>Pay</button></div>
    <div class="it pfl"><span>Bribe the judge: −${C.BRIBE_CLEAN[1]} case for ${money(C.BRIBE_CLEAN[0])} clean</span><button class="gbtn" data-payoff="clean" ${f.clean<C.BRIBE_CLEAN[0]||f.case<=0?'disabled':''}>Bribe</button></div>
    <div class="it pfl"><span>Grease the precinct: −${CFG.BRIBE_HEAT} heat for ${money(CFG.BRIBE_COST)} clean</span><button class="gbtn" data-bribe=1 ${f.clean<CFG.BRIBE_COST?'disabled':''}>Bribe</button></div>`);
-  h.push('<h3>News</h3>');if(!(G.news||[]).length)h.push('<div class="it">Nothing in the papers yet.</div>');for(const e of (G.news||[]).slice(0,30))h.push('<div class="it">'+e.m+' <span style="opacity:.6">'+agoR(e.t)+'</span></div>');h.push('<h3>Recent raids</h3>');if(!G.raids.length)h.push('<div class="it">No raids on record.</div>');
-  for(const r of G.raids.slice(0,6))h.push(`<div class="it pfl"><span>${hr(r.t)} · ${r.f===0?'<b>your</b>':FAM[r.f].name+"'s"} ${nice(r.type)}</span>${G.bld[r.b]&&G.bld[r.b].dmg?'<b>closed</b>':'<span>reopened</span>'}</div>`);
-  const cops=G.units.filter(u=>u.fam==='police'&&!u.patrol);if(cops.length){const tg={};cops.forEach(c=>{const b=c.goB||c.atB;if(b)tg[b.id]=(tg[b.id]||0)+1});h.push('<h3>Squad out now</h3>');for(const id in tg){const b=G.bld[id];h.push(`<div class="it pfl"><span>${b.owner!=null?FAM[b.owner].name+"'s ":''}${nice(b.type)}</span><b>${tg[id]} cops</b></div>`)}}
-  h.push('<h3>Other families</h3>');for(const fm of FAM){if(fm.id===0||!fm.alive)continue;h.push(`<div class="it pfl"><span>${fm.name}</span><span>Heat ${Math.round(fm.heat)} · Case ${Math.round(fm.case)}</span></div>`)}
-  h.push('</div>')}
+  h.push('<div class="it" style="font-size:11px;opacity:.8">Arrests, case warnings and raids are kept in the Police blotter in the Paper tab.</div></div>')}
  else if(TAB=='intel'){const sp=G.units.filter(u=>u.fam===0&&u.type=='spy');const hr=x=>x>=G.t-1?'Filed now':agoR(x);
   const cd=at=>{const r=Math.max(0,(at-G.t)/(CFG.SPEEDS[G.speed]||1));return r<1?'any moment':Math.ceil(r)+'s'};
   h.push(`<div class="dos"><h1>INTEL</h1><div class="dl"><span>Confidential</span><span>${hr(G.t)}</span><span>For the Don only</span></div><h3>Our dames</h3>`);
@@ -1963,7 +2025,7 @@ function renderSheet(){const f=FAM[0],h=[],sh=$('sheet');const x=`<button class=
  sh.innerHTML=x+h.join('');
  const bc=$('bossc');if(bc&&SPR.se){const g=bc.getContext('2d');g.drawImage(SPR.se,0,0,198,344,0,0,140,243)}}
 $('sheet').addEventListener('click',e=>{const st=e.target.closest('.stile');if(st){G.stip=G.stip===st.dataset.tn?null:st.dataset.tn;renderSheet();return}{{const wb=e.target.closest('[data-war]');if(wb){const fm=FAM[+wb.dataset.war];if(fm&&!fm.war&&confirm('Declare war on the '+fm.name+' family? Their crews will hit your men and rackets. There is no peace afterwards.')){fm.war=true;fm.warT=G.t;log('WAR: you declared war on the '+fm.name+' family.',1);intel('war',`<b>You declared war</b> on the ${fm.name} family.`,{loud:1})}renderSheet();return}}{const sk=e.target.closest('[data-skim],[data-expose]');if(sk){if(sk.dataset.skim){const u=G.units.find(v=>v.id==sk.dataset.skim);if(u)doSkim(u)}else exposeAiSpy(+sk.dataset.expose);buzz(12);renderSheet();return}}{const pn=e.target.closest('[data-pan]');if(pn){const[x,y]=pn.dataset.pan.split(',').map(Number);jumpTo(x,y);ripple(x,y,'Last seen','#ff6b5a');return}}const rc=e.target.closest('[data-recall],[data-cx]');if(rc){if(rc.dataset.recall){const u=G.units.find(v=>v.id==rc.dataset.recall);if(u&&u.inB!=null){spyRecall(u);closeTab();if(u)center(u.x,u.y)}}else{const[x,y]=rc.dataset.cx.split(',').map(Number);closeTab();center(x,y);ripple(x,y,'Boss','#ff6b5a')}return}}{const cc=e.target.closest('[data-card],[data-cback],[data-goto],[data-equip]');if(cc){buzz(6);const ds=cc.dataset,id=+(ds.card||ds.goto||ds.equip);const u=G.units.find(v=>v.id===id);
-  if(ds.cback){G.crewCard=null;renderSheet();$('sheet').scrollTop=0;return}if(ds.card){G.crewCard=id;renderSheet();$('sheet').scrollTop=0;return}if(!u)return;if(ds.goto){goToMan(u);return}if(ds.equip){openGear(u);return}}}const t=e.target.closest('[data-close],[data-hire],[data-unit],[data-jump],[data-upg],[data-bribe],[data-findboss],[data-payoff]');if(!t)return;const f=FAM[0];
+  if(ds.cback){G.crewCard=null;renderSheet();$('sheet').scrollTop=0;return}if(ds.card){G.crewCard=id;renderSheet();$('sheet').scrollTop=0;return}if(!u)return;if(ds.goto){goToMan(u);return}if(ds.equip){openGear(u);return}}}{const bt=e.target.closest('[data-blot]');if(bt){G.blotOpen=!G.blotOpen;renderSheet();return}}const t=e.target.closest('[data-close],[data-hire],[data-unit],[data-jump],[data-upg],[data-bribe],[data-findboss],[data-payoff]');if(!t)return;const f=FAM[0];
  if(t.dataset.close)return closeTab();
  if(t.dataset.payoff){const C=CFG.CASE,[c,n]=t.dataset.payoff=='dirty'?C.PAYOFF_DIRTY:C.BRIBE_CLEAN,k=t.dataset.payoff;if(f[k]>=c){f[k]-=c;f.case=Math.max(0,f.case-n);log('Paid off the law. Case −'+n,1);sfx&&sfx('cash')}}
  if(t.dataset.hire){hire(0,t.dataset.hire,myHQ())}
@@ -2307,7 +2369,7 @@ document.addEventListener('gesturestart',e=>e.preventDefault());
 let last=performance.now();
 function frame(now){const rdt=Math.min(0.1,(now-last)/1000);last=now;let dt=(G.paused||!G.started)?0:rdt*CFG.SPEEDS[G.speed]*(G.boost||1);
  while(dt>0){const s=Math.min(dt,5);tick(s);dt-=s}
- if(G.started&&!G.paused&&!G.over)G.rt=(G.rt||0)+Math.min(rdt,0.25);stepInertia(rdt);stepKeys(rdt);stepZoom(rdt);VOT=rdt;render(now);stepWheel(rdt);stepFollow(rdt);uiAcc+=rdt;if(uiAcc>0.25){uiAcc=0;updUI()}requestAnimationFrame(frame)}
+ if(G.started&&!G.paused&&!G.over){G.rt=(G.rt||0)+Math.min(rdt,0.25);if(G.rt>=PAP().next)paperIssue()}stepInertia(rdt);stepKeys(rdt);stepZoom(rdt);VOT=rdt;render(now);stepWheel(rdt);stepFollow(rdt);uiAcc+=rdt;if(uiAcc>0.25){uiAcc=0;updUI()}requestAnimationFrame(frame)}
 // ================= SOUND (procedural WebAudio) =================
 const SET=Object.assign({dmgnum:1,master:1,music:1,sfx:1,rain:1,quality:'high',cut:'auto'},JSON.parse(localStorage.getItem('bprt_settings')||'{}'));
 function saveSet(){localStorage.setItem('bprt_settings',JSON.stringify(SET));applySet()}
@@ -2433,7 +2495,7 @@ function saveGame(){if(!G.started||G.over||G.away)return;try{
  const st={v:3,wall:Date.now(),t:G.t,uid:G.uid,rs,VID,acc:[combatAcc,aiAcc,polAcc,witAcc],log:G.log,fam:FAM,
   bld:G.bld.map(b=>{const o={};for(const k in b){const v=b[k];if(k[0]!='_'&&(v===null||typeof v!='object'))o[k]=v}return o}),
   units:G.units.map(u=>({...u,atB:bIdx(u.atB),goB:bIdx(u.goB),ride:u.ride?u.ride.id:null,fin:u.fin?[u.fin[0],u.fin[1],bIdx(u.fin[2])]:null})),
-  cg:G.cars.map((c,i)=>c.gone?i:-1).filter(i=>i>=0),veh:G.veh.map(v=>({...v,riders:v.riders.map(u=>u.id)})),cam:[cam.x,cam.y,cam.z],ais:[G.aiSpies,G.aiWatch,aiSpyId],hl:[G.heatLog,G.raids],nw:G.news||[],pj:[G.jail,G.petty],dh:G.dh,sq:G.seenQ,it:[G.spied||{},G.spotD||[],G.spotB||{},G.spotH||{}]};
+  cg:G.cars.map((c,i)=>c.gone?i:-1).filter(i=>i>=0),veh:G.veh.map(v=>({...v,riders:v.riders.map(u=>u.id)})),cam:[cam.x,cam.y,cam.z],ais:[G.aiSpies,G.aiWatch,aiSpyId],hl:[G.heatLog,G.raids],nw:G.news||[],pp:[G.paper||null,G.rt||0],pj:[G.jail,G.petty],dh:G.dh,sq:G.seenQ,it:[G.spied||{},G.spotD||[],G.spotB||{},G.spotH||{}]};
  ST.put(JSON.stringify(st))}catch(e){console.warn('save failed',e)}}
 // ---- persistence: localStorage + IndexedDB mirror; newest copy wins ----
 const ST={ls:false,idb:false,cache:null,
@@ -2452,7 +2514,7 @@ function loadGame(){const st=JSON.parse(ST.cache||'null');try{for(const e of (st
  st.fam.forEach((f,i)=>Object.assign(FAM[i],f));st.bld.forEach((o,i)=>Object.assign(G.bld[i],o));
  const B=i=>i>=0?G.bld[i]:null;G.veh=st.veh.map(v=>({...v,riders:[]}));const VM=new Map(G.veh.map(v=>[v.id,v]));
  G.units=st.units.map(u=>{if(u.petty){for(const f of['k','j'])if(u.petty[f]=='pick'||u.petty[f]=='mug')u.petty[f]='rob'}return u}).map(u=>({...u,atB:B(u.atB),goB:B(u.goB),ride:u.ride!=null?VM.get(u.ride)||null:null,fin:u.fin?[u.fin[0],u.fin[1],B(u.fin[2])]:null}));
- G.units.forEach(u=>{if(u.ride)u.ride.riders.push(u)});(st.cg||[]).forEach(i=>{if(G.cars[i])G.cars[i].gone=1});FAM.forEach(f=>{f.inv=Object.assign({pistol:0,tommy:0,bomb:0,car:0,booze:0,guns:0},f.inv||{});if(f.bombT==null)f.bombT=-1e9});G.sel=new Set();if(st.ais){[G.aiSpies,G.aiWatch,aiSpyId]=st.ais}if(st.hl){[G.heatLog,G.raids]=st.hl}G.news=st.nw||[];if(st.dh)G.dh=st.dh;if(st.sq)G.seenQ=st.sq;if(st.it){[G.spied,G.spotD,G.spotB,G.spotH]=st.it}else{G.spied={};G.spotD=[];G.spotB={};G.spotH={}}if(st.pj){G.jail=st.pj[0]||[];G.petty=Object.assign({day:0,earn:{},arr:{},tot:0,tarr:0},st.pj[1]||{})}FAM.forEach(f=>{if(f.war==null)f.war=false});initPoliceLater=0;
+ G.units.forEach(u=>{if(u.ride)u.ride.riders.push(u)});(st.cg||[]).forEach(i=>{if(G.cars[i])G.cars[i].gone=1});FAM.forEach(f=>{f.inv=Object.assign({pistol:0,tommy:0,bomb:0,car:0,booze:0,guns:0},f.inv||{});if(f.bombT==null)f.bombT=-1e9});G.sel=new Set();if(st.ais){[G.aiSpies,G.aiWatch,aiSpyId]=st.ais}if(st.hl){[G.heatLog,G.raids]=st.hl}G.news=st.nw||[];if(st.pp){G.paper=st.pp[0];G.rt=st.pp[1]||0};if(st.dh)G.dh=st.dh;if(st.sq)G.seenQ=st.sq;if(st.it){[G.spied,G.spotD,G.spotB,G.spotH]=st.it}else{G.spied={};G.spotD=[];G.spotB={};G.spotH={}}if(st.pj){G.jail=st.pj[0]||[];G.petty=Object.assign({day:0,earn:{},arr:{},tot:0,tarr:0},st.pj[1]||{})}FAM.forEach(f=>{if(f.war==null)f.war=false});initPoliceLater=0;
  if(st.cam){cam.x=st.cam[0];cam.y=st.cam[1];cam.z=st.cam[2]}return true}
 setInterval(()=>{if(G.started&&!G.over)saveGame()},(CFG.AUTOSAVE||15)*1000);
 document.addEventListener('visibilitychange',()=>{if(document.hidden)saveGame()});addEventListener('pagehide',()=>saveGame());addEventListener('beforeunload',()=>saveGame());
