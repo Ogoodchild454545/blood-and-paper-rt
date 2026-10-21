@@ -2,7 +2,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="build" content="RT v0.15.1 pre-alpha · 21 Oct 17:45">
+<meta name="build" content="RT v0.16 pre-alpha · 21 Oct 18:20">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -192,7 +192,7 @@ html.sa #top{padding-top:max(var(--st),4px)}
 </style></head><body>
 <canvas id="c"></canvas>
 <div id="rot"><div class="rph"></div><h2>Turn the paper sideways</h2><p>Blood and Paper is played in landscape. Rotate your phone; the game waits for you.</p></div>
-<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT v0.15.1 pre-alpha · 21 Oct 17:45</div>
+<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT v0.16 pre-alpha · 21 Oct 18:20</div>
 <div id="top" class="deco">
  <div class="r"><span id="cash">$0</span><span id="inc"></span><button class="ib" id="tb-menu" title="Menu" onclick="openPause()"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button></div>
  <div class="r"><span id="donst" style="display:none"></span><span id="hc" onclick="openTab('police')">Heat 0 · Case 0</span>
@@ -200,7 +200,7 @@ html.sa #top{padding-top:max(var(--st),4px)}
   <button class="ib" id="tb-intel" title="Intel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.8-6.5 10-6.5S22 12 22 12s-3.8 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button><button class="ib" id="tb-fam" title="Families"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8l8 3v6.2c0 5-3.6 8.2-8 9.4-4.4-1.2-8-4.4-8-9.4V5.8zM12 7v9M8.5 10.5h7"/></svg></button></div>
 </div>
 <div id="toast"></div>
-<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div class="tver" style="margin-top:4px;font:bold 13px Georgia,serif;letter-spacing:2px;color:#e6c56a;text-transform:uppercase">v0.15.1 pre-alpha</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT v0.15.1 pre-alpha · 21 Oct 17:45</div>
+<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div class="tver" style="margin-top:4px;font:bold 13px Georgia,serif;letter-spacing:2px;color:#e6c56a;text-transform:uppercase">v0.16 pre-alpha</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT v0.16 pre-alpha · 21 Oct 18:20</div>
 <button class="mbtn pri" onclick="goFull();newGame()">New Game</button><button class="mbtn" id="bcont" onclick="goFull();startGame(true)">Continue</button>
 <button class="mbtn" onclick="openSettings('titleMenu')">Settings</button><button class="mbtn" onclick="openHowTo('titleMenu')">How to Play</button><button class="mbtn" onclick="openCredits()">Credits</button></div></div>
 <div id="intro" style="position:fixed;inset:0;z-index:90;background:#000;display:flex;align-items:center;justify-content:center;transition:opacity .35s;touch-action:none"><video id="ivid" playsinline webkit-playsinline preload="auto" style="width:100%;height:100%;object-fit:contain;background:#000"></video><div id="itap" style="display:none;position:absolute;inset:0;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse at center,#2a1f14 0%,#0c0805 75%);color:#e6c56a;text-align:center"><div style="font:30px Limelight,Georgia,serif;letter-spacing:3px;color:#d9c08a;text-shadow:0 2px 6px #000">Blood and Paper</div><div style="width:180px;height:1px;background:#8a6d3b;margin:10px 0"></div><div style="font:italic 17px Georgia,serif;letter-spacing:2px;color:#c9b27a;animation:itp 1.6s ease-in-out infinite">Tap to begin</div></div></div><style>@keyframes itp{50%{opacity:.35}}</style>
@@ -2216,16 +2216,27 @@ function startPinch(){closeWheel();const[a,b]=[...ptrs.values()];pinch={d:Math.m
 // ---- RT mouse controls: left click/drag = select (box), right click = order, right/middle drag = pan ----
 let MD=null;
 cv.addEventListener('contextmenu',e=>e.preventDefault());
+// v0.16: left mouse button = finger (click = tap, double-click = double-tap/wheel, drag = pan, shift-drag = box select); right button keeps click-to-order and drag-pan
 function mouseDown(e){vel=null;clearTimeout(lpT);try{cv.setPointerCapture(e.pointerId)}catch(_){}
- if(e.button===0){const _free=()=>!G.over&&!TAB&&!G.panel&&!G.mode&&$('choice').style.display!='block';const hu=_free()?hitUnit2(e.clientX,e.clientY):null;let preSel=null;if(hu&&hu.u){if(e.shiftKey||e.ctrlKey){G.sel.has(hu.u.id)?G.sel.delete(hu.u.id):G.sel.add(hu.u.id)}else G.sel=new Set([hu.u.id]);G.selPulse=performance.now();preSel=hu.u.id;updUI()}MD={b:0,sx:e.clientX,sy:e.clientY,preSel};drag={sx:e.clientX,sy:e.clientY,cx:cam.x,cy:cam.y,moved:false,mouse:1,hist:[]}}
+ if(e.button===0){const now=performance.now(),x=e.clientX,y=e.clientY,dbl=now-lastTap.t<350&&Math.hypot(x-lastTap.x,y-lastTap.y)<45&&!(()=>{const c=cvXY(x,y);return pickCar(c[0],c[1])})();
+  MD={b:0,sx:x,sy:y};drag={sx:x,sy:y,cx:cam.x,cy:cam.y,moved:false,mouse:1,hist:[]};
+  if(e.shiftKey&&_free()){drag.boxM=1;drag.box=[x,y,x,y]}
+  else if(dbl&&_free())drag.dbl=true;
+  else{const hu=_free()&&hitUnit2(x,y);if(hu&&hu.u){drag.onUnit=hu.u.id;addFx({type:'ripple',x:hu.u.x,y:hu.u.y,label:'',col:'#ffe68c'});G.selPulse=performance.now()}}}
  else MD={b:e.button,sx:e.clientX,sy:e.clientY,cx:cam.x,cy:cam.y,moved:false}}
 function mouseMove(e){if(!MD)return;const dx=e.clientX-MD.sx,dy=e.clientY-MD.sy;
- if(MD.b===0){if(!drag)return;if(drag.box){drag.box[2]=e.clientX;drag.box[3]=e.clientY}else if(Math.hypot(dx,dy)>DEAD){drag.moved=true;drag.box=[MD.sx,MD.sy,e.clientX,e.clientY]}}
+ if(MD.b===0){if(!drag)return;if(drag.boxM){drag.box[2]=e.clientX;drag.box[3]=e.clientY;return}
+  if(!drag.moved&&Math.hypot(dx,dy)>DEAD_T){drag.moved=true;closeWheel();drag.sx=e.clientX;drag.sy=e.clientY;drag.cx=cam.x;drag.cy=cam.y}
+  if(drag.moved){cam.x=drag.cx-(e.clientX-drag.sx)/cam.z;cam.y=drag.cy-(e.clientY-drag.sy)/cam.z;clamp();drag.hist.push([performance.now(),e.clientX,e.clientY]);if(drag.hist.length>6)drag.hist.shift()}}
  else{if(!MD.moved&&Math.hypot(dx,dy)>DEAD)MD.moved=true;if(MD.moved){cam.x=MD.cx-dx/cam.z;cam.y=MD.cy-dy/cam.z;clamp();(MD.h=MD.h||[]).push([performance.now(),e.clientX,e.clientY]);if(MD.h.length>6)MD.h.shift()}}}
 function mouseUp(e,cancel){if(!MD)return;const m=MD;MD=null;
- if(m.b===0){if(cancel){drag=null;return}if(drag&&drag.box){ptrs.set(e.pointerId,{});endPtr(e,false);drag=null;return}
-  const now=performance.now(),x=e.clientX,y=e.clientY,dbl=now-lastTap.t<320&&Math.hypot(x-lastTap.x,y-lastTap.y)<40;lastTap={t:dbl?0:now,x,y};drag=null;
-  if(m.preSel!=null){const pu=G.units.find(v=>v.id===m.preSel);if(dbl&&pu){G.sel.add(pu.id);selectSimilar(pu)}updUI();return}const pk=pick(x,y);if(dbl&&pk.u){G.sel.add(pk.u.id);selectSimilar(pk.u);updUI()}else if(pk.b&&!pk.u&&!pk.e&&!TAB&&!G.panel){openPanel(pk.b)}else if(!pk.u&&!pk.b&&!pk.e&&pk.car==null&&!pk.veh&&!pk.spy&&!e.shiftKey&&G.mode!=='amove'&&!$('choice').style.display.includes('block')&&!TAB&&!G.panel){G.sel.clear();G.selCar=null;updUI()}else tap(x,y,false,{mouse:1,add:e.shiftKey||e.ctrlKey})}
+ if(m.b===0){const d=drag;drag=null;if(cancel||!d)return;const x=e.clientX,y=e.clientY;
+  if(d.boxM){const[x0,y0,x1,y1]=d.box,a=Math.min(x0,x1),b=Math.max(x0,x1),c=Math.min(y0,y1),dd=Math.max(y0,y1);if(Math.hypot(x1-x0,y1-y0)>DEAD){let n=0;const R0=cv.getBoundingClientRect();
+    for(const u of G.units)if(u.fam===0&&u.garrison==null&&!u.ride&&!u.jail){const s=SPOS.get(u.id);if(!s)continue;const ux=(s.X-cam.x)*cam.z+R0.left,uy=(s.Y-cam.y)*cam.z-15*cam.z+R0.top;if(ux>=a-12&&ux<=b+12&&uy>=c-12&&uy<=dd+12){G.sel.add(u.id);n++}}
+    if(n){G.selPulse=performance.now();buzz(12)}updUI();renderABar&&renderABar();return}}
+  if(d.moved){const h=d.hist;if(h.length>1){const a=h[0],b=h[h.length-1],dt=b[0]-a[0];if(dt>0&&performance.now()-b[0]<80)vel={vx:(b[1]-a[1])/dt,vy:(b[2]-a[2])/dt}}return}
+  if(d.dbl){lastTap={t:0,x:0,y:0};const hu=hitUnit2(x,y);if(hu&&hu.u){G.sel.add(hu.u.id);openWheel(hu.u);updUI();renderABar&&renderABar()}else{closeWheel();undoOrder();G.sel.clear();G.selCar=null;G.mode=null;buzz(6);updUI();renderABar&&renderABar()}return}
+  lastTap={t:performance.now(),x,y};if(WH.u!=null)closeWheel();else if(d.onUnit!=null&&_free())touchToggle(d.onUnit);else tap(x,y)}
  if(m.b!==0&&m.moved&&m.h&&m.h.length>1){const a=m.h[0],b=m.h[m.h.length-1],dt=b[0]-a[0];if(dt>0&&performance.now()-b[0]<80)vel={vx:(b[1]-a[1])/dt,vy:(b[2]-a[2])/dt}}
  else if(m.b===2&&!m.moved&&!cancel){tap(e.clientX,e.clientY,false,{order:1,mouse:1})}}
 cv.addEventListener('pointerdown',e=>{FING={x:e.clientX,y:e.clientY,down:1,t:performance.now()}},true);
