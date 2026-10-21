@@ -2,7 +2,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="build" content="RT v0.15 pre-alpha · 21 Oct 14:55">
+<meta name="build" content="RT v0.15.1 pre-alpha · 21 Oct 17:45">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -192,7 +192,7 @@ html.sa #top{padding-top:max(var(--st),4px)}
 </style></head><body>
 <canvas id="c"></canvas>
 <div id="rot"><div class="rph"></div><h2>Turn the paper sideways</h2><p>Blood and Paper is played in landscape. Rotate your phone; the game waits for you.</p></div>
-<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT v0.15 pre-alpha · 21 Oct 14:55</div>
+<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT v0.15.1 pre-alpha · 21 Oct 17:45</div>
 <div id="top" class="deco">
  <div class="r"><span id="cash">$0</span><span id="inc"></span><button class="ib" id="tb-menu" title="Menu" onclick="openPause()"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button></div>
  <div class="r"><span id="donst" style="display:none"></span><span id="hc" onclick="openTab('police')">Heat 0 · Case 0</span>
@@ -200,7 +200,7 @@ html.sa #top{padding-top:max(var(--st),4px)}
   <button class="ib" id="tb-intel" title="Intel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.8-6.5 10-6.5S22 12 22 12s-3.8 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button><button class="ib" id="tb-fam" title="Families"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8l8 3v6.2c0 5-3.6 8.2-8 9.4-4.4-1.2-8-4.4-8-9.4V5.8zM12 7v9M8.5 10.5h7"/></svg></button></div>
 </div>
 <div id="toast"></div>
-<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div class="tver" style="margin-top:4px;font:bold 13px Georgia,serif;letter-spacing:2px;color:#e6c56a;text-transform:uppercase">v0.15 pre-alpha</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT v0.15 pre-alpha · 21 Oct 14:55</div>
+<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div class="tver" style="margin-top:4px;font:bold 13px Georgia,serif;letter-spacing:2px;color:#e6c56a;text-transform:uppercase">v0.15.1 pre-alpha</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT v0.15.1 pre-alpha · 21 Oct 17:45</div>
 <button class="mbtn pri" onclick="goFull();newGame()">New Game</button><button class="mbtn" id="bcont" onclick="goFull();startGame(true)">Continue</button>
 <button class="mbtn" onclick="openSettings('titleMenu')">Settings</button><button class="mbtn" onclick="openHowTo('titleMenu')">How to Play</button><button class="mbtn" onclick="openCredits()">Credits</button></div></div>
 <div id="intro" style="position:fixed;inset:0;z-index:90;background:#000;display:flex;align-items:center;justify-content:center;transition:opacity .35s;touch-action:none"><video id="ivid" playsinline webkit-playsinline preload="auto" style="width:100%;height:100%;object-fit:contain;background:#000"></video><div id="itap" style="display:none;position:absolute;inset:0;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse at center,#2a1f14 0%,#0c0805 75%);color:#e6c56a;text-align:center"><div style="font:30px Limelight,Georgia,serif;letter-spacing:3px;color:#d9c08a;text-shadow:0 2px 6px #000">Blood and Paper</div><div style="width:180px;height:1px;background:#8a6d3b;margin:10px 0"></div><div style="font:italic 17px Georgia,serif;letter-spacing:2px;color:#c9b27a;animation:itp 1.6s ease-in-out infinite">Tap to begin</div></div></div><style>@keyframes itp{50%{opacity:.35}}</style>
@@ -979,6 +979,7 @@ function pettyFree(){const hq=myHQ(),o={thug:0,enforcer:1,driver:2,hitman:3};ret
 function setAuto(u,k){if(!AUTOOK(u))return false;if(u.petty&&!u.petty.manual)pettyPay(u);u.garrison=null;u.petty={k,st:'rest',t:0,cash:0};u.tgt=null;u.amove=false;u.stance=null;G.sel.delete(u.id);return true}
 function pettyAssign(k){const u=pettyFree()[0];if(!u||!myHQ())return false;return setAuto(u,k)}
 function pettyPay(u){const p=u.petty;if(!p||!p.cash)return;const F=FAM[u.fam];if(!F)return;F.dirty+=p.cash;F.earned=(F.earned||0)+p.cash;if(u.fam===0){const j=p.j||p.k;pEv(j,p.cash);G.petty.tot+=p.cash}p.cash=0}
+function autoOff(us){for(const u of us)if(onJob(u)){pettyPay(u);if(u.burg!=null)comeOut(u,true);u.petty=null;u.tgt=null;if(u.fam===0)wNote(manName(u)+' drops his petty crime and takes your order.')}}
 function pettyRecall(u){if(!u.petty)return;pettyPay(u);u.petty=null;u.path=[];const hq=hqOf(u.fam);if(hq)sendToB(u,hq)}
 function pettyUnassign(k){const ms=pettyMen(k);if(!ms.length)return false;const o={rest:0,back:1,go:2,work:3};ms.sort((a,b)=>o[a.petty.st]-o[b.petty.st]);pettyRecall(ms[0]);return true}
 const jobName=p=>{const J=CFG.PETTY.JOBS;return p.k=='any'?(p.j?J[p.j].name+' (any job)':'any job'):J[p.k].name};
@@ -1089,7 +1090,7 @@ const P2=p=>CFG.PETTY.JOBS[p.j||p.k];
 function stepPetty(dt){
  for(const u of G.units){if(u.burg==null)continue;if(u.entered){if(u.jail||u.ride||u.path.length||u.hp<=0){u.entered=0;comeOut(u,true)}continue}const p=u.petty;if(!p||p.st!='work'||u.tgt!=null||u.jail||u.ride||u.garrison!=null||u.path.length){comeOut(u,true);if(p&&p.st=='work'){if(p.manual)u.petty=null;else{p.st='rest';p.t=20}}}}
  if(G.jail.length){for(const j of [...G.jail]){if(G.t<j.until)continue;G.jail=G.jail.filter(x=>x!==j);const u=j.u,hq=hqOf(u.fam)||PHQB;if(!FAM[u.fam]||!FAM[u.fam].alive)continue;u.x=hq.door[0];u.y=hq.door[1];u.path=[];u.atB=hq.type=='Hideout'?hq:null;u.goB=null;G.units.push(u);if(u.fam===0)log(manName(u)+' is out of the cells and back at the Hideout.',1)}}
- for(const u of G.units){if(!u.petty||typeof u.fam!='number')continue;const p=u.petty;if(!p.manual&&u.fam===0)G.sel.delete(u.id);
+ for(const u of G.units){if(!u.petty||typeof u.fam!='number')continue;const p=u.petty;
   const hq=hqOf(u.fam);if(!CRIMER(u)||u.garrison!=null||u.jail||(!p.manual&&((!hq&&!(u.type=='boss'&&u.fam!==0))||!AUTOOK(u)&&u.fam===0))){if(!p.manual)pettyPay(u);u.petty=null;continue}if(u.tgt!=null||u.ride)continue;
   if(u.wanted!=null&&!p.manual){if(!hq){if(p.st!='rest'){p.st='rest';p.t=30;p.c=null}}else if(p.st!='back'){p.st='back';p.c=null;sendToB(u,hq)}}
   if(p.st=='rest'){p.t-=dt;if(p.t>0)continue;if(u.wanted!=null){p.t=30;continue}if(hq&&u.carry>=CFG.CARRY.MAX){p.st='back';sendToB(u,hq);continue}if(pettyTarget(u)){p.st='go';p.rp=0}else p.t=CFG.PETTY.REST;continue}
@@ -2129,7 +2130,7 @@ function cvXY(sx,sy){const r=cv.getBoundingClientRect();return[(sx-r.left)*(inne
 function hitUnit2(sx,sy,raw){if(!raw)[sx,sy]=cvXY(sx,sy);const z=cam.z,touch=LASTPT!=='mouse',minS=touch?44:28,RAD=60;let best=null,bs=1e9,near=null,nd=RAD;
  for(const u of G.units){if(u.ride||u.hp<=0||u.jail)continue;const own=u.fam===0;if(u.inB!=null)continue;if(own){}else{if(!G.sel.size||!visible(u))continue}
   const p=SPOS.get(u.id);if(!p)continue;const fx=(p.X-cam.x)*z,fy=(p.Y-cam.y)*z,h=Math.max((u.type=='boss'?BOSSH:(RIGH[u.type]||44))*z,minS),w=Math.max(h*0.55,minS);
-  const cx=fx,cy=fy-h*0.5,dx=Math.abs(sx-cx)/(w/2),dy=Math.abs(sy-cy)/(h/2+(touch?6:3));if(touch&&!own&&false){}const cd=Math.hypot(sx-cx,sy-cy)-(own?4:0);if(touch&&!G.sel.size&&cd<nd&&own&&!onJob(u)){nd=cd;near=u}if(dx>1||dy>1)continue;
+  const cx=fx,cy=fy-h*0.5,dx=Math.abs(sx-cx)/(w/2),dy=Math.abs(sy-cy)/(h/2+(touch?6:3));if(touch&&!own&&false){}const cd=Math.hypot(sx-cx,sy-cy)-(own?4:0);if(touch&&!G.sel.size&&cd<nd&&own){nd=cd;near=u}if(dx>1||dy>1)continue;
   const sc=Math.hypot(dx,dy)-(own?0.15:0)-fy*1e-5;if(sc<bs){bs=sc;best=u}}
  if(!best&&near)best=near;return best?(best.fam===0?{u:best}:{e:best}):null}
 function groundPick(sx,sy){const wx=cam.x+sx/cam.z,wy=cam.y+sy/cam.z,fx=(wx/(TW/2)+wy/(TH/2))/2,fy=(wy/(TH/2)-wx/(TW/2))/2,x=Math.round(fx),y=Math.round(fy);
@@ -2164,7 +2165,7 @@ function choicePop(sx,sy,b,us){const el=$('choice');const en=us.some(u=>CFG.SMAS
   else if(c=='bomb'){const n=orderBomb(us,b);for(const u of us)if(u.type!='bomber')sendToB(u,b);ripple(d[0],d[1],'Bomb','#ff3b30')}
   G.target=d;G.targetT=performance.now();updUI()}}
 function buzz(ms){try{navigator.vibrate&&navigator.vibrate(ms)}catch(_){}}
-function selUnits(){return [...G.sel].map(id=>G.units.find(v=>v.id==id)).filter(u=>u&&u.inB==null&&!u.ride&&!onJob(u)&&!u.jail)}
+function selUnits(){return [...G.sel].map(id=>G.units.find(v=>v.id==id)).filter(u=>u&&(u.inB==null||onJob(u)&&u.burg!=null&&!u.entered)&&!u.ride&&!u.jail)}
 function unguard(us,keepB){const off=[];for(const u of us){if(u.garrison==null||(keepB&&keepB.id===u.garrison))continue;const b=G.bld[u.garrison];u.garrison=null;off.push(manName(u)+(b?' left guard duty at the '+nice(b.type):' left his guard post'))}if(off.length){const m=off.length>1?off.length+' men left guard duty.':off[0]+'.';NSEEN.delete(m);notice(m,true)}}
 function formationKeep(us,tx,ty){const n=us.length;if(n<2)return [[tx,ty]];let cx=0,cy=0;for(const u of us){cx+=u.x;cy+=u.y}cx/=n;cy/=n;
  let mr=0;for(const u of us)mr=Math.max(mr,Math.hypot(u.x-cx,u.y-cy));const lim=0.7*Math.sqrt(n)+0.6,sc=mr>lim?lim/mr:1;const used=new Set(),pool=formation(n*4,tx,ty),out=[];
@@ -2173,30 +2174,29 @@ function formationKeep(us,tx,ty){const n=us.length;if(n<2)return [[tx,ty]];let c
 function formation(n,tx,ty){const out=[],seen=new Set([ty*N+tx]),q=[[tx,ty]];let h=0;while(h<q.length&&out.length<n){const[x,y]=q[h++];out.push([x,y]);
  for(const[dx,dy]of[[1,0],[0,1],[-1,0],[0,-1]]){const nx=x+dx,ny=y+dy;if(isRoad(nx,ny)&&!seen.has(ny*N+nx)){seen.add(ny*N+nx);q.push([nx,ny])}}}return out}
 function ripple(x,y,label,col){addFx({type:'ripple',x,y,label,col:col||'#ffd34d'})}
-function selectSimilar(u){const p=SPOS.get(u.id);for(const v of G.units)if(v.fam===0&&v.type===u.type&&v.garrison==null&&!v.ride&&!onJob(v)&&!v.jail&&Math.hypot(v.x-u.x,v.y-u.y)<10)G.sel.add(v.id);G.selPulse=performance.now();buzz(12)}
+function selectSimilar(u){const p=SPOS.get(u.id);for(const v of G.units)if(v.fam===0&&v.type===u.type&&v.garrison==null&&!v.ride&&!v.jail&&Math.hypot(v.x-u.x,v.y-u.y)<10)G.sel.add(v.id);G.selPulse=performance.now();buzz(12)}
 function selectIdle(){for(const v of G.units)if(v.fam===0&&v.garrison==null&&!v.ride&&!onJob(v)&&!v.jail&&!v.path.length&&v.type!='boss')G.sel.add(v.id);G.selPulse=performance.now();buzz(10);updUI()}
 function snapOrder(us){G._undo={t:performance.now(),s:us.map(u=>({u,path:u.path.map(q=>q.slice()),goB:u.goB,atB:u.atB,tgt:u.tgt,amove:u.amove,amDest:u.amDest,stance:u.stance,ride:u.ride,job:u.job}))}}
 function undoOrder(){const U=G._undo;G._undo=null;if(!U||performance.now()-U.t>450)return false;for(const o of U.s){const u=o.u;if(u.ride!==o.ride)continue;Object.assign(u,{path:o.path,goB:o.goB,atB:o.atB,tgt:o.tgt,amove:o.amove,amDest:o.amDest,stance:o.stance,job:o.job})}G.target=null;return true}
 function tap(sx,sy,dbl,o={}){if(G.over)return;if(tacA()>0.5){const c=cvXY(sx,sy);vel=null;ZT={z:0.45,sx:c[0],sy:c[1]};G._tacTap=[c[0],c[1]];buzz&&buzz(8);return}if(WH.u!=null&&!dbl){closeWheel();return}if($('choice').style.display=='block'){$('choice').style.display='none';return}if(TAB){closeTab();return}if(G.panel){closePanel();return}let h=pick(sx,sy);const us=selUnits();
  if(h.spy){spyRecall(h.spy);buzz(12);updUI();return}
- if(h.burg){if(h.burg.entered)leaveB(h.burg);else callOut(h.burg);buzz(12);updUI();return}
+ if(h.burg){if(h.burg.entered)leaveB(h.burg);else if(onJob(h.burg)){G.sel.add(h.burg.id);G.selPulse=performance.now()}else callOut(h.burg);buzz(12);updUI();return}
  if(G.mode==='guard'){guardTap(h);return}
  if(G.mode==='heal'){healTap(h);updUI();return}
  if(G.mode==='driveby'){dbTap(h,sx,sy);return}
  if(G.mode==='establish'){const u=G.units.find(v=>v.id===G.estU);G.mode=null;G.estU=null;renderABar&&renderABar();if(!u||!h.b){wNote('Hideout cancelled. Tap the boss and pick Hideout again.');return}goEstablish(u,h.b);updUI();return}
- if(h.u&&onJob(h.u)&&!dbl){pettyTap(h.u);return}
  if(us.length&&!h.u&&!h.e&&!h.veh&&!o.order&&G.mode!=='amove'){const cz=pickCiv(sx,sy);if(cz){crimePop(sx,sy,{c:cz},us);return}if(h.b&&crimeKind(h.b)&&h.b.owner!==0&&!o.amove){crimePop(sx,sy,{b:h.b},us);return}}
  if(h.veh){if(us.length){orderBoard(us,h.veh);G.sel.clear()}else{G.selCar=h.veh.id;G.sel.clear()}buzz(10);updUI();renderABar&&renderABar();return}
  if(G.selCar!=null&&!us.length){const v=G.veh.find(w=>w.id===G.selCar);if(!v){G.selCar=null}else{if(h.u){G.selCar=null}else{const b=h.b&&!DECOR(h.b.type)?h.b:null;if(b)b._hl=performance.now();driveTo(v,b?b.door:(h.pt||h.road||[v.x,v.y]),b);buzz(10);updUI();return}}}
  if(o.order){if(!us.length&&G.selCar==null)return;if(h.u)h={road:[Math.round(h.u.x),Math.round(h.u.y)]}}
  if(h.b&&us.length&&us.some(u=>u.type==='spy')&&!o.amove){const sp=us.filter(u=>u.type==='spy'),rest=us.filter(u=>u.type!=='spy');let n=0;for(const u of sp)if(orderSpy(u,h.b))n++;if(n){h.b._hl=performance.now();ripple(h.b.door[0],h.b.door[1],'Go inside','#e8a0c0');buzz(12)}
   if(!rest.length){updUI();return}for(const u of sp)G.sel.delete(u.id);us.length=0;us.push(...rest)}
- if(G.mode==='amove'&&us.length&&!h.u){unguard(us);const tgt=h.road||(h.b&&h.b.door)||(h.e&&[Math.round(h.e.x),Math.round(h.e.y)]);G.mode=null;if(tgt){const f=formationKeep(us,...tgt);us.forEach((u,i)=>{u.tgt=null;u.stance=null;sendTo(u,...f[i],null,true);u.amove=true;u.amDest=f[i]});ripple(tgt[0],tgt[1],'Attack-move','#ff8a5a');buzz(15)}updUI();renderABar();return}
+ if(G.mode==='amove'&&us.length&&!h.u){autoOff(us);unguard(us);const tgt=h.road||(h.b&&h.b.door)||(h.e&&[Math.round(h.e.x),Math.round(h.e.y)]);G.mode=null;if(tgt){const f=formationKeep(us,...tgt);us.forEach((u,i)=>{u.tgt=null;u.stance=null;sendTo(u,...f[i],null,true);u.amove=true;u.amDest=f[i]});ripple(tgt[0],tgt[1],'Attack-move','#ff8a5a');buzz(15)}updUI();renderABar();return}
  if(h.e&&h.e.fam==='police'&&us.some(u=>u.type==='spy')){const sp=us.filter(u=>u.type==='spy');let ok=0;for(const u of sp)if(!ok&&charmCop(u,h.e))ok=1;buzz(12);updUI();return}
- if(h.e&&us.length){unguard(us);for(const u of us){u.tgt=h.e.id;u.amove=false;if(u.stance)u.stance=null;sendTo(u,Math.round(h.e.x),Math.round(h.e.y),null,true)}G.reticle=h.e.id;ripple(h.e.x,h.e.y,'Attack','#ff3b30');buzz(20);
+ if(h.e&&us.length){autoOff(us);unguard(us);for(const u of us){u.tgt=h.e.id;u.amove=false;if(u.stance)u.stance=null;sendTo(u,Math.round(h.e.x),Math.round(h.e.y),null,true)}G.reticle=h.e.id;ripple(h.e.x,h.e.y,'Attack','#ff3b30');buzz(20);
   if(h.e.fam==='police')log('Your crew are going after a cop. This will bring serious heat.',1);updUI();return}
  if(h.car!=null&&us.length&&!o.order&&G.mode!=='amove'){carPop(sx,sy,h.car,us);buzz(10);return}
- if(!h.u)unguard(us,h.b);for(const u of us){if(u.petty&&u.petty.manual)u.petty=null;u.tgt=null;u.amove=false;u.stance=u.stance==='hold'?'hold':null;u.board=null;if(u.type==='spy'){u.spyJob=null;u.copJob=null}}
+ if(!h.u&&(h.b||h.road||h.pt))autoOff(us);if(!h.u)unguard(us,h.b);for(const u of us){if(u.petty&&u.petty.manual)u.petty=null;u.tgt=null;u.amove=false;u.stance=u.stance==='hold'?'hold':null;u.board=null;if(u.type==='spy'){u.spyJob=null;u.copJob=null}}
  if(h.u){G.selCar=null;if(dbl){G.sel.add(h.u.id);openWheel(h.u);updUI();return}else{if(o.pre){}else if(o.mouse&&!o.add){G.sel=new Set([h.u.id])}else if(o.mouse&&o.add&&G.sel.has(h.u.id))G.sel.delete(h.u.id);else G.sel.add(h.u.id);G.selPulse=performance.now();buzz(8)}}
  else if(h.b&&us.length&&sabotageable(h.b,0)&&!h.b.dmg&&us.some(u=>CFG.SMASH.RATE[u.type]||u.type=='bomber')){h.b._hl=performance.now();for(const u of us){u.job=null;sendToB(u,h.b)}G.target=h.b.door;G.targetT=performance.now();ripple(h.b.door[0],h.b.door[1],h.b.owner==null?'Capture':'Attack',h.b.owner==null?'#ffd34d':'#ff6b5a');choicePop(sx,sy,h.b,us);updUI();return}
  else if(h.b&&us.length&&h.b.type=='Courthouse'){h.b._hl=performance.now();for(const u of us)sendToB(u,h.b);G.target=h.b.door;G.targetT=performance.now();ripple(h.b.door[0],h.b.door[1],us.some(u=>u.type=='lawyer')?'To court':'Courthouse','#c9b48a');buzz(12);updUI();return}
@@ -2257,15 +2257,15 @@ cv.addEventListener('pointermove',e=>{if(!ptrs.has(e.pointerId))return;e.prevent
  else if(drag&&drag.box){drag.box[2]=e.clientX;drag.box[3]=e.clientY;if(Math.hypot(drag.box[2]-drag.box[0],drag.box[3]-drag.box[1])>DEAD_T)drag.boxShow=true}
  else if(drag){const dx=e.clientX-drag.sx,dy=e.clientY-drag.sy;if(Math.hypot(dx,dy)>8)clearTimeout(lpT);if(!drag.moved&&Math.hypot(dx,dy)>DEAD_T){drag.moved=true;closeWheel();drag.sx=e.clientX;drag.sy=e.clientY;drag.cx=cam.x;drag.cy=cam.y}
   if(drag.moved){cam.x=drag.cx-(e.clientX-drag.sx)/cam.z;cam.y=drag.cy-(e.clientY-drag.sy)/cam.z;clamp();drag.hist.push([performance.now(),e.clientX,e.clientY]);if(drag.hist.length>6)drag.hist.shift()}}});
-function touchToggle(id){const u=G.units.find(v=>v.id===id);if(!u)return;if(onJob(u)){pettyTap(u);return}if(G.sel.has(id))G.sel.delete(id);else{G.sel.add(id);G.selPulse=performance.now()}buzz(8);updUI();renderABar&&renderABar()}
+function touchToggle(id){const u=G.units.find(v=>v.id===id);if(!u)return;if(G.sel.has(id))G.sel.delete(id);else{G.sel.add(id);G.selPulse=performance.now()}buzz(8);updUI();renderABar&&renderABar()}
 function endPtr(e,cancel){if(!ptrs.has(e.pointerId))return;const was=ptrs.size;
  if(!cancel&&was==1&&drag&&drag.dbl&&!drag.boxShow){drag.box=null;lastTap={t:0,x:0,y:0};const hu=hitUnit2(e.clientX,e.clientY);
-   if(hu&&hu.u){if(!onJob(hu.u))G.sel.add(hu.u.id);openWheel(hu.u);updUI();renderABar&&renderABar()}else{closeWheel();undoOrder();G.sel.clear();G.selCar=null;G.mode=null;buzz(6);updUI();renderABar&&renderABar()}}
+   if(hu&&hu.u){G.sel.add(hu.u.id);openWheel(hu.u);updUI();renderABar&&renderABar()}else{closeWheel();undoOrder();G.sel.clear();G.selCar=null;G.mode=null;buzz(6);updUI();renderABar&&renderABar()}}
  else if(!cancel&&was==1&&drag&&drag.dbl&&drag.boxShow&&!drag.mouse){const[x0,y0,x1,y1]=drag.box,a=Math.min(x0,x1),b=Math.max(x0,x1),c=Math.min(y0,y1),d=Math.max(y0,y1);undoOrder();G.sel.clear();let n=0;const R0=cv.getBoundingClientRect();
-  for(const u of G.units)if(u.fam===0&&u.garrison==null&&!u.ride&&!onJob(u)&&!u.jail){const s=SPOS.get(u.id);if(!s)continue;const ux=(s.X-cam.x)*cam.z+R0.left,uy=(s.Y-cam.y)*cam.z-15*cam.z+R0.top;if(ux>=a-12&&ux<=b+12&&uy>=c-12&&uy<=d+12){G.sel.add(u.id);n++}}
+  for(const u of G.units)if(u.fam===0&&u.garrison==null&&!u.ride&&!u.jail){const s=SPOS.get(u.id);if(!s)continue;const ux=(s.X-cam.x)*cam.z+R0.left,uy=(s.Y-cam.y)*cam.z-15*cam.z+R0.top;if(ux>=a-12&&ux<=b+12&&uy>=c-12&&uy<=d+12){G.sel.add(u.id);n++}}
   if(n){G.selPulse=performance.now();buzz(12)}drag.box=null;lastTap={t:0,x:0,y:0};updUI();renderABar&&renderABar()}
  else if(!cancel&&was==1&&drag&&drag.box){const[x0,y0,x1,y1]=drag.box,a=Math.min(x0,x1),b=Math.max(x0,x1),c=Math.min(y0,y1),d=Math.max(y0,y1);let n=0;if(drag.mouse&&!e.shiftKey&&Math.hypot(x1-x0,y1-y0)>DEAD)G.sel.clear();
-  for(const u of G.units)if(u.fam===0&&u.garrison==null&&!u.ride&&!onJob(u)&&!u.jail){const s=SPOS.get(u.id);if(!s)continue;const ux=(s.X-cam.x)*cam.z,uy=(s.Y-cam.y)*cam.z-15*cam.z;if(ux>=a-12&&ux<=b+12&&uy>=c-12&&uy<=d+12){G.sel.add(u.id);n++}}
+  for(const u of G.units)if(u.fam===0&&u.garrison==null&&!u.ride&&!u.jail){const s=SPOS.get(u.id);if(!s)continue;const ux=(s.X-cam.x)*cam.z,uy=(s.Y-cam.y)*cam.z-15*cam.z;if(ux>=a-12&&ux<=b+12&&uy>=c-12&&uy<=d+12){G.sel.add(u.id);n++}}
   if(n){G.selPulse=performance.now();buzz(12)}drag.box=null;updUI()}
  else if(!cancel&&was==1&&drag){if(!drag.moved){const now=performance.now(),x=e.clientX,y=e.clientY;
    lastTap={t:now,x,y};if(WH.u!=null)closeWheel();else if(drag.onUnit!=null&&_free())touchToggle(drag.onUnit);else tap(x,y)}
