@@ -2,7 +2,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="build" content="RT v0.23 pre-alpha · 22 Oct 22:57">
+<meta name="build" content="RT v0.23.1 pre-alpha · 23 Oct 00:29">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -221,14 +221,15 @@ html.sa #top{padding-top:max(var(--st),4px)}
 .news h3{font-size:11px;letter-spacing:2px;text-transform:uppercase;margin:8px 0 3px;border-bottom:1px solid #231a10}
 .news .it{font-size:12.5px;line-height:1.3;padding:3px 0;border-bottom:1px dotted #231a1066}.news .it .ago{opacity:.6;font-size:11px}
 .news .tog{font:bold 11px Georgia,serif;border:1px solid #231a10;background:#e9dbb5;color:#231a10;border-radius:3px;padding:2px 8px}
-</style><style>#resbar{display:flex;gap:7px;align-items:center;padding:2px 8px;border:1px solid #6a5636;border-radius:6px;background:linear-gradient(#2a2017,#1a140e);box-shadow:inset 0 1px 0 #4a3b26;white-space:nowrap;flex:none}
+</style><style>#modal .mx{position:sticky;top:-18px;float:right;z-index:3;width:38px;height:38px;margin:-10px -8px 0 6px;border-radius:50%;border:1px solid #c9a45c;background:radial-gradient(#3a2a1a,#1a120a);color:#f3e6c4;font:22px/1 Georgia,serif;cursor:pointer;box-shadow:0 2px 6px #000a;touch-action:manipulation}#modal .mx:hover{background:radial-gradient(#5a1d14,#2a0e08)}
+#resbar{display:flex;gap:7px;align-items:center;padding:2px 8px;border:1px solid #6a5636;border-radius:6px;background:linear-gradient(#2a2017,#1a140e);box-shadow:inset 0 1px 0 #4a3b26;white-space:nowrap;flex:none}
 #resbar .rs{display:flex;align-items:center;gap:3px;font-family:var(--deco);font-size:14px;color:#e8d9b0;text-shadow:0 1px 0 #000}
 #panel .gbtn.on,#panel .gbtn.on:disabled{opacity:1;filter:none;cursor:default;background:linear-gradient(#5a1d14,#3a120c);color:#f3e6c4;border-color:#c9a45c;box-shadow:inset 0 2px 5px #000b}#resbar img{width:20px;height:20px;object-fit:contain;filter:drop-shadow(0 1px 1px #000)}#resbar svg,#hc svg{width:20px;height:20px;filter:drop-shadow(0 1px 1px #000)}#hc svg{width:17px;height:17px;vertical-align:-3px;margin-right:2px}
 #hc{white-space:nowrap;display:flex;gap:8px;flex:none}#cash,#inc{white-space:nowrap;flex:none}.stile .sic svg.resi{width:28px;height:28px}</style>
 <script>addEventListener('DOMContentLoaded',()=>{});</script></head><body>
 <canvas id="c"></canvas>
 <div id="rot"><div class="rph"></div><h2>Turn the paper sideways</h2><p>Blood and Paper is played in landscape. Rotate your phone; the game waits for you.</p></div>
-<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT v0.23 pre-alpha · 22 Oct 22:57</div>
+<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT v0.23.1 pre-alpha · 23 Oct 00:29</div>
 <div id="top" class="deco">
  <div class="r"><span id="cash">$0</span><span id="inc"></span><button class="ib" id="tb-menu" title="Menu" onclick="openPause()"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button></div>
  <div class="r"><span id="donst" style="display:none"></span><canvas id="dnc" width="44" height="44" title="Day and night"></canvas><span id="hc" onclick="openTab('police')">Heat 0 · Case 0</span><span id="resbar"><span class="rs" title="Booze barrels"><span class="ri" data-r="booze"></span><span class="rn">0</span></span><span class="rs" title="Pistols"><span class="ri" data-r="pistol"></span><span class="rn">0</span></span><span class="rs" title="Tommy guns"><span class="ri" data-r="tommy"></span><span class="rn">0</span></span><span class="rs" title="Betting slips"><span class="ri" data-r="slips"></span><span class="rn">0</span></span><span class="rs" title="Pull"><span class="ri" data-r="pull"></span><span class="rn">0</span></span></span>
@@ -236,7 +237,7 @@ html.sa #top{padding-top:max(var(--st),4px)}
   <button class="ib" id="tb-intel" title="Intel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.8-6.5 10-6.5S22 12 22 12s-3.8 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button><button class="ib" id="tb-fam" title="Families"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8l8 3v6.2c0 5-3.6 8.2-8 9.4-4.4-1.2-8-4.4-8-9.4V5.8zM12 7v9M8.5 10.5h7"/></svg></button></div>
 </div>
 <div id="toast"></div>
-<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div class="tver" style="margin-top:4px;font:bold 13px Georgia,serif;letter-spacing:2px;color:#e6c56a;text-transform:uppercase">v0.21 pre-alpha</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT v0.23 pre-alpha · 22 Oct 22:57</div>
+<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div class="tver" style="margin-top:4px;font:bold 13px Georgia,serif;letter-spacing:2px;color:#e6c56a;text-transform:uppercase">v0.21 pre-alpha</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT v0.23.1 pre-alpha · 23 Oct 00:29</div>
 <button class="mbtn pri" onclick="goFull();newGame()">New Game</button><button class="mbtn" id="bcont" onclick="goFull();startGame(true)">Continue</button>
 <button class="mbtn" onclick="openSettings('titleMenu')">Settings</button><button class="mbtn" onclick="openHowTo('titleMenu')">How to Play</button><button class="mbtn" onclick="openCredits()">Credits</button></div></div>
 <div id="intro" style="position:fixed;inset:0;z-index:90;background:#000;display:flex;align-items:center;justify-content:center;transition:opacity .35s;touch-action:none"><video id="ivid" playsinline webkit-playsinline preload="auto" style="width:100%;height:100%;object-fit:contain;background:#000"></video><div id="itap" style="display:none;position:absolute;inset:0;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse at center,#2a1f14 0%,#0c0805 75%);color:#e6c56a;text-align:center"><div style="font:30px Limelight,Georgia,serif;letter-spacing:3px;color:#d9c08a;text-shadow:0 2px 6px #000">Blood and Paper</div><div style="width:180px;height:1px;background:#8a6d3b;margin:10px 0"></div><div style="font:italic 17px Georgia,serif;letter-spacing:2px;color:#c9b27a;animation:itp 1.6s ease-in-out infinite">Tap to begin</div></div></div><style>@keyframes itp{50%{opacity:.35}}</style>
@@ -347,7 +348,7 @@ PETTY:{PAY:1.4, RANGE:26, IN_COP_R:3.5, IN_PART:0.5, IN_MINP:0.3, REST:75, REST_
  BOMB:{HOURS:24, NOREPAIR_H:12, REPAIR:3000, REBUILD_H:4, COST:6000, FUSE_S:45, GUARD_DMG:12, HEAT:30, RANGE:2.2}, // bomber: rubble 24h (no rebuild for first 12h, then owner may pay $3000 to start); rebuild takes 4h of scaffolding, also auto after 24h
  // END-GAME BOMBS: buy only at a Lv3 Gun Factory AND while owning a running Lv3 Gun Store; $6,000 clean each, no daily limit. Bombers carry one from family stock.
  BLV:{MAX:3, COST:[0,2500,9000], HOURS:[0,4,12], INC:[1,1.5,2.2], PROD:[1,1.6,2.5]}, // building upgrades: cost/time to reach Lv2, Lv3 (index = target lvl-1); income & output multipliers per level
- CRUN:{CARRY:500,TILL:0.15,TILL_CAP:400,MIN:50,REST:RS(3),AI_ROB:RM(1.5)},
+ CRUN:{CARRY:500,TILL:0.15,TILL_CAP:3000,WASH:RS(8),MIN:50,REST:RS(3),AI_ROB:RM(1.5)},
  SUP:{TRUCK_CAP:4, CAP:{Speakeasy:2,Casino:2,GunStore:2}, USE:{Speakeasy:RM(2),Casino:RM(2),GunStore:RM(4)}, PROD:{Distillery:RM(1),PrintShop:RM(1),GunFactory:RM(2)}, OUT_CAP:6, WH_CAP:6, START:{Speakeasy:2,Casino:2,GunStore:2}, WH:5, ARM:2, TOMMY_X:2, DISPATCH:RS(2), SPEED:0.8, HJ_R:1.5, HJ_MIN:2, HJ_T:RS(3), DEF_R:3.5, PULL_HEAT:[10,25], PULL_CASE:[20,20], AI_HJ:RM(1.5), AI_HJ_R:14},
  INV:{DRY_MULT:0.4, PISTOL:250, TOMMY:700, PISTOL_STOCK:1, TOMMY_STOCK:2, GUNS_DAY:4, GUNS_CAP:20, BOOZE_DAY:6, BOOZE_USE:4, BOOZE_CAP:50, PISTOL_STR:3},
  DRIVEBY:{RANGE:12, FIRE_R:3, HITS:2, HEAT:15, DHEAT:8, AWAY:6}, // drive-by: target within RANGE tiles of the car; fire when within FIRE_R; family heat, district heat; getaway tiles
@@ -971,10 +972,11 @@ function reqStr(b){const T=CFG.TAKE;return T.BASE+T.LEVEL*(lvl(b)-1)+(T.BIGT.inc
 const strAt=(f,b)=>present(b).filter(u=>u.fam===f&&!u.job&&u.type!='hitman').reduce((a,u)=>a+str(u),0);
 function takeWhy(f,b,sx){if(!hqOf(f))return 'You need a hideout before you can take over a racket.';const need=reqStr(b),have=sx!=null?sx:strAt(f,b);if(have<need)return 'Too weak to take the '+nice(b.type)+': strength '+have+' / '+need+' needed. The boss counts '+CFG.UNITS.boss.str+', a thug '+CFG.UNITS.thug.str+' ('+CFG.INV.PISTOL_STR+' with a pistol). Hitmen don\'t take over.';return null}
 const dMul=b=>1+(G.dh[distOf(b.door[0],b.door[1])]||0)/100*CFG.DIST.CASE_MULT;
-function stepEconomy(dt){const k=dt/CFG.DAY;for(let d=0;d<5;d++)G.dh[d]=Math.max(0,G.dh[d]-CFG.DIST.DECAY_DAY*k);for(const f of fams()){const d0=f.dirty;f._la=0;
+function stepEconomy(dt){const k=dt/CFG.DAY;for(let d=0;d<5;d++)G.dh[d]=Math.max(0,G.dh[d]-CFG.DIST.DECAY_DAY*k);for(const f of fams()){const d0=f.dirty;f._la=0;const RUN=!!hqOf(f.id)&&G.units.some(u=>u.fam===f.id&&u.crun);f._run=RUN;
+ if(!RUN)for(const b of G.bld)if(b.owner===f.id&&b.till>0){f.dirty+=b.till;b.till=0}
  for(const b of G.bld)if(b.owner===f.id){const c=CFG.B[b.type];if(b.dmg)continue;if(SUPK[b.type]){if(!(b.stk>0))continue}else if(!active(b)){if(c.baseInc)f.dirty+=c.baseInc*k*lvM(b)*(inTerritory(b,f.id)?1+CFG.TERRITORY_BONUS:1)*(1+upgL(f.id,'income')*CFG.UPG.income.per);continue}
-  if(c.inc){f.dirty+=c.inc*k*lvM(b)*(inTerritory(b,f.id)?1+CFG.TERRITORY_BONUS:1)*(1+upgL(f.id,'income')*CFG.UPG.income.per);b.till=Math.min(CFG.CRUN.TILL_CAP,(b.till||0)+c.inc*k*lvM(b)*CFG.CRUN.TILL)}if(c.inf)f.inf+=c.inf*k;if(c.racket)f.case+=CFG.CASE.RACKET_DAY*k*lvl(b)*dMul(b);if(c.inc)f.case+=c.inc*lvM(b)/1000*CFG.CASE.PER_1K_DAY*k*dMul(b);
-  if(c.launder){const a=Math.min(f.dirty,c.launder*lvM(b)*k);f.dirty-=a;f.clean+=a;f._la+=a}}
+  if(c.inc){const iv=c.inc*k*lvM(b)*(inTerritory(b,f.id)?1+CFG.TERRITORY_BONUS:1)*(1+upgL(f.id,'income')*CFG.UPG.income.per);if(RUN){const t0=b.till||0;b.till=Math.min(CFG.CRUN.TILL_CAP,t0+iv*(1+CFG.CRUN.TILL));f._tl=(f._tl||0)+(b.till-t0)}else f.dirty+=iv}if(c.inf)f.inf+=c.inf*k;if(c.racket)f.case+=CFG.CASE.RACKET_DAY*k*lvl(b)*dMul(b);if(c.inc)f.case+=c.inc*lvM(b)/1000*CFG.CASE.PER_1K_DAY*k*dMul(b);
+  if(c.launder&&!RUN){const a=Math.min(f.dirty,c.launder*lvM(b)*k);f.dirty-=a;f.clean+=a;f._la+=a}}
  f.earned=(f.earned||0)+Math.max(0,f.dirty-d0+f._la);
  {let up=0;for(const u of G.units)if(u.fam===f.id)up+=CFG.UPKEEP[u.type]||0;let c=up*k;const d=Math.min(f.dirty,c);f.dirty-=d;c-=d;f.clean=Math.max(0,f.clean-c);f.upkeep=up}
  if(f.dirty>CFG.CASE.DIRTY_FREE)f.case+=(f.dirty-CFG.CASE.DIRTY_FREE)/1000*CFG.CASE.DIRTY_PER_1K_DAY*k;
@@ -1407,18 +1409,30 @@ function stepSupply(dt){const S=CFG.SUP;
  for(const u of G.units){if(u.hj==null)continue;const v=G.veh.find(w=>w.id===u.hj);if(!v||v.leg!='go'||v.amt<=0||!hjOK(u)){u.hj=null;continue}if(G.t>=(u._hjT||0)&&Math.hypot(u.x-v.x,u.y-v.y)>S.HJ_R*0.7)hjChase(v,[u])}}
 // v0.23 cash runs: a thug collects the back-room take from the family's rackets and walks it to the Laundry (cleaned on arrival) or the hideout
 function setCrun(u){if(!AUTOOK(u)||u.jail)return false;if(u.petty){if(!u.petty.manual)pettyPay(u);u.petty=null}u.garrison=null;u.tgt=null;u.amove=false;u.stance=null;u.homeRun=false;u.crun={st:'rest',t:0,dst:null};return true}
-function crunOff(u){if(!u.crun)return;u.crun=null;u.path=[];if(u.carry>0)u.homeRun=true}
+function crunOff(u){if(!u.crun)return;if(u.crun.in){u.carry=u.crun.v;u.cty='clean'}u.crun=null;u.path=[];if(u.carry>0)u.homeRun=true}
 const crunMen=(f=0)=>G.units.filter(u=>u.fam===f&&u.crun);
 const launOf=f=>G.bld.filter(b=>b.owner===f&&b.type=='Laundry'&&!b.dmg&&!b.ruin);
 const atDoor=(u,b)=>u.atB===b||(!u.path.length&&Math.hypot(u.x-b.door[0],u.y-b.door[1])<1.6);
-function crunDrop(u,b){const F=FAM[u.fam],v=u.carry||0;u.carry=0;if(!v)return;if(b.type=='Laundry'){F.clean+=v;G.crunN=G.crunN||{};G.crunN[u.fam]=(G.crunN[u.fam]||0)+v;if(u.fam===0){cashPop(b.door[0],b.door[1],v,'laundered');log(manName(u)+' ran '+money(v)+' to the Laundry. It comes out clean.')}}else{F.dirty+=v;if(u.fam===0){cashPop(b.door[0],b.door[1],v,'deposited');log(manName(u)+' dropped '+money(v)+' at the hideout.')}}}
-function crunNext(u){const C=CFG.CRUN,F=FAM[u.fam],c=u.crun,hq=hqOf(u.fam);const near=b=>Math.hypot(b.door[0]-u.x,b.door[1]-u.y);
- const tl=G.bld.filter(b=>b.owner===u.fam&&!b.dmg&&(b.till||0)>=C.MIN&&!G.units.some(m=>m!==u&&m.crun&&m.crun.dst===b.id)).sort((a,b)=>near(a)-near(b));
+function crunDrop(u,b){const F=FAM[u.fam],v=u.carry||0,cl=u.cty=='clean';u.carry=0;u.cty=null;if(!v)return;G.crunN=G.crunN||{};G.crunN[u.fam]=(G.crunN[u.fam]||0)+v;
+ if(cl){F.clean+=v;F._la=(F._la||0);G.crunC=G.crunC||{};G.crunC[u.fam]=(G.crunC[u.fam]||0)+v;if(u.fam===0){cashPop(b.door[0],b.door[1],v,'clean');log(manName(u)+' brought '+money(v)+' of clean money back to the hideout.')}}
+ else{F.dirty+=v;if(u.fam===0){cashPop(b.door[0],b.door[1],v,'deposited');log(manName(u)+' dropped '+money(v)+' of the take at the hideout.')}}}
+const crunTill=f=>G.bld.filter(b=>b.owner===f).reduce((a,b)=>a+(b.till||0),0);
+function crunNext(u){const C=CFG.CRUN,F=FAM[u.fam],c=u.crun,hq=hqOf(u.fam);const near=b=>Math.hypot(b.door[0]-u.x,b.door[1]-u.y);const go=(st,b)=>{c.st=st;c.dst=b.id;if(!sendToB(u,b)){c.st='rest';c.t=C.REST}};
+ if(!hq){c.st='rest';c.t=C.REST;return}
  const L=launOf(u.fam).sort((a,b)=>near(a)-near(b))[0];
- if((u.carry||0)<C.CARRY&&tl.length&&!(u.carry>=C.CARRY*0.6)){c.st='pick';c.dst=tl[0].id;if(!sendToB(u,tl[0])){c.st='rest';c.t=C.REST}return}
- if(u.carry>0){const d=L||hq;c.st='drop';c.dst=d.id;if(!sendToB(u,d)){c.st='rest';c.t=C.REST}return}
- if(L&&hq&&F.dirty>=C.MIN){c.st='load';c.dst=hq.id;if(!sendToB(u,hq)){c.st='rest';c.t=C.REST}return}
+ if(u.carry>0&&u.cty=='clean')return go('back',hq);
+ if(u.carry>0&&u.cty=='wash'&&L)return go('wash',L);
+ if(u.carry>0&&u.cty=='wash'){u.cty=null}
+ const tl=G.bld.filter(b=>b.owner===u.fam&&!b.dmg&&(b.till||0)>=C.MIN&&!G.units.some(m=>m!==u&&m.fam===u.fam&&m.crun&&m.crun.dst===b.id&&m.crun.st=='pick')).sort((a,b)=>near(a)-near(b));
+ const LA=L&&F.dirty>=C.MIN&&!(u.carry>0)&&!G.units.some(m=>m!==u&&m.fam===u.fam&&m.crun&&(m.crun.st=='load'||m.cty=='wash'||m.crun.in));
+ if(c.alt&&LA){c.alt=0;return go('load',hq)}
+ if((u.carry||0)<C.CARRY*0.6&&tl.length)return go('pick',tl[0]);
+ if(u.carry>0)return go('drop',hq);
+ if(L&&F.dirty>=C.MIN&&!G.units.some(m=>m!==u&&m.fam===u.fam&&m.crun&&(m.crun.st=='load'||m.cty=='wash')))return go('load',hq);
  c.st='rest';c.t=C.REST}
+function crunTxt(u){const c=u.crun,b=c&&G.bld[c.dst],v=money(u.carry||c.v||0);if(!c)return'';
+ if(u.held)return'Held up! '+v+' at risk';
+ return c.st=='pick'?'Collecting from '+(b?b.type:'a racket'):c.st=='drop'?'To hideout '+v:c.st=='load'?'Fetching dirty cash at the hideout':c.st=='wash'&&c.in?'Laundering '+v+' · '+Math.max(0,Math.ceil(c.t))+'s':c.st=='wash'?'To the Laundry '+v+' dirty':c.st=='back'?'Returning clean '+v:'Cash run: waiting for the take'}
 function stepCrun(dt){const C=CFG.CRUN,S=CFG.SUP;
  for(const u of G.units){if(!u.crun)continue;const c=u.crun,hq=hqOf(u.fam);if(u.hp<=0||u.jail||u.ride||u.garrison!=null||!hq||!AUTOOK(u)){u.crun=null;continue}
   // hold-up by rival men
@@ -1429,14 +1443,16 @@ function stepCrun(dt){const C=CFG.CRUN,S=CFG.SUP;
     if(u.hjT>=S.HJ_T){const v=u.carry,f=u.hjF;G.robN=G.robN||{};G.robN[f]=(G.robN[f]||0)+v;carryLose(u,f);ripple(u.x,u.y,'+'+money(v),'#f0cf72');if(f===0)lootPop('Robbed '+FAM[u.fam].name+' cash runner',[['+'+money(v)+' dirty','#e6d6b0']]);for(const m of G.units)if(m.hu===u.id){m.hu=null;m.path=[]}u.held=0;c.st='rest';c.t=C.REST}continue}else u.held=0}
   if(u.tgt!=null||u.path.length)continue;
   if(c.st=='rest'){c.t-=dt;if(c.t<=0)crunNext(u);continue}
+  if(c.in){c.t-=dt;if(c.t<=0){c.in=0;u.carry=c.v;c.v=0;u.cty='clean';u.hide=0;const L=G.bld[c.dst];if(L){u.x=L.door[0];u.y=L.door[1]}if(u.fam===0)ripple(u.x,u.y,'clean '+money(u.carry),'#9fd07a');crunNext(u)}continue}
   const b=G.bld[c.dst];if(!b||b.dmg){c.st='rest';c.t=C.REST;continue}if(!atDoor(u,b)){if(!sendToB(u,b)){c.st='rest';c.t=C.REST}continue}
   if(c.st=='pick'){const take=Math.min(b.till||0,C.CARRY-(u.carry||0));b.till-=take;u.carry=(u.carry||0)+Math.floor(take);FAM[u.fam].earned=(FAM[u.fam].earned||0)+take;if(u.fam===0||seenB(0,b))ripple(b.door[0],b.door[1],'+'+money(take)+' take','#e6c98a');crunNext(u);continue}
-  if(c.st=='load'){const F=FAM[u.fam],take=Math.min(F.dirty,C.CARRY-(u.carry||0));F.dirty-=take;u.carry=(u.carry||0)+Math.floor(take);F.dirty+=take-Math.floor(take);crunNext(u);continue}
-  if(c.st=='drop'){crunDrop(u,b);c.st='rest';c.t=C.REST;continue}}
+  if(c.st=='load'){const F=FAM[u.fam],take=Math.floor(Math.min(F.dirty,C.CARRY));if(take<1){c.st='rest';c.t=C.REST;continue}F.dirty-=take;u.carry=take;u.cty='wash';crunNext(u);continue}
+  if(c.st=='wash'){c.in=1;c.v=u.carry;u.carry=0;c.t=C.WASH*Math.max(0.5,c.v/C.CARRY)/Math.max(1,lvM(b));if(u.fam===0)ripple(b.door[0],b.door[1],'washing '+money(c.v),'#cfd8c8');continue}
+  if(c.st=='drop'||c.st=='back'){if(c.st=='drop')c.alt=1;crunDrop(u,b);c.st='rest';c.t=C.REST*0.3;continue}}
  // robbers chase their mark
  for(const m of G.units){if(m.hu==null)continue;const r=G.units.find(w=>w.id===m.hu);if(!r||!r.crun||!(r.carry>0)||!hjOK(m)){m.hu=null;continue}if(G.t>=(m._hjT||0)&&Math.hypot(m.x-r.x,m.y-r.y)>S.HJ_R*0.7){const a=r.path[Math.min(2,r.path.length-1)]||[r.x,r.y];sendTo(m,Math.round(a[0]),Math.round(a[1]),null,true);m._hjT=G.t+RS(1)}}}
 function orderRob(us,r){const men=us.filter(hjOK).filter(m=>m.fam!==r.fam);if(men.length<CFG.SUP.HJ_MIN)return men.length;for(const m of men){if(m.crun)crunOff(m);m.hu=r.id;m.tgt=null;m.job=null;m.amove=false;m.garrison=null;m._hjT=0}ripple(r.x,r.y,'Hold-up','#ff8a5a');return men.length}
-function aiCrun(f,mine){const hq=hqOf(f.id);if(!hq)return;const th=mine.filter(u=>u.type=='thug'&&u.garrison==null&&!u.goB&&!u.jail);const on=th.filter(u=>u.crun).length;const has=launOf(f.id).length||G.bld.some(b=>b.owner===f.id&&(b.till||0)>=CFG.CRUN.MIN);
+function aiCrun(f,mine){const hq=hqOf(f.id);if(!hq)return;const th=mine.filter(u=>u.type=='thug'&&u.garrison==null&&!u.goB&&!u.jail);const on=th.filter(u=>u.crun).length;const has=launOf(f.id).length||G.bld.some(b=>b.owner===f.id&&!b.dmg&&CFG.B[b.type].inc&&(SUPK[b.type]?b.stk>0:active(b)));
  const want=f.war&&th.length<4?0:has?Math.min(th.length>=5?2:1,th.length):0;if(on<want){const u=th.find(u=>!u.petty&&!u.crun&&!u.path.length&&u.hj==null&&u.hu==null)||th.find(u=>!u.crun&&u.petty&&!u.petty.manual);if(u)setCrun(u)}else if(on>want){const u=th.find(u=>u.crun);if(u)crunOff(u)}
  // rival runners near home are fair game
  f._ruT=f._ruT||0;if(G.t<f._ruT)return;f._ruT=G.t+CFG.CRUN.AI_ROB*(0.7+0.6*rnd());
@@ -1732,7 +1748,7 @@ function drawCut(b,sp,sim){const g=bGeo(b);if(!g){ctx.drawImage(sim,sp.X,sp.Y,sp
  b._cutTop=res.top;if(k>0.5)b._r=[sp.X,res.top-8,sp.X+sp.w,sp.Y+sp.h]}
 function drawBuilding(b){if(b.type=='Park'){b._r=null;return}const hid=!seenB(0,b),c=CFG.B[hid?dispType(b):b.type],sp=bSprite(b);b._r=[sp.X,sp.Y,sp.X+sp.w,sp.Y+sp.h];b._rf=b._r;let sim=scaledImg(sp.img,sp.w*cam.z,sp.h);if(b.tape&&b.dmg=='smashed')sim=sepiaOf(sim);const wreck=b.dmg=='bombed'||b.dmg=='rebuild';if(wreck){b._r=[sp.X,sp.Y+sp.h*0.4,sp.X+sp.w,sp.Y+sp.h];if(b.dmg=='bombed')drawRubble(b,sp);else drawScaffold(b,sp)}else{
  if(cam.z>=CFG.TAC.FAR){ctx.fillStyle='rgba(0,0,0,0.2)';ctx.beginPath();ctx.ellipse(sp.X+sp.w*0.62,sp.Y+sp.h-sp.w*0.2,sp.w*0.5,sp.w*0.2,0,0,7);ctx.fill()}
- const cutk=(b._cut||0)>0.02;if(cutk)drawCut(b,sp,sim);else if(b.flip){ctx.save();ctx.translate(sp.X+sp.w,sp.Y);ctx.scale(-1,1);ctx.drawImage(sim,0,0,sp.w,sp.h);ctx.restore()}else ctx.drawImage(sim,sp.X,sp.Y,sp.w,sp.h)}const cx=sp.X+sp.w/2,top=wreck?(b.dmg=='rebuild'?sp.Y+sp.h*0.25:sp.Y+sp.h*0.5):((b._cut||0)>0.02&&b._cutTop!=null?b._cutTop:sp.Y);
+ const cutk=(b._cut||0)>0.02;if(cutk)drawCut(b,sp,sim);else if(b.flip){ctx.save();ctx.translate(sp.X+sp.w,sp.Y);ctx.scale(-1,1);ctx.drawImage(sim,0,0,sp.w,sp.h);ctx.restore()}else ctx.drawImage(sim,sp.X,sp.Y,sp.w,sp.h);if(!cutk)drawSign(b,sp,hid);else b._sg=null}const cx=sp.X+sp.w/2,top=wreck?(b.dmg=='rebuild'?sp.Y+sp.h*0.25:sp.Y+sp.h*0.5):((b._cut||0)>0.02&&b._cutTop!=null?b._cutTop:sp.Y);
  if((b.dmg=='smashed'&&!b.tape)||b.dmg=='shot'){const ck=Math.min(1,Math.max(0,b._cut||0));if(ck<0.98){ctx.save();ctx.globalAlpha*=1-ck;drawDamage(b,sp);ctx.restore()}}
  if(b.dmg=='smashed'&&b.tape)drawRaid(b,sp);
  if(b.type=='Courthouse'&&false){const gx=sp.X+sp.w*0.5,gy=sp.Y+sp.h*0.5,gw=Math.max(60,sp.w*0.5),gh=gw*0.22;ctx.fillStyle='#1d1712';ctx.fillRect(gx-gw/2-2,gy-gh/2-2,gw+4,gh+4);ctx.fillStyle='#cfc3a3';ctx.fillRect(gx-gw/2,gy-gh/2,gw,gh);ctx.fillStyle='#1d1712';ctx.font=`bold ${Math.round(gh*0.6)}px Georgia,serif`;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('COURT HOUSE',gx,gy+1);
@@ -1747,6 +1763,20 @@ function drawBuilding(b){if(b.type=='Park'){b._r=null;return}const hid=!seenB(0,
   const gn=(b.owner===0||cam.z>=0.15)?guardsAt(b).length:0;if(gn){const sx=ix-R*0.95,sy=iy+R*0.7,r2=R*0.55;ctx.beginPath();ctx.moveTo(sx-r2,sy-r2);ctx.lineTo(sx+r2,sy-r2);ctx.lineTo(sx+r2,sy+r2*0.2);ctx.lineTo(sx,sy+r2*1.2);ctx.lineTo(sx-r2,sy+r2*0.2);ctx.closePath();ctx.fillStyle='#c9a24a';ctx.fill();ctx.strokeStyle='#1d1712';ctx.lineWidth=R*0.1;ctx.stroke();ctx.fillStyle='#1d1712';ctx.font='bold '+Math.round(R*0.7)+'px sans-serif';ctx.fillText(gn,sx,sy)}
   if(b.dmg){const t=fmtR(b.dmgUntil-rtNow()),fs=Math.round(R*0.62);ctx.font=`bold ${fs}px sans-serif`;const tw=ctx.measureText(t).width+fs*1.4,bx=ix-tw/2,by=iy+R*0.95;ctx.fillStyle=b.dmg=='bombed'?'#b3261e':'#c9701e';ctx.beginPath();ctx.roundRect?ctx.roundRect(bx,by,tw,fs*1.35,fs*0.6):ctx.rect(bx,by,tw,fs*1.35);ctx.fill();ctx.strokeStyle='#1d1712';ctx.lineWidth=R*0.08;ctx.stroke();ctx.fillStyle='#fff';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(t,ix+fs*0.45,by+fs*0.7);ctx.drawImage(ICIMG[b.dmg=='bombed'?'burst':b.dmg=='rebuild'?'scaffold':'hammer'],bx+fs*0.25,by+fs*0.15,fs*1.1,fs*1.1)}
   if(b.owner!=null&&!active(b)&&!b.dmg){ctx.font='bold '+Math.round(R*0.7)+'px sans-serif';ctx.fillStyle='#fff';ctx.drawImage(ICIMG.chain,ix+R*0.45,iy-R*1.25,R*0.9,R*0.9)}}}
+
+// v0.23.1 open signs: Speakeasy neon sign and Casino door lamp light up when open and stocked, dark when shut
+const SIGN={Speakeasy:{iw:269,ih:283,poly:[[153,147],[224,122],[224,146],[153,172]],c:[188,147],R:44,col:'255,64,40'},Casino:{iw:303,ih:308,c:[218,171],R:16,col:'255,190,90'}};
+const GLOWR=(()=>{const c=document.createElement('canvas');c.width=c.height=64;const x=c.getContext('2d'),g=x.createRadialGradient(32,32,0,32,32,32);g.addColorStop(0,'rgba(255,90,60,0.6)');g.addColorStop(0.45,'rgba(255,60,40,0.2)');g.addColorStop(1,'rgba(255,40,30,0)');x.fillStyle=g;x.fillRect(0,0,64,64);return c})();
+function bOpen(b){return b.owner!=null&&!b.dmg&&!b.ruin&&(SUPK[b.type]?(b.stk||0)>0:active(b))}
+function signFlick(b,now){const t=now/1000+b.x*1.7+b.y*0.9;let f=0.9+0.06*Math.sin(t*7.3)+0.04*Math.sin(t*23.1);if(Math.sin(t*0.37)+Math.sin(t*1.13+b.x)>1.8&&Math.sin(t*41)>0)f*=0.4;return f}
+function drawSign(b,sp,hid){b._sg=null;const S=SIGN[b.type];if(!S||!sp.img)return;const kx=sp.w/S.iw,ky=sp.h/S.ih,P=(x,y)=>[b.flip?sp.X+sp.w-x*kx:sp.X+x*kx,sp.Y+y*ky];
+ const on=!hid&&bOpen(b),now=performance.now(),[cx,cy]=P(S.c[0],S.c[1]);b._on=on;ctx.save();
+ if(S.poly){ctx.beginPath();S.poly.forEach((q,i)=>{const p=P(q[0],q[1]);i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1])});ctx.closePath();
+  if(!on){ctx.fillStyle='rgba(16,9,7,0.66)';ctx.fill()}
+  else{const f=signFlick(b,now);ctx.globalCompositeOperation='lighter';ctx.globalAlpha=0.22*f;ctx.fillStyle=`rgb(${S.col})`;ctx.fill();ctx.globalAlpha=0.55*f;ctx.drawImage(GLOWR,cx-S.R*2*kx,cy-S.R*1.4*ky,S.R*4*kx,S.R*2.8*ky);b._sg=[cx,cy,S.R*kx,f,1];b._sgT=now}}
+ else{if(!on){ctx.fillStyle='rgba(22,15,10,0.9)';ctx.beginPath();ctx.ellipse(cx,cy,4*kx,6*ky,0,0,7);ctx.fill()}
+  else{const f=signFlick(b,now);ctx.globalCompositeOperation='lighter';ctx.globalAlpha=0.9*f;ctx.drawImage(GLOW,cx-S.R*2*kx,cy-S.R*2*ky,S.R*4*kx,S.R*4*ky);b._sg=[cx,cy,S.R*kx,f,0];b._sgT=now}}
+ ctx.restore()}
 let TREEC=null,TREEOK=0;
 function drawTree(X,Y,k){if(cam.z*k<0.6){if(!TREEOK){TREEOK=1;TREEC=mkC(200,240);const g=TREEC.getContext('2d');g.setTransform(2,0,0,2,100,220);drawTree0(g,0,0,1)}ctx.drawImage(TREEC,X-50*k,Y-110*k,100*k,120*k);return}drawTree0(ctx,X,Y,k)}
 function drawTree0(ctx,X,Y,k){ctx.fillStyle='#00000033';ctx.beginPath();ctx.ellipse(X,Y,22*k,10*k,0,0,7);ctx.fill();ctx.fillStyle='#5a3d24';ctx.fillRect(X-3*k,Y-34*k,6*k,34*k);ctx.strokeStyle='#1d1712';ctx.lineWidth=1.5;ctx.strokeRect(X-3*k,Y-34*k,6*k,34*k);
@@ -1817,13 +1847,14 @@ function postFX(now){const W=innerWidth,H=innerHeight,lo=SET.quality=='low';
  if(!lo&&LF>0)for(const b of G.bld){if(!b._r||b.type=='Park')continue;const[x0,y0,x1,y1]=b._r,[sx,sy]=S(x0,y0);if(!inV(sx,sy,(x1-x0)*z*k+40))continue;
   const n=b.type=='Police'?5:3;for(let i=0;i<n;i++){const hsh=(b.x*73+b.y*151+i*97)%100/100,hs2=(b.x*31+b.y*17+i*53)%100/100;const fl=0.55+0.45*Math.sin(now/(400+i*130+b.x*7)+i*2)*Math.sin(now/1700+b.y);if(fl<0.25)continue;
    const X=x0+(x1-x0)*(0.2+hsh*0.6),Y=y0+(y1-y0)*(0.35+hs2*0.45),[px,py]=S(X,Y),r=16*z*k*fl+1;LX.globalAlpha=fl*LF;LX.drawImage(HOLE,px-r,py-r,2*r,2*r)}LX.globalAlpha=1;
-  if(b.owner!=null){const p=iso(b.door[0],b.door[1]),[px,py]=S(p.X,p.Y),r=50*z*k;LX.globalAlpha=LF;LX.drawImage(HOLE,px-r,py-r*0.6,2*r,1.2*r);LX.globalAlpha=1}}
+  if(b.owner!=null){const p=iso(b.door[0],b.door[1]),[px,py]=S(p.X,p.Y),r=50*z*k;LX.globalAlpha=LF;LX.drawImage(HOLE,px-r,py-r*0.6,2*r,1.2*r);LX.globalAlpha=1}if(b._sg&&now-b._sgT<250){const[X,Y,R]=b._sg,[px,py]=S(X,Y),r=R*1.6*z*k;LX.globalAlpha=LF;LX.drawImage(HOLE,px-r,py-r*0.75,2*r,1.5*r);LX.globalAlpha=1}}
  for(const f of G.fx)if(f.type=='tracer'){const a=now-f.t0-(f.d||0);if(a<0||a>120)continue;const s=SPOS.get(f.a),p=s?{X:s.X,Y:s.Y}:iso(f.ax,f.ay),[px,py]=S(p.X,p.Y-26),r=34*z*k*(1-a/120)+1;LX.drawImage(HOLE,px-r,py-r,2*r,2*r)}else if(f.type=='flash'){const p=iso(f.x,f.y),[px,py]=S(p.X,p.Y-20),r=70*z*k;LX.drawImage(HOLE,px-r,py-r,2*r,2*r)}
  for(const v of G.veh)if(v.siren){const p=iso(v.x,v.y),[px,py]=S(p.X,p.Y-30),r=60*z*k;LX.drawImage(HOLE,px-r,py-r,2*r,2*r)}
  LX.globalCompositeOperation='source-over';LX.globalAlpha=0.55+0.45*NK;LX.drawImage(VIG,0,0);LX.globalAlpha=1;ctx.setTransform(dpr,0,0,dpr,0,0);ctx.imageSmoothingEnabled=true;ctx.drawImage(LC,0,0,W,H);
  // warm additive glow at lamp heads
  ctx.setTransform(dpr*z,0,0,dpr*z,-cam.x*z*dpr,-cam.y*z*dpr);ctx.globalCompositeOperation='lighter';
  ctx.globalAlpha=LF;for(const[X,Y]of lamps){ctx.drawImage(GLOW,X-44,Y-108,88,88);if(!lo)ctx.drawImage(GLOW,X-70,Y-36,140,72)}ctx.globalAlpha=1;
+ for(const b of G.bld)if(b._sg&&now-b._sgT<250){const[X,Y,R,f,red]=b._sg;ctx.globalAlpha=(0.25+0.75*NK)*f;ctx.drawImage(red?GLOWR:GLOW,X-R*2.4,Y-R*1.7,R*4.8,R*3.4)}ctx.globalAlpha=1;
  for(const v of G.veh)if(v.siren){const p=iso(v.x,v.y),on=Math.floor(now/250)%2;ctx.globalAlpha=0.25+0.45*NK;ctx.drawImage(GLOW,p.X-60,p.Y-90,120,120);ctx.globalAlpha=1}
  ctx.globalCompositeOperation='source-over';ctx.setTransform(dpr,0,0,dpr,0,0);
  {const tg=G.wx&&G.wx.rain?1:0;G.wxA=(G.wxA??tg)+(tg-(G.wxA??tg))*0.01;if(SET.rain&&!lo&&G.wxA>0.02)rainDraw(ctx,W,H,now/1000,0.55*G.wxA,0.22*G.wxA)}
@@ -2141,7 +2172,7 @@ const CPT={thug:'thug',enforcer:'enforcer',hitman:'hitman',spy:'dame',bomber:'bo
 const PDO={rob:'robbing a passer-by',burgle:'burgling a flat',shake:'shaking down a shop',numbers:'running numbers',car:'breaking into a car'};
 function doing(u){if(u._jail)return['In the cells · out in '+fmtH(u._jail.until-G.t),'#e0805a'];if(u.type=='boss'&&u.jail&&G.t<u.jail)return['In jail at Police HQ · '+fmtR(u.jail-G.t),'#e0805a'];if(u.type=='boss'&&u.exposed>G.t)return['Exposed · '+fmtR(u.exposed-G.t),'#ff8a5a'];
  if(u.estB!=null)return['Setting up the hideout','#d4a84b'];const p=u.petty;
- if(u.wanted!=null)return['Wanted: running from a cop','#e0594f'];
+ if(u.wanted!=null)return['Wanted: running from a cop','#e0594f'];if(u.crun)return[crunTxt(u),u.held?'#e0594f':'#e6c98a'];
  if(p){const j=p.j||p.k,w=PDO[j]||'petty crime',a=p.manual?'':'Petty crime: ';
   if(u.burg!=null)return[(a||'')+'inside, '+w,'#9fd07a'];if(p.st=='work')return[a+w,'#9fd07a'];if(p.st=='go')return[a+'heading to a job ('+w+')','#9fd07a'];
   if(p.st=='back')return['Taking the cash home','#e6c56a'];return[a+(j=='any'||p.k=='any'?'any job':w)+', looking for a mark','#b9c98a']}
@@ -2178,11 +2209,11 @@ function crewCard(u){const d=CFG.UNITS[u.type],[st,c]=doing(u),k=Math.max(0,Math
   <div class="cnm">${nameHTML(u,1)}</div><div class="cty">${u.type=='boss'?'Boss of the family':d.name}</div>
   ${row('Health',Math.max(0,Math.ceil(u.hp))+' / '+u.max)}<div class="chp big"><i style="width:${k*100}%;background:${hpCol(k)}"></i></div>
   ${row('Strength',str(u)+(isGun(u)?' · ranged':' · melee'))}${row('Weapon',manWeapon(u))}${row('Stance',stc)}
-  ${row('Carried',u.carry>0?`<span style="color:#f0cf72">${money(u.carry)}</span> / ${money(CFG.CARRY.MAX)}`:'$0')}
+  ${row('Carried',u.carry>0?`<span style="color:#f0cf72">${money(u.carry)}</span> / ${money(u.crun?CFG.CRUN.CARRY:CFG.CARRY.MAX)}`:'$0')}
   ${row('Job',`<span style="color:${c}">${st}</span>`)}${auto?row('Auto job',auto):''}
   ${u.type=='spy'?(()=>{const d=u.dm||{};return row('Latest intel',d.last?`<span style="font-weight:normal;color:#f0c8d8">${d.last}</span>`:'Nothing to report yet')+row('Skims',(d.steals||0)+(d.took?' · '+money(d.took):''))+row('Spotted',d.spots||0)+row('Heal',u.autoHeal?'Auto heal on':G.t<(u.healCD||0)?'Resting '+fmtH(u.healCD-G.t):'Ready')})():row('Earned, last 10 min',money(pd.cash)+(pd.jobs?' · '+pd.jobs+' job'+(pd.jobs>1?'s':''):''))+row('Kills',u.kills||0)}</div></div>
  <div class="cbtns"><button class="gbtn" data-goto="${u.id}" ${inJ?'disabled':''}>Go to him</button><button class="gbtn" data-equip="${u.id}" ${inJ?'disabled':''}>Equip</button></div>
- <div class="d" style="font-size:11.5px;opacity:.8;margin-top:6px">Crime money rides in his pockets until he walks into the hideout. At ${money(CFG.CARRY.MAX)} he heads home by himself. If he is killed the killers take it; the police confiscate it.</div>`}
+ <div class="d" style="font-size:11.5px;opacity:.8;margin-top:6px">${u.crun?'On cash runs he walks the take from your rackets to the hideout'+(launOf(0).length?', then carries dirty cash to the Laundry, waits while it is washed and brings it back clean':'')+'. Rival gunmen can hold him up while he carries it.':`Crime money rides in his pockets until he walks into the hideout. At ${money(CFG.CARRY.MAX)} he heads home by himself. If he is killed the killers take it; the police confiscate it.`}</div>`}
 // ===== v0.18 NEWSPAPER =====
 let PAPOPEN=false,PAPT=0;
 function PAP(){return G.paper||(G.paper={n:0,next:CFG.PAPER.EVERY,iss:null})}
@@ -2622,7 +2653,8 @@ cv.addEventListener('pointerup',e=>{if(e.pointerType==='mouse'){mouseUp(e,false)
 cv.addEventListener('pointercancel',e=>{if(e.pointerType==='mouse'){mouseUp(e,true);e.stopImmediatePropagation()}},true);
 cv.addEventListener('lostpointercapture',e=>{if(e.pointerType==='mouse')e.stopImmediatePropagation()},true);
 const KEYS=new Set();
-addEventListener('keydown',e=>{if(/INPUT|TEXTAREA/.test(document.activeElement&&document.activeElement.tagName))return;const k=e.key.toLowerCase();
+addEventListener('keydown',e=>{const k=e.key.toLowerCase();if(/INPUT|TEXTAREA/.test(document.activeElement&&document.activeElement.tagName)&&!(k==='escape'&&$m()&&$m().parentNode.style.display=='flex'))return;
+ if(k==='escape'&&$m()&&$m().parentNode.style.display=='flex'){const bk=modalBack();if(bk){e.preventDefault();bk.click()}return}
  if(k==='escape'){if(G.mode){G.mode=null}else G.sel.clear();updUI();renderABar&&renderABar();return}
  if(k==='a'&&(e.ctrlKey||e.metaKey)){e.preventDefault();for(const v of G.units)if(v.fam===0&&v.garrison==null&&!v.ride)G.sel.add(v.id);G.selPulse=performance.now();updUI();return}
  if(['arrowup','arrowdown','arrowleft','arrowright','w','a','s','d'].includes(k)){KEYS.add(k);e.preventDefault()}});
@@ -2727,7 +2759,8 @@ function schedMusic(){if(!AC||AC.state!='running')return;const spb=60/84;
 function rainLayer(c,dens,t,alpha){const x=c.getContext('2d'),w=c.width,h=c.height;x.clearRect(0,0,w,h);x.strokeStyle=`rgba(190,200,215,${alpha})`;x.lineWidth=Math.max(1,w/400);x.beginPath();
  const n=Math.floor(dens*w*h/9000);for(let i=0;i<n;i++){const sx=(i*7919.3)%w,sy=(i*104729.7)%h,sp=0.9+((i*31)%10)/10,yy=(sy+t*900*sp)%(h+60)-30,xx=(sx-t*120*sp)%w;const X=xx<0?xx+w:xx;x.moveTo(X,yy);x.lineTo(X-w*0.012,yy+h*0.035)}x.stroke()}
 const $m=()=>document.getElementById('modal');
-function showModal(html){const m=$m();m.innerHTML=html;m.parentNode.style.display='flex'}
+function modalBack(){const m=$m();if(!m)return null;const bs=[...m.querySelectorAll('button:not(.mx)')];for(const l of ['Back','Resume','Continue','Close'])for(const b of bs)if(b.textContent.trim()==l&&!b.disabled)return b;return null}
+function showModal(html){const m=$m();m.innerHTML=html;m.parentNode.style.display='flex';m.scrollTop=0;const bk=modalBack();if(bk){const x=document.createElement('button');x.className='mx';x.type='button';x.setAttribute('aria-label',bk.textContent.trim());x.textContent='\u00d7';x.onclick=e=>{e.stopPropagation();bk.click()};m.prepend(x)}}
 function hideModal(){$m().parentNode.style.display='none'}
 const btn=(lab,fn,cls='mbtn',dis)=>`<button class="${cls}" ${dis?'disabled':''} onclick="${fn}">${lab}</button>`;
 function settingsHTML(back){const tg=(k,l)=>`<div class="srow"><span>${l}</span><button class="tog ${SET[k]?'on':''}" onclick="SET.${k}=SET.${k}?0:1;saveSet();openSettings('${back}')">${SET[k]?'ON':'OFF'}</button></div>`;
