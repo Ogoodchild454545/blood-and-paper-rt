@@ -2,7 +2,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="build" content="RT v0.20 pre-alpha · 22 Oct 13:38">
+<meta name="build" content="RT v0.20.1 pre-alpha · 22 Oct 15:06">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -224,7 +224,7 @@ html.sa #top{padding-top:max(var(--st),4px)}
 </style></head><body>
 <canvas id="c"></canvas>
 <div id="rot"><div class="rph"></div><h2>Turn the paper sideways</h2><p>Blood and Paper is played in landscape. Rotate your phone; the game waits for you.</p></div>
-<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT v0.20 pre-alpha · 22 Oct 13:38</div>
+<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT v0.20.1 pre-alpha · 22 Oct 15:06</div>
 <div id="top" class="deco">
  <div class="r"><span id="cash">$0</span><span id="inc"></span><button class="ib" id="tb-menu" title="Menu" onclick="openPause()"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button></div>
  <div class="r"><span id="donst" style="display:none"></span><canvas id="dnc" width="44" height="44" title="Day and night"></canvas><span id="hc" onclick="openTab('police')">Heat 0 · Case 0</span>
@@ -232,7 +232,7 @@ html.sa #top{padding-top:max(var(--st),4px)}
   <button class="ib" id="tb-intel" title="Intel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.8-6.5 10-6.5S22 12 22 12s-3.8 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button><button class="ib" id="tb-fam" title="Families"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8l8 3v6.2c0 5-3.6 8.2-8 9.4-4.4-1.2-8-4.4-8-9.4V5.8zM12 7v9M8.5 10.5h7"/></svg></button></div>
 </div>
 <div id="toast"></div>
-<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div class="tver" style="margin-top:4px;font:bold 13px Georgia,serif;letter-spacing:2px;color:#e6c56a;text-transform:uppercase">v0.20 pre-alpha</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT v0.20 pre-alpha · 22 Oct 13:38</div>
+<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div class="tver" style="margin-top:4px;font:bold 13px Georgia,serif;letter-spacing:2px;color:#e6c56a;text-transform:uppercase">v0.20.1 pre-alpha</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT v0.20.1 pre-alpha · 22 Oct 15:06</div>
 <button class="mbtn pri" onclick="goFull();newGame()">New Game</button><button class="mbtn" id="bcont" onclick="goFull();startGame(true)">Continue</button>
 <button class="mbtn" onclick="openSettings('titleMenu')">Settings</button><button class="mbtn" onclick="openHowTo('titleMenu')">How to Play</button><button class="mbtn" onclick="openCredits()">Credits</button></div></div>
 <div id="intro" style="position:fixed;inset:0;z-index:90;background:#000;display:flex;align-items:center;justify-content:center;transition:opacity .35s;touch-action:none"><video id="ivid" playsinline webkit-playsinline preload="auto" style="width:100%;height:100%;object-fit:contain;background:#000"></video><div id="itap" style="display:none;position:absolute;inset:0;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse at center,#2a1f14 0%,#0c0805 75%);color:#e6c56a;text-align:center"><div style="font:30px Limelight,Georgia,serif;letter-spacing:3px;color:#d9c08a;text-shadow:0 2px 6px #000">Blood and Paper</div><div style="width:180px;height:1px;background:#8a6d3b;margin:10px 0"></div><div style="font:italic 17px Georgia,serif;letter-spacing:2px;color:#c9b27a;animation:itp 1.6s ease-in-out infinite">Tap to begin</div></div></div><style>@keyframes itp{50%{opacity:.35}}</style>
@@ -287,7 +287,7 @@ const CFG={TITLE:'Blood and Paper RT', SAVE_NS:'bprt_', SHOW_PATHS:0, AUTOSAVE:1
  // CLEAN cash buys building upgrades, family upgrades, guns, cars and bombs, and pays bribes.
  DIRTY_HEAT:{FREE:5000, PER_1K_DAY:0.6}, // heat per 2 real min for every $1k of dirty cash held above FREE
  MOVE:100,                   // sim seconds per road tile (police raid timing reference)
- SPY:{REPORT:RS(17), CHECK:RS(30), SKIM:0.4, SKIM_CD:RS(30), HOT:RS(80), CATCH:0.25, CATCH_HOT:0.6, SPOT:0.5, SPOT_HOT:0.8, AI_SEND:0.08, AI_WATCH:0.12, AI_STAY:RM(3), AI_SKIM:0.12, BAN:RM(2), TALK:RS(4), CHARM_CD:RS(10), OFF_DUTY:RS(15), SEEN_AGAIN:RM(1)}, // dame intel, real time: report every 17 s, discovery roll every 30 s, skim cooldown 30 s, watched closely 80 s, beat cop off duty 15 s
+ SPY:{REPORT:RS(17), CHECK:RS(30), SKIM:0.4, SKIM_CD:RS(30), HOT:RS(80), CATCH:0.25, CATCH_HOT:0.6, SPOT:0.5, SPOT_HOT:0.8, AI_SEND:0.08, AI_WATCH:0.12, AI_STAY:RM(3), AI_SKIM:0.12, BAN:RM(2), TALK:RS(4), CHARM_CD:RS(10), OFF_DUTY:RS(15), SEEN_AGAIN:RM(1), OUT_MAX:RM(3), OUT_SPEED:0.6}, // dame intel, real time: report every 17 s, discovery roll every 30 s, skim cooldown 30 s, watched closely 80 s, beat cop off duty 15 s
  CAR_SEATS_P:4,
  DIST:{CORE:18, BASE:2, EXTRA_FROM:30, PER:20, DECAY_DAY:12, COP_KILL:50, CASE_MULT:1}, // districts: 4 family turfs + Downtown; BASE beat cops each, +1 at EXTRA_FROM heat and per PER more; cop kill adds COP_KILL to that district
  CHASE:{SIGHT:7, SPEED:1.08, LOSE:90, MAX:600, FAR:16, CATCH:0.75, REPATH:1.5, BOSS_JAIL:RS(60), CASE_JAIL:RM(8), BOSS_EXPOSE:RM(5), BOSS_FINE:0.3}, // SPEED vs a walking gangster; street arrest: 60 real s (boss also fined 30% of dirty cash); case arrest: 8 real min; boss exposed to all 5 real min after release
@@ -526,7 +526,7 @@ function end(m){G.over=true;try{ST.del()}catch(e){}try{closeTab();closePanel();h
 function overNew(){try{sessionStorage.setItem('bprt_new','1')}catch(e){}location.reload()}
 function overMenu(){try{sessionStorage.removeItem('bprt_new')}catch(e){}location.reload()}
 function stepUnits(dt){stepVeh(dt);for(const u of G.units){if(u.ride||u.jail)continue;if(!u.path.length){u.anim=0;continue}
- const spm=(1+upgL(u.fam,'speed')*CFG.UPG.speed.per)*(u.stance==='retreat'?CFG.FIGHT.RETREAT_SPEED:1);steer(u,dt,u.chase!=null?CFG.CHASE.SPEED/CFG.UNIT_MOVE:(CFG.UNITS[u.type].speed||1)*spm/(u.fam==='police'?CFG.MOVE:CFG.UNIT_MOVE));
+ const spm=(1+upgL(u.fam,'speed')*CFG.UPG.speed.per)*(u.stance==='retreat'?CFG.FIGHT.RETREAT_SPEED:1);steer(u,dt,u.chase!=null?CFG.CHASE.SPEED/CFG.UNIT_MOVE:(CFG.UNITS[u.type].speed||1)*spm*(u.outed!=null?CFG.SPY.OUT_SPEED:1)/(u.fam==='police'?CFG.MOVE:CFG.UNIT_MOVE));
  if(u.path.length){let ax=0,ay=0;for(let i=0;i<Math.min(4,u.path.length);i++){ax+=u.path[i][0]-u.x;ay+=u.path[i][1]-u.y}if(Math.abs(ax)>Math.abs(ay)*1.2)u.dir=ax>0?'se':'nw';else if(Math.abs(ay)>Math.abs(ax)*1.2)u.dir=ay>0?'sw':'ne'}
  if(!u.path.length&&u.goB){u.atB=u.goB;u.goB=null}}}
 // ===== RT steering: seek + arrive, accel/decel, curved cornering, separation, gradual facing, stuck re-path =====
@@ -649,8 +649,12 @@ function spyCaught(u,b,by){const o=b.owner;provoke(by,u.spy&&G.t<u.spy.hot?'your
  else intel('caught',`<b>Dame exposed</b> at the ${nice(b.type)} by ${who}. Thrown out and roughed up.`,{loud:1});updUI()}
 G.aiSpies=[];G.aiWatch=[];let aiSpyId=1;
 function exposeAiSpy(id){const i=G.aiSpies.findIndex(a=>a.id===id);if(i<0)return;const a=G.aiSpies[i];G.aiSpies.splice(i,1);const b=G.bld[a.b];
- intel('expose',`<b>Exposed:</b> the ${FAM[a.f].name} dame was thrown out of your <b>${nice(b.type)}</b>${a.took?` after lifting ${money(a.took)}`:''}.`,{b:b.id,loud:1});provoke(a.f,'you exposed their dame');updUI()}
-function stepAiSpies(){const S=CFG.SPY;
+ intel('expose',`<b>Exposed:</b> the ${FAM[a.f].name} dame was thrown out of your <b>${nice(b.type)}</b>${a.took?` after lifting ${money(a.took)}`:''}. She is out on the street and in plain sight: send your men after her before she gets home.`,{b:b.id,loud:1});provoke(a.f,'you exposed their dame');
+ // v0.20.1: an exposed rival dame is now a real woman on the street, visible and fair game, walking (never driving) back to her family's hideout or nearest joint
+ {const d=spawn(a.f,'spy',b.door[0],b.door[1]);d.outed=G.t;d.outT=G.t+CFG.SPY.OUT_MAX;const hq=hqOf(a.f),own=G.bld.filter(x=>x.owner===a.f).sort((p,q)=>Math.hypot(p.door[0]-b.door[0],p.door[1]-b.door[1])-Math.hypot(q.door[0]-b.door[0],q.door[1]-b.door[1])),dst=hq||own[0];
+  if(dst)sendTo(d,dst.door[0],dst.door[1],null,true);else{const ang=Math.random()*6.28;sendTo(d,Math.round(b.door[0]+Math.cos(ang)*20),Math.round(b.door[1]+Math.sin(ang)*20),null,true)}addFx({type:'ripple',x:d.x,y:d.y,col:'#ff8a5a',label:'Exposed'})}
+ updUI()}
+function stepAiSpies(){const S=CFG.SPY;for(const u of [...G.units])if(u.outed!=null&&u.hp>0&&((!u.path.length&&G.t-u.outed>RS(1))||G.t>u.outT)){G.units.splice(G.units.indexOf(u),1);G.sel.delete(u.id);intel('expose',`The exposed ${FAM[u.fam].name} dame got away.`)}
  for(const a of [...G.aiSpies]){const b=G.bld[a.b];if(!b||b.owner!==0||!FAM[a.f].alive||G.t>a.until){G.aiSpies.splice(G.aiSpies.indexOf(a),1);continue}
   if(G.t>=a.next){a.next=G.t+S.REPORT;const amt=Math.min(Math.floor(FAM[0].dirty),Math.max(40,Math.round(incomeOf(b)*S.AI_SKIM)));if(amt>0){FAM[0].dirty-=amt;a.took+=amt;a.hot=G.t+S.HOT;FAM[a.f].dirty+=amt;
     if(a.seen)intel('skim',`The ${FAM[a.f].name} dame skimmed <b>${money(amt)}</b> from your <b>${nice(b.type)}</b>. Expose her!`,{b:b.id});else log('Unexplained loss: '+money(amt)+' missing from the till at your '+nice(b.type),1)}}
@@ -749,7 +753,7 @@ function explode(bm){const b=G.bld[bm.b];if(!b)return;{const cx=b.x+b.s/2,cy=b.y
  setDmg(b,'bombed',CFG.BOMB.HOURS,bm.f);addHeat(bm.f,CFG.BOMB.HEAT,'bombed a '+nice(b.type),b.door[0],b.door[1])}
 let fieldAcc=0;G.copAggro={};
 const alive=id=>G.units.find(v=>v.id===id&&v.hp>0);
-function hostile(u,v){if(v.hp<=0||v.ride||v.jail||v.fam===u.fam||v.garrison!=null)return false;if(!seenU(u.fam,v))return false;if(v.type=='spy'&&u.fam!==v.fam&&v.fam!==0)return false;if(v.type=='spy'&&v.fam===0&&u.fam!==0)return false;
+function hostile(u,v){if(v.hp<=0||v.ride||v.jail||v.fam===u.fam||v.garrison!=null)return false;if(!seenU(u.fam,v))return false;if(v.type=='spy'&&u.fam!==v.fam&&v.fam!==0&&v.outed==null)return false;if(v.type=='spy'&&v.fam===0&&u.fam!==0)return false;
  if(u.fam==='police'&&u.squad!=null){const S=sqOf(u);if(S&&v.fam===S.f&&v.id!==S.boss)return true}if(v.fam==='police'&&v.squad!=null){const S=sqOf(v);if(S&&u.fam===S.f)return true}if(u.fam==='police')return G.t-(G.copAggro[v.fam]??-1e9)<CFG.FIGHT.COP_AGGRO;if(v.fam==='police')return false;return atWar(u.fam,v.fam)}
 const isGun=u=>u.type=='hitman'||u.type=='boss'||(u.type=='thug'&&u.pistol);
 function hitUnit(a,t){if(t.inB!=null)return;reveal(a);reveal(t);if(typeof a.fam=='number'&&typeof t.fam=='number')addHeat(a.fam,CFG.HEAT.HIT*(isGun(a)?2:1),isGun(a)?'shooting':'street fight',a.x,a.y);if(a.fam===0)badAct(0,t.fam,'your crew attacked their men');else if(t.fam===0)badAct(a.fam,0,'their men attacked yours');const F=CFG.FIGHT;const dmg=str(a)*(0.6+Math.random()*0.6);t.hp-=dmg;t.hurtT=performance.now();const F0=CFG.FIGHT,gun=isGun(a),now=performance.now(),st=now+Math.random()*450,impact=st+(gun?60:F0.MELEE_MS*0.45);
@@ -1669,7 +1673,6 @@ function drawUnit(u,X,Y){const col=u.fam==='police'?'#9ab8ff':FAM[u.fam].col,sel
  if(sel){const pk=Math.max(0,1-(performance.now()-(G.selPulse||0))/400),pu=rr+3+Math.sin(performance.now()/180)*1.5+pk*10;ctx.beginPath();ctx.ellipse(X,Y,pu,pu*0.45,0,0,7);ctx.strokeStyle=`rgba(255,240,180,${0.5+pk*0.5})`;ctx.lineWidth=2;ctx.stroke()}
  if(u.fam===0&&u.type=='thug'&&u.pistol){const gx=X+rr+2,gy=Y-3;ctx.save();ctx.fillStyle='#d9c48a';ctx.strokeStyle='#0b0907';ctx.lineWidth=1.2;ctx.beginPath();ctx.moveTo(gx-6,gy-3);ctx.lineTo(gx+5,gy-3);ctx.lineTo(gx+5,gy);ctx.lineTo(gx-1,gy);ctx.lineTo(gx-2,gy+4);ctx.lineTo(gx-5,gy+4);ctx.lineTo(gx-4,gy);ctx.lineTo(gx-6,gy);ctx.closePath();ctx.fill();ctx.stroke();ctx.restore()}
  ctx.beginPath();ctx.ellipse(X,Y,rr,rr*0.45,0,0,7);ctx.strokeStyle=sel?'#fff':col;ctx.lineWidth=sel?3:2.5;ctx.stroke();
- if(u.type=='spy'&&u.fam===0)ctx.globalAlpha=0.6;
  if(u.type=='boss'){const sh=SPR[u.dir],mv=u.path.length&&!u.ride,fr=mv?Math.floor(u.anim*10)%10:0,br=mv?0:Math.sin(performance.now()/650)*0.015,at=u.atk?(performance.now()-u.atk)/380:9,rx=at>=0&&at<0.5?-3*(1-at*2):0;ctx.drawImage(sh,fr*198,0,198,344,X-99*BSC+rx,Y-(344-30)*BSC*(1+br),198*BSC,344*BSC*(1+br));if(at>=0&&at<0.3){ctx.globalCompositeOperation='lighter';ctx.drawImage(GLOW,X+18-20,Y-36-20,40,40);ctx.globalCompositeOperation='source-over'}}
  else drawFigure(u,X,Y);
  ctx.globalAlpha=1;
@@ -1678,7 +1681,7 @@ function drawUnit(u,X,Y){const col=u.fam==='police'?'#9ab8ff':FAM[u.fam].col,sel
  if(G.reticle===u.id){const r=16+Math.sin(performance.now()/120)*2;ctx.strokeStyle='#ff3b30';ctx.lineWidth=2.5;ctx.beginPath();ctx.ellipse(X,Y,r,r*0.5,0,0,7);ctx.stroke();for(let i=0;i<4;i++){const a=i*Math.PI/2+performance.now()/900;ctx.beginPath();ctx.moveTo(X+Math.cos(a)*(r+2),Y+Math.sin(a)*(r+2)*0.5);ctx.lineTo(X+Math.cos(a)*(r+9),Y+Math.sin(a)*(r+9)*0.5);ctx.stroke()}}
  if(u.wanted!=null)WQ.set(u.id,[u,X,Y]);
  if(u.hp<u.max){ctx.fillStyle='#000a';ctx.fillRect(X-12,Y-(u.type=='boss'?66:54),24,4);ctx.fillStyle='#6c3';ctx.fillRect(X-12,Y-(u.type=='boss'?66:54),24*u.hp/u.max,4)}}
-function visible(u){return !(u.type=='spy'&&u.fam!==0)&&u.inB==null&&!u.jail&&seenU(0,u)}
+function visible(u){return !(u.type=='spy'&&u.fam!==0&&u.outed==null)&&u.inB==null&&!u.jail&&seenU(0,u)}
 function unitKey(u){let k=u.x+u.y;const ux=Math.round(u.x),uy=Math.round(u.y);let lo=-1e9,hi=1e9;
  for(const b of G.bld){if(Math.abs(b.x-ux)>4||Math.abs(b.y-uy)>4)continue;const bk=bKey(b);
   const front=ux>=b.x+b.s||uy>=b.y+b.s;if(front){if(bk+0.2>lo)lo=bk+0.2}else if(bk-0.2<hi)hi=bk-0.2}
