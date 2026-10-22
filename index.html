@@ -2,7 +2,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="build" content="RT v0.20.1 pre-alpha · 22 Oct 15:06">
+<meta name="build" content="RT v0.21 pre-alpha · 22 Oct 16:25">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -224,7 +224,7 @@ html.sa #top{padding-top:max(var(--st),4px)}
 </style></head><body>
 <canvas id="c"></canvas>
 <div id="rot"><div class="rph"></div><h2>Turn the paper sideways</h2><p>Blood and Paper is played in landscape. Rotate your phone; the game waits for you.</p></div>
-<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT v0.20.1 pre-alpha · 22 Oct 15:06</div>
+<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT v0.21 pre-alpha · 22 Oct 16:25</div>
 <div id="top" class="deco">
  <div class="r"><span id="cash">$0</span><span id="inc"></span><button class="ib" id="tb-menu" title="Menu" onclick="openPause()"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button></div>
  <div class="r"><span id="donst" style="display:none"></span><canvas id="dnc" width="44" height="44" title="Day and night"></canvas><span id="hc" onclick="openTab('police')">Heat 0 · Case 0</span>
@@ -232,7 +232,7 @@ html.sa #top{padding-top:max(var(--st),4px)}
   <button class="ib" id="tb-intel" title="Intel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.8-6.5 10-6.5S22 12 22 12s-3.8 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button><button class="ib" id="tb-fam" title="Families"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8l8 3v6.2c0 5-3.6 8.2-8 9.4-4.4-1.2-8-4.4-8-9.4V5.8zM12 7v9M8.5 10.5h7"/></svg></button></div>
 </div>
 <div id="toast"></div>
-<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div class="tver" style="margin-top:4px;font:bold 13px Georgia,serif;letter-spacing:2px;color:#e6c56a;text-transform:uppercase">v0.20.1 pre-alpha</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT v0.20.1 pre-alpha · 22 Oct 15:06</div>
+<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div class="tver" style="margin-top:4px;font:bold 13px Georgia,serif;letter-spacing:2px;color:#e6c56a;text-transform:uppercase">v0.21 pre-alpha</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT v0.21 pre-alpha · 22 Oct 16:25</div>
 <button class="mbtn pri" onclick="goFull();newGame()">New Game</button><button class="mbtn" id="bcont" onclick="goFull();startGame(true)">Continue</button>
 <button class="mbtn" onclick="openSettings('titleMenu')">Settings</button><button class="mbtn" onclick="openHowTo('titleMenu')">How to Play</button><button class="mbtn" onclick="openCredits()">Credits</button></div></div>
 <div id="intro" style="position:fixed;inset:0;z-index:90;background:#000;display:flex;align-items:center;justify-content:center;transition:opacity .35s;touch-action:none"><video id="ivid" playsinline webkit-playsinline preload="auto" style="width:100%;height:100%;object-fit:contain;background:#000"></video><div id="itap" style="display:none;position:absolute;inset:0;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse at center,#2a1f14 0%,#0c0805 75%);color:#e6c56a;text-align:center"><div style="font:30px Limelight,Georgia,serif;letter-spacing:3px;color:#d9c08a;text-shadow:0 2px 6px #000">Blood and Paper</div><div style="width:180px;height:1px;background:#8a6d3b;margin:10px 0"></div><div style="font:italic 17px Georgia,serif;letter-spacing:2px;color:#c9b27a;animation:itp 1.6s ease-in-out infinite">Tap to begin</div></div></div><style>@keyframes itp{50%{opacity:.35}}</style>
@@ -398,6 +398,11 @@ const FAM=[{id:0,name:'Red',col:'#e0332b',hq:[3,3],ai:0},{id:1,name:'Blue',col:'
 const TW=128,TH=64,N=CFG.N;
 let rs=7;const rnd=()=>{rs=(rs*16807)%2147483647;return rs/2147483647};
 const HOUR=()=>CFG.DAY/24;
+// v0.21: face a direction with hysteresis. A target near the diagonal used to flip the sprite (mirror se<->sw) on alternate frames = flashing.
+function faceDir(u,dx,dy){if(!dx&&!dy)return;const ax=Math.abs(dx),ay=Math.abs(dy),nd=ax>ay?(dx>0?'se':'nw'):(dy>0?'sw':'ne');if(nd===u.dir)return;
+ const cx=u.dir=='se'||u.dir=='nw',nx=nd=='se'||nd=='nw',now=performance.now();
+ if(cx!==nx&&u.dir){const r=nx?ax/(ay||1e-6):ay/(ax||1e-6);if(r<1.35||now-(u._dirT||0)<220){const cd=cx?(dx>0?'se':'nw'):(dy>0?'sw':'ne');if(cd!==u.dir&&(cx?ax:ay)>0.05&&now-(u._dirT||0)>=220){u.dir=cd;u._dirT=now}return}}
+ u.dir=nd;u._dirT=now}
 // v0.20 day/night: dnPos = 0..1 through the cycle (0 = dawn switch, DAY/CYCLE = dusk switch); nightK = 0 full day .. 1 full night, smoothstepped over FADE
 function dnPos(t){const D=CFG.DAYNIGHT;return((((t??G.t)+D.START)%D.CYCLE)+D.CYCLE)%D.CYCLE/D.CYCLE}
 function nightK(t){const D=CFG.DAYNIGHT;if(!D.ON)return 1;const x=dnPos(t)*D.CYCLE,h=D.FADE/2,ss=v=>{v=Math.max(0,Math.min(1,v));return v*v*(3-2*v)};
@@ -494,7 +499,7 @@ function nearRoad(x,y){x=Math.round(x);y=Math.round(y);if(isLane(x,y))return[x,y
 let VID=0;
 function mkVeh(kind,fam,x,y){const v={id:++VID,kind,fam,x,y,path:[],dir:'se',riders:[],state:'drive',t:0};G.veh.push(v);return v}
 function detach(u){const v=u.ride;if(!v)return;v.riders=v.riders.filter(r=>r!==u);u.ride=null;u.x=Math.round(v.x);u.y=Math.round(v.y);if(!isRoad(u.x,u.y)){const r=nearRoad(u.x,u.y);if(r){u.x=r[0];u.y=r[1]}}}
-function sendTo(u,tx,ty,b,noCar){u.garrison=null;let EX=null;if(tx%1||ty%1){EX=[tx,ty];tx=Math.round(tx);ty=Math.round(ty);if(!isRoad(tx,ty))EX=null}if(u.ride)detach(u);let st=[Math.round(u.x),Math.round(u.y)],pre=[];if(!isRoad(st[0],st[1])&&u.path.length&&!u.ride){st=u.path[0];pre=[u.path[0]]}if(!isRoad(tx,ty)){const r=nearRoad(tx,ty);if(r){tx=r[0];ty=r[1]}}const FP=u.ride?null:findPath(u.x,u.y,tx,ty);let p=FP?FP.raw:bfs(st[0],st[1],tx,ty);if(!p)return false;p=pre.concat(p);if(b&&!u.ride&&p.length<=1&&Math.hypot(u.x-tx,u.y-ty)<0.6){u.path=[];u.goB=null;u.atB=b;return true}
+function sendTo(u,tx,ty,b,noCar){if(u.cuffed!=null&&!u._esc)return false;u.garrison=null;let EX=null;if(tx%1||ty%1){EX=[tx,ty];tx=Math.round(tx);ty=Math.round(ty);if(!isRoad(tx,ty))EX=null}if(u.ride)detach(u);let st=[Math.round(u.x),Math.round(u.y)],pre=[];if(!isRoad(st[0],st[1])&&u.path.length&&!u.ride){st=u.path[0];pre=[u.path[0]]}if(!isRoad(tx,ty)){const r=nearRoad(tx,ty);if(r){tx=r[0];ty=r[1]}}const FP=u.ride?null:findPath(u.x,u.y,tx,ty);let p=FP?FP.raw:bfs(st[0],st[1],tx,ty);if(!p)return false;p=pre.concat(p);if(b&&!u.ride&&p.length<=1&&Math.hypot(u.x-tx,u.y-ty)<0.6){u.path=[];u.goB=null;u.atB=b;return true}
  if(!noCar&&u.fam!=='police'&&u.fam!==0&&p.length>=CFG.CAR_MIN){const s0=nearRoad(u.x,u.y),e0=nearRoad(tx,ty);const rp=s0&&e0&&roadBfs(s0[0],s0[1],e0[0],e0[1]);
   let v=rp&&rp.length>=CFG.CAR_MIN-2&&G.veh.find(v=>v.kind=='car'&&v.fam===u.fam&&v.t===G.t&&v.end[0]==e0[0]&&v.end[1]==e0[1]&&v.riders.length<CFG.CAR_SEATS&&Math.hypot(v.x-s0[0],v.y-s0[1])<4);
   let drv=null;if(rp&&!v&&u.type!='driver'&&freeCars(u.fam)>0){drv=freeDriver(u.fam);}
@@ -513,15 +518,16 @@ function caseBreak(fid){const C=CFG.CASE,F=FAM[fid],rows=[];let tot=0;
  rows.sort((a,b)=>b.d-a.d);const net=tot+dirty-law;const lim=C.MAX-2;const days=F.case>=lim?0:net>0?(lim-F.case)/net:Infinity;
  const cand=G.bld.filter(b=>b.owner===fid&&b.type!='Hideout'&&!b.dmg).sort((a,b)=>(CFG.B[b.type].racket?1:0)-(CFG.B[a.type].racket?1:0)||present(b).length-present(a).length);
  return{rows,tot,dirty,nl,law,net,days,target:cand[0]||null,ct}}
-function addCase(f,n,why){const F=FAM[f];if(!F||typeof f!='number')return;F.case=Math.min(CFG.CASE.MAX,F.case+n);if(f===0&&why)log('Police case +'+n+': '+why,0)}
+function addCase(f,n,why){const F=FAM[f];if(!F||typeof f!='number')return;if((G.squads||[]).some(q=>q.f!==f&&q.ph!=='leave'))return;F.case=Math.min(CFG.CASE.MAX,F.case+n);if(f===0&&why)log('Police case +'+n+': '+why,0)}
 function kill(u,by){if(typeof by=='number'&&u.fam!=='police'&&u.fam!==by&&typeof u.fam=='number')addHeat(by,CFG.HEAT.GANG_KILL,'killed a gangster',u.x,u.y);if(G.away&&CFG.AWAY.PROTECT_BOSS&&u.fam===0&&u.type=='boss'){u.hp=Math.max(1,u.max*0.25);return}u.hp=0;chalkFor(u);carryLose(u,by);G.units=G.units.filter(v=>v!==u);G.sel.delete(u.id);
  const f=FAM[u.fam];
  if(u.fam==0&&u.type!='boss')log((by=='police'?'Police arrested your ':'You lost a ')+CFG.UNITS[u.type].name,1);
- if(u.type=='boss'&&f){f.alive=false;log(f.name+' family boss is dead! Family eliminated.',u.fam==0);
+ if(u.type=='boss'&&f){const _pre=(()=>{try{const S=standings(),i=S.findIndex(x=>x.id===f.id);return i<0?null:{row:S[i],rank:i+1,of:S.length}}catch(e){return null}})();f.alive=false;log(f.name+' family boss is dead! Family eliminated.',u.fam==0);
   G.bld.forEach(b=>{if(b.owner===f.id&&b.type=='Hideout'&&b.look){b.type=b.look;b.look=null}if(b.owner===f.id)b.owner=null});
   G.units.filter(v=>v.fam===f.id).forEach(v=>G.units=G.units.filter(w=>w!==v));
   if(u.fam==0)end('YOUR BOSS IS DEAD<br>Game over');
-  else if(fams().length==1&&FAM[0].alive)end('THE CITY IS YOURS<br>You win!')}}
+  else if(fams().length==1&&FAM[0].alive)end('THE CITY IS YOURS<br>You win!');
+  try{donPaper(f.id,_pre,by)}catch(e){console.warn(e)}}}
 function end(m){G.over=true;try{ST.del()}catch(e){}try{closeTab();closePanel();hideModal()}catch(e){}$('choice').style.display='none';document.getElementById('overt').innerHTML=m;document.getElementById('over').style.display='flex'}
 function overNew(){try{sessionStorage.setItem('bprt_new','1')}catch(e){}location.reload()}
 function overMenu(){try{sessionStorage.removeItem('bprt_new')}catch(e){}location.reload()}
@@ -569,10 +575,13 @@ function stepVeh(dt){const P=CFG.POLICE;
   if(v.state=='park'){v.wait-=dt;if(v.wait<=0&&v.kind=='pcar'){const s0=[v.slot[0],v.slot[1]];let t=null;for(let k=0;k<8&&!t;k++){const tx=Math.max(0,Math.min(N-1,s0[0]+Math.round((rnd()-0.5)*2*P.PATROL_RANGE))),ty=Math.max(0,Math.min(N-1,s0[1]+Math.round((rnd()-0.5)*2*P.PATROL_RANGE)));const r=nearRoad(tx,ty);if(r)t=roadBfs(v.x,v.y,r[0],r[1])}
     if(t&&t.length){v.path=t;v.state='patrol'}else v.wait=200}continue}
   if(v.kind=='car'&&!v.riders.length&&!v.manual){G.veh=G.veh.filter(w=>w!==v);continue}
+  if(v.holdT&&G.t<v.holdT)continue;
   if(v.db)stepDriveBy(v);
   if(v.manual&&!v.path.length){continue}
   const sp=v.fam==='police'?1.15:(1+upgL(v.fam,'speed')*CFG.UPG.speed.per)*(hasDrv(v)?CFG.CAR.DRIVER_SPEED:1);if(v.fam==='police')moveAlong(v,dt/CFG.MOVE*CFG.PCAR_SPEED*sp);else{v._car=1;steer(v,dt,CFG.CAR_SPEED*sp/CFG.UNIT_MOVE)}
   if(v.path.length)continue;
+  if(v.squad!=null&&v.state!=='home')continue;
+  if(v.sqHome){for(const u of v.riders)G.units=G.units.filter(w=>w!==u);v.riders=[];G.veh=G.veh.filter(w=>w!==v);continue}
   if(v.manual){carArrive(v);continue}
   if(v.riders.length){for(const u of [...v.riders]){u.ride=null;u.x=v.x;u.y=v.y;const f=u.fin;u.fin=null;if(f){if(f[2])sendTo(u,f[2].door[0],f[2].door[1],f[2],true);else sendTo(u,f[0],f[1],null,true)}}v.riders=[];sfx&&sfx('door',v.x,v.y)}
   if(v.kind=='pcar'){if(v.state=='home'||(Math.round(v.x)==v.slot[0]&&Math.round(v.y)==v.slot[1])){if(v.temp){G.veh=G.veh.filter(w=>w!==v);continue}v.state='park';v.x=v.slot[0];v.y=v.slot[1];v.dir=v.slot[2];v.wait=P.PARK_MIN+rnd()*(P.PARK_MAX-P.PARK_MIN);v.siren=false}
@@ -584,7 +593,7 @@ function sabotageable(b,f){return b&&b.owner!==f&&!DECOR(b.type)&&!LAW(b.type)&&
 function orderSmash(us,b){let n=0;if(us.some(u=>u.fam===0)&&b.owner!=null&&b.owner!==0)provoke(b.owner,'you sent men to smash their '+nice(b.type));for(const u of us){u.tgt=null;u.amove=false;u.stance=null;if(CFG.SMASH.RATE[u.type]){u.job={k:'smash',b:b.id};n++}sendToB(u,b)}return n}
 function orderBomb(us,b){let n=0;if(us.some(u=>u.fam===0)&&b.owner!=null&&b.owner!==0)provoke(b.owner,'you sent a bomber at their '+nice(b.type));for(const u of us)if(u.type=='bomber'&&FAM[u.fam].inv.bomb>n){u.tgt=null;u.job={k:'bomb',b:b.id};sendTo(u,b.door[0],b.door[1],null,true);n++}return n}
 const shutReal=()=>CFG.SHUT.UNIT=='real',rtNow=()=>G.t,SHM=()=>shutReal()?RM(1):HOUR()/60;
-const fmtR=sec=>{if(!shutReal())return Math.max(1,Math.ceil(Math.max(0,sec)/SHM()))+' min';sec=Math.max(0,Math.ceil(sec/SIMR));return Math.floor(sec/60)+':'+String(sec%60).padStart(2,'0')};
+const fmtR=sec=>{if(!isFinite(sec))return 'ruined';if(!shutReal())return Math.max(1,Math.ceil(Math.max(0,sec)/SHM()))+' min';sec=Math.max(0,Math.ceil(sec/SIMR));return Math.floor(sec/60)+':'+String(sec%60).padStart(2,'0')};
 const repairCut=b=>{const S=CFG.SHUT,left=Math.max(0,b.dmgUntil-rtNow());return Math.min(left,Math.max(S.REPAIR_FLOOR*SHM(),left*S.REPAIR_KEEP))};
 function setDmg(b,kind,hours,by){if(kind=='bombed'){if(lvl(b)>1&&b.owner!=null&&(b.owner===0)){log('Your '+nice(b.type)+' was blown back to level 1',1)}b.lvl=1;b.upUntil=0}const S=CFG.SHUT,mins=by==='police'?S.RAID_MIN:kind=='bombed'?S.BOMB_MIN-S.REBUILD_MIN:kind=='shot'?S.SHOT_MIN:S.SMASH_MIN;b.dmg=kind;b.dmgStart=rtNow();b.dmgUntil=rtNow()+mins*SHM();b.repairAt=kind=='smashed'&&by!=='police'?rtNow():Infinity;b.repaired=false;b.prog=0;b.capFam=null;b.fightT=G.t;
  const nm=nice(b.type),own=b.owner;b.tape=by==='police';log((by==='police'?'The police ':by===0?'Your crew ':FAM[by].name+' family ')+(by==='police'?'raided and shut down ':kind=='smashed'?'smashed up ':'bombed ')+(own===0?'your ':own==null?'the neutral ':FAM[own].name+"'s ")+nm+'!',by===0||own===0)}
@@ -720,13 +729,13 @@ function stepDriveBy(v){const D=v.db,C=CFG.DRIVEBY;let t=D.u!=null?G.units.find(
   // keep rolling: a getaway a few tiles on
   const dx=v.x-D.from[0],dy=v.y-D.from[1],L=Math.hypot(dx,dy)||1,ex=nearRoad(Math.round(v.x+dx/L*C.AWAY),Math.round(v.y+dy/L*C.AWAY));if(ex){const keep=v.db;driveTo(v,ex,null);v.db=keep}}
  if(D.fired&&!v.path.length)v.db=null}
-function wreckCar(v,by){if(!G.veh.includes(v))return;const sq=v.kind=='pcar'&&v.squad!=null;if(sq)for(const u of v.riders)u.hp=0;if(typeof by=='number'&&!sq)addHeat(by,CFG.HEAT.WRECK,'wrecked a car');badAct(by,v.fam,'a car was wrecked');G.veh=G.veh.filter(w=>w!==v);addFx({type:'boom',b:null,x:v.x,y:v.y,small:1,parts:Array.from({length:10},()=>[Math.random()*6.28,30+Math.random()*60,Math.random()])});sfx&&sfx('boom',v.x,v.y);
+function wreckCar(v,by){if(!G.veh.includes(v))return;const sq=v.kind=='pcar'&&v.squad!=null;if(v.prisoner!=null){const bs=G.units.find(u=>u.id===v.prisoner),S=sqOf({squad:v.squad});if(bs){v.riders=v.riders.filter(w=>w!==bs);bs.ride=null;bs.cuffed=null;bs.x=Math.round(v.x);bs.y=Math.round(v.y);bs.path=[];bs.hp=Math.max(1,bs.hp*0.6);if(!isRoad(bs.x,bs.y)){const r=nearRoad(bs.x,bs.y);if(r){bs.x=r[0];bs.y=r[1]}}}if(S){FAM[S.f].case=0;FAM[S.f].heat=0;news((S.f===0?'The Don':donNm(bs||{fam:S.f}))+' was sprung from the police car! The case against the '+FAM[S.f].name+' family is dropped.')}v.prisoner=null}if(sq)for(const u of v.riders){u.hp=0;G.units=G.units.filter(w=>w!==u)}if(sq)v.riders=[];if(typeof by=='number'&&!sq)addHeat(by,CFG.HEAT.WRECK,'wrecked a car');badAct(by,v.fam,'a car was wrecked');G.veh=G.veh.filter(w=>w!==v);addFx({type:'boom',b:null,x:v.x,y:v.y,small:1,parts:Array.from({length:10},()=>[Math.random()*6.28,30+Math.random()*60,Math.random()])});sfx&&sfx('boom',v.x,v.y);
  G.wrecks.push({x:v.x,y:v.y,dir:v.dir,t:G.t});if(v.fam!=null&&FAM[v.fam]){FAM[v.fam].inv.car=Math.max(0,FAM[v.fam].inv.car-1);if(v.fam===0)log('Your car was destroyed!',1)}
  for(const u of [...v.riders]){u.ride=null;u.x=Math.round(v.x);u.y=Math.round(v.y);u.fin=null;u.hp-=8;if(u.hp<=0)kill(u,by)}v.riders=[]}
 function orderSteal(us,ci){const c=G.cars[ci];let n=0;for(const u of us)if(u.type=='driver'){u.job={k:'steal',c:ci,p:0};u.tgt=null;const r=nearRoad(c.x,c.y)||[c.x,c.y];sendTo(u,r[0],r[1],null,true);n++}return n}
 let jobAcc=0;
 function stepJobs(dt){jobAcc+=dt;
- for(const b of G.bld)if(b.dmg&&b.dmgUntil-rtNow()>CFG.SHUT.BOMB_MIN*SHM()+5)b.dmgUntil=rtNow()+CFG.SHUT.SMASH_MIN*SHM();
+ for(const b of G.bld)if(b.dmg&&!b.ruin&&b.dmgUntil-rtNow()>CFG.SHUT.BOMB_MIN*SHM()+5)b.dmgUntil=rtNow()+CFG.SHUT.SMASH_MIN*SHM();
  for(const b of G.bld)if(b.dmg&&rtNow()>=b.dmgUntil){if(b.dmg=='bombed')startRebuild(b);else{const was=b.dmg;b.dmg=null;if(was=='rebuild')addFx({type:'dust',b:b.id});if(b.owner===0)log('Your '+nice(b.type)+' is back in business',1)}}
  for(const b of G.bld)if(b.upUntil&&G.t>=b.upUntil){b.upUntil=0;b.lvl=lvl(b)+1;addFx({type:'dust',b:b.id});if(b.owner===0){log('Your '+nice(b.type)+' reached level '+b.lvl+' ★',1);sfx&&sfx('capture')}}
  G.wrecks=G.wrecks.filter(w=>G.t-w.t<CFG.CAR.WRECK_S);
@@ -735,7 +744,7 @@ function stepJobs(dt){jobAcc+=dt;
   if(u.job.p>=CFG.CAR.STEAL_H*HOUR()){c.gone=1;const F=FAM[u.fam];F.inv.car++;if(u.fam===0)G._carAt=[c.x,c.y];let h=CFG.CAR.STEAL_HEAT;const wit=G.units.some(p=>p.fam==='police'&&Math.hypot(p.x-c.x,p.y-c.y)<CFG.POLICE.SEE_RADIUS);if(wit)h+=CFG.CAR.WITNESS_HEAT;addHeat(u.fam,h,wit?'stole a car (seen)':'stole a car',c.x,c.y);addHeat(u.fam,CFG.HEAT.CAR_STEAL+(wit?CFG.HEAT.CAR_STEAL:0));
    if(u.fam===0)log('Your driver stole a car'+(wit?'. A cop saw it!':'!'),1);sfx&&sfx('door',c.x,c.y);u.job=null}}
  for(const bm of [...G.bombs])if(G.t>=bm.at){G.bombs=G.bombs.filter(x=>x!==bm);explode(bm)}
- for(const u of G.units){if(!u.job||u.job.k=='steal')continue;const b=G.bld[u.job.b];if(!b||!sabotageable(b,u.fam)||b.dmg){u.job=null;continue}
+ for(const u of G.units){if(!u.job||u.job.k=='steal'||u.job.k=='raid')continue;const b=G.bld[u.job.b];if(!b||!sabotageable(b,u.fam)||b.dmg){u.job=null;continue}
   if(u.job.k=='smash'){if(u.atB!==b){if(!u.path.length&&u.tgt==null&&!u.goB)sendToB(u,b);continue}if(present(b).some(v=>v.fam!==u.fam)||guardsAt(b).length)continue;
    b.smash=(b.smashFam===u.fam?b.smash||0:0)+dt*(CFG.SMASH.RATE[u.type]||0);b.smashFam=u.fam;
    if(Math.random()<dt/20){u.atk=performance.now()+Math.random()*300;u.atkGun=false;u.atkTo=null;addFx({type:'glass',x:b.door[0],y:b.door[1],d:CFG.FIGHT.MELEE_MS*0.45});sfx&&sfx('glass',b.door[0],b.door[1])}
@@ -754,10 +763,10 @@ function explode(bm){const b=G.bld[bm.b];if(!b)return;{const cx=b.x+b.s/2,cy=b.y
 let fieldAcc=0;G.copAggro={};
 const alive=id=>G.units.find(v=>v.id===id&&v.hp>0);
 function hostile(u,v){if(v.hp<=0||v.ride||v.jail||v.fam===u.fam||v.garrison!=null)return false;if(!seenU(u.fam,v))return false;if(v.type=='spy'&&u.fam!==v.fam&&v.fam!==0&&v.outed==null)return false;if(v.type=='spy'&&v.fam===0&&u.fam!==0)return false;
- if(u.fam==='police'&&u.squad!=null){const S=sqOf(u);if(S&&v.fam===S.f&&v.id!==S.boss)return true}if(v.fam==='police'&&v.squad!=null){const S=sqOf(v);if(S&&u.fam===S.f)return true}if(u.fam==='police')return G.t-(G.copAggro[v.fam]??-1e9)<CFG.FIGHT.COP_AGGRO;if(v.fam==='police')return false;return atWar(u.fam,v.fam)}
+ if(v.cuffed!=null)return false;if(u.fam==='police'&&u.squad!=null){const S=sqOf(u);if(S&&v.fam===S.f)return v.id!==S.boss&&!!S.fight&&S.ph!=='leave'}if(v.fam==='police'&&v.squad!=null){const S=sqOf(v);if(S&&u.fam===S.f)return S.ph!=='leave'&&(!!S.fight||(u.fam!==0&&FAM[u.fam].ai))}if(u.fam==='police')return G.t-(G.copAggro[v.fam]??-1e9)<CFG.FIGHT.COP_AGGRO;if(v.fam==='police')return false;return atWar(u.fam,v.fam)}
 const isGun=u=>u.type=='hitman'||u.type=='boss'||(u.type=='thug'&&u.pistol);
-function hitUnit(a,t){if(t.inB!=null)return;reveal(a);reveal(t);if(typeof a.fam=='number'&&typeof t.fam=='number')addHeat(a.fam,CFG.HEAT.HIT*(isGun(a)?2:1),isGun(a)?'shooting':'street fight',a.x,a.y);if(a.fam===0)badAct(0,t.fam,'your crew attacked their men');else if(t.fam===0)badAct(a.fam,0,'their men attacked yours');const F=CFG.FIGHT;const dmg=str(a)*(0.6+Math.random()*0.6);t.hp-=dmg;t.hurtT=performance.now();const F0=CFG.FIGHT,gun=isGun(a),now=performance.now(),st=now+Math.random()*450,impact=st+(gun?60:F0.MELEE_MS*0.45);
- a.atk=st;a.atkGun=gun;a.atkTo=t.id;t.hitT=impact;t.kbFrom=[a.x,a.y];if(!a.path.length&&!a.ride){const dx=t.x-a.x,dy=t.y-a.y;if(dx||dy)a.dir=Math.abs(dx)>Math.abs(dy)?(dx>0?'se':'nw'):(dy>0?'sw':'ne')}
+function hitUnit(a,t){if(t.inB!=null)return;if(t.fam==='police'&&t.squad!=null){const S=sqOf(t);if(S&&a.fam===S.f&&!S.fight){S.fight=true;news('Shots fired! '+(S.f===0?'Your men':'The '+FAM[S.f].name+' family')+' fight the arrest squad.')}}reveal(a);reveal(t);if(typeof a.fam=='number'&&typeof t.fam=='number')addHeat(a.fam,CFG.HEAT.HIT*(isGun(a)?2:1),isGun(a)?'shooting':'street fight',a.x,a.y);if(a.fam===0)badAct(0,t.fam,'your crew attacked their men');else if(t.fam===0)badAct(a.fam,0,'their men attacked yours');const F=CFG.FIGHT;const dmg=str(a)*(0.6+Math.random()*0.6);t.hp-=dmg;t.hurtT=performance.now();const F0=CFG.FIGHT,gun=isGun(a),now=performance.now(),st=now+Math.random()*450,impact=st+(gun?60:F0.MELEE_MS*0.45);
+ a.atk=st;a.atkGun=gun;a.atkTo=t.id;t.hitT=impact;t.kbFrom=[a.x,a.y];if(!a.path.length&&!a.ride){const dx=t.x-a.x,dy=t.y-a.y;faceDir(a,dx,dy)}
  if(gun){const n=a.type=='hitman'?4:1;for(let i=0;i<n;i++){addFx({type:'tracer',a:a.id,b:t.id,ax:a.x,ay:a.y,bx:t.x,by:t.y,d:i*70+(st-now),j:(Math.random()-0.5)*10});addFx({type:'shell',a:a.id,ax:a.x,ay:a.y,bx:t.x,by:t.y,d:i*70+(st-now),r:Math.random()});if(i==n-1||Math.random()<0.5)addFx({type:'puff',b:t.id,bx:t.x,by:t.y,ax:a.x,ay:a.y,d:i*70+(st-now)+60,r:Math.random(),cop:t.fam==='police'})}}
  else addFx({type:'spark',b:t.id,bx:t.x,by:t.y,d:impact-now});
  if(SET.dmgnum)addFx({type:'dmg',b:t.id,bx:t.x,by:t.y,d:impact-now,v:Math.max(1,Math.round(dmg)),c:t.fam===0?'#ff6b5a':'#ffe08a'});
@@ -768,14 +777,14 @@ function hitUnit(a,t){if(t.inB!=null)return;reveal(a);reveal(t);if(typeof a.fam=
   else{if(t.fam===0&&a.fam!==0&&t.type!='boss')log('Your '+CFG.UNITS[t.type].name+' was gunned down',1);else if(a.fam===0)log('Your crew took out a '+(t.fam==='police'?'cop':FAM[t.fam].name+' '+CFG.UNITS[t.type].name),1);kill(t,a.fam)}
   a.tgt=null;if(a.amove&&a.amDest){sendTo(a,...a.amDest,null,true)}}}
 function stepField(dt){const F=CFG.FIELD||CFG.FIGHT;fieldAcc+=dt;if(fieldAcc<F.TICK)return;fieldAcc=0;
- for(const u of [...G.units]){if(u.hp<=0||u.ride||u.jail||(u.garrison!=null&&u.tgt==null))continue;if(u.type=='bomber'||u.type=='spy'||u.type=='lawyer'){u.tgt=null;continue}
+ for(const u of [...G.units]){if(u.hp<=0||u.ride||u.jail||(u.garrison!=null&&u.tgt==null))continue;if(u.type=='bomber'||u.type=='spy'||u.type=='lawyer'||u.cuffed!=null){u.tgt=null;continue}
   if(u.stance==='retreat'){if(!u.path.length)u.stance=null;continue}
   let t=u.tgt!=null?alive(u.tgt):null;if(t&&(t.ride||Math.hypot(t.x-u.x,t.y-u.y)>F.LEASH||(u.fam==='police'&&!hostile(u,t)&&t.fam!=='police')))t=null;
   if(!t){u.tgt=null;if(u.atB&&!u.amove)continue;if(u.path.length&&!u.amove&&u.fam===0&&u.mood!=='agg')continue;if(u.mood==='def'||u.petty&&u.petty.st=='work')continue;
    const R=u.stance==='hold'?F.HOLD_RANGE:u.mood==='agg'?F.AGGRO*2:F.AGGRO;let bd=R;for(const v of G.units){if(!hostile(u,v))continue;const d=Math.hypot(v.x-u.x,v.y-u.y);if(d<bd){bd=d;t=v}}if(t)u.tgt=t.id}
-  if(!t&&isGun(u)&&!u.path.length){const cv=G.veh.find(v=>v.kind=='pcar'&&v.squad!=null&&v.riders.length&&sqOf({squad:v.squad})?.f===u.fam&&Math.hypot(v.x-u.x,v.y-u.y)<=F.GUN||v.kind=='car'&&v.fam!==u.fam&&(u.fam==='police'||v.fam==='police'||atWar(u.fam,v.fam))&&(u.fam!=='police'||G.t-(G.copAggro[v.fam]??-1e9)<F.COP_AGGRO)&&Math.hypot(v.x-u.x,v.y-u.y)<=F.GUN);if(cv){badAct(u.fam,cv.fam,'shots fired at a car');cv.hp=(cv.hp??(cv.kind=='pcar'?CFG.SQUAD.CAR_HP:CFG.CAR.HP))-str(u)*(0.6+Math.random()*0.6)*carTough(cv);cv.hitT=performance.now();u.atk=performance.now();u.atkGun=true;u.atkTo=null;const dx=cv.x-u.x,dy=cv.y-u.y;u.dir=Math.abs(dx)>Math.abs(dy)?(dx>0?'se':'nw'):(dy>0?'sw':'ne');sfx&&sfx(u.type=='hitman'?'tommy':'shots',u.x,u.y);if(cv.hp<=0)wreckCar(cv,u.fam);continue}}
+  if(!t&&isGun(u)&&!u.path.length){const cv=G.veh.find(v=>v.kind=='pcar'&&v.squad!=null&&v.riders.length&&sqOf({squad:v.squad})?.f===u.fam&&Math.hypot(v.x-u.x,v.y-u.y)<=F.GUN||v.kind=='car'&&v.fam!==u.fam&&(u.fam==='police'||v.fam==='police'||atWar(u.fam,v.fam))&&(u.fam!=='police'||G.t-(G.copAggro[v.fam]??-1e9)<F.COP_AGGRO)&&Math.hypot(v.x-u.x,v.y-u.y)<=F.GUN);if(cv){badAct(u.fam,cv.fam,'shots fired at a car');if(cv.squad!=null){const S=sqOf({squad:cv.squad});if(S&&u.fam===S.f)S.fight=true}cv.hp=(cv.hp??(cv.kind=='pcar'?CFG.SQUAD.CAR_HP:CFG.CAR.HP))-str(u)*(0.6+Math.random()*0.6)*carTough(cv);cv.hitT=performance.now();u.atk=performance.now();u.atkGun=true;u.atkTo=null;const dx=cv.x-u.x,dy=cv.y-u.y;faceDir(u,dx,dy);sfx&&sfx(u.type=='hitman'?'tommy':'shots',u.x,u.y);if(cv.hp<=0)wreckCar(cv,u.fam);continue}}
   if(!t)continue;const d=Math.hypot(t.x-u.x,t.y-u.y),rng=isGun(u)?F.GUN:u.stance==='hold'?Math.min(F.HOLD_RANGE,F.MELEE):F.MELEE;
-  if(d<=rng){if(u.path.length&&!u.goB)u.path=[];const dx=t.x-u.x,dy=t.y-u.y;u.dir=Math.abs(dx)>Math.abs(dy)?(dx>0?'se':'nw'):(dy>0?'sw':'ne');hitUnit(u,t)}
+  if(d<=rng){if(u.path.length&&!u.goB)u.path=[];const dx=t.x-u.x,dy=t.y-u.y;faceDir(u,dx,dy);hitUnit(u,t)}
   else if(u.garrison!=null){u.tgt=null}
   else if(u.stance!=='hold'){const tx=Math.round(t.x),ty=Math.round(t.y),e=u.path.at(-1);if(!e||Math.abs(e[0]-tx)+Math.abs(e[1]-ty)>1){const am=u.amove,ad=u.amDest;sendTo(u,tx,ty,null,true);u.amove=am;u.amDest=ad}}
   else u.tgt=null}}
@@ -836,33 +845,83 @@ function jailBoss(u,why,fine){const C=CFG.CHASE,F=FAM[u.fam];if(!u||u.hp<=0)retu
  u.jail=G.t+(why==='case'?C.CASE_JAIL:C.BOSS_JAIL);u.exposed=0;u.caseJail=why==='case';u.path=[];u.atB=null;u.goB=null;u.tgt=null;u.petty=null;u.ride=null;u.inB=null;u.wanted=null;u.estB=null;G.sel.delete(u.id);if(u.fam===0&&WH.u===u.id)closeWheel();const pd=PHQB.door;u.x=pd[0];u.y=pd[1];
  if(why!=='case')return;
  news(u.fam===0?'The police squad arrested the Don. He sits in a cell at Police HQ for '+fmtH(u.jail-G.t)+'.':'The police squad arrested '+donNm(u)+'. He sits in a cell at Police HQ for '+fmtH(u.jail-G.t)+'.')}
-CFG.SQUAD={CARS:3,PER:2,DISMOUNT:3,ARREST:1.2,RACKETS:3,CAR_HP:160};CFG.HUNT={ESCORT_R:6,EDGE:1.3,MAX:8};
+CFG.RAIDB={MIN:3,WORK:RS(30),R:2.6,DEF_R:4,REV:RM(1)}; // v0.21 raid on a found rival hideout: at least MIN fighting men at the door for WORK (30 real s, clock pauses while defenders stand near the door)
+CFG.SQUAD={CARS:3,PER:2,DISMOUNT:3,ARREST:1.2,RACKETS:3,CAR_HP:160,FIGHT_R:6,FIGHT_MAX:RM(1.5),BOARD:1.3,ESC_MAX:RM(2)};CFG.HUNT={ESCORT_R:6,EDGE:1.3,MAX:8}; // v0.21: FIGHT_R = cops clear the Don's men within this many tiles before cuffing him (only once a fight has broken out); BOARD = how close to a car to get in; ESC_MAX = escort safety limit
 function news(m){G.news=G.news||[];G.news.unshift({t:G.t,m});if(G.news.length>200)G.news.length=200;NSEEN.delete(m);notice(m,true);log(m,1)}
 const sqOf=u=>u&&u.squad!=null?(G.squads||[]).find(s=>s.id===u.squad):null;
 const donNm=u=>u.fam===0?'the Don':manName(u)+' ('+FAM[u.fam].name+')';
 function caseSucceed(f){const bs=G.units.find(u=>u.fam===f.id&&u.type=='boss');if(!bs||bs.hp<=0)return;f.lastRaid=G.t;
+ // v0.21 one case at a time: the first family whose file fills gets the arrest; every other family's file is wiped and stays at 0 until this arrest is over
+ const wiped=FAM.filter(o=>o!==f&&o.alive&&o.case>0);for(const o of wiped)o.case=0;
  if(bs.jail){jailBoss(bs,'case',0);f.case=CFG.CASE.AFTER_RAID;return}
- G.squads=G.squads||[];const S={id:++G.uid,f:f.id,boss:bs.id,cars:[],cops:[],t0:G.t},p=nearRoad(PHQB.door[0],PHQB.door[1])||PHQB.door;
- for(let k=0;k<CFG.SQUAD.CARS;k++){const v=mkVeh('pcar','police',p[0],p[1]);v.slot=[p[0],p[1],'se'];v.temp=1;v.squad=S.id;v.state='squad';v.siren=true;v.rp=0;v.hp=CFG.SQUAD.CAR_HP;G.veh.push(v);
-  for(let j=0;j<CFG.SQUAD.PER;j++){const c=spawn('police','police',p[0],p[1]);c.squad=S.id;c.rp=0;c.ride=v;v.riders.push(c);S.cops.push(c.id)}S.cars.push(v.id)}
+ G.squads=G.squads||[];const S={id:++G.uid,f:f.id,boss:bs.id,cars:[],cops:[],t0:G.t,ph:'go',fight:false,esc:null,pc:null},p=nearRoad(PHQB.door[0],PHQB.door[1])||PHQB.door;
+ for(let k=0;k<CFG.SQUAD.CARS;k++){const v=mkVeh('pcar','police',p[0],p[1]);v.slot=[p[0],p[1],'se'];v.temp=1;v.squad=S.id;v.state='squad';v.siren=true;v.rp=RS(1)+k*RS(0.3);v.holdT=G.t+k*RS(0.7);v.hp=CFG.SQUAD.CAR_HP;v.crew=[]; // (v0.12 bug fixed: mkVeh already adds the car; the old extra G.veh.push put every squad car in twice)
+  for(let j=0;j<CFG.SQUAD.PER;j++){const c=spawn('police','police',p[0],p[1]);c.squad=S.id;c.rp=0;c.ride=v;v.riders.push(c);S.cops.push(c.id);v.crew.push(c.id)}S.cars.push(v.id);sqDrive(v,bs.x,bs.y)}
  G.squads.push(S);sfx&&sfx('siren',p[0],p[1]);
- news('The police case against the '+f.name+' family went through. '+CFG.SQUAD.CARS+' police cars are on their way to arrest '+donNm(bs)+'.')}
-function carHome(v){v.riders=[];const r=roadBfs(Math.round(v.x),Math.round(v.y),v.slot[0],v.slot[1]);v.path=r||[];v.state='home';v.siren=false;v.squad=null;if(!r)G.veh=G.veh.filter(w=>w!==v)}
-function endSquad(S){G.squads=G.squads.filter(q=>q!==S);G.units=G.units.filter(u=>u.squad!==S.id||u.hp<=0&&false);for(const vid of S.cars){const v=G.veh.find(w=>w.id===vid);if(v)carHome(v)}}
-function squadArrest(S,bs){const f=FAM[S.f],d=distOf(Math.round(bs.x),Math.round(bs.y)),bx=bs.x,by=bs.y;
- if(bs.ride){const v=bs.ride;v.riders=v.riders.filter(w=>w!==bs);bs.ride=null}jailBoss(bs,'case',0);
- const sd=b=>distOf(b.door[0],b.door[1])===d?0:1,rk=G.bld.filter(b=>b.owner===S.f&&CFG.B[b.type].racket&&!b.dmg).sort((a,b)=>sd(a)-sd(b)||Math.hypot(a.door[0]-bx,a.door[1]-by)-Math.hypot(b.door[0]-bx,b.door[1]-by)).slice(0,CFG.SQUAD.RACKETS);
+ news('The police case against the '+f.name+' family went through. '+CFG.SQUAD.CARS+' police cars are on their way to arrest '+donNm(bs)+'.'+(wiped.length?' The police drop their other files to work this one case.':''))}
+function sqCar(id){return id==null?null:G.veh.find(w=>w.id===id)}
+function sqDrive(v,x,y){const r=nearRoad(Math.round(x),Math.round(y)),pa=r&&roadBfs(Math.round(v.x),Math.round(v.y),r[0],r[1]);if(pa&&pa.length>1){v.path=pa;return true}v.path=[];return false}
+function sqDismount(v){for(const c of [...v.riders]){c.ride=null;c.x=v.x;c.y=v.y;c.path=[];c.rp=0}v.riders=[];v.path=[];v.state='wait';sfx&&sfx('door',v.x,v.y)}
+function sqBoard(c,v){c.ride=v;c.path=[];c.tgt=null;if(!v.riders.includes(c))v.riders.push(c)}
+// squad car heading back to the station: keeps its cops aboard, and car + cops are removed together when it gets there
+function carHome(v){const r=roadBfs(Math.round(v.x),Math.round(v.y),v.slot[0],v.slot[1]);v.path=r||[];v.state='home';v.siren=false;v.squad=null;v.sqHome=1;v.prisoner=null}
+function uncuff(bs){if(!bs)return;bs.cuffed=null;if(bs.ride){detach(bs)}bs.path=[]}
+function sqLeave(S){S.ph='leave';S.fight=false;S.leaveT=G.t;const bs=G.units.find(u=>u.id===S.boss);if(bs&&bs.cuffed===S.id)uncuff(bs);
+ for(const vid of S.cars){const v=sqCar(vid);if(v&&(v.state==='squad'||v.state==='transport')&&v.riders.length)carHome(v)}
+ for(const id of S.cops){const c=G.units.find(u=>u.id===id);if(c&&!c.ride){c.tgt=null;c.rp=0}}
+ if(!S.cops.some(id=>G.units.some(u=>u.id===id&&u.hp>0&&!u.ride))&&!S.cars.map(sqCar).some(v=>v&&v.state==='wait'&&v.riders.length))G.squads=(G.squads||[]).filter(q=>q!==S)}
+function endSquad(S){sqLeave(S)} // v0.21: no more deleting the whole squad on the spot (that was cops vanishing mid-fight)
+function sqArrive(S,bs,v){const f=FAM[S.f],bx=bs.x,by=bs.y,d=distOf(Math.round(bs.x),Math.round(bs.y));
+ if(v){for(const c of v.riders)if(c!==bs)G.units=G.units.filter(w=>w!==c);v.riders=[];G.veh=G.veh.filter(w=>w!==v)}bs.ride=null;bs.cuffed=null;
+ jailBoss(bs,'case',0);
+ const hb=S.from||[bx,by],sd=b=>distOf(b.door[0],b.door[1])===(S.fromD??d)?0:1,rk=G.bld.filter(b=>b.owner===S.f&&CFG.B[b.type].racket&&!b.dmg).sort((a,b)=>sd(a)-sd(b)||Math.hypot(a.door[0]-hb[0],a.door[1]-hb[1])-Math.hypot(b.door[0]-hb[0],b.door[1]-hb[1])).slice(0,CFG.SQUAD.RACKETS);
  for(const b of rk){setDmg(b,'smashed',CFG.SMASH.HOURS,'police');G.raids.unshift({t:G.t,f:S.f,b:b.id,type:b.type})}if(G.raids.length>12)G.raids.length=12;
- f.case=CFG.CASE.AFTER_RAID;f.lastRaid=G.t;f.heat=Math.max(0,f.heat-10);endSquad(S)}
+ f.case=CFG.CASE.AFTER_RAID;f.lastRaid=G.t;f.heat=Math.max(0,f.heat-10);sqLeave(S)}
+function squadArrest(S,bs){sqArrive(S,bs,null)}
+function sqCuff(S,bs,c){if(bs.ride)detach(bs);if(bs.inB!=null)comeOut(bs);bs.cuffed=S.id;bs.path=[];bs.tgt=null;bs.petty=null;bs.estB=null;bs.atB=null;bs.goB=null;bs.huntB=null;G.sel.delete(bs.id);if(bs.fam===0&&WH.u===bs.id)closeWheel();
+ S.ph='escort';S.esc=c.id;S.escT=G.t;S.from=[bs.x,bs.y];S.fromD=distOf(Math.round(bs.x),Math.round(bs.y));const cars=S.cars.map(sqCar).filter(v=>v&&v.state==='wait').sort((a,b)=>Math.hypot(a.x-bs.x,a.y-bs.y)-Math.hypot(b.x-bs.x,b.y-bs.y));S.pc=cars[0]?cars[0].id:null;
+ sfx&&sfx('whistle',bs.x,bs.y);news((bs.fam===0?'The police have the Don in handcuffs':donNm(bs)+' is in handcuffs')+' and are walking him to a squad car.')}
+function sqFoes(S,bs,x,y){if(!S.fight)return[];if(S.fightT==null)S.fightT=G.t;if(G.t-S.fightT>CFG.SQUAD.FIGHT_MAX)return[]; // after FIGHT_MAX the cops stop chasing gunmen they can't reach and go for the Don
+ return G.units.filter(u=>u.fam===S.f&&u!==bs&&u.hp>0&&!u.jail&&!u.ride&&u.inB==null&&u.garrison==null&&u.type!='spy'&&u.type!='lawyer'&&Math.hypot(u.x-x,u.y-y)<=CFG.SQUAD.FIGHT_R)}
+function sqWalk(c,x,y,dt,r){c.rp-=dt;if(c.rp<=0||!c.path.length){c.rp=r||RS(0.4);const e=c.path.at(-1);if(!e||Math.hypot(e[0]-x,e[1]-y)>0.8)sendTo(c,Math.round(x),Math.round(y),null,true)}}
+function sqFight(c,foes){if(!foes.length)return false;if(c.tgt==null||!foes.some(f=>f.id===c.tgt)){let b=null,bd=1e9;for(const f of foes){const d=Math.hypot(f.x-c.x,f.y-c.y);if(d<bd){bd=d;b=f}}c.tgt=b.id;c.stance=null}return true}
+// cops not needed for the prisoner go back to their own car (or any squad car still waiting); a car leaves once its living crew is aboard
+function sqReturn(S,cops,dt,skip){const sk=c=>skip&&skip.has(c);for(const c of cops){if(c.ride||sk(c))continue;c.tgt=null;let v=S.cars.map(sqCar).find(w=>w&&w.state==='wait'&&w.crew&&w.crew.includes(c.id))||S.cars.map(sqCar).filter(w=>w&&w.state==='wait'&&w.id!==S.pc).sort((a,b)=>Math.hypot(a.x-c.x,a.y-c.y)-Math.hypot(b.x-c.x,b.y-c.y))[0];
+  if(!v){const d=PHQB.door;if(Math.hypot(c.x-d[0],c.y-d[1])<1.5){G.units=G.units.filter(w=>w!==c);continue}sqWalk(c,d[0],d[1],dt,RS(1));continue}
+  if(Math.hypot(c.x-v.x,c.y-v.y)<CFG.SQUAD.BOARD)sqBoard(c,v);else sqWalk(c,v.x,v.y,dt)}
+ for(const vid of S.cars){const v=sqCar(vid);if(!v||v.state!=='wait'||v.id===S.pc&&S.ph!=='leave')continue;const crew=(v.crew||[]).map(id=>G.units.find(u=>u.id===id&&u.hp>0)).filter(Boolean);const waiting=cops.filter(c=>!c.ride&&(v.crew||[]).includes(c.id));
+  if(v.riders.length&&!waiting.length)carHome(v)}}
 function stepSquads(dt){for(const S of [...(G.squads||[])]){const bs=G.units.find(u=>u.id===S.boss),cops=S.cops.map(id=>G.units.find(u=>u.id===id)).filter(c=>c&&c.hp>0);
-  if(!bs||bs.hp<=0){endSquad(S);continue}
-  if(!cops.length){FAM[S.f].case=0;FAM[S.f].heat=0;endSquad(S);news('The police squad sent for '+donNm(bs)+' was beaten off. The case against the '+FAM[S.f].name+' family is dropped.');continue}
-  if(bs.jail){jailBoss(bs,'case',0);FAM[S.f].case=CFG.CASE.AFTER_RAID;endSquad(S);continue}
+  if(S.ph==='leave'){sqReturn(S,cops,dt,null);const left=cops.filter(c=>c.ride?c.ride.squad===S.id||c.ride.state==='wait':true);
+   for(const vid of S.cars){const v=sqCar(vid);if(v&&v.state==='wait'&&!v.riders.length&&!cops.some(c=>!c.ride&&(v.crew||[]).includes(c.id))&&!onScreenXY(v.x,v.y))G.veh=G.veh.filter(w=>w!==v)}
+   if(!cops.some(c=>!c.ride)&&!S.cars.map(sqCar).some(v=>v&&v.state==='wait'&&v.riders.length))G.squads=G.squads.filter(q=>q!==S);continue}
+  if(!bs||bs.hp<=0){sqLeave(S);continue}
+  if(!cops.length){if(bs.cuffed===S.id)uncuff(bs);FAM[S.f].case=0;FAM[S.f].heat=0;sqLeave(S);news('The police squad sent for '+donNm(bs)+' was beaten off. The case against the '+FAM[S.f].name+' family is dropped.');continue}
+  if(bs.jail&&bs.cuffed!==S.id){jailBoss(bs,'case',0);FAM[S.f].case=CFG.CASE.AFTER_RAID;sqLeave(S);continue}
   const x=bs.ride?bs.ride.x:bs.x,y=bs.ride?bs.ride.y:bs.y;
-  for(const vid of S.cars){const v=G.veh.find(w=>w.id===vid);if(!v||v.squad!==S.id||!v.riders.length)continue;const d=Math.hypot(v.x-x,v.y-y);
-   let off=d<=CFG.SQUAD.DISMOUNT;if(!off){v.rp-=dt;if(v.rp<=0||!v.path.length){v.rp=RS(1);const r=nearRoad(x,y),pa=r&&roadBfs(Math.round(v.x),Math.round(v.y),r[0],r[1]);if(pa&&pa.length>1)v.path=pa;else off=true}}
-   if(off){for(const c of v.riders){c.ride=null;c.x=v.x;c.y=v.y;c.path=[];c.rp=0}sfx&&sfx('door',v.x,v.y);carHome(v)}}
-  for(const c of cops){if(c.ride)continue;if(Math.hypot(c.x-x,c.y-y)<CFG.SQUAD.ARREST){squadArrest(S,bs);break}if(c.tgt!=null)continue;c.rp-=dt;if(c.rp<=0||!c.path.length){c.rp=RS(0.4);const e=c.path.at(-1);if(!e||Math.hypot(e[0]-x,e[1]-y)>0.8)sendTo(c,Math.round(x),Math.round(y),null,true)}}}}
+  if(S.ph==='go'){
+   for(const vid of S.cars){const v=sqCar(vid);if(!v||v.state!=='squad'||!v.riders.length)continue;const d=Math.hypot(v.x-x,v.y-y);
+    if(d<=CFG.SQUAD.DISMOUNT){sqDismount(v);continue}v.rp-=dt;if(v.rp<=0||!v.path.length){v.rp=RS(1);if(!sqDrive(v,x,y))sqDismount(v)}}
+   const foes=sqFoes(S,bs,x,y);
+   for(const c of cops){if(c.ride)continue;if(sqFight(c,foes))continue;if(c.tgt!=null&&!S.fight)c.tgt=null;if(c.tgt!=null)continue;
+    {const dd=Math.hypot(c.x-x,c.y-y);if(dd<CFG.SQUAD.ARREST||(dd<2.6&&!c.path.length&&!bs.path.length)){sqCuff(S,bs,c);break}}sqWalk(c,x,y,dt)}
+   continue}
+  if(S.ph==='escort'){let esc=cops.find(c=>c.id===S.esc&&!c.ride);if(!esc){esc=cops.filter(c=>!c.ride).sort((a,b)=>Math.hypot(a.x-bs.x,a.y-bs.y)-Math.hypot(b.x-bs.x,b.y-bs.y))[0];if(!esc){const v=sqCar(S.pc);if(v&&v.riders.some(c=>c.fam==='police')){esc=v.riders.find(c=>c.fam==='police');v.riders=v.riders.filter(w=>w!==esc);esc.ride=null;esc.x=v.x;esc.y=v.y}}if(!esc){uncuff(bs);sqLeave(S);continue}S.esc=esc.id}
+   esc.tgt=null;let v=sqCar(S.pc);if(S.pc!=null&&(!v||v.state!=='wait')){v=S.cars.map(sqCar).filter(w=>w&&w.state==='wait').sort((a,b)=>Math.hypot(a.x-bs.x,a.y-bs.y)-Math.hypot(b.x-bs.x,b.y-bs.y))[0]||null;S.pc=v?v.id:null}
+   const dest=v?[v.x,v.y]:PHQB.door;sqWalk(esc,dest[0],dest[1],dt);
+   // the Don is walked along a step behind his escort
+   if(Math.hypot(bs.x-esc.x,bs.y-esc.y)>0.8){bs._esc=1;bs.rp=(bs.rp||0)-dt;if(bs.rp<=0||!bs.path.length){bs.rp=RS(0.3);sendTo(bs,Math.round(esc.x),Math.round(esc.y),null,true)}bs._esc=0}else bs.path=[];
+   const foes=sqFoes(S,bs,bs.x,bs.y);for(const c of cops){if(c.ride||c===esc)continue;if(!sqFight(c,foes)){c.tgt=null;const pv=sqCar(S.pc);if(pv&&!(pv.crew||[]).includes(c.id))continue;if(pv)sqWalk(c,pv.x,pv.y,dt)}}
+   sqReturn(S,cops,dt,new Set(cops.filter(c=>c===esc||(v&&(v.crew||[]).includes(c.id))||(foes.length&&c.tgt!=null))));
+   const late=G.t-S.escT>CFG.SQUAD.ESC_MAX;
+   if(v&&Math.hypot(esc.x-v.x,esc.y-v.y)<CFG.SQUAD.BOARD&&(Math.hypot(bs.x-v.x,bs.y-v.y)<CFG.SQUAD.BOARD+0.9||late)){
+    bs.path=[];bs.ride=v;v.riders.push(bs);sqBoard(esc,v);for(const c of cops)if(!c.ride&&(v.crew||[]).includes(c.id)&&Math.hypot(c.x-v.x,c.y-v.y)<CFG.SQUAD.BOARD+1)sqBoard(c,v);
+    v.prisoner=bs.id;v.pfam=S.f;v.state='transport';v.siren=true;v.path=roadBfs(Math.round(v.x),Math.round(v.y),v.slot[0],v.slot[1])||[];S.ph='transport';
+    news((bs.fam===0?'The Don':donNm(bs))+' is in the back of a police car on the way to Police HQ.');continue}
+   if(!v&&(Math.hypot(esc.x-PHQB.door[0],esc.y-PHQB.door[1])<1.6||late)){squadArrest(S,bs);continue}
+   continue}
+  if(S.ph==='transport'){const v=sqCar(S.pc);sqReturn(S,cops,dt,null);if(!v){uncuff(bs);sqLeave(S);continue}if(!v.path.length)sqArrive(S,bs,v)}}}
+function onScreenXY(x,y){const q=iso(x,y),X=(q.X-cam.x)*cam.z,Y=(q.Y-cam.y)*cam.z;return X>-120&&Y>-120&&X<innerWidth+120&&Y<innerHeight+120}
 function escortStr(bs){let s=str(bs);for(const v of G.units)if(v!==bs&&v.fam===bs.fam&&v.hp>0&&!v.jail&&!v.ride&&v.type!='spy'&&Math.hypot(v.x-bs.x,v.y-bs.y)<=CFG.HUNT.ESCORT_R)s+=str(v);return s}
 function aiHunt(f){for(const u of G.units)if(u.fam===f.id&&u.huntB!=null){const b=G.units.find(w=>w.id===u.huntB);if(!b||b.hp<=0||!(b.exposed>G.t)){u.huntB=null;if(u.tgt===(b&&b.id))u.tgt=null}}
  for(const bs of G.units){if(bs.type!='boss'||bs.fam===f.id||bs.hp<=0||bs.jail||!(bs.exposed>G.t))continue;
@@ -915,7 +974,7 @@ function stepEconomy(dt){const k=dt/CFG.DAY;for(let d=0;d<5;d++)G.dh[d]=Math.max
  {let up=0;for(const u of G.units)if(u.fam===f.id)up+=CFG.UPKEEP[u.type]||0;let c=up*k;const d=Math.min(f.dirty,c);f.dirty-=d;c-=d;f.clean=Math.max(0,f.clean-c);f.upkeep=up}
  if(f.dirty>CFG.CASE.DIRTY_FREE)f.case+=(f.dirty-CFG.CASE.DIRTY_FREE)/1000*CFG.CASE.DIRTY_PER_1K_DAY*k;
  {const ct=G.bld.find(b=>b.type=='Courthouse');if(ct){const nl=G.units.filter(u=>u.fam===f.id&&u.type=='lawyer'&&u.atB===ct).length;if(nl)f.case-=CFG.CASE.LAWYER_DAY*nl*k}}
- f.case=Math.max(0,Math.min(CFG.CASE.MAX,f.case));
+ f.case=Math.max(0,Math.min(CFG.CASE.MAX,f.case));if((G.squads||[]).some(q=>q.f!==f.id&&q.ph!=='leave'))f.case=0;
  const ng=G.units.filter(u=>u.fam===f.id&&u.garrison!=null).length;f.heat+=ng*CFG.GUARD.HEAT_DAY*k;
  f.heat=Math.max(0,Math.min(100,f.heat-CFG.HEAT_DECAY_DAY*k*(1+upgL(f.id,'heat')*CFG.UPG.heat.per)))}}
 const guardsAt=b=>G.units.filter(u=>u.garrison===b.id&&u.fam===b.owner);
@@ -1234,7 +1293,46 @@ function drawTerritory(now){const al=Math.max(0,Math.min(1,(CFG.TERR_ZOOM+0.05-c
 var initPoliceLater=initPoliceLater||0;var sfx=window.sfx||null;
 let lastDayS=0;
 function stepWeather(){const W=CFG.WEATHER;if(!G.wx)G.wx={rain:true,until:G.t+(W.RAIN_H[0]+rnd()*(W.RAIN_H[1]-W.RAIN_H[0]))*HOUR()};if(G.t>=G.wx.until){const r=!G.wx.rain,R=r?W.RAIN_H:W.CLEAR_H;G.wx={rain:r,until:G.t+(R[0]+rnd()*(R[1]-R[0]))*HOUR()};try{applySet()}catch(e){}}}
-function tick(dt){if(G.over)return;stepSeenQ(dt);stepWeather();stepEscort(dt);stepField(dt);stepJobs(dt);if(initPoliceLater){initPoliceLater=0;initPolice()}G.t+=dt;updTerritory();stepSpies(dt);stepBoarding();ensureCars();stepUnits(dt);stepEstablish();stepCiv(dt);stepPetty(dt);stepChase(dt);stepBuildings(dt);stepEconomy(dt);stepPolice(dt);stepAI(dt)}
+// a rival hideout counts as found once you can see it (its Don was revealed, or your dame is near) or a dame reported where it is
+function hqKnown(b){if(!b||b.type!='Hideout'||b.owner==null||b.owner===0||b.ruin)return false;if(seenB(0,b))return true;const H=(intelRec().spotH||{})[b.owner];return !!(H&&H.b===b.id)}
+const raidOK=u=>u&&u.fam===0&&u.hp>0&&!u.jail&&!u.ride&&u.cuffed==null&&!['spy','lawyer','bomber'].includes(u.type);
+function orderRaid(us,b){const men=us.filter(raidOK),C=CFG.RAIDB;if(!hqKnown(b))return 0;if(men.length<C.MIN){wNote('A raid needs at least '+C.MIN+' fighting men (no dames, lawyers or bombers).');return 0}
+ provoke(b.owner,'you raided their hideout');b.raid=b.raid&&b.raid.f===0?b.raid:{f:0,p:0,t0:G.t,out:0};
+ for(const u of men){u.job={k:'raid',b:b.id};u.tgt=null;u.petty=null;u.amove=false;u.stance=null;u.garrison=null;sendTo(u,b.door[0],b.door[1],null,true)}
+ ripple(b.door[0],b.door[1],'Raid','#ff6b5a');log(men.length+' men sent to raid the '+FAM[b.owner].name+' hideout.',1);return men.length}
+function raidKick(b,quiet){const f=b.owner,d=b.door;for(const v of [...G.units]){if(v.fam!==f)continue;const inside=v.atB===b||v.garrison===b.id||v.inB===b.id;if(!inside)continue;if(v.inB!=null)comeOut(v,true);v.atB=null;v.goB=null;v.garrison=null;v.inB=null;
+  const ang=Math.random()*6.28,tx=Math.round(d[0]+Math.cos(ang)*1.5),ty=Math.round(d[1]+Math.sin(ang)*1.5);if(isRoad(tx,ty)){v.x=tx;v.y=ty}else{v.x=d[0];v.y=d[1]}v.path=[];v.stance=null}
+ const bs=bossOf(f);if(bs)bs.rev=Math.max(bs.rev||0,G.t+CFG.RAIDB.REV);if(quiet)return;sfx&&sfx('door',d[0],d[1]);notice('Raid! The '+FAM[f].name+' family is thrown out of its hideout into the street.',true)}
+function stepRaids(dt){const C=CFG.RAIDB;for(const b of G.bld){const Rd=b.raid;if(!Rd)continue;const ok=b.type=='Hideout'&&b.owner!=null&&b.owner!==Rd.f&&!b.ruin;
+  const men=G.units.filter(u=>u.job&&u.job.k=='raid'&&u.job.b===b.id&&u.hp>0&&!u.jail);if(!ok||!men.length){for(const u of men)u.job=null;delete b.raid;continue}
+  const d=b.door,at=men.filter(u=>!u.ride&&Math.hypot(u.x-d[0],u.y-d[1])<=C.R);
+  for(const u of men)if(!u.ride&&u.tgt==null&&!u.path.length&&Math.hypot(u.x-d[0],u.y-d[1])>C.R)sendTo(u,d[0],d[1],null,true);
+  if(Rd.out){for(const v of G.units)if(v.fam===b.owner&&(v.atB===b||v.garrison===b.id||v.inB===b.id)){raidKick(b,1);break}const bs=bossOf(b.owner);if(bs&&Math.hypot(bs.x-d[0],bs.y-d[1])<C.DEF_R+6)bs.rev=Math.max(bs.rev||0,G.t+RS(5))}
+  if(at.length<C.MIN){Rd.wait=1;continue}Rd.wait=0;if(!Rd.out){Rd.out=1;raidKick(b)}
+  const def=G.units.filter(v=>v.fam===b.owner&&v.hp>0&&!v.ride&&!v.jail&&v.inB==null&&v.type!='spy'&&v.type!='lawyer'&&Math.hypot(v.x-d[0],v.y-d[1])<C.DEF_R);Rd.def=def.length;
+  if(def.length)continue;Rd.p+=dt;if(Rd.p>=C.WORK)raidDone(b,men)}}
+function raidDone(b,men){const f=FAM[b.owner],me=FAM[Rd0(b)],d=b.door,gains=[];
+ const cash=Math.floor(f.dirty||0);f.dirty-=cash;me.dirty+=cash;if(cash>0)gains.push(['+'+money(cash),'#f0cf72']);
+ const IT=[['tommy','Tommy gun','Tommy guns'],['pistol','Pistol','Pistols'],['bomb','Bomb','Bombs'],['booze','Crate of booze','Crates of booze'],['guns','Gun crate','Gun crates']],cap={booze:CFG.INV.BOOZE_CAP,guns:CFG.INV.GUNS_CAP};
+ for(const[k,one,many]of IT){let n=Math.floor(f.inv[k]||0);if(n<=0)continue;f.inv[k]-=n;if(cap[k]!=null)n=Math.min(n,Math.max(0,cap[k]-Math.floor(me.inv[k]||0)))+0;me.inv[k]=(me.inv[k]||0)+n;if(n>0)gains.push(['+'+n+' '+(n===1?one:many),'#e6d6b0'])}
+ const name=f.name;b.raid=null;b.type=b.look||'Tenement';b.look=null;b.owner=null;b.lvl=1;b.upUntil=0;b.ruin=1;b.dmg='bombed';b.dmgStart=rtNow();b.dmgUntil=Infinity;b.repairAt=Infinity;b.repaired=false;b.tape=false;b.prog=0;b.capFam=null;
+ for(const u of men)u.job=null;addFx({type:'dust',b:b.id});sfx&&sfx('capture');
+ if(!gains.length)gains.push(['Nothing left worth taking','#c9b27a']);
+ gains.forEach((g,i)=>addFx({type:'ripple',x:d[0],y:d[1],col:g[1],label:g[0],d:i*450}));lootPop(name,gains);
+ log('Raid done: the '+name+' hideout is a burnt-out ruin. '+gains.map(g=>g[0]).join(', ')+'.',1);news('The '+name+' family hideout was raided and burnt out. They have nowhere to hire men or stash cash until they set up a new one.');updUI()}
+const Rd0=b=>b.raid&&b.raid.f!=null?b.raid.f:0;
+function lootPop(name,gains){let el=$('lootpop');if(!el){el=document.createElement('div');el.id='lootpop';el.style.cssText='position:fixed;left:50%;top:70px;transform:translateX(-50%);z-index:20;min-width:220px;max-width:320px;padding:10px 14px;border-radius:8px;background:#1b120eee;border:1.5px solid #c9a24a;box-shadow:0 4px 18px #000a;color:#e8d9b0;font:13px Georgia,serif;text-align:center;cursor:pointer';el.onclick=()=>{el.style.display='none'};document.body.appendChild(el)}
+ el.innerHTML=`<div style="font:15px Limelight,serif;color:#e6c56a;letter-spacing:1px;margin-bottom:6px">Raid on the ${name} hideout</div>${gains.map(g=>`<div style="font-weight:bold;color:${g[1]};margin:2px 0">${g[0]}</div>`).join('')}<div style="opacity:.6;font-size:11px;margin-top:6px">Tap to close</div>`;el.style.display='block';clearTimeout(el._t);el._t=setTimeout(()=>{el.style.display='none'},7000)}
+function drawRaidsPris(now){const z=cam.z;ctx.save();ctx.setTransform(dpr,0,0,dpr,0,0);
+ for(const b of G.bld){const Rd=b.raid;if(!Rd||!Rd.out)continue;const q=iso(b.door[0],b.door[1]),x=(q.X-cam.x)*z,y=(q.Y-cam.y)*z-70*Math.max(z,0.4);const k=Math.min(1,Rd.p/CFG.RAIDB.WORK),R0=15;
+  ctx.beginPath();ctx.arc(x,y,R0,0,7);ctx.fillStyle='#1b120ee8';ctx.fill();ctx.lineWidth=3;ctx.strokeStyle='#4a2a20';ctx.stroke();ctx.beginPath();ctx.arc(x,y,R0,-Math.PI/2,-Math.PI/2+k*Math.PI*2);ctx.strokeStyle=Rd.def?'#a08060':'#ff6b5a';ctx.stroke();
+  ctx.fillStyle='#f1dfa8';ctx.font='bold 10px Georgia,serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(Rd.def?'HOLD':'RAID',x,y)}
+ for(const v of G.veh){if(v.prisoner==null)continue;const q=iso(v.x,v.y),x=(q.X-cam.x)*z,y=(q.Y-cam.y)*z,pu=0.5+0.5*Math.sin(now/220),col=FAM[v.pfam]?FAM[v.pfam].col:'#ffd34d',r=Math.max(16,34*z);
+  ctx.beginPath();ctx.ellipse(x,y-6*z,r*(1+pu*0.15),r*0.5*(1+pu*0.15),0,0,7);ctx.lineWidth=3;ctx.strokeStyle=col;ctx.globalAlpha=0.6+0.4*pu;ctx.stroke();ctx.globalAlpha=1;
+  const t=(v.pfam===0?'YOUR DON':FAM[v.pfam].name.toUpperCase()+' DON')+' IN CUSTODY';ctx.font='bold 11px Georgia,serif';const w=ctx.measureText(t).width+12,ty=y-Math.max(30,70*z);
+  ctx.fillStyle='#1b120ee8';ctx.fillRect(x-w/2,ty-9,w,18);ctx.strokeStyle=col;ctx.lineWidth=1.5;ctx.strokeRect(x-w/2,ty-9,w,18);ctx.fillStyle='#f1dfa8';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(t,x,ty)}
+ ctx.restore()}
+function tick(dt){if(G.over)return;stepSeenQ(dt);stepWeather();stepEscort(dt);stepField(dt);stepJobs(dt);stepRaids(dt);if(initPoliceLater){initPoliceLater=0;initPolice()}G.t+=dt;updTerritory();stepSpies(dt);stepBoarding();ensureCars();stepUnits(dt);stepEstablish();stepCiv(dt);stepPetty(dt);stepChase(dt);stepBuildings(dt);stepEconomy(dt);stepPolice(dt);stepAI(dt)}
 // ================= RENDER =================
 const cv=document.getElementById('c'),ctx=cv.getContext('2d');let dpr=1;
 const cam={x:0,y:0,z:1};const SPR={};
@@ -1540,7 +1638,7 @@ function drawPaths(now){if(!CFG.SHOW_PATHS||cam.z<0.2)return;ctx.save();ctx.setL
 function drawFX(now){G.fx=G.fx.filter(f=>now-f.t0-(f.d||0)<(f.type=='dust'?1400:f.type=='boom'?2200:f.type=='throw'?650:f.type=='glass'?500:f.type=='flag'?1800:f.type=='ripple'?950:f.type=='death'?1500:f.type=='dmg'?900:f.type=='tracer'?160:f.type=='spark'?260:f.type=='shell'?520:f.type=='puff'?420:140));
  drawPaths(now);
  const UP=(id,x,y)=>{const s=id!=null&&SPOS.get(id);return s?{X:s.X,Y:s.Y}:iso(x,y)};
- for(const f of G.fx){const a=(now-f.t0-(f.d||0));if(a<0)continue;
+ for(const f of G.fx){const a=(now-f.t0-(f.d||0));if(a<0){if(f.type=='death'&&f.u){const q=iso(f.u.x,f.u.y);ctx.save();ctx.translate(q.X,q.Y);drawFigureSafe(f.u);ctx.restore()}continue}
   if(f.type=='dust'){const b=G.bld[f.b],P=fpC(b),k=a/1400;for(let i=0;i<14;i++){const an=i/14*6.28,cx=(P[0][0]+P[2][0])/2,cy=(P[0][1]+P[2][1])/2,r=20+k*90;ctx.fillStyle=`rgba(190,170,140,${0.5*(1-k)})`;ctx.beginPath();ctx.arc(cx+Math.cos(an)*r,cy+Math.sin(an)*r*0.5-k*20,12+k*16,0,7);ctx.fill()}continue}
   if(f.type=='glass'){const p=iso(f.x,f.y),k=a/500;ctx.fillStyle=`rgba(190,225,255,${1-k})`;for(let i=0;i<8;i++){const an=i*0.8+f.x,v=20+i*4;ctx.fillRect(p.X+Math.cos(an)*v*k,p.Y-30+Math.sin(an)*v*k*0.6+k*k*30,2.5,2.5)}continue}
   if(f.type=='throw'){const b=G.bld[f.b],A=iso(f.x,f.y),B=iso(b.x+b.s*0.55,b.y+b.s*0.55),k=Math.min(1,a/650),X=A.X+(B.X-A.X)*k,Y=A.Y-30+(B.Y-90-(A.Y-30))*k-Math.sin(k*Math.PI)*70;
@@ -1631,7 +1729,7 @@ const FIGC={bomber:['#7a5a3a',40,9],thug:['#6b4a2e',36,9],enforcer:['#c2a170',44
 const RIGM={"bomber":{"w":83,"h":128,"hip":76,"pl":[34,76],"pr":[61,76]},"thug": {"w": 47, "h": 128, "hip": 76, "pl": [9.5, 76], "pr": [32.0, 76]}, "enforcer": {"w": 78, "h": 128, "hip": 76, "pl": [19.5, 76], "pr": [55.5, 76]}, "hitman": {"w": 63, "h": 128, "hip": 76, "pl": [15.5, 76], "pr": [42.0, 76]}, "dame": {"w": 50, "h": 128, "hip": 79, "pl": [14.0, 79], "pr": [27.0, 79]}, "driver": {"w": 70, "h": 128, "hip": 79, "pl": [21.5, 79], "pr": [49.5, 79]}, "cop_se": {"w": 61, "h": 128, "hip": 74, "pl": [12.5, 74], "pr": [35.0, 74]}, "cop_sw": {"w": 61, "h": 128, "hip": 74, "pl": [23.0, 74], "pr": [45.0, 74]}, "cop_ne": {"w": 58, "h": 128, "hip": 74, "pl": [22.5, 74], "pr": [43.5, 74]}, "cop_nw": {"w": 58, "h": 128, "hip": 74, "pl": [22.0, 74], "pr": [43.5, 74]}};
 const RIGH={bomber:40,thug:40,enforcer:46,hitman:46,spy:42,driver:42,lawyer:42,police:44},RIGK={spy:'dame',lawyer:'driver'};
 // paper-doll rig: two legs swing around hip pivots, upper body bobs/breathes, simple per-type attack poses
-function faceT(u){if(u.tgt==null||u.path.length)return;const t=G.units.find(v=>v.id===u.tgt);if(!t)return;const dx=t.x-u.x,dy=t.y-u.y;if(Math.abs(dx)+Math.abs(dy)>0.01)u.dir=Math.abs(dx)>Math.abs(dy)?(dx>0?'se':'nw'):(dy>0?'sw':'ne')}
+function faceT(u){if(u.tgt==null||u.path.length)return;const t=G.units.find(v=>v.id===u.tgt);if(!t)return;const dx=t.x-u.x,dy=t.y-u.y;if(Math.abs(dx)+Math.abs(dy)>0.01)faceDir(u,dx,dy)}
 function drawRig(u,X,Y){faceT(u);const now=performance.now(),cop=u.fam==='police',k=cop?'cop_'+u.dir:(RIGK[u.type]||u.type),m=RIGM[k];if(!m||!SPR['r_'+k+'_u'])return false;
  const H=RIGH[u.type]||42,s=H/m.h,mv=u.path.length&&!u.ride?1:0,ph=u.anim*Math.PI*2,flip=!cop&&(u.dir=='sw'||u.dir=='nw');
  const amp=(u.type=='spy'?0.14:0.38)*mv,bob=-Math.abs(Math.cos(ph))*m.h*0.03*mv,br=mv?0:Math.sin(now/600+u.id)*0.018;
@@ -1711,7 +1809,7 @@ function render0(now){ctx.setTransform(dpr,0,0,dpr,0,0);ctx.fillStyle='#24414b';
  for(const it of items){if(it.b){const fa=it.b._fa??1;if(fa<1){ctx.globalAlpha=fa;drawBuilding(it.b);ctx.globalAlpha=1}else drawBuilding(it.b)}else if(it.b)drawBuilding(it.b);else if(it.u){if(!TINY)drawUnit(it.u,it.s.X,it.s.Y)}else if(it.cz)drawCiv(it.cz,it.X,it.Y);else if(it.t){const p=iso(...it.t);drawTree(p.X,p.Y,it.t[2])}else if(it.l){const p=iso(...it.l);drawLamp(p.X-TW*0.3,p.Y-TH*0.0)}else if(it.v)drawVeh(it.v);else if(it.w)drawWreck(it.w);else drawCar(it.c)}
  // x-ray: units hidden behind buildings
  const XB=[];for(const b of G.bld)if(b._r&&!((b._cut||0)>0.5))XB.push(b._r,bKey(b));
- for(const it of us){const{X,Y}=it.s;let hid=false;for(let q=0;q<XB.length;q+=2){const r=XB[q];if(X>r[0]&&X<r[2]&&Y-20>r[1]&&Y-20<r[3]&&XB[q+1]>it.d){hid=true;break}}if(hid){ctx.globalAlpha=0.4;drawUnit(it.u,X,Y);ctx.globalAlpha=1;
+ const xk=1-Math.exp(-(VOT||0.016)/0.08);for(const it of us){const{X,Y}=it.s;let hid=false;for(let q=0;q<XB.length;q+=2){const r=XB[q];if(X>r[0]&&X<r[2]&&Y-20>r[1]&&Y-20<r[3]&&XB[q+1]>it.d){hid=true;break}}const u0=it.u;u0._xa=(u0._xa??(hid?0.4:0))+((hid?0.4:0)-(u0._xa??0))*xk;if(u0._xa<0.01)u0._xa=0;if(u0._xa>0){ctx.globalAlpha=u0._xa;drawUnit(it.u,X,Y);ctx.globalAlpha=1;
    if(G.sel.has(it.u.id)){const h=(it.u.type=='boss'?BOSSH:(RIGH[it.u.type]||44));ctx.save();ctx.strokeStyle='rgba(255,230,140,0.85)';ctx.lineWidth=2/Math.max(cam.z,0.5);ctx.setLineDash([4,3]);ctx.beginPath();ctx.ellipse(X,Y-h*0.5,h*0.28,h*0.55,0,0,7);ctx.stroke();ctx.restore()}}}
  for(const q of WQ.values())drawWanted(...q);WQ.clear();if(CPOP.length)drawCashPops();
  {const nowh=performance.now();for(const b of G.bld){if(!b._hl||!b._r)continue;const t=(nowh-b._hl)/700;if(t>=1){b._hl=0;continue}const r=b._r;ctx.save();ctx.globalAlpha=1-t;ctx.strokeStyle='#ffd34d';ctx.lineWidth=4/Math.max(cam.z,0.5);ctx.shadowColor='#ffd34d';ctx.shadowBlur=14;ctx.strokeRect(r[0]+6,r[1]+6,r[2]-r[0]-12,r[3]-r[1]-12);ctx.restore()}}
@@ -1724,7 +1822,7 @@ function render0(now){ctx.setTransform(dpr,0,0,dpr,0,0);ctx.fillStyle='#24414b';
    const sn=b.owner===0&&G.aiSpies.some(a=>a.b===b.id&&a.seen),lab=(sn?'!':'')+(list.length>1?' ×'+list.length:'');ctx.font=`bold ${Math.round(R0*0.8)}px Georgia,serif`;ctx.fillStyle='#f1dfa8';ctx.textAlign='left';ctx.textBaseline='middle';ctx.strokeStyle='#000';ctx.lineWidth=3;ctx.strokeText(lab,cx+R0+3,cy);ctx.fillText(lab,cx+R0+3,cy);ctx.textBaseline='alphabetic';ctx.restore();
    {const own=b.owner===0,st=own?(sn?'Rival dame spotted!':'Watching for dames'):b.owner==null?'Nothing to watch here':'Spying…',fs=Math.round(R0*0.72);ctx.save();ctx.font=`bold ${fs}px Georgia,serif`;ctx.textAlign='center';ctx.textBaseline='top';ctx.lineWidth=3;ctx.strokeStyle='#000c';ctx.strokeText(st,cx,cy+R0+3);ctx.fillStyle=sn?'#ff9a7a':'#f0c8d8';ctx.fillText(st,cx,cy+R0+3);ctx.restore()}
    SPYIC.push({u:list[0],x:(cx-cam.x)*cam.z,y:(cy-cam.y)*cam.z,r:R0*cam.z})}}
- drawJobRings(now);drawFX(now);postFX(now);drawMarkers(now);drawExposed(now);drawHPBars(now,us,items);if(TA>0)drawTactical(now,TA);
+ drawJobRings(now);drawFX(now);postFX(now);drawRaidsPris(now);drawMarkers(now);drawExposed(now);drawHPBars(now,us,items);if(TA>0)drawTactical(now,TA);
  if(drag&&drag.box&&(drag.mouse||drag.boxShow)){const[x0,y0,x1,y1]=drag.box;ctx.setTransform(dpr,0,0,dpr,0,0);ctx.fillStyle='rgba(212,168,75,0.15)';ctx.strokeStyle='#d4a84b';ctx.lineWidth=1.5;ctx.setLineDash([5,4]);ctx.fillRect(Math.min(x0,x1),Math.min(y0,y1),Math.abs(x1-x0),Math.abs(y1-y0));ctx.strokeRect(Math.min(x0,x1),Math.min(y0,y1),Math.abs(x1-x0),Math.abs(y1-y0));ctx.setLineDash([])}}
 
 // ===== zoomed-out unit markers =====
@@ -1964,23 +2062,39 @@ function demoRows(S){return PCATS.map(([lab,k,u])=>{const v=S.map(x=>x[k]),me=S.
 const HLP={lead:['{F} PULLS OUT IN FRONT','{F} MOB TIGHTENS ITS GRIP ON THE CITY','{F} OUTFIT RUNS THE TOWN'],close:['{F} MOB CLOSING IN','{F} GANG HOT ON THE LEADER\'S HEELS','NECK AND NECK AS {F} MOB GAINS'],ropes:['{F} FAMILY ON THE ROPES','{F} OUTFIT FEELS THE SQUEEZE','DARK DAYS FOR THE {F} MOB']};
 function headline(S,n){const L=S[0],Sc=S[1],W=S[S.length-1];let kind='lead',f=L;if(Sc){if(L.score>=Sc.score*1.25)kind='lead';else if(Sc.score>=L.score*0.9){kind='close';f=Sc}else if(S.length>=3){kind='ropes';f=W}}
  const pool=HLP[kind];return {kind,fam:f.id,text:pool[n%pool.length]}}
-function paperIssue(){const P=PAP();P.next=Math.max(P.next+CFG.PAPER.EVERY,(G.rt||0)+1);P.n++;const S=standings();P.iss={n:P.n,t:G.t,rt:G.rt||0,S,rows:demoRows(S),hl:headline(S,P.n)};showPaper();return P.iss}
+function paperIssue(){const P=PAP();P.next=Math.max(P.next+CFG.PAPER.EVERY,(G.rt||0)+1);P.n++;const S=standings();P.iss={n:P.n,t:G.t,rt:G.rt||0,S,rows:demoRows(S),hl:headline(S,P.n)};paperKeep(P.iss);showPaper();return P.iss}
+function paperKeep(iss){const P=PAP();P.hist=P.hist||[];P.hist.unshift(iss);if(P.hist.length>10)P.hist.length=10}
+// v0.21: special edition the moment any family's Don dies (does not move the regular 30-minute schedule)
+const HLD=['THE {F} DON IS DEAD','{F} BOSS GUNNED DOWN, FAMILY FINISHED','END OF THE LINE FOR THE {F} MOB'];
+function donPaper(fid,pre,by){const P=PAP();P.n++;const S=standings();const iss={n:P.n,t:G.t,rt:G.rt||0,S,rows:S.length?demoRows(S):[],hl:{kind:'don',fam:fid,text:HLD[P.n%HLD.length]},sp:{fid,row:pre&&pre.row,rank:pre&&pre.rank,of:pre&&pre.of,by:typeof by=='number'?by:by==='police'?'police':null}};
+ P.iss=iss;paperKeep(iss);if(!G.over&&!G.away)showPaper();else if(TAB==='paper')renderSheet();return iss}
 const ord=n=>n+(n%100>=11&&n%100<=13?'th':['th','st','nd','rd'][n%10]||'th');
 function fmtV(v,u){return u=='$'?money(v):(Math.round(v*10)/10).toLocaleString('en-US')}
 function paperHTML(iss,full){const F=id=>FAM[id],bd=id=>`<span class="bdg" style="background:${F(id).col}"></span>`;const h=iss.hl,fn=F(h.fam);
  const hl=h.text.replace('{F}',`<b style="color:${fn.col};text-shadow:0 0 1px #231a10,0 0 2px #231a10aa">${fn.name.toUpperCase()}</b>`);const day=Math.floor(iss.t/CFG.DAY)+1;
+ if(iss.sp)return donPaperHTML(iss,full,hl,bd);
  let t=`<div class="mast"><div class="ear">Late City Edition<br>Two Cents</div><div class="ttl">${CFG.PAPER.NAME}</div><div class="ear">All the News<br>Fit to Whisper</div></div>
  <div class="dl"><span>No. ${iss.n}</span><span>Day ${day} · 1931</span><span>Standings of the families</span></div><div class="hl">${hl}</div>
  <table><tr><th>Category</th><th>Rank</th><th>You</th><th>Best</th><th>Average</th><th>Worst</th></tr>`;
  for(const r of iss.rows)t+=`<tr><td class="k">${r.lab}</td><td>${r.rank?ord(r.rank):'-'}</td><td class="you">${r.you==null?'-':fmtV(r.you,r.u)}</td><td class="best">${bd(r.best.id)}${fmtV(r.best.v,r.u)}</td><td>${fmtV(r.avg,r.u)}</td><td class="worst">${bd(r.worst.id)}${fmtV(r.worst.v,r.u)}</td></tr>`;
  return t+'</table>'+(full?`<div class="ft">${CFG.PAPER.PAUSE?'Tap anywhere to put the paper down':'Tap to dismiss'}</div>`:'')}
-function showPaper(){const P=PAP(),o=$('paperov');if(!P.iss||!o)return;o.innerHTML=`<div class="news" id="frontpage">${CFG.PAPER.PAUSE?'':'<button class="x">✕</button>'}${paperHTML(P.iss,true)}</div>`;
+function showPaper(iss){const P=PAP(),o=$('paperov');iss=iss||P.iss;if(!iss||!o)return;if(PAPOPEN){o.innerHTML='';PAPOPEN=false}o.innerHTML=`<div class="news" id="frontpage">${CFG.PAPER.PAUSE?'':'<button class="x">✕</button>'}${paperHTML(iss,true)}</div>`;
  o.classList.toggle('mp',!CFG.PAPER.PAUSE);o.style.display='flex';PAPOPEN=true;PAPT=performance.now();if(CFG.PAPER.PAUSE){G._paperP=!G.paused;G.paused=true}sfx&&sfx('tab');if(TAB==='paper')renderSheet()}
 function closePaper(){if(!PAPOPEN)return;const o=$('paperov');o.style.display='none';o.innerHTML='';PAPOPEN=false;if(CFG.PAPER.PAUSE&&G._paperP){G._paperP=false;G.paused=false}}
 $('paperov').addEventListener('click',e=>{if(performance.now()-PAPT<350)return;e.stopPropagation();if(!CFG.PAPER.PAUSE&&!e.target.closest('.news'))return;closePaper()});
+function donPaperHTML(iss,full,hl,bd){const sp=iss.sp,F=FAM[sp.fid],r=sp.row,day=Math.floor(iss.t/CFG.DAY)+1;
+ const byT=sp.by==='police'?'Police HQ says the law caught up with him.':sp.by!=null&&FAM[sp.by]?`Word on the street: the <b style="color:${FAM[sp.by].col}">${FAM[sp.by].name}</b> outfit did it.`:'Nobody is saying who did it.';
+ let t=`<div class="mast"><div class="ear">Special Edition<br>Extra! Extra!</div><div class="ttl">${CFG.PAPER.NAME}</div><div class="ear">All the News<br>Fit to Whisper</div></div>
+ <div class="dl"><span>No. ${iss.n} · Extra</span><span>Day ${day} · 1931</span><span>A Don has fallen</span></div><div class="hl">${hl}</div>
+ <div class="it" style="text-align:center;margin:2px 0 6px">${bd(sp.fid)}The ${F.name} family is finished. ${byT}</div>`;
+ if(r)t+=`<table><tr><th>Final standing</th><th>Territory</th><th>Gangsters</th><th>Money</th><th>Kills</th><th>Buildings</th><th>Net worth</th></tr><tr><td class="k">${ord(sp.rank)} of ${sp.of}</td><td>${fmtV(r.terr,'')}</td><td>${fmtV(r.crew,'')}</td><td>${money(r.money)}</td><td>${fmtV(r.kills,'')}</td><td>${fmtV(r.blds,'')}</td><td>${money(r.worth)}</td></tr></table>`;
+ t+=`<table style="margin-top:6px"><tr><th>Standings now</th><th>Family</th><th>Score</th><th>Territory</th><th>Gangsters</th><th>Money</th></tr>`;
+ iss.S.forEach((x,i)=>{t+=`<tr><td class="k">${ord(i+1)}</td><td class="${x.id===0?'you':''}">${bd(x.id)}${x.id===0?'You':x.name}</td><td>${x.score}</td><td>${x.terr}</td><td>${x.crew}</td><td>${money(x.money)}</td></tr>`});
+ return t+'</table>'+(full?`<div class="ft">${CFG.PAPER.PAUSE?'Tap anywhere to put the paper down':'Tap to dismiss'}</div>`:'')}
 function paperTabHTML(){const P=PAP(),h=[];const left=Math.max(0,P.next-(G.rt||0)),mm=Math.floor(left/60),ss=String(Math.floor(left%60)).padStart(2,'0');
  h.push(`<div class="news" id="papertab">`);if(P.iss)h.push(paperHTML(P.iss,false));else h.push(`<div class="mast"><div class="ttl" style="margin:0 auto">${CFG.PAPER.NAME}</div></div><div class="it">The first edition hits the stands after 30 minutes of play.</div>`);
  h.push(`<div class="dl" style="border:0"><span>Next edition in ${mm}:${ss} of play</span></div>`);
+ {const H=(P.hist||[]).filter(x=>x!==P.iss);if(H.length){h.push('<h3>Past editions</h3>');for(const x of H)h.push(`<div class="it">No. ${x.n}${x.sp?' · Extra':''} · ${x.hl.text.replace('{F}',FAM[x.hl.fam].name.toUpperCase())} <span class="ago">${agoR(x.t)}</span> <button class="tog" data-pap="${x.n}">Read</button></div>`)}}
  const L=G.log||[];h.push('<h3>Latest</h3>'+(L[0]?`<div class="it" id="plast"><b>${L[0].m}</b> <span class="ago">${agoR(L[0].t)}</span></div>`:'<div class="it">Quiet on the streets.</div>'));
  h.push('<h3>Last 10 notices</h3><div id="plist">');for(const l of L.slice(0,10))h.push(`<div class="it">${l.m} <span class="ago">${agoR(l.t)}</span></div>`);if(!L.length)h.push('<div class="it">Nothing yet.</div>');h.push('</div>');
  const N=G.news||[];h.push(`<h3>Police blotter <button class="tog" data-blot=1>${G.blotOpen?'Hide':'Show'} (${N.length+G.raids.length})</button></h3>`);
@@ -2059,7 +2173,7 @@ function renderSheet(){const f=FAM[0],h=[],sh=$('sheet');const x=`<button class=
  {const html=x+h.join('');if(sh._h2!==html){sh._h2=html;sh.innerHTML=html}}
  const bc=$('bossc');if(bc&&SPR.se){const g=bc.getContext('2d');g.drawImage(SPR.se,0,0,198,344,0,0,140,243)}}
 $('sheet').addEventListener('click',e=>{const st=e.target.closest('.stile');if(st){G.stip=G.stip===st.dataset.tn?null:st.dataset.tn;renderSheet();return}{{const wb=e.target.closest('[data-war]');if(wb){const fm=FAM[+wb.dataset.war];if(fm&&!fm.war&&confirm('Declare war on the '+fm.name+' family? Their crews will hit your men and rackets. There is no peace afterwards.')){fm.war=true;fm.warT=G.t;log('WAR: you declared war on the '+fm.name+' family.',1);intel('war',`<b>You declared war</b> on the ${fm.name} family.`,{loud:1})}renderSheet();return}}{const sk=e.target.closest('[data-skim],[data-expose]');if(sk){if(sk.dataset.skim){const u=G.units.find(v=>v.id==sk.dataset.skim);if(u)doSkim(u)}else exposeAiSpy(+sk.dataset.expose);buzz(12);renderSheet();return}}{const pn=e.target.closest('[data-pan]');if(pn){const[x,y]=pn.dataset.pan.split(',').map(Number);jumpTo(x,y);ripple(x,y,'Last seen','#ff6b5a');return}}const rc=e.target.closest('[data-recall],[data-cx]');if(rc){if(rc.dataset.recall){const u=G.units.find(v=>v.id==rc.dataset.recall);if(u&&u.inB!=null){spyRecall(u);closeTab();if(u)center(u.x,u.y)}}else{const[x,y]=rc.dataset.cx.split(',').map(Number);closeTab();center(x,y);ripple(x,y,'Boss','#ff6b5a')}return}}{const cc=e.target.closest('[data-card],[data-cback],[data-goto],[data-equip]');if(cc){buzz(6);const ds=cc.dataset,id=+(ds.card||ds.goto||ds.equip);const u=G.units.find(v=>v.id===id);
-  if(ds.cback){G.crewCard=null;renderSheet();$('sheet').scrollTop=0;return}if(ds.card){G.crewCard=id;renderSheet();$('sheet').scrollTop=0;return}if(!u)return;if(ds.goto){goToMan(u);return}if(ds.equip){openGear(u);return}}}{const bt=e.target.closest('[data-blot]');if(bt){G.blotOpen=!G.blotOpen;renderSheet();return}}const t=e.target.closest('[data-close],[data-hire],[data-unit],[data-jump],[data-upg],[data-bribe],[data-findboss],[data-payoff]');if(!t)return;const f=FAM[0];
+  if(ds.cback){G.crewCard=null;renderSheet();$('sheet').scrollTop=0;return}if(ds.card){G.crewCard=id;renderSheet();$('sheet').scrollTop=0;return}if(!u)return;if(ds.goto){goToMan(u);return}if(ds.equip){openGear(u);return}}}{const bt=e.target.closest('[data-blot]');if(bt){G.blotOpen=!G.blotOpen;renderSheet();return}}{const pp=e.target.closest('[data-pap]');if(pp){const is=(PAP().hist||[]).find(x=>x.n==pp.dataset.pap);if(is)showPaper(is);return}}const t=e.target.closest('[data-close],[data-hire],[data-unit],[data-jump],[data-upg],[data-bribe],[data-findboss],[data-payoff]');if(!t)return;const f=FAM[0];
  if(t.dataset.close)return closeTab();
  if(t.dataset.payoff){const C=CFG.CASE,[c,n]=t.dataset.payoff=='dirty'?C.PAYOFF_DIRTY:C.BRIBE_CLEAN,k=t.dataset.payoff;if(f[k]>=c){f[k]-=c;f.case=Math.max(0,f.case-n);log('Paid off the law. Case −'+n,1);sfx&&sfx('cash')}}
  if(t.dataset.hire){hire(0,t.dataset.hire,myHQ())}
@@ -2195,7 +2309,7 @@ const WSEG=[
  {id:'gear',label:'Gear',icon:'hat',act:u=>{closeWheel();openGear(u)}}];
 function wNote(m){NSEEN.delete(m);notice(m,true)}
 const wUnit=()=>WH.u==null?null:G.units.find(v=>v.id===WH.u);
-function openWheel(u){if(!u||u.fam!==0||u.jail)return;if($('choice').style.display=='block')$('choice').style.display='none';WH.u=u.id;WH.sub=null;WH.follow=true;renderWheel();$('wheel').style.display='block';buzz(14);sfx&&sfx('tab');stepWheel(0)}
+function openWheel(u){if(!u||u.fam!==0||u.jail)return;if(u.cuffed!=null){wNote('The Don is in handcuffs. Stop the police car to get him back.');return}if($('choice').style.display=='block')$('choice').style.display='none';WH.u=u.id;WH.sub=null;WH.follow=true;renderWheel();$('wheel').style.display='block';buzz(14);sfx&&sfx('tab');stepWheel(0)}
 function closeWheel(){if(WH.u==null)return;WH.u=null;WH.sub=null;$('wheel').style.display='none'}
 function renderWheel(){const u=wUnit();if(!u){closeWheel();return}const el=$('wheel');let items;
  if(WH.sub){const sg=WSEG.find(s=>s.id===WH.sub);items=sg.sub(u).map(o=>({...o,par:sg.id}));items.push({id:'_back',label:'Back',icon:'back'})}else items=WSEG.filter(s=>!s.show||s.show(u)).map(s=>({id:s.id,label:s.label,icon:s.icon,state:s.state?s.state(u):'',lock:s.lock?s.lock(u):null}));
@@ -2266,6 +2380,10 @@ function pick(sx,sy,o){{const c=cvXY(sx,sy);for(const ic of BURGIC){if(ic.u.ente
   return{b}}
  return GP||{}}
 function nearWalk(x,y){for(let r=1;r<8;r++)for(let dx=-r;dx<=r;dx++)for(let dy=-r;dy<=r;dy++)if(isRoad(x+dx,y+dy))return[x+dx,y+dy];return null}
+function raidPop(sx,sy,b,us){const el=$('choice'),n=us.filter(raidOK).length,C=CFG.RAIDB;
+ el.innerHTML=`<div class="ct">${FAM[b.owner].name} hideout</div><button data-c="raid" ${n>=C.MIN?'':'disabled'}>Raid the hideout (${n} men${n<C.MIN?', need '+C.MIN:''})</button><button data-c="go">Walk there</button><button data-c="x" class="cx">✕</button>`;
+ el.style.display='block';const w=el.offsetWidth,h=el.offsetHeight;el.style.left=Math.max(6,Math.min(innerWidth-w-6,sx-w/2))+'px';el.style.top=Math.max(90,Math.min(innerHeight-h-140,sy-h-20))+'px';
+ el.onclick=e=>{const c=e.target.closest('button')?.dataset.c;if(!c)return;el.style.display='none';buzz(12);if(c=='raid')orderRaid(us,b);else if(c=='go'){for(const u of us)sendTo(u,b.door[0],b.door[1],null,true)}G.target=b.door;G.targetT=performance.now();updUI()}}
 function choicePop(sx,sy,b,us){const el=$('choice');const en=us.some(u=>CFG.SMASH.RATE[u.type]),bo=us.some(u=>u.type=='bomber');
  el.innerHTML=`<div class="ct">${nice(b.type)} · ${b.owner==null?'Neutral':FAM[b.owner].name}</div><button data-c="cap">⚑ Capture</button>${en?'<button data-c="smash">🔨 Smash</button>':''}${bo?`<button data-c="bomb" ${FAM[0].inv.bomb?'':'disabled'}>💣 Bomb (${FAM[0].inv.bomb} left)</button>`:''}<button data-c="x" class="cx">✕</button>`;
  el.style.display='block';const w=el.offsetWidth,h=el.offsetHeight;el.style.left=Math.max(6,Math.min(innerWidth-w-6,sx-w/2))+'px';el.style.top=Math.max(90,Math.min(innerHeight-h-140,sy-h-20))+'px';
@@ -2308,7 +2426,8 @@ function tap(sx,sy,dbl,o={}){if(G.over)return;if(tacA()>0.5){const c=cvXY(sx,sy)
  if(h.car!=null&&us.length&&!o.order&&G.mode!=='amove'){carPop(sx,sy,h.car,us);buzz(10);return}
  if(!h.u&&(h.b||h.road||h.pt))orderOff(us);if(!h.u)unguard(us,h.b);for(const u of us){if(u.petty&&u.petty.manual)u.petty=null;u.tgt=null;u.amove=false;u.stance=u.stance==='hold'?'hold':null;u.board=null;if(u.type==='spy'){u.spyJob=null;u.copJob=null}}
  if(h.u){G.selCar=null;if(dbl){G.sel.add(h.u.id);openWheel(h.u);updUI();return}else{if(o.pre){}else if(o.mouse&&!o.add){G.sel=new Set([h.u.id])}else if(o.mouse&&o.add&&G.sel.has(h.u.id))G.sel.delete(h.u.id);else G.sel.add(h.u.id);G.selPulse=performance.now();buzz(8)}}
- else if(h.b&&us.length&&sabotageable(h.b,0)&&!h.b.dmg&&us.some(u=>CFG.SMASH.RATE[u.type]||u.type=='bomber')){h.b._hl=performance.now();for(const u of us){u.job=null;sendToB(u,h.b)}G.target=h.b.door;G.targetT=performance.now();ripple(h.b.door[0],h.b.door[1],h.b.owner==null?'Capture':'Attack',h.b.owner==null?'#ffd34d':'#ff6b5a');choicePop(sx,sy,h.b,us);updUI();return}
+ else if(h.b&&us.length&&hqKnown(h.b)){h.b._hl=performance.now();raidPop(sx,sy,h.b,us);updUI();return}
+  else if(h.b&&us.length&&sabotageable(h.b,0)&&!h.b.dmg&&us.some(u=>CFG.SMASH.RATE[u.type]||u.type=='bomber')){h.b._hl=performance.now();for(const u of us){u.job=null;sendToB(u,h.b)}G.target=h.b.door;G.targetT=performance.now();ripple(h.b.door[0],h.b.door[1],h.b.owner==null?'Capture':'Attack',h.b.owner==null?'#ffd34d':'#ff6b5a');choicePop(sx,sy,h.b,us);updUI();return}
  else if(h.b&&us.length&&h.b.type=='Courthouse'){h.b._hl=performance.now();for(const u of us)sendToB(u,h.b);G.target=h.b.door;G.targetT=performance.now();ripple(h.b.door[0],h.b.door[1],us.some(u=>u.type=='lawyer')?'To court':'Courthouse','#c9b48a');buzz(12);updUI();return}
  else if(h.b&&us.length&&!LAW(h.b.type)&&!DECOR(h.b.type)){const own=h.b.owner===0,lab=own?'Move in':h.b.owner==null?'Capture':'Attack';
   h.b._hl=performance.now();for(const u of us)sendToB(u,h.b);G.target=h.b.door;G.targetT=performance.now();ripple(h.b.door[0],h.b.door[1],lab,own?'#a8c48a':h.b.owner==null?'#ffd34d':'#ff6b5a');buzz(15)}
@@ -2529,7 +2648,7 @@ function saveGame(){if(!G.started||G.over||G.away)return;try{
  const st={v:3,wall:Date.now(),t:G.t,uid:G.uid,rs,VID,acc:[combatAcc,aiAcc,polAcc,witAcc],log:G.log,fam:FAM,
   bld:G.bld.map(b=>{const o={};for(const k in b){const v=b[k];if(k[0]!='_'&&(v===null||typeof v!='object'))o[k]=v}return o}),
   units:G.units.map(u=>({...u,atB:bIdx(u.atB),goB:bIdx(u.goB),ride:u.ride?u.ride.id:null,fin:u.fin?[u.fin[0],u.fin[1],bIdx(u.fin[2])]:null})),
-  cg:G.cars.map((c,i)=>c.gone?i:-1).filter(i=>i>=0),veh:G.veh.map(v=>({...v,riders:v.riders.map(u=>u.id)})),cam:[cam.x,cam.y,cam.z],ais:[G.aiSpies,G.aiWatch,aiSpyId],hl:[G.heatLog,G.raids],nw:G.news||[],pp:[G.paper||null,G.rt||0],pj:[G.jail,G.petty],dh:G.dh,sq:G.seenQ,it:[G.spied||{},G.spotD||[],G.spotB||{},G.spotH||{}]};
+  cg:G.cars.map((c,i)=>c.gone?i:-1).filter(i=>i>=0),veh:G.veh.map(v=>({...v,riders:v.riders.map(u=>u.id)})),cam:[cam.x,cam.y,cam.z],ais:[G.aiSpies,G.aiWatch,aiSpyId],hl:[G.heatLog,G.raids],nw:G.news||[],pp:[G.paper||null,G.rt||0],pj:[G.jail,G.petty],dh:G.dh,sq:G.seenQ,sqd:G.squads||[],it:[G.spied||{},G.spotD||[],G.spotB||{},G.spotH||{}]};
  ST.put(JSON.stringify(st))}catch(e){console.warn('save failed',e)}}
 // ---- persistence: localStorage + IndexedDB mirror; newest copy wins ----
 const ST={ls:false,idb:false,cache:null,
@@ -2548,7 +2667,7 @@ function loadGame(){const st=JSON.parse(ST.cache||'null');try{for(const e of (st
  st.fam.forEach((f,i)=>Object.assign(FAM[i],f));st.bld.forEach((o,i)=>Object.assign(G.bld[i],o));
  const B=i=>i>=0?G.bld[i]:null;G.veh=st.veh.map(v=>({...v,riders:[]}));const VM=new Map(G.veh.map(v=>[v.id,v]));
  G.units=st.units.map(u=>{if(u.petty){for(const f of['k','j'])if(u.petty[f]=='pick'||u.petty[f]=='mug')u.petty[f]='rob'}return u}).map(u=>({...u,atB:B(u.atB),goB:B(u.goB),ride:u.ride!=null?VM.get(u.ride)||null:null,fin:u.fin?[u.fin[0],u.fin[1],B(u.fin[2])]:null}));
- G.units.forEach(u=>{if(u.ride)u.ride.riders.push(u)});(st.cg||[]).forEach(i=>{if(G.cars[i])G.cars[i].gone=1});FAM.forEach(f=>{f.inv=Object.assign({pistol:0,tommy:0,bomb:0,car:0,booze:0,guns:0},f.inv||{});if(f.bombT==null)f.bombT=-1e9});G.sel=new Set();if(st.ais){[G.aiSpies,G.aiWatch,aiSpyId]=st.ais}if(st.hl){[G.heatLog,G.raids]=st.hl}G.news=st.nw||[];if(st.pp){G.paper=st.pp[0];G.rt=st.pp[1]||0};if(st.dh)G.dh=st.dh;if(st.sq)G.seenQ=st.sq;if(st.it){[G.spied,G.spotD,G.spotB,G.spotH]=st.it}else{G.spied={};G.spotD=[];G.spotB={};G.spotH={}}if(st.pj){G.jail=st.pj[0]||[];G.petty=Object.assign({day:0,earn:{},arr:{},tot:0,tarr:0},st.pj[1]||{})}FAM.forEach(f=>{if(f.war==null)f.war=false});initPoliceLater=0;
+ G.units.forEach(u=>{if(u.ride)u.ride.riders.push(u)});(st.cg||[]).forEach(i=>{if(G.cars[i])G.cars[i].gone=1});FAM.forEach(f=>{f.inv=Object.assign({pistol:0,tommy:0,bomb:0,car:0,booze:0,guns:0},f.inv||{});if(f.bombT==null)f.bombT=-1e9});G.sel=new Set();if(st.ais){[G.aiSpies,G.aiWatch,aiSpyId]=st.ais}if(st.hl){[G.heatLog,G.raids]=st.hl}G.news=st.nw||[];if(st.pp){G.paper=st.pp[0];G.rt=st.pp[1]||0};if(st.dh)G.dh=st.dh;if(st.sq)G.seenQ=st.sq;G.squads=st.sqd||[];if(st.it){[G.spied,G.spotD,G.spotB,G.spotH]=st.it}else{G.spied={};G.spotD=[];G.spotB={};G.spotH={}}if(st.pj){G.jail=st.pj[0]||[];G.petty=Object.assign({day:0,earn:{},arr:{},tot:0,tarr:0},st.pj[1]||{})}FAM.forEach(f=>{if(f.war==null)f.war=false});initPoliceLater=0;
  if(st.cam){cam.x=st.cam[0];cam.y=st.cam[1];cam.z=st.cam[2]}return true}
 setInterval(()=>{if(G.started&&!G.over)saveGame()},(CFG.AUTOSAVE||15)*1000);
 document.addEventListener('visibilitychange',()=>{if(document.hidden)saveGame()});addEventListener('pagehide',()=>saveGame());addEventListener('beforeunload',()=>saveGame());
