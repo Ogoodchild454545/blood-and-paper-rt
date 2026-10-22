@@ -2,7 +2,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="build" content="RT v0.19 pre-alpha · 21 Oct 23:59">
+<meta name="build" content="RT v0.20 pre-alpha · 22 Oct 13:38">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -46,6 +46,7 @@ button.on{background:#8a6d3b;color:#111}button:disabled{opacity:.4}
 .meter{position:relative;width:74px;height:10px;border:1px solid var(--gold2);background:#0b0907;border-radius:2px;overflow:hidden}
 .meter i{position:absolute;left:0;top:0;bottom:0;background:linear-gradient(90deg,#7a1712,#d0352b)}
 .gauge{position:relative;width:50px;height:28px;margin-bottom:8px;display:inline-block;vertical-align:middle}.gauge svg{width:50px;height:27px;display:block;filter:drop-shadow(0 1px 0 #000)}.gauge .nd{transform-origin:30px 29px;transition:transform .6s}.gauge .gv{position:absolute;left:0;right:0;bottom:-9px;text-align:center;font:bold 9px Georgia,serif;color:#e8d9b0;letter-spacing:.5px}.gauge.hot .gv{color:#d9a08a}
+#dnc{position:static;display:inline-block;width:22px;height:22px;flex:none;touch-action:auto;vertical-align:middle;margin-right:2px}
 #hc{font:12px Georgia,serif;color:#b8a57e;letter-spacing:.5px;cursor:pointer;white-space:nowrap}
 .dos.pf h3{border-bottom:1px solid #2a211666}.pfgrid{display:flex;gap:8px;margin:8px 0}.pfbox{flex:1;border:1px solid #2a2116;padding:6px 8px;background:#efe6cf}.pfk{font-variant:small-caps;letter-spacing:2px;font-size:12px}.pfn{font-family:Limelight,Georgia,serif;font-size:32px;line-height:1.05}.pfs{font-size:11px}.pfl{display:flex;justify-content:space-between;align-items:center;gap:8px}.pfl b{white-space:nowrap}.dos.pf .dl{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 12px}
 .lab{font-family:var(--label);font-size:12px;color:#c9b48a;letter-spacing:1px;text-transform:uppercase;font-weight:bold}
@@ -223,15 +224,15 @@ html.sa #top{padding-top:max(var(--st),4px)}
 </style></head><body>
 <canvas id="c"></canvas>
 <div id="rot"><div class="rph"></div><h2>Turn the paper sideways</h2><p>Blood and Paper is played in landscape. Rotate your phone; the game waits for you.</p></div>
-<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT v0.19 pre-alpha · 21 Oct 23:59</div>
+<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT v0.20 pre-alpha · 22 Oct 13:38</div>
 <div id="top" class="deco">
  <div class="r"><span id="cash">$0</span><span id="inc"></span><button class="ib" id="tb-menu" title="Menu" onclick="openPause()"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button></div>
- <div class="r"><span id="donst" style="display:none"></span><span id="hc" onclick="openTab('police')">Heat 0 · Case 0</span>
+ <div class="r"><span id="donst" style="display:none"></span><canvas id="dnc" width="44" height="44" title="Day and night"></canvas><span id="hc" onclick="openTab('police')">Heat 0 · Case 0</span>
   <span class="lab" id="crewc" style="margin-left:auto">👥 0</span><span class="lab" id="propc">🏢 0</span>
   <button class="ib" id="tb-intel" title="Intel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.8-6.5 10-6.5S22 12 22 12s-3.8 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button><button class="ib" id="tb-fam" title="Families"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8l8 3v6.2c0 5-3.6 8.2-8 9.4-4.4-1.2-8-4.4-8-9.4V5.8zM12 7v9M8.5 10.5h7"/></svg></button></div>
 </div>
 <div id="toast"></div>
-<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div class="tver" style="margin-top:4px;font:bold 13px Georgia,serif;letter-spacing:2px;color:#e6c56a;text-transform:uppercase">v0.19 pre-alpha</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT v0.19 pre-alpha · 21 Oct 23:59</div>
+<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div class="tver" style="margin-top:4px;font:bold 13px Georgia,serif;letter-spacing:2px;color:#e6c56a;text-transform:uppercase">v0.20 pre-alpha</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT v0.20 pre-alpha · 22 Oct 13:38</div>
 <button class="mbtn pri" onclick="goFull();newGame()">New Game</button><button class="mbtn" id="bcont" onclick="goFull();startGame(true)">Continue</button>
 <button class="mbtn" onclick="openSettings('titleMenu')">Settings</button><button class="mbtn" onclick="openHowTo('titleMenu')">How to Play</button><button class="mbtn" onclick="openCredits()">Credits</button></div></div>
 <div id="intro" style="position:fixed;inset:0;z-index:90;background:#000;display:flex;align-items:center;justify-content:center;transition:opacity .35s;touch-action:none"><video id="ivid" playsinline webkit-playsinline preload="auto" style="width:100%;height:100%;object-fit:contain;background:#000"></video><div id="itap" style="display:none;position:absolute;inset:0;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse at center,#2a1f14 0%,#0c0805 75%);color:#e6c56a;text-align:center"><div style="font:30px Limelight,Georgia,serif;letter-spacing:3px;color:#d9c08a;text-shadow:0 2px 6px #000">Blood and Paper</div><div style="width:180px;height:1px;background:#8a6d3b;margin:10px 0"></div><div style="font:italic 17px Georgia,serif;letter-spacing:2px;color:#c9b27a;animation:itp 1.6s ease-in-out infinite">Tap to begin</div></div></div><style>@keyframes itp{50%{opacity:.35}}</style>
@@ -279,6 +280,7 @@ const SIMR=30,RS=x=>x*SIMR,RM=x=>x*60*SIMR;
 const CFG={TITLE:'Blood and Paper RT', SAVE_NS:'bprt_', SHOW_PATHS:0, AUTOSAVE:15, AWAY:{MODE:'pause', CAP_H:12, MAX_TICKS:12000, CHUNK:300, PROTECT_BOSS:1},  // autosave every 15 real s; offline catch-up capped at 12 real hours, simulated in <=12000 coarse steps  // title text, autosave interval (real seconds)
 
  N:128, SEA:9, DAY:RM(2),  // v0.5: 12x12 city blocks of 9 tiles + 2 edge road tiles, with a 9-tile sea all round; was 8x8 blocks of 9 tiles + 2 edge road tiles            // DAY = rate period: 2 real minutes (all *_DAY rates are per period)
+ DAYNIGHT:{ON:1, CYCLE:RM(10), DAY:RM(6), FADE:RM(0.75), START:RM(0.5)}, // v0.20: visual day/night only. CYCLE 10 real min = DAY 6 + night 4; FADE = length of dusk and of dawn (centred on each switch); START = where a new game begins (half a minute after dawn)
  SPEEDS:[0,1,10,SIMR],      // v0.11: only pause / run (G.speed fixed at 3 = SIMR); no speed control
  START_CASH:0, START_CLEAN:0,
  // MONEY: businesses pay DIRTY cash (hiring crew, repairs, bombs-to-throw use it). Laundries turn it CLEAN (rate x building level multiplier).
@@ -396,6 +398,11 @@ const FAM=[{id:0,name:'Red',col:'#e0332b',hq:[3,3],ai:0},{id:1,name:'Blue',col:'
 const TW=128,TH=64,N=CFG.N;
 let rs=7;const rnd=()=>{rs=(rs*16807)%2147483647;return rs/2147483647};
 const HOUR=()=>CFG.DAY/24;
+// v0.20 day/night: dnPos = 0..1 through the cycle (0 = dawn switch, DAY/CYCLE = dusk switch); nightK = 0 full day .. 1 full night, smoothstepped over FADE
+function dnPos(t){const D=CFG.DAYNIGHT;return((((t??G.t)+D.START)%D.CYCLE)+D.CYCLE)%D.CYCLE/D.CYCLE}
+function nightK(t){const D=CFG.DAYNIGHT;if(!D.ON)return 1;const x=dnPos(t)*D.CYCLE,h=D.FADE/2,ss=v=>{v=Math.max(0,Math.min(1,v));return v*v*(3-2*v)};
+ if(x<h)return 1-ss((x+h)/D.FADE);if(x<D.DAY-h)return 0;if(x<D.DAY+h)return ss((x-(D.DAY-h))/D.FADE);if(x<D.CYCLE-h)return 1;return 1-ss((x-(D.CYCLE-h))/D.FADE)}
+function dnPhase(t){const D=CFG.DAYNIGHT,x=dnPos(t)*D.CYCLE,h=D.FADE/2;return x<h||x>=D.CYCLE-h?'dawn':x<D.DAY-h?'day':x<D.DAY+h?'dusk':'night'}
 const DECOR=t=>['Tenement','Apartment','CornerShop','Park','Church'].includes(t);const LAW=t=>t=='Police'||t=='Courthouse';
 const P=9,md=i=>i%P,CITY0=CFG.SEA,CITY1=N-CFG.SEA,inCity=(x,y)=>x>=CITY0&&y>=CITY0&&x<CITY1&&y<CITY1,roadT=(x,y)=>inCity(x,y)&&(md(x)<2||md(y)<2),paveT=(x,y)=>inCity(x,y)&&!roadT(x,y)&&(md(x)==2||md(x)==8||md(y)==2||md(y)==8);
 const OCC=new Uint8Array(N*N),SEAT=new Uint8Array(N*N); // SEAT: 1 water, 2 pier
@@ -1563,21 +1570,26 @@ function drawFX(now){G.fx=G.fx.filter(f=>now-f.t0-(f.d||0)<(f.type=='dust'?1400:
 function postFX(now){const W=innerWidth,H=innerHeight,lo=SET.quality=='low';
  // darkness with light holes (quarter-res)
  const k=0.25,lw=Math.ceil(W*k),lh=Math.ceil(H*k);if(LC.width!=lw||LC.height!=lh){LC.width=lw;LC.height=lh}
- LX.globalCompositeOperation='source-over';LX.clearRect(0,0,lw,lh);LX.fillStyle='rgba(10,12,32,0.48)';LX.fillRect(0,0,lw,lh);if(!VIG||VIG.width!=lw||VIG.height!=lh){VIG=mkC(lw,lh);const x=VIG.getContext('2d'),g=x.createRadialGradient(lw/2,lh/2,Math.min(lw,lh)*0.35,lw/2,lh/2,Math.max(lw,lh)*0.75);g.addColorStop(0,'rgba(0,0,0,0)');g.addColorStop(1,'rgba(0,0,0,0.5)');x.fillStyle=g;x.fillRect(0,0,lw,lh)}LX.globalCompositeOperation='destination-out';
+ // v0.20: darkness strength and colour follow the cycle (amber at dusk, rose-grey at dawn, navy at night). Full day skips the whole pass (just the vignette).
+ const NK=nightK(),dusk=dnPos()<0.5?0:1;G.nk=NK;
+ if(NK<0.004){if(!VIG||VIG.width!=lw||VIG.height!=lh)VIG=null;else{ctx.setTransform(dpr,0,0,dpr,0,0);ctx.globalAlpha=0.55;ctx.drawImage(VIG,0,0,W,H);ctx.globalAlpha=1}
+  {const tg=G.wx&&G.wx.rain?1:0;G.wxA=(G.wxA??tg)+(tg-(G.wxA??tg))*0.01;if(SET.rain&&!lo&&G.wxA>0.02)rainDraw(ctx,W,H,now/1000,0.55*G.wxA,0.22*G.wxA)}if(VIG)return}
+ {const tw=Math.sin(Math.PI*Math.min(1,NK*1.25)),wc=dusk?[150,66,18]:[110,78,96],nc=[10,12,32],m=Math.min(1,NK*1.1),c=i=>Math.round(wc[i]+(nc[i]-wc[i])*m);
+  LX.globalCompositeOperation='source-over';LX.clearRect(0,0,lw,lh);LX.fillStyle=`rgba(${c(0)},${c(1)},${c(2)},${(0.48*NK+0.16*tw).toFixed(3)})`;LX.fillRect(0,0,lw,lh)}if(!VIG||VIG.width!=lw||VIG.height!=lh){VIG=mkC(lw,lh);const x=VIG.getContext('2d'),g=x.createRadialGradient(lw/2,lh/2,Math.min(lw,lh)*0.35,lw/2,lh/2,Math.max(lw,lh)*0.75);g.addColorStop(0,'rgba(0,0,0,0)');g.addColorStop(1,'rgba(0,0,0,0.5)');x.fillStyle=g;x.fillRect(0,0,lw,lh)}LX.globalCompositeOperation='destination-out';
  const z=cam.z,S=(X,Y)=>[(X-cam.x)*z*k,(Y-cam.y)*z*k],inV=(sx,sy,r)=>sx>-r&&sy>-r&&sx<lw+r&&sy<lh+r;
  // v0.17.1: night lights fade in/out over a zoom band instead of switching off at hard zoom steps (0.30/0.34) -> no whole-screen brightness jump
- const LF=Math.max(0,Math.min(1,(z-0.27)/0.13));const lamps=[];if(LF>0){LX.globalAlpha=LF;for(const l of G.lamps){const p=iso(l[0],l[1]),X=p.X-TW*0.3,[sx,sy]=S(X,p.Y-10),r=120*z*k;if(inV(sx,sy,r)){LX.drawImage(HOLE,sx-r,sy-r*0.7,2*r,1.4*r);lamps.push([X,p.Y])}}LX.globalAlpha=1}
+ const LF=Math.max(0,Math.min(1,(z-0.27)/0.13))*Math.max(0,Math.min(1,(NK-0.15)/0.6));const lamps=[];if(LF>0){LX.globalAlpha=LF;for(const l of G.lamps){const p=iso(l[0],l[1]),X=p.X-TW*0.3,[sx,sy]=S(X,p.Y-10),r=120*z*k;if(inV(sx,sy,r)){LX.drawImage(HOLE,sx-r,sy-r*0.7,2*r,1.4*r);lamps.push([X,p.Y])}}LX.globalAlpha=1}
  if(!lo&&LF>0)for(const b of G.bld){if(!b._r||b.type=='Park')continue;const[x0,y0,x1,y1]=b._r,[sx,sy]=S(x0,y0);if(!inV(sx,sy,(x1-x0)*z*k+40))continue;
   const n=b.type=='Police'?5:3;for(let i=0;i<n;i++){const hsh=(b.x*73+b.y*151+i*97)%100/100,hs2=(b.x*31+b.y*17+i*53)%100/100;const fl=0.55+0.45*Math.sin(now/(400+i*130+b.x*7)+i*2)*Math.sin(now/1700+b.y);if(fl<0.25)continue;
    const X=x0+(x1-x0)*(0.2+hsh*0.6),Y=y0+(y1-y0)*(0.35+hs2*0.45),[px,py]=S(X,Y),r=16*z*k*fl+1;LX.globalAlpha=fl*LF;LX.drawImage(HOLE,px-r,py-r,2*r,2*r)}LX.globalAlpha=1;
   if(b.owner!=null){const p=iso(b.door[0],b.door[1]),[px,py]=S(p.X,p.Y),r=50*z*k;LX.globalAlpha=LF;LX.drawImage(HOLE,px-r,py-r*0.6,2*r,1.2*r);LX.globalAlpha=1}}
  for(const f of G.fx)if(f.type=='tracer'){const a=now-f.t0-(f.d||0);if(a<0||a>120)continue;const s=SPOS.get(f.a),p=s?{X:s.X,Y:s.Y}:iso(f.ax,f.ay),[px,py]=S(p.X,p.Y-26),r=34*z*k*(1-a/120)+1;LX.drawImage(HOLE,px-r,py-r,2*r,2*r)}else if(f.type=='flash'){const p=iso(f.x,f.y),[px,py]=S(p.X,p.Y-20),r=70*z*k;LX.drawImage(HOLE,px-r,py-r,2*r,2*r)}
  for(const v of G.veh)if(v.siren){const p=iso(v.x,v.y),[px,py]=S(p.X,p.Y-30),r=60*z*k;LX.drawImage(HOLE,px-r,py-r,2*r,2*r)}
- LX.globalCompositeOperation='source-over';LX.drawImage(VIG,0,0);ctx.setTransform(dpr,0,0,dpr,0,0);ctx.imageSmoothingEnabled=true;ctx.drawImage(LC,0,0,W,H);
+ LX.globalCompositeOperation='source-over';LX.globalAlpha=0.55+0.45*NK;LX.drawImage(VIG,0,0);LX.globalAlpha=1;ctx.setTransform(dpr,0,0,dpr,0,0);ctx.imageSmoothingEnabled=true;ctx.drawImage(LC,0,0,W,H);
  // warm additive glow at lamp heads
  ctx.setTransform(dpr*z,0,0,dpr*z,-cam.x*z*dpr,-cam.y*z*dpr);ctx.globalCompositeOperation='lighter';
  ctx.globalAlpha=LF;for(const[X,Y]of lamps){ctx.drawImage(GLOW,X-44,Y-108,88,88);if(!lo)ctx.drawImage(GLOW,X-70,Y-36,140,72)}ctx.globalAlpha=1;
- for(const v of G.veh)if(v.siren){const p=iso(v.x,v.y),on=Math.floor(now/250)%2;ctx.globalAlpha=0.7;ctx.drawImage(GLOW,p.X-60,p.Y-90,120,120);ctx.globalAlpha=1}
+ for(const v of G.veh)if(v.siren){const p=iso(v.x,v.y),on=Math.floor(now/250)%2;ctx.globalAlpha=0.25+0.45*NK;ctx.drawImage(GLOW,p.X-60,p.Y-90,120,120);ctx.globalAlpha=1}
  ctx.globalCompositeOperation='source-over';ctx.setTransform(dpr,0,0,dpr,0,0);
  {const tg=G.wx&&G.wx.rain?1:0;G.wxA=(G.wxA??tg)+(tg-(G.wxA??tg))*0.01;if(SET.rain&&!lo&&G.wxA>0.02)rainDraw(ctx,W,H,now/1000,0.55*G.wxA,0.22*G.wxA)}
  }
@@ -1809,7 +1821,17 @@ function updCarBar(){const el=$('carbar');if(!el)return;const v=G.selCar!=null&&
 function setGauge(id,v,txt,hot){const g=$(id);if(!g)return;v=Math.max(0,Math.min(1,v));const k=Math.round(v*180);if(g._k!==k){g._k=k;g.querySelector('.nd').style.transform='rotate('+(k-90)+'deg)'}const t=String(txt);const e=g.querySelector('.gv');if(e.textContent!==t)e.textContent=t;g.classList.toggle('hot',!!hot)}
 // v0.19: only touch the DOM when the text actually changed (updUI runs 4x a second)
 function setT(e,t){if(e&&e._t2!==t){e._t2=t;e.textContent=t}}function setH(e,h){if(e&&e._h2!==h){e._h2=h;e.innerHTML=h}}
-function updUI(){const f=FAM[0];{const e=$('hqhint'),hq=myHQ(),bs=bossOf(0);let t='';if(!hq&&bs&&!G.over){const h=f.dirty+f.clean;t=bs.estB!=null?'The boss is on his way to set up the hideout':G.mode==='establish'?'Tap a building for your hideout':h<CFG.ESTABLISH?'Earn '+money(CFG.ESTABLISH)+' to set up a hideout · '+money(h)+' now':'Ready: tap the boss, pick Hideout, choose a building'}if(e&&e.textContent!==t){e.textContent=t;e.style.display=t?'block':'none'}}updCarBar();{const bs=G.units.find(u=>u.fam===0&&u.type=='boss'),e=$('donst');const t=bs&&bs.jail>G.t?'Don in jail '+fmtR(bs.jail-G.t):bs&&bs.exposed>G.t?'Don exposed '+fmtR(bs.exposed-G.t):'';if(e&&e._t!==t){e._t=t;e.textContent=t;e.style.display=t?'':'none'}}setT($('cash'),money(f.dirty));setH($('inc'),ico('clean')+' '+money(f.clean));$('inc').title='Clean cash';setH($('crewc'),ico('crew')+' '+G.units.filter(u=>u.fam===0).length+' crew');setH($('propc'),ico('bldg')+' '+G.bld.filter(b=>b.owner===0).length);
+// v0.20: painted brass dial: sky disc turns with the cycle, sun by day, moon by night, pointer at the top marks now
+function drawDial(){const c=$('dnc');if(!c)return;const p=dnPos(),key=Math.round(p*240);if(c._k===key)return;c._k=key;const x=c.getContext('2d'),R0=22,D=CFG.DAYNIGHT,dv=D.DAY/D.CYCLE;x.clearRect(0,0,44,44);
+ x.save();x.translate(R0,R0);x.beginPath();x.arc(0,0,19,0,7);x.clip();const rot=-p*Math.PI*2-Math.PI/2;
+ // day arc (ochre) and night arc (navy) painted around the disc, rotating so 'now' sits at the top
+ x.rotate(rot);x.fillStyle='#d9b46a';x.beginPath();x.moveTo(0,0);x.arc(0,0,20,0,dv*Math.PI*2);x.fill();x.fillStyle='#1c2440';x.beginPath();x.moveTo(0,0);x.arc(0,0,20,dv*Math.PI*2,Math.PI*2);x.fill();
+ x.fillStyle='#e9d29a';x.beginPath();x.arc(14*Math.cos(dv*Math.PI),14*Math.sin(dv*Math.PI),4.2,0,7);x.fill();x.fillStyle='#e8e2cc';x.beginPath();x.arc(14*Math.cos((dv+1)*Math.PI),14*Math.sin((dv+1)*Math.PI),3.6,0,7);x.fill();x.fillStyle='#1c2440';x.beginPath();x.arc(14*Math.cos((dv+1)*Math.PI)+1.8,14*Math.sin((dv+1)*Math.PI)-1.2,3,0,7);x.fill();x.restore();
+ const g=x.createRadialGradient(R0-5,R0-5,2,R0,R0,20);g.addColorStop(0,'rgba(255,240,200,0.18)');g.addColorStop(1,'rgba(30,20,10,0.35)');x.fillStyle=g;x.beginPath();x.arc(R0,R0,19,0,7);x.fill();
+ x.lineWidth=3;x.strokeStyle='#a07c3a';x.beginPath();x.arc(R0,R0,19.5,0,7);x.stroke();x.lineWidth=1;x.strokeStyle='#3a2a14';x.beginPath();x.arc(R0,R0,21,0,7);x.stroke();
+ x.fillStyle='#f0dca0';x.strokeStyle='#2a1d0e';x.beginPath();x.moveTo(R0,9);x.lineTo(R0-4,2);x.lineTo(R0+4,2);x.closePath();x.fill();x.stroke();
+ const ph=dnPhase(),x2=dnPos()*D.CYCLE,left=ph=='day'||ph=='dawn'?(D.DAY-x2+D.CYCLE)%D.CYCLE:(D.CYCLE-x2)%D.CYCLE,m=Math.max(1,Math.ceil(left/RM(1)));c.title=(ph=='day'||ph=='dawn'?'Day · night falls in ':'Night · dawn in ')+m+' min'}
+function updUI(){drawDial();const f=FAM[0];{const e=$('hqhint'),hq=myHQ(),bs=bossOf(0);let t='';if(!hq&&bs&&!G.over){const h=f.dirty+f.clean;t=bs.estB!=null?'The boss is on his way to set up the hideout':G.mode==='establish'?'Tap a building for your hideout':h<CFG.ESTABLISH?'Earn '+money(CFG.ESTABLISH)+' to set up a hideout · '+money(h)+' now':'Ready: tap the boss, pick Hideout, choose a building'}if(e&&e.textContent!==t){e.textContent=t;e.style.display=t?'block':'none'}}updCarBar();{const bs=G.units.find(u=>u.fam===0&&u.type=='boss'),e=$('donst');const t=bs&&bs.jail>G.t?'Don in jail '+fmtR(bs.jail-G.t):bs&&bs.exposed>G.t?'Don exposed '+fmtR(bs.exposed-G.t):'';if(e&&e._t!==t){e._t=t;e.textContent=t;e.style.display=t?'':'none'}}setT($('cash'),money(f.dirty));setH($('inc'),ico('clean')+' '+money(f.clean));$('inc').title='Clean cash';setH($('crewc'),ico('crew')+' '+G.units.filter(u=>u.fam===0).length+' crew');setH($('propc'),ico('bldg')+' '+G.bld.filter(b=>b.owner===0).length);
  {const t='Heat '+Math.round(f.heat)+' · Case '+Math.round(f.case),e=$('hc');if(e&&e.textContent!==t)e.textContent=t}
  const l=G.log[0];if(l&&l!==lastToast){lastToast=l}
  const n=[...G.sel].filter(id=>G.units.some(u=>u.id==id)).length;const idle=G.units.some(u=>u.fam===0&&u.garrison==null&&!u.ride&&!u.path.length&&u.type!='boss'&&!G.sel.has(u.id));const ck=n+':'+idle+':'+!!TAB+':'+!!G.panel+':'+!!G.abarOpen+':'+(WH.u!=null);if(ck!==G._chip){G._chip=ck;$('selchip').style.display=(n||idle)&&!TAB&&WH.u==null?'flex':'none';G.abarOpen=false;
