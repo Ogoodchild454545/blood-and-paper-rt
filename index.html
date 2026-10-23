@@ -2,7 +2,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="build" content="RT v0.25.1 pre-alpha · 23 Oct 15:30">
+<meta name="build" content="RT v0.25.2 pre-alpha · 23 Oct 21:18">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -229,7 +229,7 @@ html.sa #top{padding-top:max(var(--st),4px)}
 <script>addEventListener('DOMContentLoaded',()=>{});</script></head><body>
 <canvas id="c"></canvas>
 <div id="rot"><div class="rph"></div><h2>Turn the paper sideways</h2><p>Blood and Paper is played in landscape. Rotate your phone; the game waits for you.</p></div>
-<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT v0.25.1 pre-alpha · 23 Oct 15:30</div>
+<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT v0.25.2 pre-alpha · 23 Oct 21:18</div>
 <div id="top" class="deco">
  <div class="r"><span id="cash">$0</span><span id="inc"></span><button class="ib" id="tb-menu" title="Menu" onclick="openPause()"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button></div>
  <div class="r"><span id="donst" style="display:none"></span><canvas id="dnc" width="44" height="44" title="Day and night"></canvas><span id="hc" onclick="openTab('police')">Heat 0 · Case 0</span><span id="resbar"><span class="rs" title="Booze barrels"><span class="ri" data-r="booze"></span><span class="rn">0</span></span><span class="rs" title="Pistols"><span class="ri" data-r="pistol"></span><span class="rn">0</span></span><span class="rs" title="Tommy guns"><span class="ri" data-r="tommy"></span><span class="rn">0</span></span><span class="rs" title="Betting slips"><span class="ri" data-r="slips"></span><span class="rn">0</span></span><span class="rs" title="Pull"><span class="ri" data-r="pull"></span><span class="rn">0</span></span></span>
@@ -237,7 +237,7 @@ html.sa #top{padding-top:max(var(--st),4px)}
   <button class="ib" id="tb-intel" title="Intel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.8-6.5 10-6.5S22 12 22 12s-3.8 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button><button class="ib" id="tb-fam" title="Families"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8l8 3v6.2c0 5-3.6 8.2-8 9.4-4.4-1.2-8-4.4-8-9.4V5.8zM12 7v9M8.5 10.5h7"/></svg></button></div>
 </div>
 <div id="toast"></div>
-<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div class="tver" style="margin-top:4px;font:bold 13px Georgia,serif;letter-spacing:2px;color:#e6c56a;text-transform:uppercase">v0.21 pre-alpha</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT v0.25.1 pre-alpha · 23 Oct 15:30</div>
+<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div class="tver" style="margin-top:4px;font:bold 13px Georgia,serif;letter-spacing:2px;color:#e6c56a;text-transform:uppercase">v0.21 pre-alpha</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT v0.25.2 pre-alpha · 23 Oct 21:18</div>
 <button class="mbtn pri" onclick="goFull();newGame()">New Game</button><button class="mbtn" id="bcont" onclick="goFull();startGame(true)">Continue</button>
 <button class="mbtn" onclick="openSettings('titleMenu')">Settings</button><button class="mbtn" onclick="openHowTo('titleMenu')">How to Play</button><button class="mbtn" onclick="openCredits()">Credits</button></div></div>
 <div id="intro" style="position:fixed;inset:0;z-index:90;background:#000;display:flex;align-items:center;justify-content:center;transition:opacity .35s;touch-action:none"><video id="ivid" playsinline webkit-playsinline preload="auto" style="width:100%;height:100%;object-fit:contain;background:#000"></video><div id="itap" style="display:none;position:absolute;inset:0;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse at center,#2a1f14 0%,#0c0805 75%);color:#e6c56a;text-align:center"><div style="font:30px Limelight,Georgia,serif;letter-spacing:3px;color:#d9c08a;text-shadow:0 2px 6px #000">Blood and Paper</div><div style="width:180px;height:1px;background:#8a6d3b;margin:10px 0"></div><div style="font:italic 17px Georgia,serif;letter-spacing:2px;color:#c9b27a;animation:itp 1.6s ease-in-out infinite">Tap to begin</div></div></div><style>@keyframes itp{50%{opacity:.35}}</style>
@@ -255,6 +255,36 @@ html.sa #top{padding-top:max(var(--st),4px)}
 <div id="over" class="ui"><div id="overt" style="text-align:center;font-family:Limelight,serif;color:#e6c56a;padding:0 20px"></div><button class="mbtn pri" onclick="overNew()" style="margin-top:22px;width:240px">New Game</button><button class="mbtn" onclick="overMenu()" style="margin-top:10px;width:240px">Main Menu</button></div>
 <style>.ic{width:1.25em;height:1.25em;vertical-align:-0.28em;display:inline-block;flex:none;object-fit:contain}.ic.pi{width:1.5em;height:1.5em;vertical-align:-0.42em;filter:drop-shadow(0 1px 1px #000)}svg.ic path,svg.ic rect{}.mib .ic,.mib .ic.pi{width:25px;height:25px;vertical-align:0}.mib.inl .ic,.mib.inl .ic.pi{width:25px;height:25px}.sic .ic,.sic .ic.pi{width:56px;height:56px}h3 .ic,h3 .ic.pi{width:30px;height:30px;vertical-align:-8px}.pad .ic{width:34px;height:34px}.pad .ic{width:34px;height:34px}.stk{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:6px}.stile{background:linear-gradient(#2a221a,#16120e);border:1.5px solid #8a6d3b;border-radius:10px;padding:8px 2px 6px;text-align:center;box-shadow:inset 0 0 0 3px #16120e,inset 0 0 0 4px #5a4626;cursor:pointer}.stile.on{border-color:#ffd34d}.sic{font-size:30px;height:58px;display:flex;align-items:center;justify-content:center}.scn{font:15px Limelight,serif;color:var(--gold);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.snm{font-size:10.5px;color:#a8987a;letter-spacing:.5px;text-transform:uppercase}.stip{margin-top:10px;min-height:20px;font-size:13px;color:#d9c9a3;text-align:center}
 .mib{position:absolute;left:-7px;top:-7px;width:30px;height:30px;border-radius:50%;background:#16120ee6;border:2px solid #8a6d3b;display:flex;align-items:center;justify-content:center;font-size:13px;line-height:1;z-index:2;box-shadow:0 1px 3px #000a}.mib.inl{position:static;display:inline-flex;width:30px;height:30px;font-size:12px;margin-right:6px;vertical-align:middle}.thumb{position:relative}.mkey{display:flex;align-items:center;gap:8px;padding:5px 2px;border-bottom:1px solid #2a241c;font-size:12.5px}.mkey .d{color:#a8987a}</style>
+<script>window.BUILD_LABEL='RT v0.25.2 pre-alpha · 23 Oct 21:18';
+// ===== v0.25.2 crash log + resilient loop =====
+const CRASH=(()=>{const K='bprt_crash',S='bprt_sess';let L=[];try{L=JSON.parse(localStorage.getItem(K)||'[]')}catch(e){L=[]}
+ let prev=null;try{prev=JSON.parse(localStorage.getItem(S)||'null')}catch(e){}
+ const sid=Date.now().toString(36);let nSess=0,lastSave=0,shown=0;const seen=new Map();
+ const save=()=>{try{localStorage.setItem(K,JSON.stringify(L.slice(-12)))}catch(e){}};
+ function rec(where,e){const msg=String(e&&e.message||e).slice(0,200),st=String(e&&e.stack||'').split('\n').slice(0,4).join(' | ').slice(0,400),key=where+'|'+msg;
+  const n=(seen.get(key)||0)+1;seen.set(key,n);nSess++;if(n>1&&n%50)return;  // same error: update count every 50th
+  const old=L.find(x=>x.sid===sid&&x.where===where&&x.msg===msg);if(old){old.n=n;old.t2=new Date().toISOString();save();return}
+  L.push({t:new Date().toISOString(),sid,where,msg,st,n,v:(window.BUILD_LABEL||''),gt:Math.round((typeof G!='undefined'&&G.t)||0)});L=L.slice(-12);save();
+  if(!shown&&typeof notice=='function'){shown=1;try{notice('A game error was caught and skipped ('+where+': '+msg.slice(0,80)+'). The game keeps running.',true)}catch(_){}}}
+ function slow(a,b){L.push({t:new Date().toISOString(),sid,where:'slow frame',msg:'frame took '+(a+b)+' ms (sim '+a+', draw '+b+')',st:'',n:1,v:(window.BUILD_LABEL||''),gt:Math.round((typeof G!='undefined'&&G.t)||0)});L=L.slice(-12);save()}
+ function guard(where,f){try{return f()}catch(e){rec(where,e)}}
+ function beat(){const n=Date.now();if(n-lastSave<4000)return;lastSave=n;try{localStorage.setItem(S,JSON.stringify({sid,ts:n,vis:document.visibilityState,clean:0,err:nSess,started:!!(typeof G!='undefined'&&G.started&&!G.over)}))}catch(e){}}
+ function clean(){try{localStorage.setItem(S,JSON.stringify({sid,ts:Date.now(),vis:document.visibilityState,clean:1,err:nSess}))}catch(e){}}
+ addEventListener('pagehide',clean);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')clean();else beat()});
+ addEventListener('error',e=>rec('window',e.error||e.message));addEventListener('unhandledrejection',e=>rec('promise',e.reason));
+ // last session: errors, or it stopped while visible and running (tab killed or reloaded by iOS)
+ const recent=L.filter(x=>prev&&x.sid===prev.sid),errs=recent.filter(x=>x.where!='slow frame');const died=prev&&!prev.clean&&prev.started&&prev.vis==='visible'&&Date.now()-prev.ts<6*3600e3;
+ function offer(){if(!(errs.length||died))return;const el=document.createElement('div');el.id='crashnote';
+  el.style.cssText='position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:99999;max-width:min(92vw,560px);background:#2a1d12;color:#f1e3c4;border:2px solid #c9a24a;border-radius:10px;padding:10px 12px;font:13px/1.35 Georgia,serif;box-shadow:0 6px 24px rgba(0,0,0,.6)';
+  const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+  const lines=recent.slice(-3).map(x=>'<div style="font:11px/1.3 monospace;margin-top:4px;word-break:break-word">'+esc(x.where+': '+x.msg+(x.n>1?' (x'+x.n+')':''))+'<br>'+esc(x.st.slice(0,220))+'</div>').join('');
+  el.innerHTML='<b>Last session crashed</b><div style="margin-top:3px">'+(errs.length?'The game hit an error. Please screenshot this and send it to us.':'The game stopped unexpectedly (the page was closed or reloaded while playing). Please tell us what you were doing.')+'</div>'+lines+
+   '<div style="font:11px monospace;margin-top:4px;opacity:.75">'+esc((prev&&new Date(prev.ts).toLocaleString())||'')+' · '+esc(window.BUILD_LABEL||'')+'</div><button style="margin-top:8px;padding:5px 14px;background:#c9a24a;border:0;border-radius:6px;font:bold 13px Georgia" onclick="this.parentNode.remove()">OK</button>';
+  document.body.appendChild(el)}
+ return{rec,slow,guard,beat,clean,offer,get log(){return L},get prev(){return prev},nErr:()=>nSess}})();
+
+addEventListener('load',()=>setTimeout(()=>CRASH.offer(),1200));
+</script>
 <script>
 (function(){const I=document.getElementById('intro'),V=document.getElementById('ivid'),T=document.getElementById('itap');let done=false;window.INTRO_STATE='loading';
 window.introDone=function(why){if(done)return;done=true;window.INTRO_STATE='done';window.INTRO_WHY=why||'';try{if(typeof applySet=='function')applySet()}catch(e){}try{V.pause()}catch(e){}I.style.opacity='0';setTimeout(()=>{try{V.removeAttribute('src');V.load()}catch(e){}I.remove()},400)};
@@ -1496,7 +1526,8 @@ function supRows(b){const S=CFG.SUP;let h='';const IC=k=>resSvg(k).replace('clas
   h+=`<div class="row" style="font-size:12px;opacity:.8">Holds up to ${S.OUT_CAP}. With a Warehouse, spare stock is trucked there.</div>`}
  return h}
 function updRes(){document.querySelectorAll('#resbar .ri:empty').forEach(e=>e.innerHTML=resSvg(e.dataset.r));const f=FAM[0];const el=$('resbar');if(!el)return;const v=[supTot(0,'booze'),supTot(0,'pistol'),supTot(0,'tommy'),supTot(0,'slips'),Math.floor(f.inf||0)],t=v.join(',');if(el._t===t)return;el._t=t;el.querySelectorAll('.rn').forEach((e,i)=>e.textContent=v[i])}
-function tick(dt){if(G.over)return;RW.tick(dt);stepSeenQ(dt);stepWeather();stepEscort(dt);stepField(dt);stepJobs(dt);stepRaids(dt);stepSupply(dt);if(initPoliceLater){initPoliceLater=0;initPolice()}G.t+=dt;updTerritory();stepSpies(dt);stepBoarding();ensureCars();stepUnits(dt);stepEstablish();stepCiv(dt);stepPetty(dt);stepChase(dt);stepBuildings(dt);stepEconomy(dt);stepPolice(dt);stepAI(dt)}
+const TICKSTEPS=[['rail',dt=>RW.tick(dt)],['seen',dt=>stepSeenQ(dt)],['weather',()=>stepWeather()],['escort',dt=>stepEscort(dt)],['field',dt=>stepField(dt)],['jobs',dt=>stepJobs(dt)],['raids',dt=>stepRaids(dt)],['supply',dt=>stepSupply(dt)],['police0',()=>{if(initPoliceLater){initPoliceLater=0;initPolice()}}],['clock',dt=>{G.t+=dt}],['territory',()=>updTerritory()],['spies',dt=>stepSpies(dt)],['boarding',()=>stepBoarding()],['cars',()=>ensureCars()],['units',dt=>stepUnits(dt)],['establish',()=>stepEstablish()],['civ',dt=>stepCiv(dt)],['petty',dt=>stepPetty(dt)],['chase',dt=>stepChase(dt)],['buildings',dt=>stepBuildings(dt)],['economy',dt=>stepEconomy(dt)],['police',dt=>stepPolice(dt)],['ai',dt=>stepAI(dt)]];
+function tick(dt){if(G.over)return;for(const s of TICKSTEPS){try{s[1](dt)}catch(e){CRASH.rec('tick.'+s[0],e)}}}
 // ================= RENDER =================
 const cv=document.getElementById('c'),ctx=cv.getContext('2d');let dpr=1;
 const cam={x:0,y:0,z:1};const SPR={};
@@ -1515,7 +1546,7 @@ function center(x,y){const p=iso(x,y);cam.x=p.X-innerWidth/2/cam.z;cam.y=p.Y-inn
 function poly(pts,fill,stroke='#1d1712',lw=2){ctx.beginPath();pts.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.closePath();if(fill){ctx.fillStyle=fill;ctx.fill()}if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=lw;ctx.lineJoin='round';ctx.stroke()}}
 function shade(hex,k){const n=parseInt(hex.slice(1),16);let r=n>>16,g=n>>8&255,b=n&255;const f=v=>Math.max(0,Math.min(255,Math.round(v*k)));return`rgb(${f(r)},${f(g)},${f(b)})`}
 // Ground is painted lazily into chunks (CHW world px square at GS scale) + one low-res overview for far zoom.
-const GS=0.6,CHW=2048,OVS=0.12,CHUNK_MAX=16;const CHUNKS=new Map();let OVER=null;
+const GS=0.6,CHW=2048,OVS=0.12,CHUNK_MAX=/iPhone|iPad|iPod|Android|Mobile/.test(navigator.userAgent)?12:16;const CHUNKS=new Map();let OVER=null;
 function th(x,y,n){let h=(x*374761393+y*668265263+n*2246822519)>>>0;h=Math.imul(h^(h>>>13),1274126177)>>>0;return (h^(h>>>16))/4294967296}
 let PARKT=null;
 let HOMET=null;
@@ -1792,7 +1823,7 @@ const TSPR={};function tSpr(i,d){const k=i+(i==0?'_'+d:'');if(TSPR[k])return TSP
 // ---- game-side glue ----
 const OBJ=[],OBJA=[],LAMPS=[],LIVE=[];let LAMPA=[],curA=OBJ,curL=LAMPS;
 function addObj(key,bb,paint,lights){curA.push({k:key,bb,paint,s:null,t:0});if(lights)for(const l of lights)curL.push(l)}
-function sprOf(o,now){if(!o.s){o.s=mkSpr(o.bb,o.paint);o.by=o.s.c.width*o.s.c.height*4;SPRBYTES+=o.by;LIVE.push(o);if(SPRBYTES>SPRCAP)evict(now)}o.t=now;return o.s}
+function sprOf(o,now){o.t=now;if(!o.s){const s=mkSpr(o.bb,o.paint);o.s=s;o.by=s.c.width*s.c.height*4;SPRBYTES+=o.by;LIVE.push(o);if(SPRBYTES>SPRCAP)evict(now)}return o.s}
 function evict(now){LIVE.sort((a,b)=>a.t-b.t);while(SPRBYTES>SPRCAP*0.75&&LIVE.length>1){const o=LIVE[0];if(o.t>=now-50)break;LIVE.shift();SPRBYTES-=o.by;o.s.c.width=o.s.c.height=0;o.s=null}}
 function dropA(){for(const o of OBJA)if(o.s){SPRBYTES-=o.by;o.s.c.width=o.s.c.height=0;o.s=null;const i=LIVE.indexOf(o);if(i>=0)LIVE.splice(i,1)}OBJA.length=0;LAMPA=[]}
 const C0=CITY0-0.5,C1=CITY1-0.5;
@@ -1831,11 +1862,11 @@ function bridgeP(g,a){const T=P(a-10,68);g.save();g.translate(T[0],T[1]);
  poly(g,[P(9.5,BR.y0),P(11.5,BR.y0),P(11.5,BR.y1),P(9.5,BR.y1)],'#57524b');
  for(let n=0;n<420;n++){const x=9.5+th(n,1,77+a)*2,y=BR.y0+th(n,2,77+a)*4,p=P(x,y);g.fillStyle=th(n,3,77+a)<0.5?'#6a645c':'#46423d';g.beginPath();g.ellipse(p[0],p[1],5,2.5,0,0,7);g.fill()}
  for(const x of[9.5,11.5]){g.strokeStyle='#d6ccb6';g.lineWidth=4;g.beginPath();g.moveTo(...P(x,BR.y0));g.lineTo(...P(x,BR.y1));g.stroke();g.strokeStyle='#6d665a';g.lineWidth=1.5;g.beginPath();g.moveTo(...P(x+0.02,BR.y0,-2));g.lineTo(...P(x+0.02,BR.y1,-2));g.stroke()}
- for(const y of[BR.y0,BR.y1]){g.strokeStyle='#2a2520';g.lineWidth=3;g.beginPath();g.moveTo(...P(8.7,y));g.lineTo(...P(12.3,y));g.stroke()}
+ for(const y of[BR.y0+0.04,BR.y1-0.04]){g.strokeStyle='rgba(120,110,95,0.55)';g.lineWidth=1.2;g.beginPath();g.moveTo(...P(9.5,y));g.lineTo(...P(11.5,y));g.stroke()}
  for(const y of[12.2,14.8]){const p=P(9.6,y);g.fillStyle='#24201b';g.fillRect(p[0]-6,p[1]-2,12,4);const q=P(11.4,y);g.fillRect(q[0]-6,q[1]-2,12,4)}
  for(let n=0;n<60;n++){const x=th(n,1,5+a)<0.5?8.75+th(n,2,5)*0.2:12.05+th(n,2,5)*0.2,y=BR.y0+th(n,3,5+a)*4,p=P(x,y);g.fillStyle='rgba(50,40,30,0.18)';g.beginPath();g.ellipse(p[0],p[1],7,3,0,0,7);g.fill()}
  paintParapet(g,FPX[0],FPX[1],'far');
- poly(g,[P(FPX[1],BR.y0-0.3),P(FPX[1]+0.32,BR.y0-0.3),P(FPX[1]+0.32,BR.y1+0.3),P(FPX[1],BR.y1+0.3)],'rgba(10,8,6,0.22)');
+ poly(g,[P(FPX[1],BR.y0),P(FPX[1]+0.32,BR.y0),P(FPX[1]+0.32,BR.y1),P(FPX[1],BR.y1)],'rgba(10,8,6,0.22)');
  g.restore()}
 const NEARC={};
 function nearOf(a){if(NEARC[a])return NEARC[a];const pad=40,A=P(NPX[1]+0.1,BR.y0-0.8),B=P(NPX[0]-0.1,BR.y1+0.8);const X0=B[0]-pad,X1=A[0]+pad,Y0=A[1]-130,Y1=B[1]+pad;const S=SS,c=mkC(Math.ceil((X1-X0)*S),Math.ceil((Y1-Y0)*S)),g=c.getContext('2d');g.setTransform(S,0,0,S,-X0*S,-Y0*S);paintParapet(g,NPX[0],NPX[1],'near');const T=P(a-10,68);return NEARC[a]={c,X0:X0+T[0],Y0:Y0+T[1],S}}
@@ -3153,9 +3184,12 @@ function stepInertia(rdt){if(!vel||drag||pinch)return;cam.x-=vel.vx*1000*rdt/cam
 cv.addEventListener('wheel',e=>{e.preventDefault();zoomSmooth(Math.exp(-Math.max(-300,Math.min(300,e.deltaY))*0.0018),e.clientX,e.clientY)},{passive:false});
 document.addEventListener('gesturestart',e=>e.preventDefault());
 let last=performance.now();
-function frame(now){const rdt=Math.min(0.1,(now-last)/1000);last=now;let dt=(G.paused||!G.started)?0:rdt*CFG.SPEEDS[G.speed]*(G.boost||1);
- while(dt>0){const s=Math.min(dt,5);tick(s);dt-=s}
- if(G.started&&!G.paused&&!G.over){G.rt=(G.rt||0)+Math.min(rdt,0.25);if(G.rt>=PAP().next)paperIssue()}stepInertia(rdt);stepKeys(rdt);stepZoom(rdt);VOT=rdt;render(now);stepWheel(rdt);stepFollow(rdt);uiAcc+=rdt;if(uiAcc>0.25){uiAcc=0;updUI()}requestAnimationFrame(frame)}
+function frame(now){requestAnimationFrame(frame);const F0=performance.now();CRASH.beat();const rdt=Math.min(0.1,Math.max(0,(now-last)/1000)||0);last=now;let dt=(G.paused||!G.started)?0:rdt*CFG.SPEEDS[G.speed]*(G.boost||1);
+ let nT=0;while(dt>0&&nT<40){const s=Math.min(dt,5);tick(s);dt-=s;nT++}const F1=performance.now();
+ CRASH.guard('paper',()=>{if(G.started&&!G.paused&&!G.over){G.rt=(G.rt||0)+Math.min(rdt,0.25);if(G.rt>=PAP().next)paperIssue()}});
+ CRASH.guard('input',()=>{stepInertia(rdt);stepKeys(rdt);stepZoom(rdt)});VOT=rdt;
+ CRASH.guard('render',()=>render(now));CRASH.guard('camera',()=>{stepWheel(rdt);stepFollow(rdt)});uiAcc+=rdt;if(uiAcc>0.25){uiAcc=0;CRASH.guard('ui',updUI)}
+ const F2=performance.now();if(F2-F0>1000)CRASH.slow(Math.round(F1-F0),Math.round(F2-F1))}
 // ================= SOUND (procedural WebAudio) =================
 const SET=Object.assign({dmgnum:1,master:1,music:1,sfx:1,rain:1,train:1,quality:'high',cut:'auto'},JSON.parse(localStorage.getItem('bprt_settings')||'{}'));
 function saveSet(){localStorage.setItem('bprt_settings',JSON.stringify(SET));applySet()}
