@@ -2,7 +2,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="build" content="RT v0.25.2 pre-alpha · 23 Oct 21:18">
+<meta name="build" content="RT v0.25.3 pre-alpha · 23 Oct 21:50">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -229,7 +229,7 @@ html.sa #top{padding-top:max(var(--st),4px)}
 <script>addEventListener('DOMContentLoaded',()=>{});</script></head><body>
 <canvas id="c"></canvas>
 <div id="rot"><div class="rph"></div><h2>Turn the paper sideways</h2><p>Blood and Paper is played in landscape. Rotate your phone; the game waits for you.</p></div>
-<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT v0.25.2 pre-alpha · 23 Oct 21:18</div>
+<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT v0.25.3 pre-alpha · 23 Oct 21:50</div>
 <div id="top" class="deco">
  <div class="r"><span id="cash">$0</span><span id="inc"></span><button class="ib" id="tb-menu" title="Menu" onclick="openPause()"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button></div>
  <div class="r"><span id="donst" style="display:none"></span><canvas id="dnc" width="44" height="44" title="Day and night"></canvas><span id="hc" onclick="openTab('police')">Heat 0 · Case 0</span><span id="resbar"><span class="rs" title="Booze barrels"><span class="ri" data-r="booze"></span><span class="rn">0</span></span><span class="rs" title="Pistols"><span class="ri" data-r="pistol"></span><span class="rn">0</span></span><span class="rs" title="Tommy guns"><span class="ri" data-r="tommy"></span><span class="rn">0</span></span><span class="rs" title="Betting slips"><span class="ri" data-r="slips"></span><span class="rn">0</span></span><span class="rs" title="Pull"><span class="ri" data-r="pull"></span><span class="rn">0</span></span></span>
@@ -237,7 +237,7 @@ html.sa #top{padding-top:max(var(--st),4px)}
   <button class="ib" id="tb-intel" title="Intel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.8-6.5 10-6.5S22 12 22 12s-3.8 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button><button class="ib" id="tb-fam" title="Families"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8l8 3v6.2c0 5-3.6 8.2-8 9.4-4.4-1.2-8-4.4-8-9.4V5.8zM12 7v9M8.5 10.5h7"/></svg></button></div>
 </div>
 <div id="toast"></div>
-<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div class="tver" style="margin-top:4px;font:bold 13px Georgia,serif;letter-spacing:2px;color:#e6c56a;text-transform:uppercase">v0.21 pre-alpha</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT v0.25.2 pre-alpha · 23 Oct 21:18</div>
+<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div class="tver" style="margin-top:4px;font:bold 13px Georgia,serif;letter-spacing:2px;color:#e6c56a;text-transform:uppercase">v0.21 pre-alpha</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT v0.25.3 pre-alpha · 23 Oct 21:50</div>
 <button class="mbtn pri" onclick="goFull();newGame()">New Game</button><button class="mbtn" id="bcont" onclick="goFull();startGame(true)">Continue</button>
 <button class="mbtn" onclick="openSettings('titleMenu')">Settings</button><button class="mbtn" onclick="openHowTo('titleMenu')">How to Play</button><button class="mbtn" onclick="openCredits()">Credits</button></div></div>
 <div id="intro" style="position:fixed;inset:0;z-index:90;background:#000;display:flex;align-items:center;justify-content:center;transition:opacity .35s;touch-action:none"><video id="ivid" playsinline webkit-playsinline preload="auto" style="width:100%;height:100%;object-fit:contain;background:#000"></video><div id="itap" style="display:none;position:absolute;inset:0;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse at center,#2a1f14 0%,#0c0805 75%);color:#e6c56a;text-align:center"><div style="font:30px Limelight,Georgia,serif;letter-spacing:3px;color:#d9c08a;text-shadow:0 2px 6px #000">Blood and Paper</div><div style="width:180px;height:1px;background:#8a6d3b;margin:10px 0"></div><div style="font:italic 17px Georgia,serif;letter-spacing:2px;color:#c9b27a;animation:itp 1.6s ease-in-out infinite">Tap to begin</div></div></div><style>@keyframes itp{50%{opacity:.35}}</style>
@@ -255,7 +255,7 @@ html.sa #top{padding-top:max(var(--st),4px)}
 <div id="over" class="ui"><div id="overt" style="text-align:center;font-family:Limelight,serif;color:#e6c56a;padding:0 20px"></div><button class="mbtn pri" onclick="overNew()" style="margin-top:22px;width:240px">New Game</button><button class="mbtn" onclick="overMenu()" style="margin-top:10px;width:240px">Main Menu</button></div>
 <style>.ic{width:1.25em;height:1.25em;vertical-align:-0.28em;display:inline-block;flex:none;object-fit:contain}.ic.pi{width:1.5em;height:1.5em;vertical-align:-0.42em;filter:drop-shadow(0 1px 1px #000)}svg.ic path,svg.ic rect{}.mib .ic,.mib .ic.pi{width:25px;height:25px;vertical-align:0}.mib.inl .ic,.mib.inl .ic.pi{width:25px;height:25px}.sic .ic,.sic .ic.pi{width:56px;height:56px}h3 .ic,h3 .ic.pi{width:30px;height:30px;vertical-align:-8px}.pad .ic{width:34px;height:34px}.pad .ic{width:34px;height:34px}.stk{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:6px}.stile{background:linear-gradient(#2a221a,#16120e);border:1.5px solid #8a6d3b;border-radius:10px;padding:8px 2px 6px;text-align:center;box-shadow:inset 0 0 0 3px #16120e,inset 0 0 0 4px #5a4626;cursor:pointer}.stile.on{border-color:#ffd34d}.sic{font-size:30px;height:58px;display:flex;align-items:center;justify-content:center}.scn{font:15px Limelight,serif;color:var(--gold);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.snm{font-size:10.5px;color:#a8987a;letter-spacing:.5px;text-transform:uppercase}.stip{margin-top:10px;min-height:20px;font-size:13px;color:#d9c9a3;text-align:center}
 .mib{position:absolute;left:-7px;top:-7px;width:30px;height:30px;border-radius:50%;background:#16120ee6;border:2px solid #8a6d3b;display:flex;align-items:center;justify-content:center;font-size:13px;line-height:1;z-index:2;box-shadow:0 1px 3px #000a}.mib.inl{position:static;display:inline-flex;width:30px;height:30px;font-size:12px;margin-right:6px;vertical-align:middle}.thumb{position:relative}.mkey{display:flex;align-items:center;gap:8px;padding:5px 2px;border-bottom:1px solid #2a241c;font-size:12.5px}.mkey .d{color:#a8987a}</style>
-<script>window.BUILD_LABEL='RT v0.25.2 pre-alpha · 23 Oct 21:18';
+<script>window.BUILD_LABEL='RT v0.25.3 pre-alpha · 23 Oct 21:50';
 // ===== v0.25.2 crash log + resilient loop =====
 const CRASH=(()=>{const K='bprt_crash',S='bprt_sess';let L=[];try{L=JSON.parse(localStorage.getItem(K)||'[]')}catch(e){L=[]}
  let prev=null;try{prev=JSON.parse(localStorage.getItem(S)||'null')}catch(e){}
@@ -1618,12 +1618,12 @@ function paintBridgeFace(g,refl){// the visible (+x) elevation of the bridge: sp
  else{poly(g,[Pz(...cw[0],WZ),Pz(...cw[1],WZ),Pz(...cw[2],WZ),Pz(...cw[2],zt),Pz(...cw[1],zt),Pz(...cw[0],zt)],'#4e4b43')}
 }
 function archP(g,xf,yc,hw,Pz){g.moveTo(...Pz(xf,yc-hw,WZ));g.lineTo(...Pz(xf,yc-hw,ZS));for(let i=1;i<=24;i++){const t=Math.PI*i/24;g.lineTo(...Pz(xf,yc-hw*Math.cos(t),ZS+RISE*Math.sin(t)))}g.lineTo(...Pz(xf,yc+hw,WZ));g.closePath()}
-function paintParapet(g,x0,x1,side){const y0=BR.y0-0.45,y1=BR.y1+0.45;
+function paintParapet(g,x0,x1,side){const y0=BR.y0-0.2,y1=BR.y1+0.2;
  // run wall in segments between piers so occlusion slices stay correct
  box(g,x0,x1,y0,y1,0,PH,'#a09480',{ch:5.3,seed:side=='far'?71:81,bl:0.26});
  // coping
  box(g,x0-0.03,x1+0.03,y0,y1,PH,PH+4,'#c0b39a',{ch:4,seed:91,bl:0.5});
- for(const py of[y0,13.5,y1]){const w=0.2;box(g,x0-0.04,x1+0.04,py-w,py+w,0,PPH,'#9a8d78',{ch:6.5,seed:100+py*3,bl:0.14});box(g,x0-0.07,x1+0.07,py-w-0.03,py+w+0.03,PPH,PPH+4,'#c6b9a0',{ch:4,seed:7,bl:0.5});
+ for(const py of[BR.y0,13.5,BR.y1]){const w=0.2;box(g,x0-0.04,x1+0.04,py-w,py+w,0,PPH,'#9a8d78',{ch:6.5,seed:100+py*3,bl:0.14});box(g,x0-0.07,x1+0.07,py-w-0.03,py+w+0.03,PPH,PPH+4,'#c6b9a0',{ch:4,seed:7,bl:0.5});
   const cx=(x0+x1)/2;const L=lamp(g,cx,py,PPH+4);if(REC)LAMPS.push({x:cx,y:py,X:L[0],Y:L[1]-56})}}
 // near parapet: painted once into its own canvas, then drawn in depth-sorted column slices
 function smooth(p,n){for(let k=0;k<n;k++){const q=[p[0]];for(let i=0;i<p.length-1;i++){const a=p[i],b=p[i+1];q.push([a[0]*.75+b[0]*.25,a[1]*.75+b[1]*.25],[a[0]*.25+b[0]*.75,a[1]*.25+b[1]*.75])}q.push(p[p.length-1]);p=q}return p}
@@ -1850,7 +1850,7 @@ function segP(g,x0,x1,first,last,stairX){g.save();foot(g,x0,last?x1:x1+1,CY0,CY1
  for(let x=Math.ceil(x0)+2;x<x1-1;x+=5){if(stairX!=null&&x>stairX-1&&x<stairX+3.5)continue;const[X,Y]=P(x,CY0,-16);g.strokeStyle='#2b241c';g.lineWidth=2;g.beginPath();g.arc(X,Y+4,4,0,7);g.stroke()}
  g.restore();lipsP(g,x0,x1)}
 function bridgeP(g,a){const T=P(a-10,68);g.save();g.translate(T[0],T[1]);
- g.save();foot(g,BR.x0,BR.x1+2.2,BR.y0,BR.y1);g.clip();
+ g.save();g.beginPath();[P(BR.x0,BR.y0),P(BR.x1,BR.y0),P(BR.x1,BR.y1),P(BR.x0,BR.y1)].forEach((p,i)=>i?g.lineTo(...p):g.moveTo(...p));g.closePath();{const e=BR.x1+2.2,q=[P(BR.x1,BR.y0),P(BR.x1,BR.y0,WZ),P(e,BR.y0,WZ),P(e,BR.y1),P(BR.x1,BR.y1)];q.forEach((p,i)=>i?g.lineTo(...p):g.moveTo(...p));g.closePath()}g.clip();
  {const A=P(BR.x0,BR.y0,WZ),D=P(BR.x0,BR.y1,WZ),B=P(BR.x1,BR.y0,WZ);g.fillStyle='#22404a';g.fillRect(D[0]-300,A[1]-400,B[0]-D[0]+600,800)}
  poly(g,[P(BR.x0-1,BR.y0,WZ),P(BR.x1,BR.y0,WZ),P(BR.x1,BR.y0+0.55,WZ),P(BR.x0-1,BR.y0+0.55,WZ)],'rgba(5,15,20,0.35)');
  g.globalAlpha=0.55;paintBridgeFace(g,true);g.globalAlpha=1;
@@ -1908,7 +1908,7 @@ function init(){if(inited)return;inited=1;
  const xs=[11.5,...RWBR.flatMap(a=>[a-1.5,a+2.5]),115.5];
  for(let i=0;i<xs.length;i+=2){const x0=xs[i],x1=xs[i+1],first=i==0,last=i==xs.length-2,st=last?null:x1-5.9;add(bbOf(x0,x1+1,79.3,83.7,WZ,0,12),g=>segP(g,x0,x1,first,last,st))}
  for(const a of RWBR)add(bbOf(a-1.7,a+4.8,78.8,84.2,WZ-10,PPH+80,20),g=>bridgeP(g,a));
- for(const a of RWBR){const cx=a+0.5;for(const px of[a-1.39,a+2.39])for(const py of[CY0-0.45,81.5,CY1+0.45])LAMPS.push({wx:px,wy:py,z:PPH+4+62,c:'l',r:70,zb:PPH+4})}
+ for(const a of RWBR){const cx=a+0.5;for(const px of[a-1.39,a+2.39])for(const py of[CY0,81.5,CY1])LAMPS.push({wx:px,wy:py,z:PPH+4+62,c:'l',r:70,zb:PPH+4})}
  // crossings: planked rails over the road
  for(const c of CROSS)for(let x=Math.ceil(c.x0);x<c.x1;x++)for(const y of[36,37])add(dbb(x,y),g=>{g.save();clipDia(g,x,y);tracksIn(g,'road',x,y);g.restore()});
  for(const c of CROSS)for(const x of[c.ra,c.ra+1]){if(!inCity(x,35))continue;add(dbb(x,35),g=>{g.strokeStyle='rgba(235,228,205,0.8)';g.lineWidth=4;g.beginPath();g.moveTo(...P(x-.45,35.2));g.lineTo(...P(x+.45,35.2));g.moveTo(...P(x-.45,37.8+0));g.lineTo(...P(x+.45,37.8));g.stroke()})}
@@ -2078,7 +2078,7 @@ function drawTactical(now,A){const P=tacPatterns(),z=cam.z;ctx.save();ctx.global
 function getChunk(i,j){const key=i+','+j;let ch=CHUNKS.get(key);if(ch){ch.used=performance.now();return ch}
  const c=document.createElement('canvas');c.width=c.height=Math.ceil(CHW*GS);const g=c.getContext('2d');const rx=WB.x0+i*CHW,ry=-TH/2+j*CHW;
  g.setTransform(GS,0,0,GS,-rx*GS,-ry*GS);paintGround(g,rx,ry,rx+CHW,ry+CHW,true);ch={c,rx,ry,used:performance.now()};CHUNKS.set(key,ch);
- if(CHUNKS.size>CHUNK_MAX){let old=null;for(const[k2,v]of CHUNKS)if(!old||v.used<old[1].used)old=[k2,v];CHUNKS.delete(old[0])}return ch}
+ if(CHUNKS.size>CHUNK_MAX){let old=null;for(const[k2,v]of CHUNKS)if(!old||v.used<old[1].used)old=[k2,v];CHUNKS.delete(old[0]);old[1].c.width=old[1].c.height=0}return ch}
 function drawGround(){const W=WB.x1-WB.x0,H=N*TH+TH;
  if(cam.z<0.3){if(!OVER){OVER=document.createElement('canvas');OVER.width=Math.ceil(W*OVS);OVER.height=Math.ceil(H*OVS);const g=OVER.getContext('2d');g.setTransform(OVS,0,0,OVS,-WB.x0*OVS,TH/2*OVS);paintGround(g,WB.x0,-TH/2,WB.x1,H,false)}
   ctx.drawImage(OVER,WB.x0,-TH/2,OVER.width/OVS,OVER.height/OVS);return}
@@ -2086,7 +2086,7 @@ function drawGround(){const W=WB.x1-WB.x0,H=N*TH+TH;
  for(let i=Math.max(0,Math.floor((vx0-WB.x0)/CHW));i<=Math.floor((vx1-WB.x0)/CHW);i++)for(let j=Math.max(0,Math.floor((vy0+TH/2)/CHW));j<=Math.floor((vy1+TH/2)/CHW);j++){
   if(i*CHW>W||j*CHW>H)continue;const key=i+','+j;if(!CHUNKS.has(key)){if(made>=1)continue;made++}const ch=getChunk(i,j);ctx.drawImage(ch.c,ch.rx,ch.ry,CHW,CHW)}
  // idle pre-paint: one neighbouring chunk per frame when nothing new was needed
- if(!made){const i0=Math.floor((vx0-WB.x0)/CHW)-1,i1=Math.floor((vx1-WB.x0)/CHW)+1,j0=Math.floor((vy0+TH/2)/CHW)-1,j1=Math.floor((vy1+TH/2)/CHW)+1;
+ if(!made&&CHUNKS.size<CHUNK_MAX){const i0=Math.floor((vx0-WB.x0)/CHW)-1,i1=Math.floor((vx1-WB.x0)/CHW)+1,j0=Math.floor((vy0+TH/2)/CHW)-1,j1=Math.floor((vy1+TH/2)/CHW)+1;
   outer:for(let i=Math.max(0,i0);i<=i1;i++)for(let j=Math.max(0,j0);j<=j1;j++){if(i*CHW>W||j*CHW>H)continue;const c2=CHUNKS.get(i+','+j);if(c2)c2.used=performance.now();else{getChunk(i,j);break outer}}}}
 function bSprite(b){const ty=b.look||b.base||b.type;let m=BM[ty];if(b.flip)m={w:m.w,h:m.h,ay:m.ay,ax:m.w-m.ax,hl:m.hr,hr:m.hl};const sc=b.s*TW/(m.hl+m.hr),{X,Y}=iso(b.x+b.s-1,b.y+b.s-1);const ox=(m.hl-m.hr)/2*sc,oy=-Math.abs(m.hl-m.hr)/4*sc;
  return{img:SPR['b_'+ty],sc,X:X+ox-m.ax*sc,Y:Y+TH/2+oy-m.ay*sc,w:m.w*sc,h:m.h*sc}}
