@@ -2,7 +2,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="build" content="RT v0.25 pre-alpha · 23 Oct 15:05">
+<meta name="build" content="RT v0.25.1 pre-alpha · 23 Oct 15:30">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -229,7 +229,7 @@ html.sa #top{padding-top:max(var(--st),4px)}
 <script>addEventListener('DOMContentLoaded',()=>{});</script></head><body>
 <canvas id="c"></canvas>
 <div id="rot"><div class="rph"></div><h2>Turn the paper sideways</h2><p>Blood and Paper is played in landscape. Rotate your phone; the game waits for you.</p></div>
-<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT v0.25 pre-alpha · 23 Oct 15:05</div>
+<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT v0.25.1 pre-alpha · 23 Oct 15:30</div>
 <div id="top" class="deco">
  <div class="r"><span id="cash">$0</span><span id="inc"></span><button class="ib" id="tb-menu" title="Menu" onclick="openPause()"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button></div>
  <div class="r"><span id="donst" style="display:none"></span><canvas id="dnc" width="44" height="44" title="Day and night"></canvas><span id="hc" onclick="openTab('police')">Heat 0 · Case 0</span><span id="resbar"><span class="rs" title="Booze barrels"><span class="ri" data-r="booze"></span><span class="rn">0</span></span><span class="rs" title="Pistols"><span class="ri" data-r="pistol"></span><span class="rn">0</span></span><span class="rs" title="Tommy guns"><span class="ri" data-r="tommy"></span><span class="rn">0</span></span><span class="rs" title="Betting slips"><span class="ri" data-r="slips"></span><span class="rn">0</span></span><span class="rs" title="Pull"><span class="ri" data-r="pull"></span><span class="rn">0</span></span></span>
@@ -237,7 +237,7 @@ html.sa #top{padding-top:max(var(--st),4px)}
   <button class="ib" id="tb-intel" title="Intel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.8-6.5 10-6.5S22 12 22 12s-3.8 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button><button class="ib" id="tb-fam" title="Families"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8l8 3v6.2c0 5-3.6 8.2-8 9.4-4.4-1.2-8-4.4-8-9.4V5.8zM12 7v9M8.5 10.5h7"/></svg></button></div>
 </div>
 <div id="toast"></div>
-<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div class="tver" style="margin-top:4px;font:bold 13px Georgia,serif;letter-spacing:2px;color:#e6c56a;text-transform:uppercase">v0.21 pre-alpha</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT v0.25 pre-alpha · 23 Oct 15:05</div>
+<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div class="tver" style="margin-top:4px;font:bold 13px Georgia,serif;letter-spacing:2px;color:#e6c56a;text-transform:uppercase">v0.21 pre-alpha</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT v0.25.1 pre-alpha · 23 Oct 15:30</div>
 <button class="mbtn pri" onclick="goFull();newGame()">New Game</button><button class="mbtn" id="bcont" onclick="goFull();startGame(true)">Continue</button>
 <button class="mbtn" onclick="openSettings('titleMenu')">Settings</button><button class="mbtn" onclick="openHowTo('titleMenu')">How to Play</button><button class="mbtn" onclick="openCredits()">Credits</button></div></div>
 <div id="intro" style="position:fixed;inset:0;z-index:90;background:#000;display:flex;align-items:center;justify-content:center;transition:opacity .35s;touch-action:none"><video id="ivid" playsinline webkit-playsinline preload="auto" style="width:100%;height:100%;object-fit:contain;background:#000"></video><div id="itap" style="display:none;position:absolute;inset:0;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse at center,#2a1f14 0%,#0c0805 75%);color:#e6c56a;text-align:center"><div style="font:30px Limelight,Georgia,serif;letter-spacing:3px;color:#d9c08a;text-shadow:0 2px 6px #000">Blood and Paper</div><div style="width:180px;height:1px;background:#8a6d3b;margin:10px 0"></div><div style="font:italic 17px Georgia,serif;letter-spacing:2px;color:#c9b27a;animation:itp 1.6s ease-in-out infinite">Tap to begin</div></div></div><style>@keyframes itp{50%{opacity:.35}}</style>
@@ -738,7 +738,9 @@ function dbTap(h,sx,sy){const v=G.veh.find(w=>w.id===G.dbCar);G.mode=null;G.dbCa
  v.db={...T,fired:0,from:[v.x,v.y]};G.selCar=v.id;if(driveTo(v,[Math.round(T.x),Math.round(T.y)],null)){ripple(T.x,T.y,'Drive-by','#ff3b30');buzz(20)}else v.db=null;updUI()}
 function stepDriveBy(v){const D=v.db,C=CFG.DRIVEBY;let t=D.u!=null?G.units.find(w=>w.id===D.u):null,b=D.b!=null?G.bld[D.b]:null;if(t){D.x=t.x;D.y=t.y}
  if(D.u!=null&&(!t||t.hp<=0)){v.db=null;return}
- if(!D.fired&&Math.hypot(v.x-D.x,v.y-D.y)<=C.FIRE_R){D.fired=1;const guns=dbGuns(v);if(!guns.length||!hasDrv(v)){v.db=null;return}
+ if(!D.fired&&!v.path.length&&Math.hypot(v.x-D.x,v.y-D.y)>C.FIRE_R-0.01&&RW.alleyAt(D.x,D.y)){v.db=null;if(v.fam===0){const m=(D.name||'The target')+' is too deep in the alley. The car cannot get close enough to shoot.';NSEEN.delete(m);notice(m,true)}return}
+ if(!D.fired&&!v.path.length&&RW.alleyAt(D.x,D.y)&&!RW.los(v,D)){v.db=null;if(v.fam===0){const m='No clear shot into the alley. Drive-by called off.';NSEEN.delete(m);notice(m,true)}return}
+ if(!D.fired&&Math.hypot(v.x-D.x,v.y-D.y)<=C.FIRE_R&&RW.los(v,D)){D.fired=1;const guns=dbGuns(v);if(!guns.length||!hasDrv(v)){v.db=null;return}
   for(const s of guns){s.x=v.x;s.y=v.y}
   const tg=t?[t]:b?present(b).filter(u=>u.fam!==0&&u.hp>0):[];
   for(const s of guns)for(let k=0;k<C.HITS;k++){const live=tg.filter(u=>G.units.includes(u)&&u.hp>0);if(!live.length)break;const x=live[(k+guns.indexOf(s))%live.length];hitUnit(s,x)}
@@ -1903,9 +1905,11 @@ function trainAt(st){const k=Math.floor(st/TP),tl=(st-k*TP)/1000,d=k%2?-1:1;cons
 function inBand(c,x,y){return y>35.45&&y<37.55&&x>c.x0&&x<c.x1}
 function hold(o,nx,ny){if(ny<35.3||ny>37.7)return false;for(const c of CROSS){if(!(c.a<0.97||c.cl))continue;if(inBand(c,nx,ny)&&!inBand(c,o.x,o.y)){STAT.held++;return true}}return false}
 const STAT={held:0,alleyShots:0,alleyBlocked:0,bridgeHits:0};
-const alleyAt=(x,y)=>{const X=Math.round(x),Y=Math.round(y);return X>=0&&Y>=0&&X<N&&Y<N&&ALLEY[Y*N+X]>0};
-function cover(a,t){if(!alleyAt(t.x,t.y))return false;if(!(a.ride!=null||a.kind=='car'||a.kind=='truck'||a.veh))return false;STAT.alleyShots++;if(Math.random()<0.7){STAT.alleyBlocked++;return true}return false}
-function dmgK(a,t){const X=Math.round(t.x),Y=Math.round(t.y);if(X<0||Y<0||X>=N||Y>=N||FEAT[Y*N+X]!=4)return 1;STAT.bridgeHits++;return md(X)>=2?0.7:0.8}
+const alleyAt=(x,y)=>{const X=Math.round(x),Y=Math.round(y);return X>=0&&Y>=0&&X<N&&Y<N&&(ALLEY[Y*N+X]>0||(!OCC[Y*N+X]&&((Y>0&&ALLEY[(Y-1)*N+X]>0)+(Y<N-1&&ALLEY[(Y+1)*N+X]>0)+(X>0&&ALLEY[Y*N+X-1]>0)+(X<N-1&&ALLEY[Y*N+X+1]>0))>=2&&!roadT(X,Y)))};
+function los(a,t){if(!alleyAt(t.x,t.y)&&!alleyAt(a.x,a.y))return true;const ax=Math.round(a.x),ay=Math.round(a.y),tx=Math.round(t.x),ty=Math.round(t.y),dx=t.x-a.x,dy=t.y-a.y,n=Math.max(2,Math.ceil(Math.hypot(dx,dy)/0.2));
+ for(let k=1;k<n;k++){const X=Math.round(a.x+dx*k/n),Y=Math.round(a.y+dy*k/n);if((X==ax&&Y==ay)||(X==tx&&Y==ty))continue;if(X<0||Y<0||X>=N||Y>=N||OCC[Y*N+X])return false}return true}
+function cover(a,t){if(!alleyAt(t.x,t.y)&&!alleyAt(a.x,a.y))return false;STAT.alleyShots++;if(los(a,t))return false;STAT.alleyBlocked++;return true}
+function dmgK(a,t){return 1}
 // ---- per-frame items ----
 function items(L,VX0,VY0,VX1,VY1,now,FARZ){init();chkA();const inV=bb=>bb[2]>VX0&&bb[0]<VX1&&bb[3]>VY0&&bb[1]<VY1;
  const lists=FARZ?[OBJ]:[OBJ,OBJA];for(const A of lists)for(const o of A)if(inV(o.bb)){L.push({d:o.k,rw:()=>{const s=sprOf(o,now);ctx.drawImage(s.c,s.x,s.y,s.w,s.h)}})}
@@ -1949,7 +1953,7 @@ function tac(g,z){const q=pts=>{g.beginPath();pts.forEach((p,i)=>{const a=iso(p[
  const A=iso(-14,36.5),B=iso(N+14,36.5);g.strokeStyle='#2a2016';g.lineWidth=Math.max(TW*0.7,2/z);g.beginPath();g.moveTo(A.X,A.Y);g.lineTo(B.X,B.Y);g.stroke();g.strokeStyle='#d8ccb0';g.lineWidth=Math.max(TW*0.25,1/z);g.setLineDash([TW*0.5,TW*0.5]);g.beginPath();g.moveTo(A.X,A.Y);g.lineTo(B.X,B.Y);g.stroke();g.setLineDash([]);
  q([[55.5,28.5],[62.5,28.5],[62.5,35.5],[55.5,35.5]]);g.fillStyle='rgba(60,52,44,0.6)';g.fill()}
 const seaSkip=(x,y)=>y>=34&&y<=40&&(x<CITY0||x>=CITY1);
-return{tick,hold,cover,dmgK,items,holes,glows,tile,paint,tac,seaSkip,STAT,CROSS,_:{OBJ,OBJA,LIVE,E,trainAt:s=>trainAt(s),get ST(){return ST},set ST(v){ST=v},get SPRBYTES(){return SPRBYTES},sprOf,init,chkA,LAMPS,lampList,FENCE,FEAT,ALLEY}};
+return{tick,hold,cover,los,alleyAt,dmgK,items,holes,glows,tile,paint,tac,seaSkip,STAT,CROSS,_:{OBJ,OBJA,LIVE,E,trainAt:s=>trainAt(s),get ST(){return ST},set ST(v){ST=v},get SPRBYTES(){return SPRBYTES},sprOf,init,chkA,LAMPS,lampList,FENCE,FEAT,ALLEY}};
 })();
 
 function paintGround(g,rx0,ry0,rx1,ry1,detail){
