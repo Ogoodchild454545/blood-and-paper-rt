@@ -2,7 +2,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="build" content="RT v0.42 pre-alpha · 25 Oct 22:32">
+<meta name="build" content="RT v0.43 pre-alpha · 25 Oct 22:50">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -233,7 +233,7 @@ html.sa #top{padding-top:max(var(--st),4px)}
 </head><body>
 <canvas id="c"></canvas>
 <div id="rot"><div class="rph"></div><h2>Turn the paper sideways</h2><p>Blood and Paper is played in landscape. Rotate your phone; the game waits for you.</p></div>
-<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT v0.42 pre-alpha · 25 Oct 22:32</div>
+<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT v0.43 pre-alpha · 25 Oct 22:50</div>
 <div id="top" class="deco">
  <div class="r"><span id="cash">$0</span><span id="inc"></span><span id="tillc" style="display:none;font-family:var(--label);font-size:12px;color:#c9b48a;opacity:.85;white-space:nowrap" title="Money waiting in your racket tills. A cash runner or the Don must carry it to the hideout.">$0</span></div>
  <div class="r"><span id="donst" style="display:none"></span><canvas id="dnc" width="44" height="44" title="Day and night"></canvas><span id="hc" onclick="openTab('police')" title="Police case file"></span><span id="resbar"><span class="rs" title="Booze barrels"><span class="ri" data-r="booze"></span><span class="rn">0</span></span><span class="rs" title="Pistols"><span class="ri" data-r="pistol"></span><span class="rn">0</span></span><span class="rs" title="Tommy guns"><span class="ri" data-r="tommy"></span><span class="rn">0</span></span><span class="rs" title="Betting slips"><span class="ri" data-r="slips"></span><span class="rn">0</span></span><span class="rs" title="Pull"><span class="ri" data-r="pull"></span><span class="rn">0</span></span></span>
@@ -241,7 +241,7 @@ html.sa #top{padding-top:max(var(--st),4px)}
   <button class="ib" id="tb-fam" title="Families"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8l8 3v6.2c0 5-3.6 8.2-8 9.4-4.4-1.2-8-4.4-8-9.4V5.8zM12 7v9M8.5 10.5h7"/></svg></button><button class="ib" id="tb-set" title="Settings" onclick="openPause()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></button></div>
 </div>
 <div id="toast"></div>
-<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div class="tver" style="margin-top:4px;font:bold 13px Georgia,serif;letter-spacing:2px;color:#e6c56a;text-transform:uppercase">v0.29.1 pre-alpha</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT v0.42 pre-alpha · 25 Oct 22:32</div>
+<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div class="tver" style="margin-top:4px;font:bold 13px Georgia,serif;letter-spacing:2px;color:#e6c56a;text-transform:uppercase">v0.29.1 pre-alpha</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT v0.43 pre-alpha · 25 Oct 22:50</div>
 <button class="mbtn pri" onclick="goFull();newGame()">New Game</button><button class="mbtn" id="bcont" onclick="goFull();startGame(true)">Continue</button>
 <button class="mbtn" onclick="openSettings('titleMenu')">Settings</button><button class="mbtn" onclick="openHowTo('titleMenu')">How to Play</button><button class="mbtn" onclick="openCredits()">Credits</button></div></div>
 <div id="intro" style="position:fixed;inset:0;z-index:90;background:#000;display:flex;align-items:center;justify-content:center;transition:opacity .35s;touch-action:none"><video id="ivid" playsinline webkit-playsinline preload="auto" style="width:100%;height:100%;object-fit:contain;background:#000"></video><div id="itap" style="display:none;position:absolute;inset:0;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse at center,#2a1f14 0%,#0c0805 75%);color:#e6c56a;text-align:center"><div style="font:30px Limelight,Georgia,serif;letter-spacing:3px;color:#d9c08a;text-shadow:0 2px 6px #000">Blood and Paper</div><div style="width:180px;height:1px;background:#8a6d3b;margin:10px 0"></div><div style="font:italic 17px Georgia,serif;letter-spacing:2px;color:#c9b27a;animation:itp 1.6s ease-in-out infinite">Tap to begin</div></div></div><style>@keyframes itp{50%{opacity:.35}}</style>
@@ -259,7 +259,7 @@ html.sa #top{padding-top:max(var(--st),4px)}
 <div id="over" class="ui"><div id="overt" style="text-align:center;font-family:Limelight,serif;color:#e6c56a;padding:0 20px"></div><button class="mbtn pri" onclick="overNew()" style="margin-top:22px;width:240px">New Game</button><button class="mbtn" onclick="overMenu()" style="margin-top:10px;width:240px">Main Menu</button></div>
 <style>.ic{width:1.25em;height:1.25em;vertical-align:-0.28em;display:inline-block;flex:none;object-fit:contain}.ic.pi{width:1.5em;height:1.5em;vertical-align:-0.42em;filter:drop-shadow(0 1px 1px #000)}svg.ic path,svg.ic rect{}.mib .ic,.mib .ic.pi{width:25px;height:25px;vertical-align:0}.mib.inl .ic,.mib.inl .ic.pi{width:25px;height:25px}.sic .ic,.sic .ic.pi{width:56px;height:56px}h3 .ic,h3 .ic.pi{width:30px;height:30px;vertical-align:-8px}.pad .ic{width:34px;height:34px}.pad .ic{width:34px;height:34px}.stk{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:6px}.stile{background:linear-gradient(#2a221a,#16120e);border:1.5px solid #8a6d3b;border-radius:10px;padding:8px 2px 6px;text-align:center;box-shadow:inset 0 0 0 3px #16120e,inset 0 0 0 4px #5a4626;cursor:pointer}.stile.on{border-color:#ffd34d}.sic{font-size:30px;height:58px;display:flex;align-items:center;justify-content:center}.scn{font:15px Limelight,serif;color:var(--gold);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.snm{font-size:10.5px;color:#a8987a;letter-spacing:.5px;text-transform:uppercase}.stip{margin-top:10px;min-height:20px;font-size:13px;color:#d9c9a3;text-align:center}
 .mib{position:absolute;left:-7px;top:-7px;width:30px;height:30px;border-radius:50%;background:#16120ee6;border:2px solid #8a6d3b;display:flex;align-items:center;justify-content:center;font-size:13px;line-height:1;z-index:2;box-shadow:0 1px 3px #000a}.mib.inl{position:static;display:inline-flex;width:30px;height:30px;font-size:12px;margin-right:6px;vertical-align:middle}.thumb{position:relative}.mkey{display:flex;align-items:center;gap:8px;padding:5px 2px;border-bottom:1px solid #2a241c;font-size:12.5px}.mkey .d{color:#a8987a}</style>
-<script>window.BUILD_LABEL='RT v0.42 pre-alpha · 25 Oct 22:32';
+<script>window.BUILD_LABEL='RT v0.43 pre-alpha · 25 Oct 22:50';
 // ===== v0.25.2 crash log + resilient loop =====
 const CRASH=(()=>{const K='bprt_crash',S='bprt_sess';let L=[];try{L=JSON.parse(localStorage.getItem(K)||'[]')}catch(e){L=[]}
  let prev=null;try{prev=JSON.parse(localStorage.getItem(S)||'null')}catch(e){}
@@ -459,17 +459,19 @@ function nightK(t){const D=CFG.DAYNIGHT;if(!D.ON)return 1;const x=dnPos(t)*D.CYC
  if(x<h)return 1-ss((x+h)/D.FADE);if(x<D.DAY-h)return 0;if(x<D.DAY+h)return ss((x-(D.DAY-h))/D.FADE);if(x<D.CYCLE-h)return 1;return 1-ss((x-(D.CYCLE-h))/D.FADE)}
 function dnPhase(t){const D=CFG.DAYNIGHT,x=dnPos(t)*D.CYCLE,h=D.FADE/2;return x<h||x>=D.CYCLE-h?'dawn':x<D.DAY-h?'day':x<D.DAY+h?'dusk':'night'}
 const DECOR=t=>['Tenement','Apartment','CornerShop','Park','Church'].includes(t);const LAW=t=>t=='Police'||t=='Courthouse';
-const P=9,md=i=>i%P,CITY0=CFG.SEA,CITY1=N-CFG.SEA,inCity=(x,y)=>x>=CITY0&&y>=CITY0&&x<CITY1&&y<CITY1,roadT=(x,y)=>inCity(x,y)&&(md(x)<2||md(y)<2)&&rwRoadOK(x,y),paveT=(x,y)=>inCity(x,y)&&!roadT(x,y)&&(md(x)==2||md(x)==8||md(y)==2||md(y)==8)&&rwPaveOK(x,y);
+const P=9,md=i=>i%P,CITY0=CFG.SEA,CITY1=N-CFG.SEA,inCity=(x,y)=>x>=CITY0&&y>=CITY0&&x<CITY1&&y<CITY1,roadT=(x,y)=>inCity(x,y)&&(md(x)<2||md(y)<2||AVW(x,y))&&rwRoadOK(x,y),paveT=(x,y)=>inCity(x,y)&&!roadT(x,y)&&(md(x)==2||md(x)==8||md(y)==2||md(y)==8)&&rwPaveOK(x,y);
 const OCC=new Uint8Array(N*N),SEAT=new Uint8Array(N*N); // SEAT: 1 water, 2 pier
 const isRoad=(x,y)=>x>=0&&y>=0&&x<N&&y<N&&!OCC[y*N+x];  // walkable (roads, pavements, plazas)
 
 const FEAT=new Uint8Array(N*N),ALLEY=new Uint8Array(N*N);let ALLEYV=0;
 const RWXC=[9,36,63,90,117],RWBR=[27,54,81,108];
+// v0.43 main avenues: one extra lane each side (a-1..a+2 = 4 tiles), matches rail crossings/bridges
+const AVX=[36,63,90],AVY=[18,63,108],avOn=(v,L)=>L.some(a=>v==a-1||v==a+2);function AVW(x,y){return avOn(x,AVX)||avOn(y,AVY)}
 (()=>{for(let y=0;y<N;y++)for(let x=0;x<N;x++){let f=0;
  if(y==36||y==37){if(!inCity(x,y))f=6;else f=RWXC.some(a=>x>=a-1&&x<=a+2)?3:2}
  else if(y>=80&&y<=83&&x>=12&&x<=115)f=RWBR.some(a=>x>=a-1&&x<=a+2)?4:1;
  FEAT[y*N+x]=f}})();
-function rwRoadOK(x,y){const f=FEAT[y*N+x];return f==0||((f==3||f==4)&&md(x)<2)}
+function rwRoadOK(x,y){const f=FEAT[y*N+x];return f==0||((f==3||f==4)&&(md(x)<2||avOn(x,AVX)))}
 function rwPaveOK(x,y){const f=FEAT[y*N+x];return f==0||f==3||f==4}
 const G={t:0,speed:3, /* fixed game speed: SPEEDS[3] = 30x */units:[],bld:[],log:[],sel:new Set(),over:false,uid:0,target:null,lamps:[],cars:[],trees:[],veh:[]};
 window.G=G;
@@ -1680,7 +1682,7 @@ const iso=(x,y)=>({X:(x-y)*TW/2,Y:(x+y)*TH/2});
 const WB={x0:-N*TW/2,x1:N*TW/2,y0:-260,y1:N*TH+40};const BM={"Station": {"w": 564, "h": 388, "ax": 282.0, "ay": 387.0, "hl": 280.0, "hr": 280.0}, "Docks": {"w": 640, "h": 425, "ax": 320.0, "ay": 354.0, "hl": 280.0, "hr": 280.0}, "LawFirm": {"w": 228, "h": 273, "ax": 114.0, "ay": 272.0, "hl": 112.0, "hr": 112.0}, "Church": {"w": 566, "h": 601, "ax": 283.0, "ay": 600.0, "hl": 280.0, "hr": 280.0}, "Courthouse": {"w": 566, "h": 448, "ax": 283.0, "ay": 447.0, "hl": 280.0, "hr": 280.0}, "Distillery": {"w": 280, "h": 305, "ax": 130.0, "ay": 296.0, "hl": 118.0, "hr": 138.0}, "Warehouse": {"w": 281, "h": 288, "ax": 138.0, "ay": 280.0, "hl": 128.0, "hr": 132.0}, "Speakeasy": {"w": 269, "h": 283, "ax": 136.0, "ay": 274.0, "hl": 124.0, "hr": 122.0}, "GunFactory": {"w": 289, "h": 314, "ax": 132.0, "ay": 304.0, "hl": 123.0, "hr": 144.0}, "GunStore": {"w": 281, "h": 295, "ax": 120.0, "ay": 283.0, "hl": 109.0, "hr": 149.0}, "PrintShop": {"w": 273, "h": 298, "ax": 122.5, "ay": 287.0, "hl": 112.5, "hr": 138.5}, "Casino": {"w": 303, "h": 308, "ax": 151.0, "ay": 300.0, "hl": 144.0, "hr": 141.0}, "Laundry": {"w": 284, "h": 291, "ax": 131.5, "ay": 276.0, "hl": 121.5, "hr": 140.5}, "Tenement": {"w": 286, "h": 351, "ax": 89.0, "ay": 339.0, "hl": 86.0, "hr": 192.0}, "Apartment": {"w": 279, "h": 339, "ax": 95.0, "ay": 331.0, "hl": 90.0, "hr": 179.0}, "CornerShop": {"w": 289, "h": 322, "ax": 123.5, "ay": 315.0, "hl": 117.5, "hr": 158.5}, "Police": {"w": 322, "h": 367, "ax": 120.0, "ay": 345.0, "hl": 116.0, "hr": 201.0}, "Hideout": {"w": 310, "h": 347, "ax": 116.0, "ay": 329.0, "hl": 113.0, "hr": 189.0}};
 BM.Garage=BM.Warehouse;ART.t_Garage=ART.t_Garage||ART.t_Warehouse;
 function minZ(){return Math.min(innerWidth/(WB.x1-WB.x0),(innerHeight-130)/(WB.y1-WB.y0))}
-function clamp(){cam.z=Math.min(2.5,Math.max(minZ(),cam.z));const vw=innerWidth/cam.z,vh=innerHeight/cam.z;
+function clamp(){cam.z=Math.min(3,Math.max(minZ(),cam.z));const vw=innerWidth/cam.z,vh=innerHeight/cam.z;
  const cx=(lo,hi,v,s)=>{const m=s*0.4;return s>=hi-lo+2*m?(lo+hi-s)/2:Math.min(Math.max(v,lo-m),hi-s+m)};
  cam.x=cx(WB.x0,WB.x1,cam.x,vw);cam.y=cx(WB.y0-60,WB.y1+80,cam.y,vh)}
 function resize(){setTimeout(()=>{try{layoutUI()}catch(e){}},0);dpr=Math.min(window.devicePixelRatio||1,SET.quality=='low'?1:(window.ADPR?window.ADPR.cap:2))*(SET.quality=='low'?0.75:1);cv.width=innerWidth*dpr;cv.height=innerHeight*dpr;cv.style.width=innerWidth+'px';cv.style.height=innerHeight+'px';clamp()}
@@ -2789,9 +2791,9 @@ function openTab(t){if(t=='intel'&&!intelOK()&&TAB!==t){wNote('Intel opens once 
 function closeTab(){TAB=null;$('sheet').classList.remove('open');document.querySelectorAll('.tab,.ib').forEach(b=>b.classList.remove('on'))}
 document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>openTab(b.dataset.tab));$('tb-fam').onclick=()=>openTab('fam');
 $('sheet').addEventListener('pointerdown',()=>sheetBusy=performance.now());$('sheet').addEventListener('scroll',()=>sheetBusy=performance.now());
-function jumpTo(x,y){closeTab();vel=null;cam.z=Math.max(cam.z,0.9);center(x,y)}
+function jumpTo(x,y){closeTab();vel=null;cam.z=Math.max(cam.z,1.08);center(x,y)}
 // v0.8 'Go to him': select the man and keep the camera on him until the player pans
-function goToMan(u){closeTab();G.crewCard=null;G.sel.clear();if(u.garrison==null&&!u.ride)G.sel.add(u.id);vel=null;cam.z=Math.max(cam.z,0.9);center(u.x,u.y);G.follow=u.id;G._chip=null;updUI()}
+function goToMan(u){closeTab();G.crewCard=null;G.sel.clear();if(u.garrison==null&&!u.ride)G.sel.add(u.id);vel=null;cam.z=Math.max(cam.z,1.08);center(u.x,u.y);G.follow=u.id;G._chip=null;updUI()}
 function stepFollow(rdt){if(G.follow==null)return;const u=G.units.find(v=>v.id===G.follow);if(!u||WH.u!=null||drag&&drag.moved){G.follow=null;return}const p=iso(u.x,u.y),tx=p.X-innerWidth/2/cam.z,ty=p.Y-20-innerHeight/2/cam.z,k=rdt?1-Math.exp(-rdt*6):1;cam.x+=(tx-cam.x)*k;cam.y+=(ty-cam.y)*k;clamp()}
 const SUITS=[['Midnight Pinstripe','#1f2638','#8f9bb8',450],['White Tuxedo','#e9e3d4','#2a2420',600],['Camel Overcoat','#a8763f','#5a3d20',380],['Crimson Smoking Jacket','#7a1c22','#d4a84b',720],['Chalk-stripe Grey','#5d5f63','#d9d9d9',300],['Gold Lamé','#b8913f','#f2d58a',1200]];
 const suitSvg=(c,t)=>`<svg viewBox="0 0 54 64"><path d="M14 8l13 8 13-8 8 6-4 14-4-2v34H14V26l-4 2-4-14z" fill="${c}" stroke="#0b0907" stroke-width="2"/><path d="M27 16l-6 10 6 30 6-30z" fill="${t}" stroke="#0b0907" stroke-width="1.5"/><path d="M24 20h6l-3 5z" fill="#7a1c22"/><path d="M18 30v28M36 30v28" stroke="${t}" stroke-width=".8" opacity=".5"/></svg>`;
@@ -2984,7 +2986,7 @@ $('sheet').addEventListener('click',e=>{const st=e.target.closest('.stile');if(s
 
  sheetBusy=0;renderSheet();updUI()});
 addEventListener('resize',()=>setTimeout(layoutUI,50));
-$('home').onclick=()=>{vel=null;cam.z=Math.max(cam.z,1);const h=myHQ(),bs=bossOf(0),d=h?h.door:bs?[bs.x,bs.y]:FAM[0].yard;center(d[0]-1,d[1]-1)};$('zi').onclick=()=>zoomSmooth(1.3,innerWidth/2,innerHeight/2);$('zo').onclick=()=>zoomSmooth(1/1.3,innerWidth/2,innerHeight/2);
+$('home').onclick=()=>{vel=null;cam.z=Math.max(cam.z,1.2);const h=myHQ(),bs=bossOf(0),d=h?h.door:bs?[bs.x,bs.y]:FAM[0].yard;center(d[0]-1,d[1]-1)};$('zi').onclick=()=>zoomSmooth(1.3,innerWidth/2,innerHeight/2);$('zo').onclick=()=>zoomSmooth(1/1.3,innerWidth/2,innerHeight/2);
 function openHidden(b){const p=$('panel'),t=b.look||'Tenement';G.panel=b;G._ptb='';p.style.transform='';
  p.innerHTML=`<div class="grab"></div><h3>${ico(t)} ${nice(t)}</h3><div class="kv" style="display:flex;justify-content:space-between;gap:8px;font-size:13px"><span>Owner</span><span>Neutral</span></div><div class="row">Just apartments. Nothing to take here.</div>`;p.style.display='block'}
 function fmtH(simS){const s=Math.max(1,Math.ceil(simS/SIMR));if(s<60)return s+'s';if(s<3600)return Math.floor(s/60)+':'+String(s%60).padStart(2,'0');return Math.floor(s/3600)+'h '+String(Math.floor(s%3600/60)).padStart(2,'0')+'m'}
@@ -3534,7 +3536,7 @@ const TL_C=document.getElementById('train'),TL_T=document.getElementById('title'
 
 const SRC={se:'boss_rig_se.png',sw:'boss_rig_sw.png',ne:'boss_rig_ne.png',nw:'boss_rig_nw.png',park_decal:'park.png'};Object.keys(BM).forEach(k=>{if(k!='Garage')SRC['b_'+k]='w_'+k+'.png'});Object.keys(RIGM).forEach(k=>['u','l','r'].forEach(p=>SRC['r_'+k+'_'+p]='rig/'+k+'_'+p+'.png'));['pistol','tommy','shotgun'].forEach(g=>SRC['g_'+g]='rig/gun_'+g+'.png');['arm','up','fore','head'].forEach(p=>SRC['r_lawyer_'+p]='rig/lawyer_'+p+'.png');SRC.x_lawyer_desk='x_lawyer_desk.png';['pcar','car','cop'].forEach(k=>['se','sw','ne','nw'].forEach(d=>SRC['x_'+k+'_'+d]='x_'+k+'_'+d+'.png'));
 Promise.all(Object.entries(SRC).map(([k,s])=>new Promise(r=>{const i=new Image();i.onload=()=>{SPR[k]=i;r()};i.src=(window.EMB||{})[k]||s}))).then(()=>{SPR.b_Garage=SPR.b_Warehouse;
- addEventListener('resize',resize);if(window.visualViewport)visualViewport.addEventListener('resize',()=>setTimeout(resize,60));addEventListener('orientationchange',()=>setTimeout(resize,250));resize();cam.z=1.0;{const bs=bossOf(0),d=bs?[bs.x,bs.y]:FAM[0].yard;center(d[0]-1,d[1]-1)}
+ addEventListener('resize',resize);if(window.visualViewport)visualViewport.addEventListener('resize',()=>setTimeout(resize,60));addEventListener('orientationchange',()=>setTimeout(resize,250));resize();cam.z=1.2;{const bs=bossOf(0),d=bs?[bs.x,bs.y]:FAM[0].yard;center(d[0]-1,d[1]-1)}
  layoutUI();document.getElementById('tname').textContent=CFG.TITLE;document.title=CFG.TITLE;document.getElementById('tbg').style.backgroundImage=`url(${(window.EMB||{}).menu||'menu.jpg'})`;updTitle();
  G.paused=true;let nw=false;try{nw=sessionStorage.getItem('bprt_new');sessionStorage.removeItem('bprt_new')}catch(e){}
  ST.init().then(()=>ST.load()).then(()=>{updTitle();if(nw)startGame(false);else if(ST.has()&&!G.started&&window.INTRO_WHY==='bypass')startGame(true)});updUI();requestAnimationFrame(frame)});
