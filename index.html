@@ -3261,7 +3261,7 @@ let LASTPT='mouse';
 function cvXY(sx,sy){const r=cv.getBoundingClientRect();return[(sx-r.left)*(innerWidth/(r.width||innerWidth)),(sy-r.top)*(innerHeight/(r.height||innerHeight))]}
 function hitUnit2(sx,sy,raw){if(!raw)[sx,sy]=cvXY(sx,sy);const z=cam.z,touch=LASTPT!=='mouse',minS=touch?44:28,RAD=60;let best=null,bs=1e9,near=null,nd=RAD;
  for(const u of G.units){if(u.ride||u.hp<=0||u.jail)continue;const own=u.fam===0;if(u.inB!=null)continue;if(own){}else{if(!G.sel.size||!visible(u))continue}
-  const p=SPOS.get(u.id);if(!p)continue;const fx=(p.X-cam.x)*z,fy=(p.Y-cam.y)*z,h=Math.max((u.type=='boss'?BOSSH:(RIGH[u.type]||44))*z,minS),w=Math.max(h*0.55,minS);
+  const p=SPOS.get(u.id);if(!p)continue;const fx=(p.X-cam.x)*z,fy=(p.Y-cam.y)*z,h=Math.max((u.type=='boss'?BOSSH:(RIGH[u.type]||44))*z*USC(),minS),w=Math.max(h*0.55,minS);
   const cx=fx,cy=fy-h*0.5,dx=Math.abs(sx-cx)/(w/2),dy=Math.abs(sy-cy)/(h/2+(touch?6:3));if(touch&&!own&&false){}const cd=Math.hypot(sx-cx,sy-cy)-(own?4:0);if(touch&&!G.sel.size&&cd<nd&&own){nd=cd;near=u}if(dx>1||dy>1)continue;
   const sc=Math.hypot(dx,dy)-(own?0.15:0)-fy*1e-5;if(sc<bs){bs=sc;best=u}}
  if(!best&&near)best=near;return best?(best.fam===0?{u:best}:{e:best}):null}
