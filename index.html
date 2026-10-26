@@ -2,7 +2,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="build" content="RT v0.67 pre-alpha · 26 Oct 02:30">
+<meta name="build" content="RT v0.68 pre-alpha · 26 Oct 10:45">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -233,7 +233,7 @@ html.sa #top{padding-top:max(var(--st),4px)}
 </head><body>
 <canvas id="c"></canvas>
 <div id="rot"><div class="rph"></div><h2>Turn the paper sideways</h2><p>Blood and Paper is played in landscape. Rotate your phone; the game waits for you.</p></div>
-<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT v0.67 pre-alpha · 26 Oct 02:30</div>
+<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT v0.68 pre-alpha · 26 Oct 10:45</div>
 <div id="top" class="deco">
  <div class="r"><span id="cash">$0</span><span id="inc"></span><span id="tillc" style="display:none;font-family:var(--label);font-size:12px;color:#c9b48a;opacity:.85;white-space:nowrap" title="Money waiting in your racket tills. A cash runner or the Don must carry it to the hideout.">$0</span></div>
  <div class="r"><span id="donst" style="display:none"></span><canvas id="dnc" width="44" height="44" title="Day and night"></canvas><span id="hc" onclick="openTab('police')" title="Police case file"></span><span id="resbar"><span class="rs" title="Booze barrels"><span class="ri" data-r="booze"></span><span class="rn">0</span></span><span class="rs" title="Pistols"><span class="ri" data-r="pistol"></span><span class="rn">0</span></span><span class="rs" title="Tommy guns"><span class="ri" data-r="tommy"></span><span class="rn">0</span></span><span class="rs" title="Betting slips"><span class="ri" data-r="slips"></span><span class="rn">0</span></span><span class="rs" title="Pull"><span class="ri" data-r="pull"></span><span class="rn">0</span></span></span>
@@ -241,7 +241,7 @@ html.sa #top{padding-top:max(var(--st),4px)}
   <button class="ib" id="tb-fam" title="Families"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8l8 3v6.2c0 5-3.6 8.2-8 9.4-4.4-1.2-8-4.4-8-9.4V5.8zM12 7v9M8.5 10.5h7"/></svg></button><button class="ib" id="tb-set" title="Settings" onclick="openPause()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></button></div>
 </div>
 <div id="toast"></div>
-<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div class="tver" style="margin-top:4px;font:bold 13px Georgia,serif;letter-spacing:2px;color:#e6c56a;text-transform:uppercase">v0.29.1 pre-alpha</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT v0.67 pre-alpha · 26 Oct 02:30</div>
+<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div class="tver" style="margin-top:4px;font:bold 13px Georgia,serif;letter-spacing:2px;color:#e6c56a;text-transform:uppercase">v0.29.1 pre-alpha</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT v0.68 pre-alpha · 26 Oct 10:45</div>
 <button class="mbtn pri" onclick="goFull();newGame()">New Game</button><button class="mbtn" id="bcont" onclick="goFull();startGame(true)">Continue</button>
 <button class="mbtn" onclick="openSettings('titleMenu')">Settings</button><button class="mbtn" onclick="openHowTo('titleMenu')">How to Play</button><button class="mbtn" onclick="openCredits()">Credits</button></div></div>
 <div id="intro" style="position:fixed;inset:0;z-index:90;background:#000;display:flex;align-items:center;justify-content:center;transition:opacity .35s;touch-action:none"><video id="ivid" playsinline webkit-playsinline preload="auto" style="width:100%;height:100%;object-fit:contain;background:#000"></video><div id="itap" style="display:none;position:absolute;inset:0;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse at center,#2a1f14 0%,#0c0805 75%);color:#e6c56a;text-align:center"><div style="font:30px Limelight,Georgia,serif;letter-spacing:3px;color:#d9c08a;text-shadow:0 2px 6px #000">Blood and Paper</div><div style="width:180px;height:1px;background:#8a6d3b;margin:10px 0"></div><div style="font:italic 17px Georgia,serif;letter-spacing:2px;color:#c9b27a;animation:itp 1.6s ease-in-out infinite">Tap to begin</div></div></div><style>@keyframes itp{50%{opacity:.35}}</style>
@@ -259,7 +259,7 @@ html.sa #top{padding-top:max(var(--st),4px)}
 <div id="over" class="ui"><div id="overt" style="text-align:center;font-family:Limelight,serif;color:#e6c56a;padding:0 20px"></div><button class="mbtn pri" onclick="overNew()" style="margin-top:22px;width:240px">New Game</button><button class="mbtn" onclick="overMenu()" style="margin-top:10px;width:240px">Main Menu</button></div>
 <style>.ic{width:1.25em;height:1.25em;vertical-align:-0.28em;display:inline-block;flex:none;object-fit:contain}.ic.pi{width:1.5em;height:1.5em;vertical-align:-0.42em;filter:drop-shadow(0 1px 1px #000)}svg.ic path,svg.ic rect{}.mib .ic,.mib .ic.pi{width:25px;height:25px;vertical-align:0}.mib.inl .ic,.mib.inl .ic.pi{width:25px;height:25px}.sic .ic,.sic .ic.pi{width:56px;height:56px}h3 .ic,h3 .ic.pi{width:30px;height:30px;vertical-align:-8px}.pad .ic{width:34px;height:34px}.pad .ic{width:34px;height:34px}.stk{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:6px}.stile{background:linear-gradient(#2a221a,#16120e);border:1.5px solid #8a6d3b;border-radius:10px;padding:8px 2px 6px;text-align:center;box-shadow:inset 0 0 0 3px #16120e,inset 0 0 0 4px #5a4626;cursor:pointer}.stile.on{border-color:#ffd34d}.sic{font-size:30px;height:58px;display:flex;align-items:center;justify-content:center}.scn{font:15px Limelight,serif;color:var(--gold);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.snm{font-size:10.5px;color:#a8987a;letter-spacing:.5px;text-transform:uppercase}.stip{margin-top:10px;min-height:20px;font-size:13px;color:#d9c9a3;text-align:center}
 .mib{position:absolute;left:-7px;top:-7px;width:30px;height:30px;border-radius:50%;background:#16120ee6;border:2px solid #8a6d3b;display:flex;align-items:center;justify-content:center;font-size:13px;line-height:1;z-index:2;box-shadow:0 1px 3px #000a}.mib.inl{position:static;display:inline-flex;width:30px;height:30px;font-size:12px;margin-right:6px;vertical-align:middle}.thumb{position:relative}.mkey{display:flex;align-items:center;gap:8px;padding:5px 2px;border-bottom:1px solid #2a241c;font-size:12.5px}.mkey .d{color:#a8987a}</style>
-<script>window.BUILD_LABEL='RT v0.67 pre-alpha · 26 Oct 02:30';
+<script>window.BUILD_LABEL='RT v0.68 pre-alpha · 26 Oct 10:45';
 // ===== v0.25.2 crash log + resilient loop =====
 const CRASH=(()=>{const K='bprt_crash',S='bprt_sess';let L=[];try{L=JSON.parse(localStorage.getItem(K)||'[]')}catch(e){L=[]}
  let prev=null;try{prev=JSON.parse(localStorage.getItem(S)||'null')}catch(e){}
@@ -414,7 +414,7 @@ PETTY:{PAY:1.4, RANGE:26, IN_COP_R:3.5, IN_PART:0.5, IN_MINP:0.3, REST:75, REST_
  RACKETS:{QUARTER:['Speakeasy','Speakeasy','Casino','GunStore','Distillery','PrintShop','Warehouse','Laundry'],DOWNTOWN:['GunFactory','GunFactory','GunFactory','Garage','Garage','Garage']}, // v0.31: per family quarter x4, plus Downtown
  HQ_CAP:{booze:2,slips:5,guns:5}, // v0.31: hideout storage; pistols + tommy guns share the one guns pool
  SELL:{Docks:{N:12,CD:RM(2)},Station:{N:8,CD:RM(1.25)},KEEP:0,PRICE:{booze:320,slips:360,pistol:420,tommy:950}}, // v0.31: sell surplus Warehouse goods (units per sale x level mult, cooldown)
- PIERS:[3,7,11], SPAWN_APART:55, TAC:{ON:0.25,OFF:0.28,DWELL:0.5,FADE:0.3,FAR:0.34},
+ PIERS:[3,7,11], SPAWN_APART:55, TAC:{ON:0.17,OFF:0.20,DWELL:0.5,FADE:0.3,FAR:0.26},
  PAPER:{EVERY:1800, // v0.18 front page every 30 REAL minutes of play (G.rt counts real seconds while the game runs)
   PAUSE:true, // single player: the front page is a full overlay that pauses the game until tapped. MULTIPLAYER: set false -> a non-pausing popup the player can dismiss
   NAME:'The Evening Clarion', W:{T:0.4,G:0.3,M:0.3}, BLD_VAL:2000}, ESTABLISH:300, TAKE_MIN:3, TAKE:{BASE:4,LEVEL:2,BIG:2,GUARD:2,BIGT:['Casino','GunFactory']}, REVEAL:600, DAME_SEE:6,
@@ -1692,12 +1692,13 @@ const cam={x:0,y:0,z:1};const SPR={};
 const iso=(x,y)=>({X:(x-y)*TW/2,Y:(x+y)*TH/2});
 const WB={x0:-N*TW/2,x1:N*TW/2,y0:-260,y1:N*TH+40};const BM={"Station": {"w": 564, "h": 388, "ax": 282.0, "ay": 387.0, "hl": 280.0, "hr": 280.0}, "Docks": {"w": 640, "h": 425, "ax": 320.0, "ay": 354.0, "hl": 280.0, "hr": 280.0}, "LawFirm": {"w": 228, "h": 273, "ax": 114.0, "ay": 272.0, "hl": 112.0, "hr": 112.0}, "Church": {"w": 566, "h": 601, "ax": 283.0, "ay": 600.0, "hl": 280.0, "hr": 280.0}, "Courthouse": {"w": 566, "h": 448, "ax": 283.0, "ay": 447.0, "hl": 280.0, "hr": 280.0}, "Distillery": {"w": 280, "h": 305, "ax": 130.0, "ay": 296.0, "hl": 118.0, "hr": 138.0}, "Warehouse": {"w": 281, "h": 288, "ax": 138.0, "ay": 280.0, "hl": 128.0, "hr": 132.0}, "Speakeasy": {"w": 269, "h": 283, "ax": 136.0, "ay": 274.0, "hl": 124.0, "hr": 122.0}, "GunFactory": {"w": 289, "h": 314, "ax": 132.0, "ay": 304.0, "hl": 123.0, "hr": 144.0}, "GunStore": {"w": 281, "h": 295, "ax": 120.0, "ay": 283.0, "hl": 109.0, "hr": 149.0}, "PrintShop": {"w": 273, "h": 298, "ax": 122.5, "ay": 287.0, "hl": 112.5, "hr": 138.5}, "Casino": {"w": 303, "h": 308, "ax": 151.0, "ay": 300.0, "hl": 144.0, "hr": 141.0}, "Laundry": {"w": 284, "h": 291, "ax": 131.5, "ay": 276.0, "hl": 121.5, "hr": 140.5}, "Tenement": {"w": 286, "h": 351, "ax": 89.0, "ay": 339.0, "hl": 86.0, "hr": 192.0}, "Apartment": {"w": 279, "h": 339, "ax": 95.0, "ay": 331.0, "hl": 90.0, "hr": 179.0}, "CornerShop": {"w": 289, "h": 322, "ax": 123.5, "ay": 315.0, "hl": 117.5, "hr": 158.5}, "Police": {"w": 322, "h": 367, "ax": 120.0, "ay": 345.0, "hl": 116.0, "hr": 201.0}, "Hideout": {"w": 310, "h": 347, "ax": 116.0, "ay": 329.0, "hl": 113.0, "hr": 189.0}};
 BM.Garage=BM.Warehouse;ART.t_Garage=ART.t_Garage||ART.t_Warehouse;
+const ZMAX=1.5; // v0.68: was 2.5 (3 via pinch) -- deeper zoom only showed one car
 function minZ(){return Math.min(innerWidth/(WB.x1-WB.x0),(innerHeight-130)/(WB.y1-WB.y0))}
-function clamp(){cam.z=Math.min(3,Math.max(minZ(),cam.z));const vw=innerWidth/cam.z,vh=innerHeight/cam.z;
+function clamp(){cam.z=Math.min(ZMAX,Math.max(minZ(),cam.z));const vw=innerWidth/cam.z,vh=innerHeight/cam.z;
  const cx=(lo,hi,v,s)=>{const m=s*0.4;return s>=hi-lo+2*m?(lo+hi-s)/2:Math.min(Math.max(v,lo-m),hi-s+m)};
  cam.x=cx(WB.x0,WB.x1,cam.x,vw);cam.y=cx(WB.y0-60,WB.y1+80,cam.y,vh)}
 function resize(){setTimeout(()=>{try{layoutUI()}catch(e){}},0);dpr=Math.min(window.devicePixelRatio||1,SET.quality=='low'?1:(window.ADPR?window.ADPR.cap:2))*(SET.quality=='low'?0.75:1);cv.width=innerWidth*dpr;cv.height=innerHeight*dpr;cv.style.width=innerWidth+'px';cv.style.height=innerHeight+'px';clamp()}
-let ZT=null;function zoomSmooth(f,sx,sy){const z0=ZT?ZT.z:cam.z;ZT={z:Math.min(2.5,Math.max(minZ(),z0*f)),sx,sy}}
+let ZT=null;function zoomSmooth(f,sx,sy){const z0=ZT?ZT.z:cam.z;ZT={z:Math.min(ZMAX,Math.max(minZ(),z0*f)),sx,sy}}
 function stepZoom(rdt){if(!ZT)return;if(pinch){ZT=null;return}const k=1-Math.exp(-rdt*14);let nz=cam.z+(ZT.z-cam.z)*k;if(Math.abs(ZT.z-nz)<ZT.z*0.002){nz=ZT.z}zoomAt(nz/cam.z,ZT.sx,ZT.sy);if(nz===ZT.z||Math.abs(cam.z-ZT.z)<1e-4)ZT=null}
 function zoomAt(f,sx,sy){const wx=cam.x+sx/cam.z,wy=cam.y+sy/cam.z;cam.z*=f;clamp();cam.x=wx-sx/cam.z;cam.y=wy-sy/cam.z;clamp()}
 function center(x,y){const p=iso(x,y);cam.x=p.X-innerWidth/2/cam.z;cam.y=p.Y-innerHeight/2/cam.z;clamp()}
@@ -2167,7 +2168,7 @@ function paintGround(g,rx0,ry0,rx1,ry1,detail){
     if(detail){g.strokeStyle='rgba(110,100,86,0.7)';g.lineWidth=1;for(const t of[0.25,0.5,0.75]){const a=iso(...(sx?[x+sx*(.5-w/2),y-.5+t]:[x-.5+t,y+sy*(.5-w/2)])),b=iso(...(sx?[x+sx*.5,y-.5+t]:[x-.5+t,y+sy*.5])),c=iso(...(sx?[x+sx*(.5-w),y-.5+t]:[x-.5+t,y+sy*(.5-w)]));g.beginPath();g.moveTo(c.X,c.Y);g.lineTo(b.X,b.Y);g.stroke()}}
     const a=iso(...q[1]),b=iso(...q[2]);g.strokeStyle='#f0e6cc';g.lineWidth=6;g.beginPath();g.moveTo(a.X,a.Y);g.lineTo(b.X,b.Y);g.stroke();g.strokeStyle='rgba(12,10,8,0.7)';g.lineWidth=4;g.beginPath();g.moveTo(a.X,a.Y+5);g.lineTo(b.X,b.Y+5);g.stroke()}
     else if(detail){const cx=AVX.find(a=>x==a)!=null&&!avCross(y),cy=AVY.find(a=>y==a)!=null&&!avCross(x);if(cx||cy){g.strokeStyle='rgba(236,196,90,0.95)';g.lineWidth=5;g.setLineDash([18,12]);const a=iso(...(cx?[x+.5,y-.5]:[x-.5,y+.5])),b=iso(...(cx?[x+.5,y+.5]:[x+.5,y+.5]));g.beginPath();g.moveTo(a.X,a.Y);g.lineTo(b.X,b.Y);g.stroke();g.setLineDash([])}}}}
-  else if(paveT(x,y)&&((md(x)==5&&(SMAJ[(y+1)*N+x]&1||SMAJ[(y-1)*N+x]&1))||(md(y)==5&&(SMAJ[y*N+x+1]&2||SMAJ[y*N+x-1]&2)))){dia(X,Y,'#3d3935','#3d3935',1)}
+  else if(paveT(x,y)&&((md(x)==5&&(SMAJ[(y+1)*N+x]&1||SMAJ[(y-1)*N+x]&1))||(md(y)==5&&(SMAJ[y*N+x+1]&2||SMAJ[y*N+x-1]&2)))){dia(X,Y,'#47433e','#47433e',1);if(detail)for(let n=0;n<14;n++){const u=th(x,y,n)-0.5,v=th(x,y,n+50)-0.5;g.fillStyle=th(x,y,n+99)<0.5?'#58534c':'#3a3632';g.beginPath();g.ellipse(X+(u-v)*TW/2,Y+(u+v)*TH/2,5,2.5,0,0,7);g.fill()}} // v0.68: was a flat #3d3935 void (no texture) where a major street cut a pavement cell, read as a missing tile under cars
   else if(paveT(x,y)&&!(md(x)==5&&(SMAJ[(y+1)*N+x]&1||SMAJ[(y-1)*N+x]&1))&&!(md(y)==5&&(SMAJ[y*N+x+1]&2||SMAJ[y*N+x-1]&2))){dia(X,Y,'#c0b49c','#9a8e7a',1.5);
    for(const[dx,dy,ex]of[[-1,0,[[X-TW/2,Y],[X,Y-TH/2]]],[0,-1,[[X,Y-TH/2],[X+TW/2,Y]]],[1,0,[[X+TW/2,Y],[X,Y+TH/2]]],[0,1,[[X,Y+TH/2],[X-TW/2,Y]]]])
     if(roadT(x+dx,y+dy)){g.strokeStyle='#f0e6cc';g.lineWidth=6;g.beginPath();g.moveTo(...ex[0]);g.lineTo(...ex[1]);g.stroke()}}
@@ -2377,7 +2378,7 @@ let LMA=null;function lmAssign(){LMA=new Map();const W=[['Apartment',0,3],['Tene
 function lmPick(b,ty){if(!LMDEF[ty]||!window.G||!G.bld)return -1;if(!LMA||LMA._n!==G.bld.length){lmAssign();LMA._n=G.bld.length}return LMA.has(b)?LMA.get(b):-1}
 (function(){const go=()=>{if(!window.G||!G.bld||!G.bld.length||!SPR.b_Tenement||!SPR.b_Tenement.width)return setTimeout(go,400);let i=0;const st=()=>{const t=performance.now();while(i<G.bld.length&&performance.now()-t<8){try{bSprite(G.bld[i])}catch(e){}i++}if(i<G.bld.length)setTimeout(st,16)};st()};setTimeout(go,800)})();
 function lmGet(ty,i){const k='LM'+ty+'#'+i;let v=BVC.get(k);if(v)return v;const sv=BVDEF[ty];BVDEF[ty]=LMDEF[ty];BVC.delete(ty+'#'+i);v=bvGet(ty,i);BVC.delete(ty+'#'+i);BVDEF[ty]=sv;if(v){v.lm=LMDEF[ty][i];BVC.set(k,v)}return v}
-function bvSign(b){if(b.lmI==null||b.lmI<0||b.dmg||cam.z<0.26)return;const ty=b.look||b.base||b.type;if(!LMDEF[ty]||b.look&&b.look!==b.type&&!LMDEF[b.look])return;const D=LMDEF[ty][b.lmI];if(!D||!D.sign)return;
+function bvSign(b){if(b.lmI==null||b.lmI<0||b.dmg||cam.z<0.18)return;const ty=b.look||b.base||b.type;if(!LMDEF[ty]||b.look&&b.look!==b.type&&!LMDEF[b.look])return;const D=LMDEF[ty][b.lmI];if(!D||!D.sign)return;
  const g=bGeo(b),sp=bSprite(b);if(!g)return;const S=D.sign,m=BM[ty],roofH=(m.hl+m.hr)*sp.sc/2,top=sp.Y+roofH+8*sp.sc*2,X=g.B.X-(w0=>w0)(0)-Math.min(17,Math.max(11,1))*0-9,n=S.t.length,ch=Math.min(17,Math.max(11,(g.B.Y-top)*0.7/n)),w=ch*1.05,hgt=ch*n+8,y0=Math.max(top,g.B.Y-hgt-46*sp.sc*2)+(w/2+3)*0.5;
  const nk=typeof nightK=='function'?Math.max(0,Math.min(1,nightK())):0,a=b._fa??1;ctx.save();ctx.globalAlpha=a;
  ctx.fillStyle='#2a2018';ctx.fillRect(X-1.5,y0-6,3,hgt+12);
@@ -2816,7 +2817,7 @@ function render0(now){ctx.setTransform(dpr,0,0,dpr,0,0);ctx.fillStyle='#24414b';
  if(drag&&drag.box&&(drag.mouse||drag.boxShow)){const[x0,y0,x1,y1]=drag.box;ctx.setTransform(dpr,0,0,dpr,0,0);ctx.fillStyle='rgba(212,168,75,0.15)';ctx.strokeStyle='#d4a84b';ctx.lineWidth=1.5;ctx.setLineDash([5,4]);ctx.fillRect(Math.min(x0,x1),Math.min(y0,y1),Math.abs(x1-x0),Math.abs(y1-y0));ctx.strokeRect(Math.min(x0,x1),Math.min(y0,y1),Math.abs(x1-x0),Math.abs(y1-y0));ctx.setLineDash([])}}
 
 // ===== zoomed-out unit markers =====
-const MK={FULL:0.26,GONE:0.31,R:15,RR:10};let MPOS=[];
+const MK={FULL:0.18,GONE:0.22,R:15,RR:10};let MPOS=[];
 const MKCROP={boss:['p_boss',59,10,120],thug:['p_thug',57,33,100],enforcer:['p_enforcer',52,33,100],hitman:['p_hitman',40,0,100],spy:['p_dame',32,0,100],lawyer:['p_lawyer',57,10,100],bomber:['p_bomber',24,8,100],driver:['p_driver',57,10,100],ub0:['p_ub0',10,0,100],ub1:['p_ub1',10,0,100],ub2:['p_ub2',10,0,100],ub3:['p_ub3',10,0,100],ub4:['p_ub4',10,0,100],ub5:['p_ub5',10,0,100],ub6:['p_ub6',10,0,100],ub7:['p_ub7',10,0,100]};
 const MKIMG={};for(const k in MKCROP){const im=new Image();im.src=ART[MKCROP[k][0]];MKIMG[k]=im}
 function mkAlpha(){const z=cam.z;if(z<=MK.FULL)return 1;if(z>=MK.GONE)return 0;const t=(z-MK.FULL)/(MK.GONE-MK.FULL);return 1-t*t*(3-2*t)}
@@ -3178,7 +3179,7 @@ $('sheet').addEventListener('click',e=>{const st=e.target.closest('.stile');if(s
 
  sheetBusy=0;renderSheet();updUI()});
 addEventListener('resize',()=>setTimeout(layoutUI,50));
-$('home').onclick=()=>{vel=null;cam.z=DEFZ;const h=myHQ(),bs=bossOf(0),d=h?h.door:bs?[bs.x,bs.y]:FAM[0].yard;center(d[0]-1,d[1]-1)};$('zi').onclick=()=>zoomSmooth(1.3,innerWidth/2,innerHeight/2);$('zo').onclick=()=>zoomSmooth(1/1.3,innerWidth/2,innerHeight/2);
+$('home').onclick=()=>{vel=null;cam.z=DEFZ;const h=myHQ(),bs=bossOf(0),d=h?h.door:bs?[bs.x,bs.y]:FAM[0].yard;center(d[0]-1,d[1]-1)};$('zi').onclick=()=>zoomSmooth(1.18,innerWidth/2,innerHeight/2);$('zo').onclick=()=>zoomSmooth(1/1.18,innerWidth/2,innerHeight/2);
 function openHidden(b){const p=$('panel'),t=b.look||'Tenement';G.panel=b;G._ptb='';p.style.transform='';
  p.innerHTML=`<div class="grab"></div><h3>${ico(t)} ${nice(t)}</h3><div class="kv" style="display:flex;justify-content:space-between;gap:8px;font-size:13px"><span>Owner</span><span>Neutral</span></div><div class="row">Just apartments. Nothing to take here.</div>`;p.style.display='block'}
 function fmtH(simS){const s=Math.max(1,Math.ceil(simS/SIMR));if(s<60)return s+'s';if(s<3600)return Math.floor(s/60)+':'+String(s%60).padStart(2,'0');return Math.floor(s/3600)+'h '+String(Math.floor(s%3600/60)).padStart(2,'0')+'m'}
@@ -3505,7 +3506,7 @@ cv.addEventListener('pointerdown',e=>{if(e.pointerType==='mouse')return;e.preven
  else if(ptrs.size==2)startPinch()});
 cv.addEventListener('pointermove',e=>{if(!ptrs.has(e.pointerId))return;e.preventDefault();ptrs.set(e.pointerId,{x:e.clientX,y:e.clientY});
  if(pinch&&ptrs.size>=2){const[a,b]=[...ptrs.values()];const d=Math.max(20,Math.hypot(a.x-b.x,a.y-b.y)),mx=(a.x+b.x)/2,my=(a.y+b.y)/2;
-  zoomAt(d/pinch.d,pinch.mx,pinch.my);cam.x-=(mx-pinch.mx)/cam.z;cam.y-=(my-pinch.my)/cam.z;clamp();pinch.d=d;pinch.mx=mx;pinch.my=my}
+  zoomAt(Math.pow(d/pinch.d,0.75),pinch.mx,pinch.my);cam.x-=(mx-pinch.mx)/cam.z;cam.y-=(my-pinch.my)/cam.z;clamp();pinch.d=d;pinch.mx=mx;pinch.my=my}
  else if(drag&&drag.box){drag.box[2]=e.clientX;drag.box[3]=e.clientY;if(Math.hypot(drag.box[2]-drag.box[0],drag.box[3]-drag.box[1])>DEAD_T)drag.boxShow=true}
  else if(drag){const dx=e.clientX-drag.sx,dy=e.clientY-drag.sy;if(Math.hypot(dx,dy)>8)clearTimeout(lpT);if(!drag.moved&&Math.hypot(dx,dy)>DEAD_T){drag.moved=true;closeWheel();drag.sx=e.clientX;drag.sy=e.clientY;drag.cx=cam.x;drag.cy=cam.y}
   if(drag.moved){cam.x=drag.cx-(e.clientX-drag.sx)/cam.z;cam.y=drag.cy-(e.clientY-drag.sy)/cam.z;clamp();drag.hist.push([performance.now(),e.clientX,e.clientY]);if(drag.hist.length>6)drag.hist.shift()}}});
@@ -3530,7 +3531,7 @@ cv.addEventListener('lostpointercapture',e=>{if(ptrs.has(e.pointerId))endPtr(e,t
 ['touchstart','touchmove','touchend'].forEach(t=>cv.addEventListener(t,e=>e.preventDefault(),{passive:false}));
 document.addEventListener('gesturechange',e=>e.preventDefault());document.addEventListener('dblclick',e=>e.preventDefault());
 function stepInertia(rdt){if(!vel||drag||pinch)return;cam.x-=vel.vx*1000*rdt/cam.z;cam.y-=vel.vy*1000*rdt/cam.z;clamp();const k=Math.exp(-rdt*4.5);vel.vx*=k;vel.vy*=k;if(Math.hypot(vel.vx,vel.vy)<0.02)vel=null}
-cv.addEventListener('wheel',e=>{e.preventDefault();zoomSmooth(Math.exp(-Math.max(-300,Math.min(300,e.deltaY))*0.0018),e.clientX,e.clientY)},{passive:false});
+cv.addEventListener('wheel',e=>{e.preventDefault();zoomSmooth(Math.exp(-Math.max(-300,Math.min(300,e.deltaY))*0.0011),e.clientX,e.clientY)},{passive:false});
 document.addEventListener('gesturestart',e=>e.preventDefault());
 let last=performance.now();
 const ADPR={cap:2,n:0,s:0,t0:0,steps:[1.5,1.25],log:[]};ADPR.on=!/[?&]noadpr/.test(location.search);
