@@ -2,7 +2,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="build" content="RT v0.87 pre-alpha · 27 Oct 23:14">
+<meta name="build" content="RT v0.88 pre-alpha · 27 Oct 23:26">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -273,7 +273,7 @@ html.sa #top{padding-top:max(var(--st),4px)}
 </head><body>
 <canvas id="c"></canvas>
 <div id="rot"><div class="rph"></div><h2>Turn the paper sideways</h2><p>Blood and Paper is played in landscape. Rotate your phone; the game waits for you.</p></div>
-<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT v0.87 pre-alpha · 27 Oct 23:14</div>
+<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT v0.88 pre-alpha · 27 Oct 23:26</div>
 <div id="top" class="deco">
  <div class="r"><span id="cash">$0</span><span id="inc"></span><span id="tillc" style="display:none;font-family:var(--label);font-size:12px;color:#c9b48a;opacity:.85;white-space:nowrap" title="Money waiting in your racket tills. A cash runner or the Don must carry it to the hideout.">$0</span></div>
  <div class="r"><span id="donst" style="display:none"></span><canvas id="dnc" width="44" height="44" title="Day and night"></canvas><span id="hc" onclick="openTab('police')" title="Police case file"></span><span id="resbar"><span class="rs" title="Booze barrels"><span class="ri" data-r="booze"></span><span class="rn">0</span></span><span class="rs" title="Pistols"><span class="ri" data-r="pistol"></span><span class="rn">0</span></span><span class="rs" title="Tommy guns"><span class="ri" data-r="tommy"></span><span class="rn">0</span></span><span class="rs" title="Betting slips"><span class="ri" data-r="slips"></span><span class="rn">0</span></span><span class="rs" title="Pull"><span class="ri" data-r="pull"></span><span class="rn">0</span></span></span>
@@ -281,7 +281,7 @@ html.sa #top{padding-top:max(var(--st),4px)}
   <button class="ib" id="tb-fam" title="Families"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8l8 3v6.2c0 5-3.6 8.2-8 9.4-4.4-1.2-8-4.4-8-9.4V5.8zM12 7v9M8.5 10.5h7"/></svg></button><button class="ib" id="tb-set" title="Settings" onclick="openPause()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></button></div>
 </div>
 <div id="toast"></div>
-<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div class="tver" style="margin-top:4px;font:bold 13px Georgia,serif;letter-spacing:2px;color:#e6c56a;text-transform:uppercase">v0.29.1 pre-alpha</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT v0.87 pre-alpha · 27 Oct 23:14</div>
+<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div class="tver" style="margin-top:4px;font:bold 13px Georgia,serif;letter-spacing:2px;color:#e6c56a;text-transform:uppercase">v0.29.1 pre-alpha</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT v0.88 pre-alpha · 27 Oct 23:26</div>
 <button class="mbtn pri" onclick="goFull();newGame()">New Game</button><button class="mbtn" id="bcont" onclick="goFull();startGame(true)">Continue</button>
 <button class="mbtn" onclick="openSettings('titleMenu')">Settings</button><button class="mbtn" onclick="openHowTo('titleMenu')">How to Play</button><button class="mbtn" onclick="openCredits()">Credits</button></div></div>
 <div id="intro" style="position:fixed;inset:0;z-index:90;background:#000;display:flex;align-items:center;justify-content:center;transition:opacity .35s;touch-action:none"><video id="ivid" playsinline webkit-playsinline preload="auto" style="width:100%;height:100%;object-fit:contain;background:#000"></video><div id="itap" style="display:none;position:absolute;inset:0;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse at center,#2a1f14 0%,#0c0805 75%);color:#e6c56a;text-align:center"><div style="font:30px Limelight,Georgia,serif;letter-spacing:3px;color:#d9c08a;text-shadow:0 2px 6px #000">Blood and Paper</div><div style="width:180px;height:1px;background:#8a6d3b;margin:10px 0"></div><div style="font:italic 17px Georgia,serif;letter-spacing:2px;color:#c9b27a;animation:itp 1.6s ease-in-out infinite">Tap to begin</div></div></div><style>@keyframes itp{50%{opacity:.35}}</style>
@@ -299,7 +299,7 @@ html.sa #top{padding-top:max(var(--st),4px)}
 <div id="over" class="ui"><div id="overt" style="text-align:center;font-family:Limelight,serif;color:#e6c56a;padding:0 20px"></div><button class="mbtn pri" onclick="overNew()" style="margin-top:22px;width:240px">New Game</button><button class="mbtn" onclick="overMenu()" style="margin-top:10px;width:240px">Main Menu</button></div>
 <style>.ic{width:1.25em;height:1.25em;vertical-align:-0.28em;display:inline-block;flex:none;object-fit:contain}.ic.pi{width:1.5em;height:1.5em;vertical-align:-0.42em;filter:drop-shadow(0 1px 1px #000)}svg.ic path,svg.ic rect{}.mib .ic,.mib .ic.pi{width:25px;height:25px;vertical-align:0}.mib.inl .ic,.mib.inl .ic.pi{width:25px;height:25px}.sic .ic,.sic .ic.pi{width:56px;height:56px}h3 .ic,h3 .ic.pi{width:30px;height:30px;vertical-align:-8px}.pad .ic{width:34px;height:34px}.pad .ic{width:34px;height:34px}.stk{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:6px}.stile{background:linear-gradient(#2a221a,#16120e);border:1.5px solid #8a6d3b;border-radius:10px;padding:8px 2px 6px;text-align:center;box-shadow:inset 0 0 0 3px #16120e,inset 0 0 0 4px #5a4626;cursor:pointer}.stile.on{border-color:#ffd34d}.sic{font-size:30px;height:58px;display:flex;align-items:center;justify-content:center}.scn{font:15px Limelight,serif;color:var(--gold);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.snm{font-size:10.5px;color:#a8987a;letter-spacing:.5px;text-transform:uppercase}.stip{margin-top:10px;min-height:20px;font-size:13px;color:#d9c9a3;text-align:center}
 .mib{position:absolute;left:-7px;top:-7px;width:30px;height:30px;border-radius:50%;background:#16120ee6;border:2px solid #8a6d3b;display:flex;align-items:center;justify-content:center;font-size:13px;line-height:1;z-index:2;box-shadow:0 1px 3px #000a}.mib.inl{position:static;display:inline-flex;width:30px;height:30px;font-size:12px;margin-right:6px;vertical-align:middle}.thumb{position:relative}.mkey{display:flex;align-items:center;gap:8px;padding:5px 2px;border-bottom:1px solid #2a241c;font-size:12.5px}.mkey .d{color:#a8987a}</style>
-<script>window.BUILD_LABEL='RT v0.87 pre-alpha · 27 Oct 23:14';
+<script>window.BUILD_LABEL='RT v0.88 pre-alpha · 27 Oct 23:26';
 // ===== v0.25.2 crash log + resilient loop =====
 const CRASH=(()=>{const K='bprt_crash',S='bprt_sess';let L=[];try{L=JSON.parse(localStorage.getItem(K)||'[]')}catch(e){L=[]}
  let prev=null;try{prev=JSON.parse(localStorage.getItem(S)||'null')}catch(e){}
@@ -3846,7 +3846,11 @@ const css=`#crewbar{position:fixed;z-index:6;display:flex;gap:6px;pointer-events
 #crewbar .cb.dead::after{content:'✝';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:26px;color:#d8c8a8}
 #crewbar .cb.jail::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 7px,#111c 7px 10px)}
 #eqmod{position:fixed;inset:0;z-index:40;display:none;align-items:center;justify-content:center;background:#000c}
-#eqmod .eq{position:relative;width:min(820px,97vw);height:min(370px,94vh);display:grid;grid-template-columns:150px 1fr 230px;gap:8px;background:radial-gradient(ellipse at 50% 40%,#4a3420,#1c130a 75%);border:3px solid #c9a24a;border-radius:12px;box-shadow:0 8px 30px #000,inset 0 0 0 2px #6b4a24;color:#f0e2c0;font-family:Georgia,serif;padding:10px;box-sizing:border-box}
+#eqmod .eq{position:relative;width:min(640px,96vw);height:min(340px,92vh);display:grid;grid-template-columns:1fr 132px;grid-template-rows:auto 1fr;gap:6px;background:radial-gradient(ellipse at 50% 40%,#4a3420,#1c130a 75%);border:3px solid #c9a24a;border-radius:12px;box-shadow:0 8px 30px #000,inset 0 0 0 2px #6b4a24;color:#f0e2c0;font-family:Georgia,serif;padding:8px;box-sizing:border-box}
+#eqmod .stat{grid-column:1/3;display:flex;align-items:center;gap:10px;background:#22170cdd;border:2px solid #6b4a24;border-radius:8px;padding:5px 46px 5px 8px}
+#eqmod .stat .who{min-width:0}#eqmod .stat h3{font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#eqmod .stat .rk{margin:0;font-size:9px}
+#eqmod .chip{display:flex;flex-direction:column;align-items:center;font-size:9px;text-transform:uppercase;letter-spacing:.06em;color:#c9a24a}#eqmod .chip b{font-size:15px;color:#f5dc8a}
+#eqmod .hpw{flex:1;min-width:80px;font-size:9px;text-transform:uppercase;color:#c9a24a;letter-spacing:.06em}#eqmod .hpw b{float:right;color:#f5dc8a;font-size:11px}#eqmod .hpw .bar{margin:2px 0 0}
 #eqmod .x{position:absolute;right:-8px;top:-8px;z-index:3;background:#7a1a12;border:2px solid #f5dc8a;color:#f5dc8a;border-radius:50%;font-size:20px;width:42px;height:42px;cursor:pointer;box-shadow:0 2px 6px #000}
 #eqmod .pn{background:#22170cdd;border:2px solid #6b4a24;border-radius:8px;padding:8px;overflow:auto}
 #eqmod h3{margin:0 0 2px;font:700 16px Limelight,Georgia,serif;color:#f5dc8a}
@@ -3854,20 +3858,20 @@ const css=`#crewbar{position:fixed;z-index:6;display:flex;gap:6px;pointer-events
 #eqmod .bar{height:10px;background:#2a0d0a;border:1px solid #000;border-radius:3px;margin:2px 0 8px}#eqmod .bar i{display:block;height:100%;background:linear-gradient(#e06a4a,#9a2a1a);border-radius:2px}
 #eqmod .sr{display:flex;justify-content:space-between;font-size:12px;margin:3px 0}#eqmod .sr b{color:#f5dc8a}
 #eqmod .doll{position:relative;display:flex;align-items:center;justify-content:center}
-#eqmod .doll .body{height:100%;max-height:340px;object-fit:contain;filter:drop-shadow(0 6px 10px #000)}
-#eqmod .slot{position:absolute;width:62px;height:62px;background:#1a110a;border:2px solid #8a6a34;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:9px;text-transform:uppercase;color:#c9a24a;letter-spacing:.05em;cursor:pointer;box-shadow:inset 0 0 10px #000}
-#eqmod .slot img{width:50px;height:34px;object-fit:contain}
+#eqmod .doll{min-height:0}#eqmod .doll .body{height:100%;max-height:270px;object-fit:contain;filter:drop-shadow(0 6px 10px #000)}
+#eqmod .slot{position:absolute;width:54px;height:54px;background:#1a110a;border:2px solid #8a6a34;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:9px;text-transform:uppercase;color:#c9a24a;letter-spacing:.05em;cursor:pointer;box-shadow:inset 0 0 10px #000}
+#eqmod .slot img{width:44px;height:28px;object-fit:contain}
 #eqmod .slot.full{border-color:#f5dc8a;box-shadow:0 0 8px #c9a24a88,inset 0 0 10px #000}
 #eqmod .slot.lock{opacity:.5;cursor:default}#eqmod .slot .ic{font-size:22px;line-height:34px;filter:grayscale(.4)}
 #eqmod .s-wpn{right:4%;top:50%}#eqmod .s-arm{left:4%;top:38%}#eqmod .s-hat{left:4%;top:6%}#eqmod .s-off{right:4%;top:20%}
-#eqmod .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+#eqmod .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:6px}
 #eqmod .it{position:relative;aspect-ratio:1;background:#1a110a;border:2px solid #6b4a24;border-radius:7px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:9px;text-align:center;cursor:default}
 #eqmod .it img{width:80%;height:50%;object-fit:contain}#eqmod .it .resi{width:26px!important;height:26px!important}
 #eqmod .it.eqp{cursor:pointer;border-color:#c9a24a}#eqmod .it.eqp:active{transform:scale(.95)}
 #eqmod .it em{position:absolute;right:3px;top:2px;font-style:normal;font-weight:700;color:#f5dc8a;font-size:12px;text-shadow:0 1px 2px #000}
 #eqmod .it.no{opacity:.45}
 #eqmod .hint{font-size:10px;opacity:.8;margin-top:6px;line-height:1.3}
-@media (max-height:300px){#eqmod .eq{grid-template-columns:120px 1fr 190px}}`;
+@media (max-height:300px){#eqmod .eq{grid-template-columns:1fr 112px}#eqmod .slot{width:46px;height:46px}}`;
 const st=document.createElement('style');st.textContent=css;document.head.appendChild(st);
 const bar=document.createElement('div');bar.id='crewbar';document.body.appendChild(bar);
 const mod=document.createElement('div');mod.id='eqmod';document.body.appendChild(mod);
@@ -3899,20 +3903,18 @@ function openEq(u){window.EQU=u.id;drawEq(u);mod.style.display='flex';try{sfx&&s
 function closeEq(){mod.style.display='none';window.EQU=null}
 window.openEq=openEq;window.closeEq=closeEq;
 function drawEq(u){const I=FAM[0].inv,C=CFG.UNITS[u.type],mx=C.hp,w=wk(u),own=u.type=='boss'?'Revolver':'Pistol';
- const items=[['pistol',1],['tommy',1],['bomb',0],['car',0],['booze',0],['guns',0]],NM={pistol:'Pistol',tommy:'Tommy',bomb:'Bombs',car:'Cars',booze:'Booze',guns:'Parts'};
+ const items=[['pistol',1],['tommy',1]],NM={pistol:'Pistol',tommy:'Tommy'};
  const cells=items.map(([k,e])=>{const n=e?gunAvail(0,k):Math.floor(I[k]||0),can=e&&n>0&&w!==k;return `<div class="it${can?' eqp':''}${n<1?' no':''}" data-k="${k}">${e?`<img src="${ART['g_'+k]}">`:resSvg(k)}<em>${n}</em>${NM[k]}</div>`}).join('');
  mod.innerHTML=`<div class="eq"><button class="x" aria-label="Close">✕</button>
- <div class="pn"><h3>${manName(u)}</h3><div class="rk">${C.name}</div>
- <div class="sr"><span>Health</span><b>${Math.ceil(u.hp)}/${mx}</b></div><div class="bar"><i style="width:${Math.max(0,Math.min(100,u.hp/mx*100))}%"></i></div>
- <div class="sr"><span>Strength</span><b>${str(u)}</b></div><div class="sr"><span>Base</span><b>${C.str}</b></div>
- <div class="sr"><span>Weapon</span><b>${w?WN[w]:own}</b></div>
- <div class="hint">${w?'Tap the weapon slot to put it back in storage.':'Tap a gun in storage to put it in his hand.'}</div></div>
+ <div class="stat"><div class="who"><h3>${manName(u)}</h3><div class="rk">${C.name}</div></div>
+ <div class="hpw">Health <b>${Math.ceil(u.hp)}/${mx}</b><div class="bar"><i style="width:${Math.max(0,Math.min(100,u.hp/mx*100))}%"></i></div></div>
+ <div class="chip">Attack<b>${str(u)}</b></div><div class="chip">Base<b>${C.str}</b></div><div class="chip">Weapon<b style="font-size:11px">${w?WN[w]:own}</b></div></div>
  <div class="doll"><img class="body" src="${full(u)}" alt="">
   <div class="slot s-hat lock"><span class="ic">🎩</span>Hat</div>
   <div class="slot s-arm lock"><span class="ic">🛡</span>Armour<br>soon</div>
   <div class="slot s-off lock"><span class="ic">✋</span>Off hand</div>
   <div class="slot s-wpn${w?' full':''}">${w?`<img src="${ART['g_'+w]}">`:`<span class="ic">🔫</span>`}${w?WN[w]:'Weapon'}</div></div>
- <div class="pn"><div class="rk">Family storage</div><div class="grid">${cells}</div><div class="hint">Gold-edged guns can be equipped. Armour and hats are coming.</div></div></div>`}
+ <div class="pn"><div class="rk">Family storage</div><div class="grid">${cells}</div><div class="hint">${w?'Tap the weapon slot to return it.':'Weapons only. Tap one to arm him.'}</div></div></div>`}
 setInterval(()=>{try{render()}catch(e){}},300);
 window.renderCrewBar=render;
 })();</script>
