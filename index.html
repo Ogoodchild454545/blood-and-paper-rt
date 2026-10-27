@@ -2,7 +2,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="build" content="RT v0.85 pre-alpha · 27 Oct 21:33">
+<meta name="build" content="RT v0.86 pre-alpha · 27 Oct 23:03">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -273,7 +273,7 @@ html.sa #top{padding-top:max(var(--st),4px)}
 </head><body>
 <canvas id="c"></canvas>
 <div id="rot"><div class="rph"></div><h2>Turn the paper sideways</h2><p>Blood and Paper is played in landscape. Rotate your phone; the game waits for you.</p></div>
-<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT v0.85 pre-alpha · 27 Oct 21:33</div>
+<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT v0.86 pre-alpha · 27 Oct 23:03</div>
 <div id="top" class="deco">
  <div class="r"><span id="cash">$0</span><span id="inc"></span><span id="tillc" style="display:none;font-family:var(--label);font-size:12px;color:#c9b48a;opacity:.85;white-space:nowrap" title="Money waiting in your racket tills. A cash runner or the Don must carry it to the hideout.">$0</span></div>
  <div class="r"><span id="donst" style="display:none"></span><canvas id="dnc" width="44" height="44" title="Day and night"></canvas><span id="hc" onclick="openTab('police')" title="Police case file"></span><span id="resbar"><span class="rs" title="Booze barrels"><span class="ri" data-r="booze"></span><span class="rn">0</span></span><span class="rs" title="Pistols"><span class="ri" data-r="pistol"></span><span class="rn">0</span></span><span class="rs" title="Tommy guns"><span class="ri" data-r="tommy"></span><span class="rn">0</span></span><span class="rs" title="Betting slips"><span class="ri" data-r="slips"></span><span class="rn">0</span></span><span class="rs" title="Pull"><span class="ri" data-r="pull"></span><span class="rn">0</span></span></span>
@@ -281,7 +281,7 @@ html.sa #top{padding-top:max(var(--st),4px)}
   <button class="ib" id="tb-fam" title="Families"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8l8 3v6.2c0 5-3.6 8.2-8 9.4-4.4-1.2-8-4.4-8-9.4V5.8zM12 7v9M8.5 10.5h7"/></svg></button><button class="ib" id="tb-set" title="Settings" onclick="openPause()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></button></div>
 </div>
 <div id="toast"></div>
-<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div class="tver" style="margin-top:4px;font:bold 13px Georgia,serif;letter-spacing:2px;color:#e6c56a;text-transform:uppercase">v0.29.1 pre-alpha</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT v0.85 pre-alpha · 27 Oct 21:33</div>
+<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div class="tver" style="margin-top:4px;font:bold 13px Georgia,serif;letter-spacing:2px;color:#e6c56a;text-transform:uppercase">v0.29.1 pre-alpha</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT v0.86 pre-alpha · 27 Oct 23:03</div>
 <button class="mbtn pri" onclick="goFull();newGame()">New Game</button><button class="mbtn" id="bcont" onclick="goFull();startGame(true)">Continue</button>
 <button class="mbtn" onclick="openSettings('titleMenu')">Settings</button><button class="mbtn" onclick="openHowTo('titleMenu')">How to Play</button><button class="mbtn" onclick="openCredits()">Credits</button></div></div>
 <div id="intro" style="position:fixed;inset:0;z-index:90;background:#000;display:flex;align-items:center;justify-content:center;transition:opacity .35s;touch-action:none"><video id="ivid" playsinline webkit-playsinline preload="auto" style="width:100%;height:100%;object-fit:contain;background:#000"></video><div id="itap" style="display:none;position:absolute;inset:0;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse at center,#2a1f14 0%,#0c0805 75%);color:#e6c56a;text-align:center"><div style="font:30px Limelight,Georgia,serif;letter-spacing:3px;color:#d9c08a;text-shadow:0 2px 6px #000">Blood and Paper</div><div style="width:180px;height:1px;background:#8a6d3b;margin:10px 0"></div><div style="font:italic 17px Georgia,serif;letter-spacing:2px;color:#c9b27a;animation:itp 1.6s ease-in-out infinite">Tap to begin</div></div></div><style>@keyframes itp{50%{opacity:.35}}</style>
@@ -299,7 +299,7 @@ html.sa #top{padding-top:max(var(--st),4px)}
 <div id="over" class="ui"><div id="overt" style="text-align:center;font-family:Limelight,serif;color:#e6c56a;padding:0 20px"></div><button class="mbtn pri" onclick="overNew()" style="margin-top:22px;width:240px">New Game</button><button class="mbtn" onclick="overMenu()" style="margin-top:10px;width:240px">Main Menu</button></div>
 <style>.ic{width:1.25em;height:1.25em;vertical-align:-0.28em;display:inline-block;flex:none;object-fit:contain}.ic.pi{width:1.5em;height:1.5em;vertical-align:-0.42em;filter:drop-shadow(0 1px 1px #000)}svg.ic path,svg.ic rect{}.mib .ic,.mib .ic.pi{width:25px;height:25px;vertical-align:0}.mib.inl .ic,.mib.inl .ic.pi{width:25px;height:25px}.sic .ic,.sic .ic.pi{width:56px;height:56px}h3 .ic,h3 .ic.pi{width:30px;height:30px;vertical-align:-8px}.pad .ic{width:34px;height:34px}.pad .ic{width:34px;height:34px}.stk{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:6px}.stile{background:linear-gradient(#2a221a,#16120e);border:1.5px solid #8a6d3b;border-radius:10px;padding:8px 2px 6px;text-align:center;box-shadow:inset 0 0 0 3px #16120e,inset 0 0 0 4px #5a4626;cursor:pointer}.stile.on{border-color:#ffd34d}.sic{font-size:30px;height:58px;display:flex;align-items:center;justify-content:center}.scn{font:15px Limelight,serif;color:var(--gold);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.snm{font-size:10.5px;color:#a8987a;letter-spacing:.5px;text-transform:uppercase}.stip{margin-top:10px;min-height:20px;font-size:13px;color:#d9c9a3;text-align:center}
 .mib{position:absolute;left:-7px;top:-7px;width:30px;height:30px;border-radius:50%;background:#16120ee6;border:2px solid #8a6d3b;display:flex;align-items:center;justify-content:center;font-size:13px;line-height:1;z-index:2;box-shadow:0 1px 3px #000a}.mib.inl{position:static;display:inline-flex;width:30px;height:30px;font-size:12px;margin-right:6px;vertical-align:middle}.thumb{position:relative}.mkey{display:flex;align-items:center;gap:8px;padding:5px 2px;border-bottom:1px solid #2a241c;font-size:12.5px}.mkey .d{color:#a8987a}</style>
-<script>window.BUILD_LABEL='RT v0.85 pre-alpha · 27 Oct 21:33';
+<script>window.BUILD_LABEL='RT v0.86 pre-alpha · 27 Oct 23:03';
 // ===== v0.25.2 crash log + resilient loop =====
 const CRASH=(()=>{const K='bprt_crash',S='bprt_sess';let L=[];try{L=JSON.parse(localStorage.getItem(K)||'[]')}catch(e){L=[]}
  let prev=null;try{prev=JSON.parse(localStorage.getItem(S)||'null')}catch(e){}
@@ -381,6 +381,7 @@ SHUT:{UNIT:'real', RAID_MIN:10, SMASH_MIN:20, BOMB_MIN:30, REBUILD_MIN:5, SHOT_M
 
 CHALK:{LIFE:60000, FADE:5000, IN:700, MAX:24, MINZ:0.24}, // chalk outlines: real-time ms
 
+VO_ON:false, // v0.86: Vince voice callouts muted for now - set true to bring them back
 PETTY:{PAY:1.4, RANGE:26, IN_COP_R:3.5, IN_PART:0.5, IN_MINP:0.3, REST:75, REST_FIELD:25, JAIL:RS(60), STALE:RM(2), CAR_CD:RM(2), SHAKE_CD:RM(5), ARREST_CASE:3, JOBS:{ // petty crime from the Hideout: $ range (dirty), work sim s, rumor = chance heat leaks with no cop around, h = that heat, seen = chance a nearby cop notices, hs = heat if seen, caught = chance he is arrested once seen
   rob:{name:'Rob',verb:'robbing a passer-by',tg:'civ',$:[18,38],work:32,rumor:0.25,h:2,seen:0.6,hs:4.5,d:'Rob a passer-by in the street. Fair money, some noise.'},
   burgle:{name:'Burgle',verb:'burgling a flat',tg:'home',$:[60,140],work:480,rumor:0.3,h:3,seen:0.5,hs:6,d:'Break into a tenement or apartment house. Takes a while, pays well.'},
@@ -548,8 +549,10 @@ function door(x,y,s=2){for(const[dx,dy]of[[s,s-1],[s-1,s],[s,0],[0,s],[-1,0],[0,
  const isDT=(bx,by)=>bx>=5&&bx<=8&&by>=5&&by<=8,QB=[[],[],[],[]],DT=[];
  for(const key in free){const[bx,by]=key.split(',').map(Number);if(isDT(bx,by)){if(!CFG.LAWFIRMS.includes(key))DT.push(key)}else QB[(bx>=7?1:0)+(by>=7?2:0)].push(key)}
  G.racketQ=[[],[],[],[],[]];
- for(let q=0;q<4;q++){const bl=shuf(QB[q].slice());CFG.RACKETS.QUARTER.forEach((t,i)=>{const p=free[bl[i]].pop();add(p[0],p[1],t);G.racketQ[q].push(t)})}
- {const bl=shuf(DT.slice());CFG.RACKETS.DOWNTOWN.forEach((t,i)=>{const p=free[bl[i]].pop();add(p[0],p[1],t);G.racketQ[4].push(t)})}
+ /* v0.86: rackets prefer the plot with open street in front (camera side, +x/+y) so they are not hidden right behind another building */
+ const front=p=>{let sc=0;for(let k=0;k<2;k++){if(roadT(p[0]+2,p[1]+k)||paveT(p[0]+2,p[1]+k))sc+=2;if(roadT(p[0]+k,p[1]+2)||paveT(p[0]+k,p[1]+2))sc+=2;if(roadT(p[0]-1,p[1]+k)||paveT(p[0]-1,p[1]+k))sc++;if(roadT(p[0]+k,p[1]-1)||paveT(p[0]+k,p[1]-1))sc++}return sc},pickF=k=>{const L=free[k];let bi=L.length-1,bs=-1;for(let i=L.length-1;i>=0;i--){const v=front(L[i]);if(v>bs){bs=v;bi=i}}return L.splice(bi,1)[0]};
+ for(let q=0;q<4;q++){const bl=shuf(QB[q].slice());CFG.RACKETS.QUARTER.forEach((t,i)=>{const p=pickF(bl[i]);add(p[0],p[1],t);G.racketQ[q].push(t)})}
+ {const bl=shuf(DT.slice());CFG.RACKETS.DOWNTOWN.forEach((t,i)=>{const p=pickF(bl[i]);add(p[0],p[1],t);G.racketQ[4].push(t)})}
  const fill=['Tenement','Apartment','CornerShop','Tenement','Apartment','CornerShop'];
  for(const key in free)for(const p of free[key])if(rnd()<0.86)add(p[0],p[1],fill[Math.floor(rnd()*fill.length)]);
  G.bld.forEach(b=>b.door=door(b.x,b.y,b.s)||rwDoor(b));rwAlleys(lmk);
@@ -634,7 +637,8 @@ function sendTo(u,tx,ty,b,noCar){if(u.cuffed!=null&&!u._esc)return false;u.garri
  u.path=FP?FP.p.map(q=>[q[0],q[1]]):p;if(EX&&!b){const L=u.path.at(-1),pv=u.path.at(-2)||[u.x,u.y];if(!L)u.path=[EX];else if(Math.round(L[0])===tx&&Math.round(L[1])===ty&&losClear(pv[0],pv[1],EX[0],EX[1],0.15))u.path[u.path.length-1]=EX;else u.path.push(EX)}u._st=0;u.goB=b||null;u.atB=null;return true}
 function sendToB(u,b){return sendTo(u,b.door[0],b.door[1],b)}
 const fams=()=>FAM.filter(f=>f.alive);
-function hire(f,t,b){b=b&&b.owner===f?b:hqOf(f);if(f===0&&b&&!HIRE_AT(b.type).includes(t)){log(t=='spy'?'Dames are hired at a Speakeasy.':t=='driver'?'Drivers are hired at a Garage.':t=='lawyer'?'Lawyers are hired at a Law Firm you own.':'This man is hired at the Hideout.',1);return}if(t=='lawyer'&&!owns(f,'LawFirm').some(x=>!x.dmg)){if(f===0)log('Lawyers are hired at a Law Firm you own. Take one first.',1);return}if(t=='lawyer'&&f!==0){const lf=owns(f,'LawFirm').find(x=>!x.dmg);if(lf)b=lf}if(!b){if(f==0){const m='Earn '+money(CFG.ESTABLISH)+' to set up a hideout first. No hideout, no crew.';NSEEN.delete(m);notice(m,true)}return}const c=CFG.UNITS[t].cost;if(crewUsed(f)>=crewCap(f)){if(f==0)log('Crew is at the cap ('+crewCap(f)+'). Upgrade your Hideout to hire more.',1);return}if(!canPay(f,t)||!canHire(f,t)||!gearOK(f,t)){if(f==0&&!gearOK(f,t))log('A hitman needs a tommy gun. Buy one at a Gun Store.',1);else if(f==0&&t=='lawyer'&&!canHire(f,t))notice('You already have a lawyer on the street. One at a time.',true);return}{const ps=paySplit(f,t);FAM[f].dirty-=ps.d;FAM[f].clean-=ps.c;if(f===0&&t=='thug'){const m='Hired a thug. Paid '+(ps.d&&ps.c?money(ps.d)+' dirty and '+money(ps.c)+' clean':money(c)+' '+(ps.c?'clean':'dirty'))+'.';NSEEN.delete(m);notice(m,true)}}if(t=='hitman')takeGun(f,'tommy');const u=spawn(f,t,b.door[0],b.door[1]);u.atB=b;if(f==0)log('Hired a '+CFG.UNITS[t].name,1)}
+function hire(f,t,b){/* v0.86: hiring never touches district heat or the case file */const _dh=G.dh.slice(),_cs=FAM[f]&&FAM[f].case;try{return hire0(f,t,b)}finally{for(let i=0;i<_dh.length;i++)if(G.dh[i]>_dh[i])G.dh[i]=_dh[i];if(FAM[f]&&FAM[f].case>_cs)FAM[f].case=_cs}}
+function hire0(f,t,b){b=b&&b.owner===f?b:hqOf(f);if(f===0&&b&&!HIRE_AT(b.type).includes(t)){log(t=='spy'?'Dames are hired at a Speakeasy.':t=='driver'?'Drivers are hired at a Garage.':t=='lawyer'?'Lawyers are hired at a Law Firm you own.':'This man is hired at the Hideout.',1);return}if(t=='lawyer'&&!owns(f,'LawFirm').some(x=>!x.dmg)){if(f===0)log('Lawyers are hired at a Law Firm you own. Take one first.',1);return}if(t=='lawyer'&&f!==0){const lf=owns(f,'LawFirm').find(x=>!x.dmg);if(lf)b=lf}if(!b){if(f==0){const m='Earn '+money(CFG.ESTABLISH)+' to set up a hideout first. No hideout, no crew.';NSEEN.delete(m);notice(m,true)}return}const c=CFG.UNITS[t].cost;if(crewUsed(f)>=crewCap(f)){if(f==0)log('Crew is at the cap ('+crewCap(f)+'). Upgrade your Hideout to hire more.',1);return}if(!canPay(f,t)||!canHire(f,t)||!gearOK(f,t)){if(f==0&&!gearOK(f,t))log('A hitman needs a tommy gun. Buy one at a Gun Store.',1);else if(f==0&&t=='lawyer'&&!canHire(f,t))notice('You already have a lawyer on the street. One at a time.',true);return}{const ps=paySplit(f,t);FAM[f].dirty-=ps.d;FAM[f].clean-=ps.c;if(f===0&&t=='thug'){const m='Hired a thug. Paid '+(ps.d&&ps.c?money(ps.d)+' dirty and '+money(ps.c)+' clean':money(c)+' '+(ps.c?'clean':'dirty'))+'.';NSEEN.delete(m);notice(m,true)}}if(t=='hitman')takeGun(f,'tommy');const u=spawn(f,t,b.door[0],b.door[1]);u.atB=b;if(f==0)log('Hired a '+CFG.UNITS[t].name,1)}
 G.raids=[];G.news=[];G.squads=[];
 // v0.30 case file: one tick every CFG.CASE.TICK (5 real min): -5, +3 per working Speakeasy, +1 per $1k dirty held; crimes add bumps (addCase)
 const speakWorking=b=>b.type=='Speakeasy'&&b.owner!=null&&!b.dmg&&!b.ruin&&!b.closed&&(b.stk||0)>0;
@@ -735,10 +739,12 @@ function startUpg(f,b){if(!upgradable(b)||b.owner!==f||b.dmg||b.upUntil||lvl(b)>
 // ===== RT player cars: parked at base, board up to 4, drive with tap orders =====
 function manualCars(){return G.veh.filter(v=>{if(v.kind=='car'&&v.fam===0&&v.manual){if(v.state=='park')v.state='idle';return true}return false})}
 /* v0.34: kerb parking - cars sit on the pavement edge and face along the road */
-function roadAx(x,y){const a=md(x)<2,b=md(y)<2;if(a&&!b)return 1;if(b&&!a)return 0;return -1}
+/* v0.86: road axis from the real road run through the tile (works on avenues + side streets, not just the 9-grid) */
+function roadAx(x,y){if(!roadT(x,y))return -1;let ex=1,ey=1;for(let k=1;k<=6&&roadT(x+k,y);k++)ex++;for(let k=1;k<=6&&roadT(x-k,y);k++)ex++;for(let k=1;k<=6&&roadT(x,y+k);k++)ey++;for(let k=1;k<=6&&roadT(x,y-k);k++)ey++;if(ey>=ex+2)return 1;if(ex>=ey+2)return 0;return -1}
+function sideAt(x,y){return x>=0&&y>=0&&x<N&&y<N&&SIDE[y*N+x]>0}
 function parkAlongRoad(x,y){if(!paveT(x,y)||FEAT[y*N+x]||OCC[y*N+x])return null;const a=md(x),b=md(y),K=0.5; // v0.35: half on the kerb, half on the road
- if((a==2||a==8)&&b>=3&&b<=7){const s=a==2?-1:1;if(!roadT(x+s,y))return null;return{x:x+s*K,y,ax:1,flip:(x*7+y*3)%2,dir:(x*7+y*3)%2?'ne':'sw'}}
- if((b==2||b==8)&&a>=3&&a<=7){const s=b==2?-1:1;if(!roadT(x,y+s))return null;return{x,y:y+s*K,ax:0,flip:(x*5+y)%2,dir:(x*5+y)%2?'nw':'se'}}
+ if((a==2||a==8)&&b>=3&&b<=7){const s=a==2?-1:1;if(!roadT(x+s,y)||!roadT(x+s,y-1)||!roadT(x+s,y+1)||roadAx(x+s,y)!==1)return null;for(let k=-1;k<=1;k++)if(sideAt(x-s,y+k)||sideAt(x,y+k)||!paveT(x,y+k))return null;return{x:x+s*K,y,ax:1,flip:(x*7+y*3)%2,dir:(x*7+y*3)%2?'ne':'sw'}}
+ if((b==2||b==8)&&a>=3&&a<=7){const s=b==2?-1:1;if(!roadT(x,y+s)||!roadT(x-1,y+s)||!roadT(x+1,y+s)||roadAx(x,y+s)!==0)return null;for(let k=-1;k<=1;k++)if(sideAt(x+k,y-s)||sideAt(x+k,y)||!paveT(x+k,y))return null;return{x,y:y+s*K,ax:0,flip:(x*5+y)%2,dir:(x*5+y)%2?'nw':'se'}}
  return null}
 function roadDir(x,y,alt){const r=roadAx(Math.round(x),Math.round(y));if(r==1)return alt?'ne':'sw';if(r==0)return alt?'nw':'se';return null}
 function ensureCars(){const F=FAM[0];let n=manualCars().length;while(n<F.inv.car){let at=G._carAt;G._carAt=null;if(!at){const h0=myHQ(),bs0=bossOf(0);const d=h0?h0.door:bs0?[Math.round(bs0.x),Math.round(bs0.y)]:PHQB.door;at=d}const r0=nearRoad(at[0],at[1])||at;
@@ -1007,7 +1013,12 @@ const distName=d=>d===4?'Downtown':FAM[d].name+' turf';
 function addDHeat(x,y,n){if(x==null||!(n>0))return;const d=distOf(Math.round(x),Math.round(y));G.dh[d]=Math.min(100,G.dh[d]+n)}
 const distCops=d=>{const h=G.dh[d],D=CFG.DIST;return D.BASE_D[d]+(h<D.EXTRA_FROM?0:1+Math.floor((h-D.EXTRA_FROM)/D.PER))};
 const extraCops=()=>{let n=0;for(let d=0;d<5;d++)n+=distCops(d)-CFG.DIST.BASE_D[d];return n};
-function initPolice(){/* v0.29: parked round the Police Station, not at the old hard-coded spot */const D=['ne','se','sw','nw'],h=PHQB.door,slots=[];for(let r=1;r<=6&&slots.length<CFG.POLICE.PATROL_CARS;r++)for(let dy=-r;dy<=r;dy++)for(let dx=-r;dx<=r;dx++){if(Math.max(Math.abs(dx),Math.abs(dy))!==r||slots.length>=CFG.POLICE.PATROL_CARS)continue;const x=h[0]+dx,y=h[1]+dy;if(isRoad(x,y)&&roadAx(x,y)>=0&&!slots.some(q=>Math.abs(q[0]-x)+Math.abs(q[1]-y)<2))slots.push([x,y,roadDir(x,y,slots.length%2)])}
+/* v0.86: police car park - one orderly row of bays on the straightest kerb lane(s) beside the Station, all cars facing the same way */
+function stationLot(n){const b=PHQB;if(!b)return[];let best=null;for(const[sx,sy]of[[1,0],[-1,0],[0,1],[0,-1]]){const lanes=[];for(let L=1;L<=2;L++){const row=[];for(let t=-1;t<=b.s;t++){const x=sx?(sx>0?b.x+b.s-1+L:b.x-L):b.x+t,y=sy?(sy>0?b.y+b.s-1+L:b.y-L):b.y+t;row.push(roadT(x,y)&&isRoad(x,y)&&roadAx(x,y)===(sx?1:0)?[x,y]:null)}lanes.push(row)}
+  const sl=[];for(const row of lanes){for(let i=0;i<row.length;i++){if(!row[i])continue;if(sl.length&&sl[sl.length-1]._r===row&&i-sl[sl.length-1]._i<2)continue;const q=[row[i][0],row[i][1],sx?'sw':'se'];q._r=row;q._i=i;sl.push(q)}}
+  if(!best||sl.length>best.length)best=sl}
+ return (best||[]).slice(0,n).map(q=>[q[0],q[1],q[2]])}
+function initPolice(){const D=['ne','se','sw','nw'],h=PHQB.door;let slots=stationLot(CFG.POLICE.PATROL_CARS);G.lot=slots.map(q=>[q[0],q[1],q[2]]);for(let r=1;r<=6&&slots.length<CFG.POLICE.PATROL_CARS;r++)for(let dy=-r;dy<=r;dy++)for(let dx=-r;dx<=r;dx++){if(Math.max(Math.abs(dx),Math.abs(dy))!==r||slots.length>=CFG.POLICE.PATROL_CARS)continue;const x=h[0]+dx,y=h[1]+dy;if(isRoad(x,y)&&roadAx(x,y)>=0&&!slots.some(q=>Math.abs(q[0]-x)+Math.abs(q[1]-y)<2))slots.push([x,y,roadDir(x,y,0)])}
  for(let i=0;i<Math.min(CFG.POLICE.PATROL_CARS,slots.length);i++){const s=slots[i];const v=mkVeh('pcar','police',s[0],s[1]);v.slot=s;v.dir=s[2];v.state='park';v.wait=rnd()*CFG.POLICE.PARK_MAX}
  for(let d=0;d<5;d++)for(let i=0;i<CFG.DIST.BASE_D[d];i++)spawnPatrol(true,d)}
 function distTile(d,clear){for(let k=0;k<60;k++){const tx=Math.floor(rnd()*N),ty=Math.floor(rnd()*N);if(!isRoad(tx,ty)||!paveT(tx,ty)||distOf(tx,ty)!==d)continue;if(clear&&k<45&&!FAM.every(f=>Math.hypot(tx-f.hq[0],ty-f.hq[1])>CFG.POLICE.SPAWN_CLEAR))continue;return[tx,ty]}return null}
@@ -1170,10 +1181,10 @@ const strAt=(f,b)=>present(b).filter(u=>u.fam===f&&!u.job&&u.type!='hitman').red
 function takeWhy(f,b,sx){if(!hqOf(f))return 'You need a hideout before you can take over a racket.';const need=reqStr(b),have=sx!=null?sx:strAt(f,b);if(have<need)return 'Too weak to take the '+nice(b.type)+': strength '+have+' / '+need+' needed. The boss counts '+CFG.UNITS.boss.str+', a thug '+CFG.UNITS.thug.str+' ('+CFG.INV.PISTOL_STR+' with a pistol). Hitmen don\'t take over.';return null}
 const dMul=b=>1+(G.dh[distOf(b.door[0],b.door[1])]||0)/100*CFG.DIST.CASE_MULT;
 function stepEconomy(dt){const k=dt/CFG.DAY;{const dm=[1,1,1,1,1];for(const f of fams()){const h=hqOf(f.id);if(h){const d=distOf(h.door[0],h.door[1]);dm[d]=Math.max(dm[d],1+upgL(f.id,'heat')*CFG.UPG.heat.per)}}for(let d=0;d<5;d++)G.dh[d]=Math.max(0,G.dh[d]-CFG.DIST.DECAY_DAY*k*dm[d])}for(const f of fams()){const d0=f.dirty;f._la=0;for(const b of G.bld)if(b.bizOwn===f.id&&!b.dmg){const Z=bizOf(b);if(Z){const v=Z.inc*k;f.clean+=v;b._ei=v}}const RUN=true;f._run=G.units.some(u=>u.fam===f.id&&u.crun);
- for(const b of G.bld)if(b.owner===f.id){const c=CFG.B[b.type];if(b.dmg)continue;if(SUPK[b.type]){if(!(b.stk>0)||b.closed)continue}else if(!active(b)){if(c.baseInc){f.dirty+=c.baseInc*k*lvM(b)*(inTerritory(b,f.id)?1+CFG.TERRITORY_BONUS:1)*(1+upgL(f.id,'income')*CFG.UPG.income.per)}continue}
-  if(c.inc){const iv=c.inc*k*lvM(b)*(inTerritory(b,f.id)?1+CFG.TERRITORY_BONUS:1)*(1+upgL(f.id,'income')*CFG.UPG.income.per);f.dirty+=iv;b._ei=iv}if(c.inf)f.inf+=c.inf*k;
+ for(const b of G.bld)if(b.owner===f.id){const c=CFG.B[b.type];if(b.dmg)continue;if(SUPK[b.type]){if(!(b.stk>0)||b.closed)continue}else if(!active(b)){if(c.baseInc){f[b.type=='Garage'?'clean':'dirty']+=c.baseInc*k*lvM(b)*(inTerritory(b,f.id)?1+CFG.TERRITORY_BONUS:1)*(1+upgL(f.id,'income')*CFG.UPG.income.per)}continue}
+  if(c.inc){const iv=c.inc*k*lvM(b)*(inTerritory(b,f.id)?1+CFG.TERRITORY_BONUS:1)*(1+upgL(f.id,'income')*CFG.UPG.income.per);if(b.type=='Garage'){f.clean+=iv;f._gc=(f._gc||0)+iv}else f.dirty+=iv;b._ei=iv}if(c.inf)f.inf+=c.inf*k;
   if(c.launder){const a=Math.min(f.dirty,c.launder*lvM(b)*k);f.dirty-=a;f.clean+=a;f._la+=a}}
- f.earned=(f.earned||0)+Math.max(0,f.dirty-d0+f._la);capInv(f);if(f.id!==0){aiSell(f);aiBuyBiz(f,dt)}
+ f.earned=(f.earned||0)+Math.max(0,f.dirty-d0+f._la+(f._gc||0));f._gc=0;capInv(f);if(f.id!==0){aiSell(f);aiBuyBiz(f,dt)}
  {let up=0;for(const u of G.units)if(u.fam===f.id)up+=CFG.UPKEEP[u.type]||0;let c=up*k;const d=Math.min(f.dirty,c);f.dirty-=d;c-=d;f.clean=Math.max(0,f.clean-c);f.upkeep=up}
   lawUpkeep(f,dt);f._ct=(f._ct||0)+dt;while(f._ct>=CFG.CASE.TICK){f._ct-=CFG.CASE.TICK;caseTick(f)}
  f.case=Math.max(0,Math.min(CFG.CASE.MAX,f.case));if(donJailed(f.id)){if(f._cz==null)f._cz=f.case;f.case=Math.min(f.case,f._cz);f._cz=f.case}else f._cz=null;if((G.squads||[]).some(q=>q.f===f.id&&q.ph!=='leave'))f.case=0;
@@ -2410,7 +2421,7 @@ const LMDEF={
  Apartment:[{r:[[15,70,0.08,8,0.9,0.82]],f:2,tank:1,sign:{t:'HOTEL',c:'#e8443a',bg:'#1a1210'},lm:'Hotel'}],
  CornerShop:[{r:[[80,200,0.06,350,1.4,1.2],[342,27,0.42,30,0.15,1.12]],sign:{t:'DINER',c:'#5fd7e0',bg:'#1b1414'},lm:'Diner'},
   {r:[[80,200,0.06,0,1.4,0.9],[342,27,0.42,38,0.35,1.1]],bill:'#7a1a14',sign:{t:'BIJOU',c:'#ffd36a',bg:'#3a0f0c',bulbs:1},lm:'Picture house'},
-  {r:[[80,200,0.06,220,1.2,1.1]],st:1,sign:{t:'BARBER',c:'#f2eadb',bg:'#24324a',pole:1},lm:'Barber'},{r:[[80,200,0.06,120,0.9,0.7],[342,27,0.42,30,0.3,0.8]],sign:{t:'PAWN',c:'#e8c25a',bg:'#13251a',balls:1},lm:'Pawn shop'},{r:[[80,200,0.06,0,0.1,0.6],[342,27,0.42,20,0.6,0.7]],bill:'#3a3a40',sign:{t:'GARAGE',c:'#f0f0e8',bg:'#7a1612'},lm:'Garage'},{r:[[80,200,0.06,290,1.3,0.75],[342,27,0.42,300,0.4,0.9]],bill:'#2a0f2a',sign:{t:'CLUB',c:'#ff5fd0',bg:'#140a14',bulbs:1},lm:'Nightclub'}],
+  {r:[[80,200,0.06,220,1.2,1.1]],st:1,sign:{t:'BARBER',c:'#f2eadb',bg:'#24324a',pole:1},lm:'Barber'},{r:[[80,200,0.06,120,0.9,0.7],[342,27,0.42,30,0.3,0.8]],sign:{t:'PAWN',c:'#e8c25a',bg:'#13251a',balls:1},lm:'Pawn shop'},{r:[[80,200,0.06,0,0.1,0.6],[342,27,0.42,20,0.6,0.7]],bill:'#3a3a40',sign:{t:'HARDWARE',c:'#f0f0e8',bg:'#7a1612'},lm:'Hardware'},{r:[[80,200,0.06,290,1.3,0.75],[342,27,0.42,300,0.4,0.9]],bill:'#2a0f2a',sign:{t:'CLUB',c:'#ff5fd0',bg:'#140a14',bulbs:1},lm:'Nightclub'}],
  Tenement:[{r:[[342,27,0.42,24,0.75,0.78]],f:2,tank:1,sign:{t:'ROOMS',c:'#ff8a3a',bg:'#141010'},lm:'Rooming house'}]};
 let LMA=null;function lmAssign(){LMA=new Map();const W=[['Apartment',0,3],['Tenement',0,3],['CornerShop',0,3],['CornerShop',1,3],['CornerShop',2,3],['CornerShop',3,3],['CornerShop',4,3],['CornerShop',5,3]],pool={},used=[];
  for(const b of G.bld){const ty=b.look||b.base||b.type;if(!LMDEF[ty]||b.type!==ty&&b.look!==ty)continue;const h=Math.imul(b.x*73856093^b.y*19349663,0x2c1b3c6d)>>>0;(pool[ty]=pool[ty]||[]).push([h,b])}
@@ -2775,7 +2786,7 @@ function vincePre(){if(VPRE||!window.VOX)return;VPRE=1;for(const k in VOX){const
  try{const a=new Audio();a.preload='auto';a.setAttribute('playsinline','');a.src=src;a.load();VEL[k]=a}catch(e){}
  if(AC)try{const bs=atob(src.split(',')[1]),u8=new Uint8Array(bs.length);for(let i=0;i<bs.length;i++)u8[i]=bs.charCodeAt(i);
   const p=AC.decodeAudioData(u8.buffer,buf=>{VBUF[k]=buf},()=>{});if(p&&p.catch)p.catch(()=>{})}catch(e){}}}
-function vinceVO(us,kind){try{
+function vinceVO(us,kind){if(!CFG.VO_ON)return;try{
  if(!us||!us.length||!us.some(u=>u.fam===0))return;
  if(!G.units.some(u=>u.fam===0&&u.type=='underboss'&&u.ub===0&&u.hp>0&&!u.jail))return;
  initAudio();vincePre();const now=performance.now();if(now-VNT<1500)return;if(!SET.master||!SET.sfx)return;
@@ -3293,14 +3304,14 @@ function openPanel(b){if(!seenB(0,b))return openHidden(b);const p=$('panel'),c=C
   if(mine&&!b.dmg&&active(b)){
    if(b.type=='GunStore')h+=`<div class="row" style="font-size:12px;opacity:.85">Sells pistols over the counter. Trucks bring them from your Gun Factory or Warehouse.</div>`;
    if(b.type=='Hideout'){const I=f.inv,HC=CFG.HQ_CAP,gn=Math.floor(I.pistol||0)+Math.floor(I.tommy||0);h+=`<div class="row" style="margin-top:4px"><b>Hideout stock</b></div>`+kv('Booze',`${Math.floor(I.booze||0)} / ${HC.booze} crates`)+kv('Numbers slips',`${Math.floor(I.slips||0)} / ${HC.slips} bundles`)+kv('Guns',`${gn} / ${HC.guns} (pistols ${Math.floor(I.pistol||0)}, tommy guns ${Math.floor(I.tommy||0)})`)+(I.bomb?kv('Bombs',Math.floor(I.bomb)):'')+(I.car?kv('Cars',Math.floor(I.car)):'')+`<div class="row" style="font-size:12px;opacity:.8">Anything over the limit goes to your Warehouse.</div>`+(b.raid&&b.raid.out?kv('Under raid',`<b style="color:#ff8a7a">Hideout ${raidHP(b)}% · ${b.raid.def?'your men are holding the door':'nobody is defending it'}</b>`):'')}
-   if(b.type=='Hideout'){const np=gunAvail(0,'pistol'),nt=gunAvail(0,'tommy'),un=G.units.filter(u=>u.fam===0&&u.type=='thug'&&!u.pistol&&u.hp>0&&!u.jail).length,L=lvl(b);h+=supKV('Armory',`${resSvg('pistol').replace('class="resi"','class="resi" style="width:16px;height:16px;vertical-align:-3px"')} ${np} · ${resSvg('tommy').replace('class="resi"','class="resi" style="width:16px;height:16px;vertical-align:-3px"')} ${nt}`)+`<div class="row"><button class="gbtn" data-act="arm" ${np&&un?'':'disabled'}>Arm ${Math.min(np,un)} thug${Math.min(np,un)==1?'':'s'} from storage</button> ${L>=2?`<button class="gbtn" data-act="autoarm">Auto-arm: ${f.autoArm===false?'Off':'On'}</button>`:'<span style="font-size:12px;opacity:.8">Auto-arm unlocks at Lv 2.</span>'}</div>${L>=2&&f.autoArm!==false?`<div class="row" style="font-size:12px;opacity:.85">Auto-arm is on: unarmed thugs take the best gun in storage (tommy gun first, then pistol) every few seconds.${f._armLog?' Last: '+f._armLog[0]+'.':''}</div>`:''}<div class="row" style="font-size:12px;opacity:.8">Tommy guns are kept for hiring Hitmen.</div>`}
+   /* v0.86: Hideout Armory / arm-from-storage UI removed for now (stock already listed above) */
    if(b.type=='LawFirm')h+=`<div class="row" style="font-size:12px;opacity:.85">Your firm of mouthpieces. Hire a <b>Lawyer</b> here, then send him to the Courthouse to cut your case file.</div>`;
    if(CFG.SELL[b.type]){const st=sellStock(0),L=sellLeft(b),cap=CFG.SELL[b.type].N;h+=`<div class="row" style="font-size:12px;opacity:.85">${b.type=='Docks'?'Freighters take crates off the quay.':'Goods wagons leave from the platform.'} Ships up to <b>${cap}</b> crates of surplus Warehouse stock per load, every ${fmtH(CFG.SELL[b.type].CD)}. In your Warehouses: ${st.n} crates.</div><div class="row"><button class="gbtn" data-act="sell" ${L>0||!st.n?'disabled':''}>${b.type=='Docks'?'Ship':'Rail'} surplus · ${L>0?'next load in '+fmtH(L):'sell now'}</button></div><div class="row" style="font-size:11.5px;opacity:.75">Booze ${money(CFG.SELL.PRICE.booze)} · Slips ${money(CFG.SELL.PRICE.slips)} · Pistol ${money(CFG.SELL.PRICE.pistol)} · Tommy ${money(CFG.SELL.PRICE.tommy)} a crate, paid dirty.</div>`}
    if(b.type=='Garage')h+=`<div class="row"><button class="gbtn" data-act="car" ${f.clean<CFG.CAR.COST?'disabled':''}>🚗 Buy car · ${money(CFG.CAR.COST)} clean</button> You own ${f.inv.car}.</div>`;
    if(b.type=='GunFactory'){const r=bombReq(0);h+=lvl(b)<3?'<div class="row" style="font-size:12px;opacity:.8">💣 Bombs unlock at Lv 3 (plus a Lv 3 Gun Store).</div>':`<div class="row"><button class="gbtn" data-act="bomb" ${!r.gs||r.cd||f.clean<CFG.BOMB.COST?'disabled':''}>💣 Buy bomb · ${money(CFG.BOMB.COST)} clean</button> ${!r.gs?'Needs a running Lv 3 Gun Store.':r.cd?'Next bomb in '+fmtH(r.cd):''} Stock: ${f.inv.bomb}</div>`}}
   h+=kv('Income',c.launder?`launders ${money(PMIN(c.launder))}/min`:inc?`${money(PMIN(inc))}/min`:'—');
-  if(SUPK[b.type]||SUPSRC[b.type]||b.type=='Warehouse')h+=supRows(b);else h+=kv('Chain',!c.up?'no supplier needed':ms.length?`⛓ missing: ${ms.join(' → ')}`:'✅ running');
-  if(b.owner!=null)h+=kv('District heat',Math.round(G.dh[distOf(b.door[0],b.door[1])]||0)+'/100');
+  if(SUPK[b.type]||SUPSRC[b.type]||b.type=='Warehouse')h+=supRows(b);else if(b.type!='Hideout')h+=kv('Chain',!c.up?'no supplier needed':ms.length?`⛓ missing: ${ms.join(' → ')}`:'✅ running');
+  if(b.owner!=null)h+=kv('Heat in this district',Math.round(G.dh[distOf(b.door[0],b.door[1])]||0)+'/100');
   const gs=guardsAt(b);if(b.owner!=null)h+=kv('Guards',`🛡 ${gs.length}/${guardMax(b)}`);
   const us=present(b).filter(u=>u.garrison!==b.id);if(us.length)h+=kv('Crew here',us.map(u=>u.fam==='police'?'Cop':CFG.UNITS[u.type].name).join(', '));
   if(spied&&!mine&&b.owner!=null){const o=FAM[b.owner];h+=`<div class="row" style="color:#ffb08a">🕵️ Your dame reports: ${o.name} has ${money(o.dirty)} dirty, ${G.bld.filter(x=>x.owner===o.id).length} buildings.</div>`}
@@ -3365,7 +3376,7 @@ const WSEG=[
  {id:'hq',label:'Hideout',icon:'house',show:u=>u.type=='boss'&&!hqOf(u.fam),state:u=>u.estB!=null?'Going':money(Math.min(CFG.ESTABLISH,FAM[u.fam].dirty+FAM[u.fam].clean))+' / '+money(CFG.ESTABLISH),lock:u=>{const F=FAM[u.fam],h=F.dirty+F.clean;return h<CFG.ESTABLISH?'Earn '+money(CFG.ESTABLISH)+' to set up a hideout ('+money(h)+' now).':null},
   act:u=>{const nb=G.bld.filter(b=>!estWhy(u.fam,b)&&Math.hypot(b.door[0]-u.x,b.door[1]-u.y)<2.2).sort((a,b)=>Math.hypot(a.door[0]-u.x,a.door[1]-u.y)-Math.hypot(b.door[0]-u.x,b.door[1]-u.y))[0];closeWheel();
    if(nb&&u.atB===nb){goEstablish(u,nb);return}G.mode='establish';G.estU=u.id;renderABar&&renderABar();wNote('Tap the building you want for your hideout. Any ordinary building will do.')}},
- {id:'petty',label:'Petty crime',icon:'wallet',state:u=>onJob(u)?jobName(u.petty):'Off',lock:u=>u.type=='boss'?'The boss never works the streets on his own. Tap a mark with him selected for a job by hand.':u.type=='underboss'?'An Underboss doesn’t hustle the streets on auto. Tap a mark with him selected for a job by hand.':!AUTOOK(u)?'He is no street hustler.':null,
+ {id:'petty',label:'Petty crime',show:u=>u.type!='underboss',icon:'wallet',state:u=>onJob(u)?jobName(u.petty):'Off',lock:u=>u.type=='boss'?'The boss never works the streets on his own. Tap a mark with him selected for a job by hand.':u.type=='underboss'?'An Underboss doesn’t hustle the streets on auto. Tap a mark with him selected for a job by hand.':!AUTOOK(u)?'He is no street hustler.':null,
   sub:u=>[{id:'any',label:'Any job',icon:'star'},...Object.keys(CFG.PETTY.JOBS).filter(k=>!CFG.PETTY.JOBS[k].manual).map(k=>({id:k,label:CFG.PETTY.JOBS[k].name,icon:JIC[k],on:onJob(u)&&u.petty.k===k})),{id:'off',label:'Off',icon:'x'}],
   pick:(u,id)=>{if(id=='off'){if(onJob(u))pettyRecall(u);wNote(manName(u)+' is off petty crime.')}else{setAuto(u,id);wNote(manName(u)+' goes out on '+(id=='any'?'any petty job':CFG.PETTY.JOBS[id].name.toLowerCase()+' jobs')+' by himself.')}closeWheel()}},
  {id:'crun',label:'Cash run',icon:'wallet',show:u=>!!CFG.CRUN_ON,state:u=>u.crun?'On':'Off',lock:u=>!CFG.CRUN_ON?'No cash runs: racket money goes straight to the family.':u.type=='boss'?'The boss carries cash by hand only.':!AUTOOK(u)?'He is no runner.':null,
@@ -3820,4 +3831,62 @@ Object.assign(SRC,SRC_UB0);Promise.all(Object.entries(SRC).map(([k,s])=>new Prom
  G.paused=true;let nw=false;try{nw=sessionStorage.getItem('bprt_new');sessionStorage.removeItem('bprt_new')}catch(e){}
  ST.init().then(()=>ST.load()).then(()=>{updTitle();if(nw)startGame(false);else if(ST.has()&&!G.started&&window.INTRO_WHY==='bypass')startGame(true)});updUI();requestAnimationFrame(frame)});
 document.addEventListener('pointerdown',e=>{if(e.target.closest&&e.target.closest('button,.card'))sfx&&sfx('tap')},true);
-</script></body></html>
+</script><script>/* v0.86 CREW BAR: Don + 2 Underbosses under the resources HUD. Tap = select + jump camera, double tap = equip screen. */
+(function(){
+const css=`#crewbar{position:fixed;z-index:6;display:flex;gap:6px;pointer-events:auto;right:calc(var(--sr,0px) + 56px)}
+#eqmod .slot .resi,#eqmod .slot img,#eqmod .slot svg{width:28px!important;height:28px!important;flex:0 0 28px}
+#crewbar .cb{position:relative;width:46px;height:56px;border-radius:7px;background:linear-gradient(#3a2a1a,#1d140c);border:2px solid #c9a24a;box-shadow:0 2px 6px #0009,inset 0 0 0 1px #6b4a24;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;padding:0;overflow:hidden}
+#crewbar .cb.sel{border-color:#f5dc8a;box-shadow:0 0 8px #f5dc8a,inset 0 0 0 1px #6b4a24}
+#crewbar .cb svg{width:100%;height:42px;display:block}
+#crewbar .cb .hp{position:absolute;left:3px;right:3px;bottom:3px;height:6px;background:#2a0d0a;border:1px solid #000;border-radius:2px}
+#crewbar .cb .hp i{display:block;height:100%;background:linear-gradient(#9fd27a,#5a9a3a);border-radius:1px}
+#crewbar .cb .nm{position:absolute;left:0;right:0;bottom:10px;font:700 8px/1 Georgia,serif;color:#f0dca0;text-align:center;text-shadow:0 1px 1px #000}
+#crewbar .cb.dead{filter:grayscale(1) brightness(.55);border-color:#5a4a3a;cursor:default}
+#crewbar .cb.dead::after{content:'✝';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:26px;color:#d8c8a8;text-shadow:0 1px 3px #000}
+#crewbar .cb.jail::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 7px,#111c 7px 10px)}
+#eqmod{position:fixed;inset:0;z-index:40;display:none;align-items:center;justify-content:center;background:#000a}
+#eqmod .eq{width:min(560px,94vw);max-height:90vh;overflow:auto;background:linear-gradient(#3b2a18,#21170d);border:3px solid #c9a24a;border-radius:12px;box-shadow:0 8px 30px #000,inset 0 0 0 2px #6b4a24;color:#f0e2c0;font-family:Georgia,serif;padding:12px 14px}
+#eqmod h3{margin:0 0 8px;font:700 18px Limelight,Georgia,serif;color:#f5dc8a;display:flex;justify-content:space-between;align-items:center}
+#eqmod .x{background:#5a1a12;border:2px solid #c9a24a;color:#f5dc8a;border-radius:6px;font-size:16px;width:34px;height:34px;cursor:pointer}
+#eqmod .cols{display:flex;gap:12px;flex-wrap:wrap}
+#eqmod .doll{flex:0 0 150px;display:flex;flex-direction:column;align-items:center;gap:6px}
+#eqmod .doll svg{width:110px;height:100px;background:#1a120a;border:2px solid #8a6a34;border-radius:8px}
+#eqmod .slot{width:150px;display:flex;gap:6px;align-items:center;background:#2a1d10;border:2px dashed #8a6a34;border-radius:8px;padding:5px;font-size:12px;min-height:38px}
+#eqmod .slot.on{border-style:solid;border-color:#c9a24a}
+#eqmod .slot b{display:block;font-size:10px;color:#c9a24a;text-transform:uppercase;letter-spacing:.05em}
+#eqmod .bag{flex:1 1 200px}
+#eqmod .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(64px,1fr));gap:6px}
+#eqmod .it{background:#2a1d10;border:2px solid #6b4a24;border-radius:8px;padding:6px 2px;text-align:center;font-size:11px}
+#eqmod .it .resi{width:24px;height:24px}
+#eqmod .it em{display:block;font-style:normal;font-weight:700;color:#f5dc8a;font-size:13px}
+#eqmod .stat{font-size:12px;margin-top:4px;opacity:.9}`;
+const st=document.createElement('style');st.textContent=css;document.head.appendChild(st);
+const bar=document.createElement('div');bar.id='crewbar';document.body.appendChild(bar);
+const mod=document.createElement('div');mod.id='eqmod';document.body.appendChild(mod);
+mod.addEventListener('click',e=>{if(e.target===mod||e.target.closest('.x'))closeEq()});
+function face(type,col){const don=type=='boss';return `<svg viewBox="0 0 46 42"><rect width="46" height="42" fill="${col||'#2a1d10'}" opacity=".35"/><path d="M8 42c2-10 8-13 15-13s13 3 15 13z" fill="${don?'#1b1b22':'#3a3026'}"/><path d="M19 29l4 7 4-7z" fill="#e8e0d0"/>${don?'<path d="M22 31l1 5 1-5z" fill="#8a1a14"/>':''}<ellipse cx="23" cy="20" rx="7" ry="8.5" fill="#d9b08c"/><path d="M17 22c2 4 10 4 12 0" stroke="#7a5238" stroke-width="1" fill="none"/>${don?'<path d="M10 15h26l-3 -2h-20z" fill="#111"/><path d="M14 13c0-6 18-6 18 0z" fill="#1a1a1a"/><rect x="14" y="12" width="18" height="2" fill="#8a1a14"/>':'<path d="M14 15c0-7 18-7 18 0l3 1h-21z" fill="#5a4a3a"/>'}</svg>`}
+function ids(){G.crewIds=G.crewIds||[];const L=G.crewIds;const b=bossOf(0);if(b&&!L.includes(b.id))L.unshift(b.id);for(const u of G.units)if(u.fam===0&&u.type=='underboss'&&!L.includes(u.id)&&L.length<3)L.push(u.id);return L}
+const byId=id=>G.units.find(u=>u.id===id);
+let last={id:null,t:0},sig='';
+function render(){if(!window.G||!G.units||!$('top'))return;const r=$('top').getBoundingClientRect();bar.style.top=(r.bottom+4)+'px';bar.style.display=$('top').offsetParent===null&&getComputedStyle($('top')).display=='none'?'none':'flex';
+ const L=ids(),slots=[];for(let i=0;i<3;i++){const id=L[i],u=id!=null?byId(id):null;slots.push({id,u,type:i==0?'boss':'underboss'})}
+ const h=slots.map((s,i)=>{const u=s.u,dead=!u||u.hp<=0,mx=u?(CFG.UNITS[u.type].hp||1):1,p=dead?0:Math.max(0,Math.min(100,u.hp/mx*100));return `<button class="cb${dead?' dead':''}${u&&u.jail?' jail':''}${u&&G.sel.has(u.id)?' sel':''}" data-i="${i}" title="${u?manName(u):'Gone'}">${face(s.type,FAM[0].col)}<span class="nm">${u?manName(u).split(' ').pop():i?'Underboss':'Don'}</span><span class="hp"><i style="width:${p}%"></i></span></button>`}).join('');
+ if(h!==sig){bar.innerHTML=h;sig=h}}
+bar.addEventListener('click',e=>{const b=e.target.closest('.cb');if(!b)return;e.stopPropagation();const id=ids()[+b.dataset.i],u=id!=null?byId(id):null;if(!u||u.hp<=0)return;const now=performance.now();
+ if(last.id===id&&now-last.t<380){last={id:null,t:0};openEq(u);return}last={id,t:now};
+ try{goToMan(u)}catch(_){G.sel=new Set([u.id]);const x=u.ride?u.ride.x:u.x,y=u.ride?u.ride.y:u.y;jumpTo(x,y)}try{buzz(8);updUI()}catch(_){}render()});
+bar.addEventListener('dblclick',e=>{const b=e.target.closest('.cb');if(!b)return;e.stopPropagation();const u=byId(ids()[+b.dataset.i]);if(u&&u.hp>0&&mod.style.display!='flex')openEq(u)});
+function openEq(u){window.EQU=u.id;drawEq(u);mod.style.display='flex';try{sfx&&sfx('tab')}catch(_){}}
+function closeEq(){mod.style.display='none';window.EQU=null}
+window.openEq=openEq;window.closeEq=closeEq;
+function drawEq(u){const I=FAM[0].inv,gs=gearSlot(u),mx=CFG.UNITS[u.type].hp,keys=['pistol','tommy','bomb','car','booze','guns','slips'],NM={pistol:'Pistols',tommy:'Tommy guns',bomb:'Bombs',car:'Cars',booze:'Booze',guns:'Gun parts',slips:'Slips'};
+ const cur=u.type=='boss'?'Revolver':u.type=='underboss'?'Pistol':gs&&gs.cur?gs.cur:'—';
+ mod.innerHTML=`<div class="eq"><h3>${manName(u)} <small style="font:12px Georgia;color:#d8c8a8">${CFG.UNITS[u.type].name}</small><button class="x" aria-label="Close">✕</button></h3><div class="cols"><div class="doll">${face(u.type,FAM[0].col).replace('<svg ','<svg ')}<div class="stat">Health ${Math.ceil(u.hp)}/${mx} · Str ${CFG.UNITS[u.type].str}</div>
+ <div class="slot on"><span>${resSvg('pistol')}</span><span><b>Weapon</b>${cur}<br><small style="opacity:.75">${gs&&gs.why?gs.why:'Carries his own.'}</small></span></div>
+ <div class="slot"><span style="font-size:20px">🛡</span><span><b>Armour</b>Empty<br><small style="opacity:.75">Coming soon</small></span></div>
+ <div class="slot"><span style="font-size:20px">🎩</span><span><b>Hat</b>${u.type=='boss'?'Fedora':'Flat cap'}</span></div></div>
+ <div class="bag"><div style="font-weight:700;color:#c9a24a;margin-bottom:6px">Family stock</div><div class="grid">${keys.map(k=>`<div class="it">${resSvg(k)}<em>${Math.floor(gunAvail?(k=='pistol'||k=='tommy'?gunAvail(0,k):I[k]||0):I[k]||0)}</em>${NM[k]}</div>`).join('')}</div><div class="stat">Gear for the Don and his Underbosses is coming. For now this shows what the family has in storage.</div></div></div></div>`}
+setInterval(()=>{try{render();if(window.EQU!=null&&mod.style.display=='flex'){}}catch(e){}},300);
+window.renderCrewBar=render;
+})();</script>
+</body></html>
