@@ -2,7 +2,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="build" content="RT v1.39 pre-alpha · 18 Nov">
+<meta name="build" content="RT v1.40 pre-alpha · 22 Nov">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -302,7 +302,7 @@ let n=0;const iv=setInterval(()=>{if(typeof SPR=='undefined')return;if(++n>120)c
 </head><body>
 <canvas id="c"></canvas>
 <div id="rot"><div class="rph"></div><h2>Turn the paper sideways</h2><p>Blood and Paper is played in landscape. Rotate your phone; the game waits for you.</p></div>
-<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT v1.39 pre-alpha · 18 Nov</div>
+<div id="buildtag" style="position:fixed;right:6px;bottom:calc(env(safe-area-inset-bottom) + 64px);z-index:4;font:10px monospace;color:#e8d9b0;opacity:.55;pointer-events:none">RT v1.40 pre-alpha · 22 Nov</div>
 <div id="top" class="deco">
  <div class="r"><span id="cash">$0</span><span id="inc"></span><span id="tillc" style="display:none;font-family:var(--label);font-size:12px;color:#c9b48a;opacity:.85;white-space:nowrap" title="Money waiting in your racket tills. A cash runner or the Don must carry it to the hideout.">$0</span></div>
  <div class="r"><span id="donst" style="display:none"></span><canvas id="dnc" width="44" height="44" title="Day and night"></canvas><span id="hc" onclick="openTab('police')" title="Police case file"></span><span id="resbar"><span class="rs" title="Booze barrels"><span class="ri" data-r="booze"></span><span class="rn">0</span></span><span class="rs" title="Pistols"><span class="ri" data-r="pistol"></span><span class="rn">0</span></span><span class="rs" title="Tommy guns"><span class="ri" data-r="tommy"></span><span class="rn">0</span></span><span class="rs" title="Betting slips"><span class="ri" data-r="slips"></span><span class="rn">0</span></span><span class="rs" title="Pull"><span class="ri" data-r="pull"></span><span class="rn">0</span></span></span>
@@ -310,7 +310,7 @@ let n=0;const iv=setInterval(()=>{if(typeof SPR=='undefined')return;if(++n>120)c
   <button class="ib" id="tb-fam" title="Families"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8l8 3v6.2c0 5-3.6 8.2-8 9.4-4.4-1.2-8-4.4-8-9.4V5.8zM12 7v9M8.5 10.5h7"/></svg></button><button class="ib" id="tb-set" title="Settings" onclick="openPause()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></button></div>
 </div>
 <div id="toast"></div>
-<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div class="tver" style="margin-top:4px;font:bold 13px Georgia,serif;letter-spacing:2px;color:#e6c56a;text-transform:uppercase">v0.29.1 pre-alpha</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT v1.39 pre-alpha · 18 Nov</div>
+<div id="title"><div id="tbg"></div><canvas id="train"></canvas><div id="fshint"><svg class="sh" viewBox="0 0 20 24" fill="none" stroke="#2a2116" stroke-width="1.8"><path d="M10 15V2M5.5 6.5 10 2l4.5 4.5M6 10H3v12h14V10h-3"/></svg><div><b>For full screen</b><br>Tap Share, then Add to Home Screen.</div><button onclick="fsHintOff()" aria-label="Dismiss">×</button></div><div class="tin"><h1 id="tname">Blood and Paper RT</h1><div class="tsub">Chicago · 1931</div><div class="tver" style="margin-top:4px;font:bold 13px Georgia,serif;letter-spacing:2px;color:#e6c56a;text-transform:uppercase">v0.29.1 pre-alpha</div><div id="tbuild" style="margin-top:6px;font:12px/1.2 monospace;color:#c9b27a;opacity:.85">RT v1.40 pre-alpha · 22 Nov</div>
 <button class="mbtn pri" onclick="goFull();newGame()">New Game</button><button class="mbtn" id="bcont" onclick="goFull();startGame(true)">Continue</button>
 <button class="mbtn" onclick="openSettings('titleMenu')">Settings</button><button class="mbtn" onclick="openHowTo('titleMenu')">How to Play</button><button class="mbtn" onclick="openCredits()">Credits</button></div></div>
 <div id="intro" style="position:fixed;inset:0;z-index:90;background:#000;display:flex;align-items:center;justify-content:center;transition:opacity .35s;touch-action:none"><video id="ivid" playsinline webkit-playsinline preload="auto" style="width:100%;height:100%;object-fit:contain;background:#000"></video><div id="itap" style="display:none;position:absolute;inset:0;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse at center,#2a1f14 0%,#0c0805 75%);color:#e6c56a;text-align:center"><div style="font:30px Limelight,Georgia,serif;letter-spacing:3px;color:#d9c08a;text-shadow:0 2px 6px #000">Blood and Paper</div><div style="width:180px;height:1px;background:#8a6d3b;margin:10px 0"></div><div style="font:italic 17px Georgia,serif;letter-spacing:2px;color:#c9b27a;animation:itp 1.6s ease-in-out infinite">Tap to begin</div></div></div><style>@keyframes itp{50%{opacity:.35}}</style>
@@ -328,7 +328,7 @@ let n=0;const iv=setInterval(()=>{if(typeof SPR=='undefined')return;if(++n>120)c
 <div id="over" class="ui"><div id="overt" style="text-align:center;font-family:Limelight,serif;color:#e6c56a;padding:0 20px"></div><button class="mbtn pri" onclick="overNew()" style="margin-top:22px;width:240px">New Game</button><button class="mbtn" onclick="overMenu()" style="margin-top:10px;width:240px">Main Menu</button></div>
 <style>.ic{width:1.25em;height:1.25em;vertical-align:-0.28em;display:inline-block;flex:none;object-fit:contain}.ic.pi{width:1.5em;height:1.5em;vertical-align:-0.42em;filter:drop-shadow(0 1px 1px #000)}svg.ic path,svg.ic rect{}.mib .ic,.mib .ic.pi{width:25px;height:25px;vertical-align:0}.mib.inl .ic,.mib.inl .ic.pi{width:25px;height:25px}.sic .ic,.sic .ic.pi{width:56px;height:56px}h3 .ic,h3 .ic.pi{width:30px;height:30px;vertical-align:-8px}.pad .ic{width:34px;height:34px}.pad .ic{width:34px;height:34px}.stk{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:6px}.stile{background:linear-gradient(#2a221a,#16120e);border:1.5px solid #8a6d3b;border-radius:10px;padding:8px 2px 6px;text-align:center;box-shadow:inset 0 0 0 3px #16120e,inset 0 0 0 4px #5a4626;cursor:pointer}.stile.on{border-color:#ffd34d}.sic{font-size:30px;height:58px;display:flex;align-items:center;justify-content:center}.scn{font:15px Limelight,serif;color:var(--gold);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.snm{font-size:10.5px;color:#a8987a;letter-spacing:.5px;text-transform:uppercase}.stip{margin-top:10px;min-height:20px;font-size:13px;color:#d9c9a3;text-align:center}
 .mib{position:absolute;left:-7px;top:-7px;width:30px;height:30px;border-radius:50%;background:#16120ee6;border:2px solid #8a6d3b;display:flex;align-items:center;justify-content:center;font-size:13px;line-height:1;z-index:2;box-shadow:0 1px 3px #000a}.mib.inl{position:static;display:inline-flex;width:30px;height:30px;font-size:12px;margin-right:6px;vertical-align:middle}.thumb{position:relative}.mkey{display:flex;align-items:center;gap:8px;padding:5px 2px;border-bottom:1px solid #2a241c;font-size:12.5px}.mkey .d{color:#a8987a}</style>
-<script>window.BUILD_LABEL='RT v1.39 pre-alpha · 18 Nov · hold for the action ring, Molotovs on the Black Market'; // v1.01: pavement strip at car-park entrance converted to street road, lamp/kerb removed; v1.00: car park = street asphalt driveway into yard, buildings flush (trim alpha pad + footprint); // v0.99: hideout 2x2 at rear of yard on a tile grid (paths every 3rd row/col), L3 cap, yard fade ~off, labels lower; v0.98: new distinct coffee shop art, defringed pad art, hideout grounded on its 3x3 footprint, pad buildings fade lightly not see-through, camera reaches rear corner yards, pill labels; v0.97: four unique hire buildings (boxing gym, coffee shop, Italian restaurant, church) shuffled one per family; grounded footprints/shadows/paths on pads; v0.96: v0.96: real flat corner pads (corner blocks cleared), dedicated L0/L1 hideout art, open car park bays, pub + tables, empty plot; v0.95: corner compounds (L0 ruin hideout -> fix L1, L2 via upgrade; front car park w/ rubbish; pub = hire hub + outdoor tables; empty slot), no hideout pick; v0.94: Bruno = playable Don (8-dir walk/run/shoot/smoke sheets);  v0.93b: Otto flick-knife thug rob (8f×190);  v0.93: Vince back as ub0; Otto Brick = thug skin; walk-flash fix (UBREG 12f + guards); thug rob = idle stub until knife sheets
+<script>window.BUILD_LABEL='RT v1.40 pre-alpha · 22 Nov · thief skims, hideout raids, no more stuck men'; // v1.01: pavement strip at car-park entrance converted to street road, lamp/kerb removed; v1.00: car park = street asphalt driveway into yard, buildings flush (trim alpha pad + footprint); // v0.99: hideout 2x2 at rear of yard on a tile grid (paths every 3rd row/col), L3 cap, yard fade ~off, labels lower; v0.98: new distinct coffee shop art, defringed pad art, hideout grounded on its 3x3 footprint, pad buildings fade lightly not see-through, camera reaches rear corner yards, pill labels; v0.97: four unique hire buildings (boxing gym, coffee shop, Italian restaurant, church) shuffled one per family; grounded footprints/shadows/paths on pads; v0.96: v0.96: real flat corner pads (corner blocks cleared), dedicated L0/L1 hideout art, open car park bays, pub + tables, empty plot; v0.95: corner compounds (L0 ruin hideout -> fix L1, L2 via upgrade; front car park w/ rubbish; pub = hire hub + outdoor tables; empty slot), no hideout pick; v0.94: Bruno = playable Don (8-dir walk/run/shoot/smoke sheets);  v0.93b: Otto flick-knife thug rob (8f×190);  v0.93: Vince back as ub0; Otto Brick = thug skin; walk-flash fix (UBREG 12f + guards); thug rob = idle stub until knife sheets
 
 // ===== v0.25.2 crash log + resilient loop =====
 const CRASH=(()=>{const K='bprt_crash',S='bprt_sess';let L=[];try{L=JSON.parse(localStorage.getItem(K)||'[]')}catch(e){L=[]}
@@ -512,7 +512,7 @@ PETTY:{PAY:1.4, RANGE:26, IN_COP_R:3.5, IN_PART:0.5, IN_MINP:0.3, REST:75, REST_
   '3,2':['GunFactory'],'2,3':['Casino']},
  CENTRE:{'3,3':'police','4,4':'park','4,3':['Casino','GunFactory'],'3,4':['Casino','GunFactory']},
  TERRITORY_BONUS:0.10, // +10% income for buildings on a block you fully own
- TERR_GROW_SEC:1.5, TERR_ZOOM:(typeof matchMedia=='function'&&matchMedia('(pointer:coarse)').matches)?0.47:0.55, // territory overlay shows below this zoom
+ TERR_GROW_SEC:1.5, TERR_ZOOM:(typeof matchMedia=='function'&&matchMedia('(pointer:coarse)').matches)?0.42:0.50, // territory overlay shows below this zoom
  FILLER_MIRROR:0.5,
  LOG_SECONDS:30, // real seconds a log line stays visible
 };
@@ -636,7 +636,7 @@ const HIRE_T={gym:'Boxing Gym',coffee:'Coffee Shop',italian:'Italian Restaurant'
 /* the four old hire halls are now one-of-a-kind buildings out in the city: bought with money, they pay money and each has a perk */
 const UBIZ={
  church:{n:'Church',cost:4000,inc:200,uq:'church',d:'A quiet parish church. Sunday collections, and a priest who hears everything.',p:'Your case file cools 2 more every count.'},
- coffee:{n:'Coffee Shop',cost:4500,inc:250,uq:'coffee',d:'A corner coffee shop where the cops take their breaks.',p:'Your Laundries wash 20% more money.'},
+ coffee:{n:'Coffee Shop',cost:4500,inc:250,uq:'coffee',d:'A corner coffee shop where the cops take their breaks.',p:'Detectives take 30% longer to find your rackets.'},
  gym:{n:'Boxing Gym',cost:5000,inc:300,uq:'gym',d:'A sweat-and-sawdust boxing gym. Hard men train here.',p:'New recruits arrive 15% tougher.'},
  italian:{n:'Italian Restaurant',cost:6000,inc:350,uq:'italian',d:'Red sauce, white tablecloths and private back rooms.',p:'Crew wages cost 15% less.'}};
 const uOwn=(f,k)=>G.bld.some(b=>b.uniq===k&&b.bizOwn===f&&!b.dmg);
@@ -815,7 +815,7 @@ function drawCompounds(){try{for(const F of FAM){const own=F.id===0,P=F.pad;if(!
  const hl=P.hq.ruin?0:Math.min(3,Math.max(1,(typeof lvl=='function'?lvl(P.hq):1)||1));
  atTop(P.hq,P.hq.ruin?'Hideout ruin (L0) · fix '+money(CFG.ESTABLISH):'Hideout L'+(P.hq.ruin?0:lvl(P.hq)),'#f0a080',0.6);
  if(P.pub.vac)at(P.pub.x+0.5,P.pub.y+0.5,'Empty plot · build '+money(PLOT_COST),'#cbb994');else if(P.pub.plot2!=null)atTop(P.pub,nice(P.pub.type),'#e6c98a');if(!plotB(0))at(P.slot[0]+0.5,P.slot[1]+0.5,'Empty plot · build '+money(PLOT_COST),'#cbb994');
- for(const b of UNQ()){if(!b._r)continue;const r=b._r;if(r[2]<cam.x-50||r[0]>cam.x+innerWidth/cam.z+50||r[3]<cam.y-50||r[1]>cam.y+innerHeight/cam.z+50)continue;const Z=UBIZ[b.uniq],o=b.bizOwn;atTop(b,Z.n+(o==null?' · '+money(Z.cost):o===0?' · yours':''),o==null?'#e6c98a':FAM[o].col,0.55)}}}catch(e){}}
+ for(const b of UNQ()){if(!b._r)continue;const r=b._r;if(r[2]<cam.x-50||r[0]>cam.x+innerWidth/cam.z+50||r[3]<cam.y-50||r[1]>cam.y+innerHeight/cam.z+50)continue;const Z=UBIZ[b.uniq],o=b.bizOwn;atTop(b,Z.n+(o==null?' · '+money(Z.cost):''),o==null||o===0?'#e6c98a':FAM[o].col,0.55)}}}catch(e){}}
 // ================= LOGIC =================
 const owns=(f,t)=>G.bld.filter(b=>b.owner===f&&b.type===t);
 function active(b){if(b.dmg)return false;const up=CFG.B[b.type].up;return !up||owns(b.owner,up).some(active)}
@@ -941,7 +941,7 @@ function steer(u,dt,vmax){const CR=!!u._car,offR=CR&&!roadT(Math.round(u.x),Math
  const dv=want-sp;sp+=Math.max(-acc*2*dt,Math.min(acc*dt,dv));sp=Math.max(0,Math.min(vmax,sp));
  vx=Math.cos(hd)*sp;vy=Math.sin(hd)*sp;
  let nx=u.x+vx*dt,ny=u.y+vy*dt;
- if(!WK(nx,ny)){// wall slide: keep speed along the free axis
+ if(!WK(nx,ny)&&(u._car||WK(u.x,u.y))){// wall slide: keep speed along the free axis
   const sgx=Math.sign(vx)||1,sgy=Math.sign(vy)||1;
   if(WK(u.x+sgx*sp*dt,u.y)&&Math.abs(vx)>=Math.abs(vy)*0.2){nx=u.x+sgx*sp*dt;ny=u.y;vx=sgx*sp;vy=0}
   else if(WK(u.x,u.y+sgy*sp*dt)){nx=u.x;ny=u.y+sgy*sp*dt;vx=0;vy=sgy*sp}
@@ -1790,7 +1790,7 @@ function stepBuildings(dt){combatAcc+=dt;const doCombat=combatAcc>=CFG.COMBAT_TI
   }
   const cs=present(b).filter(u=>u.fam!=='police'&&!u.job);const cf=[...new Set(cs.map(u=>u.fam))];
   const tw=cf.length==1&&cf[0]!==b.owner?takeWhy(cf[0],b,cs.reduce((a,u)=>a+str(u),0)):null;if(tw&&cf[0]===0&&G.t-(b._twT||-1e9)>300){b._twT=G.t;const m=tw;NSEEN.delete(m);notice(m,true)}
-  if(cf.length==1&&cf[0]!==b.owner&&!b.dmg&&!tw&&!present(b).some(u=>u.fam==='police')){const f=cf[0];if(b.capFam!==f){b.capFam=f;b.prog=0}b.prog+=dt;if(f===0&&b.owner!=null)provoke(b.owner,'you moved on their '+nice(b.type));
+  if(cf.length==1&&cf[0]!==b.owner&&!b.dmg&&!tw&&!present(b).some(u=>u.fam==='police')){const f=cf[0];if(b.capFam!==f){b.capFam=f;b.prog=0}b.prog+=dt*(cs.length<=1?0.85:Math.min(2,0.9+0.2*cs.length));if(f===0&&b.owner!=null)provoke(b.owner,'you moved on their '+nice(b.type));
    if(b.prog>=CFG.CAPTURE){b.upUntil=0;b.closed=0;const old=b.owner;b.owner=f;b.prog=0;b.capFam=null;if(SUPK[b.type]){b.stk=0;b.pend=0;b.dry=1;if(f===0)log('The '+nice(b.type)+' is yours, but the shelves are bare. It stays shut, sign dark, until a truck of '+RESN[SUPK[b.type]][1]+' from your Warehouse arrives.',1)}if(b.type=='Distillery'||b.type=='PrintShop'||b.type=='GunFactory'){b.out=0;b.outT=0}if(b.type=='Warehouse'&&f===0){const got=[];for(const k of RK){const n=Math.floor(b['wh_'+k]||0);if(n>0)got.push(['+'+n+' '+(RESN[k]?RESN[k][n==1?0:1]:k),'#f0cf72'])}const m=got.length?'The Warehouse is yours, with everything inside: '+got.map(g=>g[0].slice(1)).join(', ')+'.':'The Warehouse is yours. It was empty: your Distillery trucks booze here for your Speakeasies.';setTimeout(()=>{try{NSEEN.delete(m);notice(m,true);if(got.length)ripple(b.door[0],b.door[1],got[0][0],'#f0cf72')}catch(e){}},0)}addDHeat(b.door[0],b.door[1],CFG.HEAT_CAPTURE);
     addFx({type:'flag',b,fam:f});if(f==0)sfx&&sfx('capture');else if(old==0)sfx&&sfx('lose');
     log(FAM[f].name+' family captured the '+nice(b.type)+(old!=null?' from '+FAM[old].name:''),f==0||old==0)}}
@@ -1825,7 +1825,7 @@ function upBlurb(b,L){const S=CFG.SUP,c=CFG.B[b.type]||{},T=CFG.TAKE,st=`needs $
  if(c.launder)return `Lv ${L+1}: washes ${money(pm(c.launder*CFG.BLV.INC[L]))} a minute (now ${money(pm(c.launder*CFG.BLV.INC[L-1]))}), and ${st}.`;
  return `Lv ${L+1}: it makes nothing, so the upgrade only makes it harder to take: ${st}.`}
 const NOUPG=t=>t=='Docks'||t=='Station';const upgradable=b=>!!b&&!DECOR(b.type)&&!LAW(b.type)&&!NOUPG(b.type);const maxLvl=b=>b.type=='Hideout'?CFG.CREW_CAP.length:CFG.BLV.MAX;
-const crewCap=f=>{const q=FAM[f]&&FAM[f].pad&&FAM[f].pad.hq,h=(q&&q.type=='Hideout'&&!q.ruin)?q:G.bld.find(b=>b.owner===f&&b.type=='Hideout');const C=CFG.CREW_CAP;return C[Math.max(0,Math.min(C.length,h?lvl(h):1)-1)]},crewUsed=f=>G.units.filter(u=>u.fam===f&&u.type!='boss'&&u.type!='underboss').length+G.jail.filter(j=>j.u.fam===f&&j.u.type!='underboss').length;
+const crewCap=f=>{const q0=FAM[f]&&FAM[f].pad&&FAM[f].pad.hq,q=q0&&q0.id!=null&&G.bld[q0.id]?G.bld[q0.id]:q0,h=(q&&q.type=='Hideout'&&!q.ruin)?q:G.bld.find(b=>b.owner===f&&b.type=='Hideout');const C=CFG.CREW_CAP;return C[Math.max(0,Math.min(C.length,h?lvl(h):1)-1)]},crewUsed=f=>G.units.filter(u=>u.fam===f&&u.type!='boss'&&u.type!='underboss').length+G.jail.filter(j=>j.u.fam===f&&j.u.type!='underboss').length;
 const payClean=t=>t!='thug',canPay=(f,t)=>(t=='thug'?FAM[f].dirty:payClean(t)?FAM[f].clean:FAM[f].dirty)>=CFG.UNITS[t].cost;
 // v0.8: a thug takes money first and the rest in clean
 function paySplit(f,t){const c=CFG.UNITS[t].cost,F=FAM[f];if(t!='thug')return payClean(t)?{d:0,c}:{d:c,c:0};const d=Math.min(Math.max(0,F.dirty),c);return{d,c:c-d}}
@@ -2176,7 +2176,7 @@ function drawJobRings(now){BURGIC=[];const z=cam.z;for(const u of G.units){if(u.
   if(inb)BURGIC.push({u,x:(cx-cam.x)*z,y:(cy-cam.y)*z,r:R0*z})}}
 
 // ===== v1.25 the empty plot in a family's base can be built into a racket of their choice =====
-const PLOT_COST=1000,PLOT_T=['Speakeasy','Casino','GunStore','Distillery','Warehouse','PrintShop','GunFactory','Laundry','Garage'];
+const PLOT_COST=1000,PLOT_T=['Speakeasy','Casino','GunStore','Distillery','Warehouse','PrintShop','GunFactory','Garage'];
 const plotB=f=>G.bld.find(b=>b.plot===f)||null;
 function plotTiles(x,y,b){for(let i=0;i<2;i++)for(let j=0;j<2;j++)OCC[(y+j)*N+x+i]=1;for(const u of G.units){if(u.ride)continue;const ux=Math.round(u.x),uy=Math.round(u.y);if(ux>=x&&ux<x+2&&uy>=y&&uy<y+2&&b.door){u.x=b.door[0];u.y=b.door[1];u.path=[]}}try{CHUNKS.clear();OVER=null}catch(e){}}
 function plotInit(b){/*a new build opens with a little stock so it trades straight away; after that it needs deliveries like any racket*/if(SUPK[b.type]){b.stk=0;b.pend=0;b.dry=1}if(b.type=='Distillery'||b.type=='PrintShop'||b.type=='GunFactory'){b.out=0;b.outT=0}if(b.type=='Warehouse')for(const k of RK)b['wh_'+k]=0}
@@ -2488,8 +2488,8 @@ const TERR=new Int8Array(N*N).fill(-1),RIVAL=new Uint8Array(N*N),TANIM=new Float
 const blockOwner={};
 const TMAIN=new Uint8Array(N*N);let terrVer=0;
 function terrHold(f){const out=[],cen=b=>[b.x+(b.s-1)/2,b.y+(b.s-1)/2],P=CFG.PROT;
- for(const b of G.bld){if(b.owner===f&&!DECOR(b.type)&&!LAW(b.type))out.push({c:cen(b),r:b.type=='Hideout'?P.R_HQ:P.R_RACKET,hq:b.type=='Hideout'});else if(b.prot===f)out.push({c:cen(b),r:P.R_SHOP})}return out}
-function updTerritory(){const sig=G.bld.map(b=>(b.owner==null?'-':b.owner)+(b.prot==null?'':'p'+b.prot)).join('')+FAM.map(f=>f.alive?1:0).join('');if(sig===terrSig)return;terrSig=sig;terrVer++;
+ for(const b of G.bld){if(b.owner===f&&!DECOR(b.type)&&!LAW(b.type))out.push({c:cen(b),r:b.type=='Hideout'?P.R_HQ:P.R_RACKET,hq:b.type=='Hideout'});else if(b.uniq&&b.bizOwn===f)out.push({c:cen(b),r:P.R_RACKET});else if(b.prot===f)out.push({c:cen(b),r:P.R_SHOP})}return out}
+function updTerritory(){const sig=G.bld.map(b=>(b.owner==null?'-':b.owner)+(b.prot==null?'':'p'+b.prot)+(b.uniq&&b.bizOwn!=null?'u'+b.bizOwn:'')).join('')+FAM.map(f=>f.alive?1:0).join('');if(sig===terrSig)return;terrSig=sig;terrVer++;
  const P=CFG.PROT,bestD=new Float32Array(N*N).fill(1e9),nt=new Int8Array(N*N).fill(-1),H=[];
  const put=(x,y,d,f)=>{if(x<0||y<0||x>=N||y>=N)return;const i=y*N+x;if(SEAT[i]||!inCity(x,y))return;if(d<bestD[i]){bestD[i]=d;nt[i]=f}};
  for(let f=0;f<4;f++){if(!FAM[f].alive){H.push([]);continue}const hs=terrHold(f);H.push(hs);
@@ -2548,7 +2548,7 @@ function stepWeather(){const W=CFG.WEATHER;if(!G.wx)G.wx={rain:true,until:G.t+(W
 // a rival hideout counts as found once you can see it (its Don was revealed, or your dame is near) or a dame reported where it is
 function hqKnown(b){if(!b||b.type!='Hideout'||b.owner==null||b.owner===0||b.ruin)return false;if(seenB(0,b))return true;const H=(intelRec().spotH||{})[b.owner];return !!(H&&H.b===b.id)}
 const raidOK=u=>u&&u.fam===0&&u.hp>0&&!u.jail&&!u.ride&&u.cuffed==null&&!['spy','lawyer','bomber'].includes(u.type);
-function orderRaid(us,b){const men=us.filter(raidOK),C=CFG.RAIDB;if(!hqKnown(b))return 0;if(hqWrecked(b)){wNote('That hideout is already wrecked. Nothing left to tear down.');return 0}if(men.length<C.MIN){wNote('A raid needs at least '+C.MIN+' fighting men (no dames, lawyers or bombers).');return 0}
+function orderRaid(us,b){const men=us.filter(raidOK),C=CFG.RAIDB;if(!raidable(b))return 0;if(hqWrecked(b)){wNote('That hideout is already wrecked. Nothing left to tear down.');return 0}if(men.length<C.MIN){wNote('A raid needs at least '+C.MIN+' fighting men (no dames, lawyers or bombers).');return 0}
  provoke(b.owner,'you raided their hideout');b.raid=b.raid&&b.raid.f===0?b.raid:{f:0,p:0,t0:G.t,out:0};
  for(const u of men){u.job={k:'raid',b:b.id};u.tgt=null;u.petty=null;u.amove=false;u.stance=null;u.garrison=null;sendTo(u,b.door[0],b.door[1],null,true)}
  ripple(b.door[0],b.door[1],'Raid','#ff6b5a');log(men.length+' men sent to raid the '+FAM[b.owner].name+' hideout.',1);return men.length}
@@ -2764,7 +2764,7 @@ function detPick(u,f){const P=G.pol,ds=new Set(G.bld.filter(b=>b.owner===f&&b.do
 function stepDet(u,dt){const P=G.pol,f=P.target;if(u.chase!=null)return;if(f==null&&!u.dj){if(!u.path.length)sendToB(u,PHQB);return}u.detF=f;
  if(u.dj){const b=G.bld[u.dj.b];if(!b||b.dmg){u.dj=null;return}const dd=Math.hypot(u.x-b.door[0],u.y-b.door[1]);
   if(dd>2.6){u.dj.w=(u.dj.w||0)-dt;if(u.dj.w<=0||!u.path.length){u.dj.w=RS(2);const r=nearRoad(b.door[0],b.door[1])||b.door;sendTo(u,r[0],r[1],null,true)}u.dj.g=(u.dj.g||0)+dt;if(u.dj.g>RM(2))u.dj=null;return}
-  u.path=[];u.dj.t+=dt;if(u.dj.t>=KC.INV_T){detDone(u,b);u.dj=null;u.wait=RS(3)}return}
+  u.path=[];u.dj.t+=dt*(b.owner!=null&&uOwn(b.owner,'coffee')?0.7:1);if(u.dj.t>=KC.INV_T){detDone(u,b);u.dj=null;u.wait=RS(3)}return}
  u.wait=(u.wait||0)-dt;if(u.wait>0)return;const b=detPick(u,f);if(b)u.dj={b:b.id,t:0};else u.wait=RS(5)}
 function detDone(u,b){const P=G.pol;P.chk[b.id]=G.t;const o=b.owner;if(typeof o!=='number'||!FAM[o]||!FAM[o].alive)return;if(!CFG.B[b.type].racket||frontsOf(o).includes(b))return;
  P.known[b.id]=o;addCase(o,KC.FIND_CASE,o===0?'a detective found your '+nice(b.type):null);if(o===0)news('A detective has found your '+nice(b.type)+'. The police know it is yours, and the Feds may raid it.')}
@@ -2891,7 +2891,7 @@ function chiefCardHTML(){const P=polInit(),K=kehoe(),tf=P.target!=null?FAM[P.tar
 (function(){const st=document.createElement('style');st.textContent=`.kcard{display:flex;gap:10px;align-items:center;margin:6px 0 10px;padding:8px;border-radius:8px;background:#1c1510;border:1px solid #4e3c24}.kcard img{width:58px;height:58px;border-radius:6px;border:1px solid #6a5434;flex:none;object-fit:cover;object-position:50% 6%}.kcard .kn{font:700 14px Georgia,serif;color:#f1e4c4}.kcard .kr{font:12px system-ui;color:#c9b88f;margin:1px 0 3px}.kcard .kr b.r{color:#ff8a7a}.kcard .kl{font:12px system-ui;color:#c9b88f;line-height:1.35}`;document.head.appendChild(st)})();
 
 /* ===== the thief ===== */
-const THJ={evidence:{t:RS(60),n:'Steal the evidence'},safe:{t:RS(45),n:'Crack the safe'},crates:{t:RS(30),n:'Steal crates'}};
+const THJ={evidence:{t:RS(60),n:'Steal the evidence'},safe:{t:RS(45),n:'Crack the safe'},crates:{t:RS(30),n:'Steal crates'},skim:{t:1e12,n:'Skim the take'}};
 function orderThief(us,b,kind){let n=0;for(const u of us)if(u.type=='thief'){u.petty=null;u.tgt=null;u.job={k:'thief',kind,b:b.id,t:0};sendTo(u,b.door[0],b.door[1],null,true);n++}if(n&&us.some(u=>u.fam===0))ripple(b.door[0],b.door[1],THJ[kind].n,'#c9b0ff');return n}
 function thiefSpotters(u,b,kind){if(kind==='evidence')return G.units.filter(c=>c.fam==='police'&&c.hp>0&&!c.ride&&c.inB==null&&!c.chief&&Math.hypot(c.x-u.x,c.y-u.y)<5).length;
  return G.units.filter(c=>c.fam===b.owner&&c.hp>0&&!c.ride&&(c.inB==null||c.garrison===b.id)&&Math.hypot(c.x-u.x,c.y-u.y)<5).length+guardsAt(b).length}
@@ -2905,14 +2905,14 @@ function thiefDone(u,b,j){const F=FAM[u.fam],d=b.door;u.job=null;
  if(j.kind==='safe'){const amt=Math.min(3000,Math.floor(Math.max(0,O.dirty)*0.25));O.dirty-=amt;F.dirty+=amt;if(u.fam===0)lootPop(O.name,[[amt>0?'+'+money(amt)+' cash':'The safe was empty','#f0cf72']]);ripple(d[0],d[1],amt>0?'+'+money(amt):'Empty','#f0cf72');return}
  if(j.kind==='crates'){const res=b.type=='PrintShop'?'slips':'booze';let n=0;for(const k of['out','wh_booze','stk']){if(n>=6)break;const have=Math.floor(b[k]||0);if(have>0){const g=Math.min(6-n,have);b[k]-=g;n+=g}}
   F.inv[res]=(F.inv[res]||0)+n;if(u.fam===0)lootPop(O.name,[[n?'+'+n+' '+(res=='slips'?'bundles of slips':'crates of booze'):'The shelves were empty','#e6d6b0']]);ripple(d[0],d[1],n?'+'+n+' '+res:'Empty','#e6d6b0')}}
-function stepThieves(dt){for(const u of G.units){const j=u.job;if(!j||j.k!=='thief'||u.hp<=0||u.jail)continue;const b=G.bld[j.b];if(!b||!b.door){u.job=null;continue}
+function stepThieves(dt){for(const u of G.units){const j=u.job;if(!j||j.k!=='thief'||u.hp<=0||u.jail)continue;const b=G.bld[j.b];if(!b||!b.door){if(u.inB!=null)comeOut(u,true);u.job=null;continue}if(j.kind==='skim'){skimStep(u,b,j,dt);continue}
   if(j.kind!=='evidence'&&(b.owner==null||b.owner===u.fam)){u.job=null;continue}
   const d=b.door;if(Math.hypot(u.x-d[0],u.y-d[1])>1.5){if(!u.path.length&&u.tgt==null)sendTo(u,d[0],d[1],null,true);j.t=Math.max(0,j.t-dt*0.5);continue}
   j.t+=dt;if(Math.random()<dt/RS(1.2)){u.atk=performance.now();u.atkGun=false;u.atkTo=null}
   j.acc=(j.acc||0)+dt;if(j.acc>=RS(1)){j.acc=0;const n=thiefSpotters(u,b,j.kind);if(n&&rnd()<Math.min(0.5,0.07*n)){thiefCaught(u,b,j);continue}}
   if(j.t>=THJ[j.kind].t)thiefDone(u,b,j)}}
 setTimeout(()=>{try{TICKSTEPS.push(['bank38',dt=>stepBank(dt)]);TICKSTEPS.push(['thief37',dt=>stepThieves(dt)])}catch(e){}},0);
-function drawThiefJobs(){for(const u of G.units){const j=u.job;if(!j||j.k!=='thief'||u.fam!==0||u.hp<=0)continue;const b=G.bld[j.b];if(!b||Math.hypot(u.x-b.door[0],u.y-b.door[1])>1.5)continue;const k=Math.min(1,j.t/THJ[j.kind].t),q=iso(u.x,u.y),z=cam.z,X=(q.X-cam.x)*z,Y=(q.Y-cam.y)*z-60*Math.max(z,0.5);
+function drawThiefJobs(){try{drawSkims()}catch(e){}for(const u of G.units){const j=u.job;if(!j||j.k!=='thief'||j.kind==='skim'||u.fam!==0||u.hp<=0)continue;const b=G.bld[j.b];if(!b||Math.hypot(u.x-b.door[0],u.y-b.door[1])>1.5)continue;const k=Math.min(1,j.t/THJ[j.kind].t),q=iso(u.x,u.y),z=cam.z,X=(q.X-cam.x)*z,Y=(q.Y-cam.y)*z-60*Math.max(z,0.5);
   ctx.save();ctx.setTransform(dpr,0,0,dpr,0,0);ctx.lineWidth=4;ctx.strokeStyle='#000a';ctx.beginPath();ctx.arc(X,Y,11,0,7);ctx.stroke();ctx.strokeStyle='#c9b0ff';ctx.beginPath();ctx.arc(X,Y,11,-Math.PI/2,-Math.PI/2+k*Math.PI*2);ctx.stroke();ctx.font='bold 10px system-ui';ctx.fillStyle='#f1e4c4';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(Math.round(k*100)+'%',X,Y+1);ctx.restore()}try{drawPolMarks()}catch(e){}}
 function hqPop(sx,sy,us){const el=$('choice'),bo=us.some(u=>u.type=='bomber'),th=us.some(u=>u.type=='thief'),b=PHQB;
  el.innerHTML=`<div class="ct">Police HQ · ${KC.SHORT}'s station</div>${th?'<button data-c="ev">🗂 Steal the evidence (60 s, risky)</button>':''}${bo?`<button data-c="bomb" ${FAM[0].inv.bomb?'':'disabled'}>💣 Bomb Police HQ (${FAM[0].inv.bomb} left)</button>`:''}<button data-c="x" class="cx">✕</button>`;
@@ -2974,7 +2974,7 @@ function stepRaids(dt){try{stepHq()}catch(e){}const C=CFG.RAIDB;for(const b of G
   if(at.length<C.MIN){Rd.wait=1;continue}Rd.wait=0;if(!Rd.out){Rd.out=1;if(b.owner===0)log('Your hideout is being torn apart! Get men to the door to stop it.',1);else notice('Your men are tearing the '+FAM[b.owner].name+' hideout apart. Anyone inside stays holed up until it comes down.',true)}
   /*v1.25: men holed up inside shoot out at the raiders*/Rd.ct=(Rd.ct||0)+dt;if(Rd.ct>=CFG.COMBAT_TICK){Rd.ct=0;const ins=G.units.filter(v=>v.fam===b.owner&&v.hp>0&&(v.atB===b||v.garrison===b.id||v.inB===b.id)&&v.type!='spy'&&v.type!='lawyer');for(const v of ins){const t=at[Math.floor(Math.random()*at.length)];if(!t)break;v.atk=performance.now();v.atkGun=isGun(v);v.atkTo=null;if(Math.random()<0.6){hurtU(t,str(v)*0.17,b.owner)}}if(ins.length)sfx&&sfx(ins.some(isGun)?'tommy':'shots',d[0],d[1])}
   const def=G.units.filter(v=>v.fam===b.owner&&v.hp>0&&!v.ride&&!v.jail&&v.inB==null&&v.atB!==b&&v.garrison!==b.id&&v.type!='spy'&&v.type!='lawyer'&&Math.hypot(v.x-d[0],v.y-d[1])<C.DEF_R);Rd.def=def.length;
-  if(def.length)continue;const RF=FAM[Rd.f],key=b.id+'_'+Rd.t0;for(const u of at){if(u._rg===key)continue;u._rg=key;let dm=0;if(u.molo>0){u.molo=0;dm=HRAID.MOLO}else if(RF&&(RF.inv.molo||0)>=1&&['thug','soldier','enforcer','hitman','boss','underboss','driver'].includes(u.type)){RF.inv.molo--;dm=HRAID.MOLO}if(dm){Rd.p+=dm;addFx({type:'ripple',x:d[0],y:d[1],col:'#ff8a3a',label:'Molotov! -'+dm});sfx&&sfx('glass',d[0],d[1])}}if(!Rd.bomb&&RF&&(RF.inv.bomb||0)>=1){Rd.bomb=1;RF.inv.bomb--;Rd.p+=HRAID.BOMB;addFx({type:'ripple',x:d[0],y:d[1],col:'#ff5a3a',label:'Bomb! -'+HRAID.BOMB});G.shakeQ={t:performance.now(),x:d[0],y:d[1],amp:6};sfx&&sfx('boom',d[0],d[1])}for(const u of at)Rd.p+=hqDmgRate(u)*dt;if(Rd.p>=hqHPmax(b))raidDone(b,men)}}
+  const DK=def.length?Math.max(0.3,1/(1+0.35*def.length)):1;const RF=FAM[Rd.f],key=b.id+'_'+Rd.t0;for(const u of at){if(u._rg===key)continue;u._rg=key;let dm=0;if(u.molo>0){u.molo=0;dm=HRAID.MOLO}else if(RF&&(RF.inv.molo||0)>=1&&['thug','soldier','enforcer','hitman','boss','underboss','driver'].includes(u.type)){RF.inv.molo--;dm=HRAID.MOLO}if(dm){Rd.p+=dm;addFx({type:'ripple',x:d[0],y:d[1],col:'#ff8a3a',label:'Molotov! -'+dm});sfx&&sfx('glass',d[0],d[1])}}if(!Rd.bomb&&RF&&(RF.inv.bomb||0)>=1){Rd.bomb=1;RF.inv.bomb--;Rd.p+=HRAID.BOMB;addFx({type:'ripple',x:d[0],y:d[1],col:'#ff5a3a',label:'Bomb! -'+HRAID.BOMB});G.shakeQ={t:performance.now(),x:d[0],y:d[1],amp:6};sfx&&sfx('boom',d[0],d[1])}for(const u of at)Rd.p+=hqDmgRate(u)*dt*DK;if(Rd.p>=hqHPmax(b))raidDone(b,men)}}
 function raidDone(b,men){const vic=b.owner,f=FAM[vic],rf=Rd0(b),me=FAM[rf],d=b.door,L=HRAID.LOOT,gains=[];raidKick(b);const don=ejectDon(b);G.shakeQ={t:performance.now(),x:d[0],y:d[1],amp:8};sfx&&sfx('boom',d[0],d[1]);
  const sg=rf===0?'+':'-';const cash=Math.floor((f.dirty||0)*L);f.dirty-=cash;me.dirty+=cash;if(cash>0)gains.push([sg+money(cash)+' cash','#f0cf72']);
  const IT=[['tommy','Tommy gun','Tommy guns'],['pistol','Pistol','Pistols'],['bomb','Bomb','Bombs'],['booze','Crate of booze','Crates of booze'],['slips','Bundle of slips','Bundles of slips'],['shotgun','Sawn-off shotgun','Sawn-off shotguns'],['knux','Pair of brass knuckles','Pairs of brass knuckles'],['vest','Bulletproof vest','Bulletproof vests'],['molo','Molotov cocktail','Molotov cocktails']],cap={booze:CFG.INV.BOOZE_CAP,guns:CFG.INV.GUNS_CAP,slips:CFG.INV.BOOZE_CAP};
@@ -5111,9 +5111,9 @@ function pickMarker(sx,sy){if(mkAlpha()<0.3)return null;let best=null,bd=1e9;for
 let LASTPT='mouse';
 function cvXY(sx,sy){const r=cv.getBoundingClientRect();return[(sx-r.left)*(innerWidth/(r.width||innerWidth)),(sy-r.top)*(innerHeight/(r.height||innerHeight))]}
 function hitUnit2(sx,sy,raw){if(!raw)[sx,sy]=cvXY(sx,sy);const z=cam.z,touch=LASTPT!=='mouse',minS=touch?44:28,RAD=60;let best=null,bs=1e9,near=null,nd=RAD;
- for(const u of G.units){if(u.ride||u.hp<=0||u.jail)continue;const own=u.fam===0;if(u.inB!=null)continue;if(own&&u.garrison!=null){const gb=G.bld[u.garrison];if(gb&&gb.door&&Math.hypot(u.x-gb.door[0],u.y-gb.door[1])<2.4)continue}if(own){}else{if(!G.sel.size||!visible(u))continue}
+ for(const u of G.units){if(u.ride||u.hp<=0||u.jail)continue;const own=u.fam===0;if(u.inB!=null)continue;let post=false;if(u.garrison!=null){const gb=G.bld[u.garrison];if(gb&&gb.door&&(Math.hypot(u.x-gb.door[0],u.y-gb.door[1])<4||Math.hypot(u.x-(gb.x+(gb.s-1)/2),u.y-(gb.y+(gb.s-1)/2))<gb.s/2+3))post=true}if(own&&post)continue;if(own){}else{if(!G.sel.size||!visible(u))continue}
   const p=SPOS.get(u.id);if(!p)continue;const fx=(p.X-cam.x)*z,fy=(p.Y-cam.y)*z,h=Math.max((u.type=='boss'?BOSSH:(RIGH[u.type]||44))*z*USC(),minS),w=Math.max(h*0.55,minS);
-  const cx=fx,cy=fy-h*0.5,dx=Math.abs(sx-cx)/(w/2),dy=Math.abs(sy-cy)/(h/2+(touch?6:3));if(touch&&!own&&false){}const cd=Math.hypot(sx-cx,sy-cy)-(own?4:0);if(touch&&!G.sel.size&&cd<nd&&own){nd=cd;near=u}if(dx>1||dy>1)continue;
+  const cx=fx,cy=fy-h*0.5,dx=Math.abs(sx-cx)/(w/2),dy=Math.abs(sy-cy)/(h/2+(touch?6:3));if(touch&&!own&&false){}const cd=Math.hypot(sx-cx,sy-cy)-(own?4:0);if(touch&&!G.sel.size&&cd<nd&&own){nd=cd;near=u}if(dx>(post?0.55:1)||dy>(post?0.7:1))continue;
   const sc=Math.hypot(dx,dy)-(own?0.15:0)-fy*1e-5;if(sc<bs){bs=sc;best=u}}
  if(!best&&near)best=near;return best?(best.fam===0?{u:best}:{e:best}):null}
 function groundPick(sx,sy){const wx=cam.x+sx/cam.z,wy=cam.y+sy/cam.z,fx=(wx/(TW/2)+wy/(TH/2))/2,fy=(wy/(TH/2)-wx/(TW/2))/2,x=Math.round(fx),y=Math.round(fy);
@@ -5141,17 +5141,57 @@ function pick(sx,sy,o){{const c=cvXY(sx,sy);for(const ic of BURGIC){if(ic.u.ente
   return{b}}
  return GP||{}}
 function nearWalk(x,y){for(let r=1;r<8;r++)for(let dx=-r;dx<=r;dx++)for(let dy=-r;dy<=r;dy++)if(isRoad(x+dx,y+dy))return[x+dx,y+dy];return null}
+/* ===== v1.40 ===== */
+/* thief: slips inside a rival racket and skims whatever it makes until he is caught or called out */
+const SKIM={T:RS(30),GOODS:2,CASH:0.3,CATCH:0.03,PER_G:0.04};
+function skimEnd(u,b,why){u.entered=0;if(u.inB!=null)comeOut(u,true);u.job=null;u.atB=null;if(u.fam===0&&why)log(manName(u)+' '+why,1)}
+function skimStep(u,b,j,dt){
+ if(b.owner==null||b.owner===u.fam||b.dmg){skimEnd(u,b,b.owner===u.fam?'walks out: that racket is yours now.':'walks out of the '+nice(b.type)+'.');return}
+ const d=b.door;
+ if(u.inB==null){if(Math.hypot(u.x-d[0],u.y-d[1])>1.5){if(!u.path.length&&u.tgt==null)sendTo(u,d[0],d[1],null,true);return}
+  goInside(u,b);u.entered=1;u.atB=null;j.acc=0;j.tot=j.tot||{};if(u.fam===0){ripple(d[0],d[1],'Skimming','#c9b0ff');log(manName(u)+' is inside the '+FAM[b.owner].name+' '+nice(b.type)+', skimming off the top.',1)}return}
+ u.path=[];u.tgt=null;j.acc=(j.acc||0)+dt;if(j.acc<SKIM.T)return;j.acc=0;
+ const F=FAM[u.fam],O=FAM[b.owner];
+ if(rnd()<SKIM.CATCH+SKIM.PER_G*guardsAt(b).length){u.entered=0;comeOut(u,true);u.atB=null;thiefCaught(u,b,j);return}
+ let got='';const res=SUPSRC[b.type]||(b.type=='Warehouse'?RK.find(k=>(b['wh_'+k]||0)>=1):null);
+ if(res){let n=0;for(const k of (b.type=='Warehouse'?['wh_'+res]:['out','stk'])){if(n>=SKIM.GOODS)break;const have=Math.floor(b[k]||0);if(have>0){const t=Math.min(SKIM.GOODS-n,have);b[k]-=t;n+=t}}
+  if(n){F.inv[res]=(F.inv[res]||0)+n;got=n+' '+(RESN[res]?RESN[res][n==1?0:1]:res);j.tot[res]=(j.tot[res]||0)+n}}
+ else{const inc=incomeOf(b);if(inc>0){const amt=Math.max(1,Math.round(PMIN(inc)*SKIM.T/RM(1)*SKIM.CASH)),a=Math.min(amt,Math.max(0,Math.floor(O.dirty)));if(a>0){O.dirty-=a;F.dirty+=a;got=money(a);j.tot.cash=(j.tot.cash||0)+a}}}
+ if(!got)return;b._shortT=G.t;
+ if(u.fam===0){ripple(d[0],d[1],'+'+got,'#c9b0ff');log(manName(u).split(' ')[0]+' skimmed '+got+' from the '+O.name+' '+nice(b.type)+'. Their '+(res?'stock':'takings')+' are short today.',0)}
+ if(b.owner===0){const m='Your '+nice(b.type)+(res?' stock':' takings')+' are short today. Somebody is skimming off the top.';NSEEN.delete(m);notice(m,true)}}
+function skimmersAt(b){return G.units.filter(u=>u.fam===0&&u.job&&u.job.k==='thief'&&u.job.kind==='skim'&&u.job.b===b.id&&u.hp>0)}
+function drawSkims(){for(const u of G.units){const j=u.job;if(!j||j.k!=='thief'||j.kind!=='skim'||u.fam!==0||u.inB==null)continue;const b=G.bld[j.b];if(!b)continue;const q=iso(b.door[0],b.door[1]),z=cam.z,X=(q.X-cam.x)*z,Y=(q.Y-cam.y)*z-70*Math.max(z,0.5);if(X<-90||Y<-40||X>innerWidth+90||Y>innerHeight+40)continue;
+  const T=j.tot||{},parts=[];if(T.cash)parts.push(money(T.cash));for(const k of RK)if(T[k])parts.push(T[k]+' '+(RESN[k]?RESN[k][T[k]==1?0:1]:k));const t='Skimming'+(parts.length?' · '+parts.join(', '):'');
+  ctx.save();ctx.setTransform(dpr,0,0,dpr,0,0);ctx.font='bold 11px Georgia,serif';const w=ctx.measureText(t).width+16;ctx.fillStyle='#1d1430e8';ctx.fillRect(X-w/2,Y-10,w,20);ctx.strokeStyle='#c9b0ff';ctx.lineWidth=1.5;ctx.strokeRect(X-w/2,Y-10,w,20);
+  const k=(j.acc||0)/SKIM.T;ctx.fillStyle='#c9b0ff55';ctx.fillRect(X-w/2,Y+8,w*k,2);ctx.fillStyle='#ece0ff';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(t,X,Y+1);ctx.restore()}}
+/* rival hideouts in the corner yards can always be raided: you can see them */
+function raidable(b){if(hqKnown(b))return true;return !!(b&&b.type=='Hideout'&&b.cmpHQ&&b.owner!=null&&b.owner!==0&&!b.ruin)}
+/* a computer family whose yard is threatened pulls its men home and puts the Don inside */
+let ADF=0;function stepAIDefend(dt){ADF+=dt;if(ADF<RS(2))return;ADF=0;
+ for(const F of FAM){if(!F.ai||!F.alive)continue;const H=hqOf(F.id);if(!H||H.hdmg||!H.door)continue;const d=H.door;
+  const foes=G.units.filter(v=>v.hp>0&&!v.jail&&!v.ride&&v.inB==null&&typeof v.fam=='number'&&v.fam!==F.id&&!['spy','lawyer'].includes(v.type)&&Math.hypot(v.x-d[0],v.y-d[1])<9);
+  const raided=H.raid&&H.raid.f!==F.id,bs=bossOf(F.id);
+  if(foes.length||raided){F._thT=G.t;
+   if(bs&&bs.hp>0&&!bs.jail&&!bs.ride){if(bs.inB===H.id){bs.path=[];bs.tgt=null}else if(bs.inB==null){const bd=Math.hypot(bs.x-d[0],bs.y-d[1]);if(bd<2.2){bs.path=[];bs.tgt=null;bs.petty=null;goInside(bs,H);bs.entered=1;bs.atB=H;bs._defIn=1}else if(bd<30&&(!bs.path.length||G.t-(bs._defT||-1e9)>RS(5))){bs._defT=G.t;bs.tgt=null;bs.petty=null;sendToB(bs,H)}}}
+   const n=Math.max(3,foes.length+1);let c=0;
+   for(const v of G.units){if(c>=n)break;if(v.fam!==F.id||v.hp<=0||v.jail||v.ride||v.inB!=null||v.type=='boss'||['spy','lawyer','bomber','driver','thief'].includes(v.type))continue;if(v.garrison===H.id){c++;continue}
+    const vd=Math.hypot(v.x-d[0],v.y-d[1]);if(vd>35||(v.job&&v.job.k=='raid'))continue;if(v.tgt!=null&&vd<10){c++;continue}
+    if(vd>4&&(!v.path.length||G.t-(v._defT||-1e9)>RS(6))){v._defT=G.t;v.petty=null;v.job=null;v.amove=true;const r=nearRoad(d[0],d[1])||d;sendTo(v,r[0],r[1],null,true)}c++}}
+  else if(F._thT&&G.t-F._thT>RS(20)){F._thT=0;if(bs&&bs._defIn&&bs.inB===H.id){bs._defIn=0;bs.entered=0;comeOut(bs)}}}}
+setTimeout(()=>{try{TICKSTEPS.push(['def40',dt=>stepAIDefend(dt)])}catch(e){}},0);
+
 function raidPop(sx,sy,b,us){const el=$('choice'),n=us.filter(raidOK).length,C=CFG.RAIDB;
  el.innerHTML=`<div class="ct">${FAM[b.owner].name} hideout</div><button data-c="raid" ${n>=C.MIN?'':'disabled'}>Raid the hideout (${n} men${n<C.MIN?', need '+C.MIN:''})</button>${us.some(u=>u.type=='thief')?'<button data-c="safe">🔓 Crack the safe (45 s)</button>':''}<button data-c="go">Walk there</button><button data-c="x" class="cx">✕</button>`;
  el.style.display='block';const w=el.offsetWidth,h=el.offsetHeight;el.style.left=Math.max(6,Math.min(innerWidth-w-6,sx-w/2))+'px';el.style.top=Math.max(90,Math.min(innerHeight-h-140,sy-h-20))+'px';
  el.onclick=e=>{const c=e.target.closest('button')?.dataset.c;if(!c)return;el.style.display='none';buzz(12);if(c=='raid')orderRaid(us,b);else if(c=='safe')orderThief(us,b,'safe');else if(c=='go'){for(const u of us)sendTo(u,b.door[0],b.door[1],null,true)}G.target=b.door;G.targetT=performance.now();updUI()}}
 function choicePop(sx,sy,b,us){const el=$('choice');const en=us.some(u=>CFG.SMASH.RATE[u.type]),bo=us.some(u=>u.type=='bomber');
- el.innerHTML=`<div class="ct">${nice(b.type)} · ${b.owner==null?'Neutral':FAM[b.owner].name}</div><button data-c="cap">⚑ Capture</button>${en?'<button data-c="smash">🔨 Smash</button>':''}${bo?`<button data-c="bomb" ${FAM[0].inv.bomb?'':'disabled'}>💣 Bomb (${FAM[0].inv.bomb} left)</button>`:''}${us.some(u=>u.type=='thief')&&b.owner!=null&&b.owner!==0&&['Warehouse','PrintShop','Distillery'].includes(b.type)?'<button data-c="crates">📦 Steal crates (30 s)</button>':''}<button data-c="x" class="cx">✕</button>`;
+ el.innerHTML=`<div class="ct">${nice(b.type)} · ${b.owner==null?'Neutral':FAM[b.owner].name}</div><button data-c="cap">⚑ Capture</button>${en?'<button data-c="smash">🔨 Smash</button>':''}${bo?`<button data-c="bomb" ${FAM[0].inv.bomb?'':'disabled'}>💣 Bomb (${FAM[0].inv.bomb} left)</button>`:''}${us.some(u=>u.type=='thief')&&b.owner!=null&&b.owner!==0&&(SUPSRC[b.type]||b.type=='Warehouse'||CFG.B[b.type].inc)&&!b.dmg?'<button data-c="crates">🤫 Skim the take (stays inside)</button>':''}<button data-c="x" class="cx">✕</button>`;
  el.style.display='block';const w=el.offsetWidth,h=el.offsetHeight;el.style.left=Math.max(6,Math.min(innerWidth-w-6,sx-w/2))+'px';el.style.top=Math.max(90,Math.min(innerHeight-h-140,sy-h-20))+'px';
  el.onclick=e=>{const c=e.target.closest('button')?.dataset.c;if(!c)return;el.style.display='none';buzz(12);const d=b.door;
   if(c=='cap'){for(const u of us){u.job=null;sendToB(u,b)}ripple(d[0],d[1],'Capture','#ffd34d')}
   else if(c=='smash'){orderSmash(us,b);ripple(d[0],d[1],'Smash','#ff8a3a')}
-  else if(c=='bomb'){const n=orderBomb(us,b);for(const u of us)if(u.type!='bomber')sendToB(u,b);ripple(d[0],d[1],'Bomb','#ff3b30')}else if(c=='crates'){orderThief(us,b,'crates')}
+  else if(c=='bomb'){const n=orderBomb(us,b);for(const u of us)if(u.type!='bomber')sendToB(u,b);ripple(d[0],d[1],'Bomb','#ff3b30')}else if(c=='crates'){orderThief(us,b,'skim')}
   G.target=d;G.targetT=performance.now();updUI()}}
 function buzz(ms){try{navigator.vibrate&&navigator.vibrate(ms)}catch(_){}}
 function selUnits(){return [...G.sel].map(id=>G.units.find(v=>v.id==id)).filter(u=>u&&(u.inB==null||onJob(u)&&u.burg!=null&&!u.entered)&&!u.ride&&!u.jail)}
@@ -5198,7 +5238,7 @@ function tap(sx,sy,dbl,o={}){if(G.over)return;if(tacA()>0.5){const c=cvXY(sx,sy)
  if(!h.u&&(h.b||h.road||h.pt))orderOff(us);if(!h.u)unguard(us,h.b);for(const u of us){if(!h.u){u.mvOrd=1;u.patrol=null}if(u.petty&&u.petty.manual)u.petty=null;u.tgt=null;u.amove=false;u.stance=u.stance==='hold'?'hold':null;u.board=null;if(u.type==='spy'){u.spyJob=null;u.copJob=null}if(u.type==='lawyer'&&u.lawJob)lawRelease(u)}
  if(h.u){G.selCar=null;if(dbl){G.sel.add(h.u.id);openWheel(h.u);updUI();return}else{if(o.pre){}else if(o.mouse&&!o.add){G.sel=new Set([h.u.id])}else if(o.mouse&&o.add&&G.sel.has(h.u.id))G.sel.delete(h.u.id);else G.sel.add(h.u.id);G.selPulse=performance.now();buzz(8)}}
  else if(h.b&&us.length&&h.b.type=='Bank'){h.b._hl=performance.now();bankPop(sx,sy,h.b,us);updUI();return}
-  else if(h.b&&us.length&&hqKnown(h.b)){h.b._hl=performance.now();raidPop(sx,sy,h.b,us);updUI();return}
+  else if(h.b&&us.length&&raidable(h.b)){h.b._hl=performance.now();raidPop(sx,sy,h.b,us);updUI();return}
   else if(h.b&&us.length&&h.b===PHQB&&us.some(u=>u.type=='bomber'||u.type=='thief')){h.b._hl=performance.now();hqPop(sx,sy,us);updUI();return}
   else if(h.b&&us.length&&sabotageable(h.b,0)&&!h.b.dmg&&us.some(u=>CFG.SMASH.RATE[u.type]||u.type=='bomber'||u.type=='thief')){h.b._hl=performance.now();for(const u of us){u.job=null;sendToB(u,h.b)}vinceVO(us,'atk');G.target=h.b.door;G.targetT=performance.now();ripple(h.b.door[0],h.b.door[1],h.b.owner==null?'Capture':'Attack',h.b.owner==null?'#ffd34d':'#ff6b5a');choicePop(sx,sy,h.b,us);updUI();return}
  else if(h.b&&us.length&&h.b.type=='Courthouse'){h.b._hl=performance.now();for(const u of us)sendToB(u,h.b);G.target=h.b.door;G.targetT=performance.now();vinceVO(us,'mv');ripple(h.b.door[0],h.b.door[1],us.some(u=>u.type=='lawyer')?'To court':'Courthouse','#c9b48a');buzz(12);updUI();return}
@@ -5250,7 +5290,7 @@ function ringItems(sx,sy,us){const h=pick(sx,sy),L=[];let title='';const add=o=>
  const b=h.b&&(!DECOR(h.b.type)||(crimeKind(h.b)&&h.b.owner!==0))?h.b:null;
  if(b){title=nice(b.type)+(b.owner===0?' · yours':b.owner!=null?' · '+FAM[b.owner].name:'');
   if(b.type=='Bank')L.push(...ringHarvest(()=>bankPop(sx,sy,b,us)));
-  else if(hqKnown(b))L.push(...ringHarvest(()=>raidPop(sx,sy,b,us)));
+  else if(raidable(b))L.push(...ringHarvest(()=>raidPop(sx,sy,b,us)));
   else if(b===PHQB){if(us.some(u=>u.type=='bomber'||u.type=='thief'))L.push(...ringHarvest(()=>hqPop(sx,sy,us)))}
   else if(b.owner===0){const men=us.filter(RFIGHT),gs=guardsAt(b),room=guardMax(b)-gs.length;
    add({lab:'Guard',sub:gs.length+'/'+guardMax(b),dis:!men.length||room<=0,ic:RSV('shield'),run:()=>{let n=0;for(const u of men){if(n>=room)break;if(u.garrison===b.id)continue;G.guardU=u.id;guardTap({b});n++}}});
@@ -5259,6 +5299,7 @@ function ringItems(sx,sy,us){const h=pick(sx,sy),L=[];let title='';const add=o=>
   else if(crimeKind(b)&&b.owner!==0)L.push(...ringHarvest(()=>crimePop(sx,sy,{b},us)));
   else if(sabotageable(b,0)&&!b.dmg)L.push(...ringHarvest(()=>choicePop(sx,sy,b,us)));
   else if(!LAW(b.type))add({lab:'Go there',ic:RSV('run'),run:()=>{for(const u of us)sendToB(u,b);ripple(b.door[0],b.door[1],'Move','#a8c48a')}});
+  {const sk=skimmersAt(b);if(sk.length)add({lab:'Call him out',sub:manName(sk[0]).split(' ')[0],ic:RSV('run'),run:()=>{for(const u of sk)skimEnd(u,b,'slips out of the '+nice(b.type)+'.');updUI()}})}
   if(b.owner!==0)mo();
   add({lab:'Info',ic:RSV('eye'),run:()=>openPanel(b)});return{title,L}}
  const pt=h.pt||h.road;if(!pt)return null;title='Street';
@@ -5475,7 +5516,7 @@ const HOWTO=[
  ['Territory','t_Hideout','Own every business on a city block and it becomes your <b>territory</b>, glowing in your colour when zoomed out. Territory pays <b>+10%</b> income. Zoom right out and the city turns into a flat <b>tactical map</b>: quarters tinted by the family whose rackets you have seen there, markers for your men and any rival crews in sight. Tap a quarter to zoom back in on it.'],
  ['Guards','p_enforcer','Tap your building and press <b>+ Guard</b>: a free thug walks over and garrisons it (or use <b>Guard</b> on his wheel). Attackers must beat the guards before they can take the building. A guard can still be tapped and selected: send him anywhere and he leaves his post (a notice says so); order him to guard again to put him back.'],
  ['Police & Heat','t_Police','The city has five <b>districts</b>: each family\'s quarter around where it settled and neutral <b>Downtown</b> in the middle, with the Police Station and the Court House. Each has a beat cop or two, and every crime heats up the district where it happens. Past 30 heat a district gets extra cops, and the rackets in a hot district fill their case file faster. Doing jobs on a rival\'s turf makes the cops lean on <b>him</b>. A cop who <b>sees a crime</b> chases the man, who gets a <b>WANTED</b> tag. Break his line of sight (get behind buildings) and keep away, or get far off, and he gives up; reach your own Hideout and you are safe. Or fight him, but <b>killing a cop</b> sends that district\'s heat through the roof and floods it with police. If he catches you: a thug goes to the cells for 60 seconds; the <b>Boss</b> is fined 30% of your cash and jailed at Police HQ for 60 seconds (not game over). Nobody else hears about it. The same goes for rival bosses. There is no family heat any more: <b>heat belongs to each district</b> (fights, shootings, smashing, bombing, killings, stealing or wrecking cars, hitting cops) and cools off over time. Your <b>Lawyer</b> can buy it down: select him and tap a beat cop to slip him $50 for 10 heat off that district (or turn on Auto bribe in his wheel). Tap the case bar at the top or the <b>Police</b> tab for the full police file and heat per district.'],
- ['Smash & Bomb','p_bomber','With <b>Thugs</b> or <b>Enforcers</b> selected, tap any rival <i>or neutral</i> business and choose <b>Smash</b> (enforcers work 2x faster; a group adds up). Closures run on <b>real minutes of play</b> (paused time does not count) and the m:ss countdown shows over the building and in its panel. A smashed business is shut for <b>20 minutes</b>: no income, its chain breaks, and a smashed neutral can\'t be captured until it recovers. Its owner can press <b>Repair</b> ($600) to cut what is left to a quarter. A <b>Bomber</b> with a bomb in stock turns it to rubble for <b>30 minutes</b> (the last 5 are scaffolding) and it can\'t be repaired. A police closure lasts <b>10 minutes</b>, no repair. Rival families repair and wait the same way. Hideouts can\'t be hit. A bomb at Police HQ brings the Commissioner out to fight. Both bring heat.'],
+ ['Smash & Bomb','p_bomber','With <b>Thugs</b> or <b>Enforcers</b> selected, tap any rival <i>or neutral</i> business and choose <b>Smash</b> (enforcers work 2x faster; a group adds up). Closures run on <b>real minutes of play</b> (paused time does not count) and the m:ss countdown shows over the building and in its panel. A smashed business is shut for <b>20 minutes</b>: no income, its chain breaks, and a smashed neutral can\'t be captured until it recovers. Its owner can press <b>Repair</b> ($600) to cut what is left to a quarter. A <b>Bomber</b> with a bomb in stock turns it to rubble for <b>30 minutes</b> (the last 5 are scaffolding) and it can\'t be repaired. A police closure lasts <b>10 minutes</b>, no repair. Rival families repair and wait the same way. Rival hideouts can be <b>raided</b> with 3 or more men: they wear down its health bar (slower while defenders are near) and at zero everyone inside, Don included, is thrown out. A bomb at Police HQ brings the Commissioner out to fight. Both bring heat.'],
  ['Money','t_Laundry','There is one kind of money: <b>cash</b>. It pays for everything, and holding a big pile of it is safe: the police only take it when they catch you. A Fed raid on one of your rackets seizes some, and so does the arrest of your Don.'],
  ['Upgrades & Gear','t_GunFactory','Tap your business to <b>upgrade</b> it to ★★ and ★★★ for more income and output. Upgrades stay with the building if it is captured, and a bomb knocks it back to ★. Pistols and tommy guns from your Gun Factory and Gun Store go into Stock: spares re-arm disarmed crew and arm the Don and underbosses. See it all in the <b>Stock</b> tab.'],
  ['Orders & Gear','p_thug','Tapping a man selects him; tap the street to send him, tap an enemy to attack. Everything else is on his <b>wheel</b>: double-tap him. <b>Orders</b> on his wheel holds attack-move, hold, retreat, stop and <b>Let go</b> (clear the selection). Hand jobs: tap a mark with a man selected. While anything is selected a <b>Deselect</b> button sits at the bottom left; with several men selected, an order from one man\'s wheel or a tap goes to all of them. <b>Gear</b> shows his portrait, health and strength and one <b>weapon slot</b>. Crew weapons come with the hire and stay with the man: every thug carries a pistol, soldiers a sawn-off, hitmen a tommy gun, enforcers a bat. If the police take a man\'s gun, he picks the right one up from your <b>Stock</b> on his own once there is one. Only the Don and underbosses change gear, on their crew-bar cards.'],
@@ -5536,7 +5577,7 @@ const ST={ls:false,idb:false,cache:null,
  has(){return !!this.cache}};
 function loadGame(){const st=JSON.parse(ST.cache||'null');try{for(const e of (st&&st.petty&&st.petty.ev)||[])if(e.j=='pick'||e.j=='mug')e.j='rob'}catch(e){}if(!st||(st.v||1)<4)return false;/*v1.19: Courthouse moved, older saves start fresh*/G.saveWall=st.wall||0;
  G.t=st.t;G.uid=st.uid;rs=st.rs;VID=st.VID;[combatAcc,aiAcc,polAcc,witAcc]=st.acc;G.log=st.log||[];
- st.fam.forEach((f,i)=>{if(f&&f.clean!=null){f.dirty=(f.dirty||0)+(f.clean||0);delete f.clean}Object.assign(FAM[i],f)});st.bld.forEach((o,i)=>{if(!G.bld[i]){if(o.plot!=null&&i===G.bld.length)plotRestore(o);return}Object.assign(G.bld[i],o)});
+ st.fam.forEach((f,i)=>{if(f&&f.clean!=null){f.dirty=(f.dirty||0)+(f.clean||0);delete f.clean}Object.assign(FAM[i],f)});st.bld.forEach((o,i)=>{if(!G.bld[i]){if(o.plot!=null&&i===G.bld.length)plotRestore(o);return}Object.assign(G.bld[i],o)});FAM.forEach(F=>{if(F.pad)for(const k of ['hq','pub']){const o=F.pad[k];if(o&&o.id!=null&&G.bld[o.id])F.pad[k]=G.bld[o.id]}});
  const B=i=>i>=0?G.bld[i]:null;G.veh=st.veh.map(v=>({...v,riders:[]}));const VM=new Map(G.veh.map(v=>[v.id,v]));
  G.units=st.units.map(u=>{if(u.petty){for(const f of['k','j'])if(u.petty[f]=='pick'||u.petty[f]=='mug')u.petty[f]='rob'}return u}).map(u=>({...u,atB:B(u.atB),goB:B(u.goB),ride:u.ride!=null?VM.get(u.ride)||null:null,fin:u.fin?[u.fin[0],u.fin[1],B(u.fin[2])]:null}));
  G.units.forEach(u=>{if(u.ride)u.ride.riders.push(u)});(st.cg||[]).forEach(i=>{if(G.cars[i])G.cars[i].gone=1});FAM.forEach(f=>{f.inv=Object.assign({pistol:0,tommy:0,bomb:0,car:0,booze:0,guns:0},f.inv||{});if(f.bombT==null)f.bombT=-1e9});G.sel=new Set();if(st.ais){[G.aiSpies,G.aiWatch,aiSpyId]=st.ais}if(st.hl){G.raids=st.hl[1]||[]}G.news=st.nw||[];if(st.pp){G.paper=st.pp[0];G.rt=st.pp[1]||0};if(st.dh)G.dh=st.dh;if(st.sq)G.seenQ=st.sq;G.squads=st.sqd||[];G.pol=st.pol||null;if(st.it){[G.spied,G.spotD,G.spotB,G.spotH]=st.it}else{G.spied={};G.spotD=[];G.spotB={};G.spotH={}}if(st.pj){G.jail=st.pj[0]||[];G.petty=Object.assign({day:0,earn:{},arr:{},tot:0,tarr:0},st.pj[1]||{})}FAM.forEach(f=>{if(f.war==null)f.war=false});initPoliceLater=0;
